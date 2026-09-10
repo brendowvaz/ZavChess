@@ -69,6 +69,19 @@ model Opening {
   @@index([family])
 }
 
+/// Editorial guidance is stored by opening family so every variation inherits
+/// the same strategic foundation without pretending that a family guide is a
+/// move-by-move evaluation of that variation.
+model OpeningGuide {
+  family         String @id @db.VarChar(191)
+  overview       String @db.Text
+  whitePlan      Json
+  blackPlan      Json
+  commonMistakes Json
+  lessonIds      Json
+  updatedAt      DateTime @updatedAt
+}
+
 model Puzzle {
   /// Lichess PuzzleId is base62 and case-sensitive. Migration uses utf8mb4_bin.
   id        String @id

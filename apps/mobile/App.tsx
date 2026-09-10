@@ -7,7 +7,7 @@ import { AuthScreen } from './src/features/auth/AuthScreen';
 import { EndgameScreen, EndgamesScreen } from './src/features/endgames/EndgamesScreen';
 import { HomeScreen } from './src/features/home/HomeScreen';
 import { LessonScreen, LessonsScreen } from './src/features/lessons/LessonsScreen';
-import { OpeningScreen, OpeningsScreen } from './src/features/openings/OpeningsScreen';
+import { OpeningFamilyScreen, OpeningScreen, OpeningsScreen } from './src/features/openings/OpeningsScreen';
 import { PuzzlesScreen } from './src/features/puzzles/PuzzlesScreen';
 import { NavigationProvider, useNavigation } from './src/navigation/Navigation';
 import { Shell } from './src/navigation/Shell';
@@ -23,6 +23,7 @@ function CurrentScreen() {
     case 'lessons': return <LessonsScreen />;
     case 'lesson': return <LessonScreen id={route.id} />;
     case 'openings': return <OpeningsScreen />;
+    case 'opening-family': return <OpeningFamilyScreen family={route.id} />;
     case 'opening': return <OpeningScreen id={route.id} />;
     case 'puzzles': return <PuzzlesScreen />;
     case 'endgames': return <EndgamesScreen />;

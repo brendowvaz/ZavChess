@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Readable } from 'node:stream';
-import { Chess, DEFAULT_POSITION, legalPosition, parseCsvLine, replay } from './lib.mjs';
+import { resolve } from 'node:path';
+import { Chess, DATA, DEFAULT_POSITION, legalPosition, parseCsvLine, readJson, replay } from './lib.mjs';
 import { openingId } from './openings.mjs';
 import { offerCandidate, skipLeadingZstdMetadata } from './puzzles.mjs';
 import { exactFields, validateData, validatePuzzle } from './validate.mjs';
@@ -56,6 +57,31 @@ test('Contrato rejeita campos extras e FEN de puzzle já avançado', () => {
   const game = new Chess();
   game.move('e4');
   assert.throws(() => validatePuzzle({ id: 'x', rating: 1000, themes: ['short'], fen: game.fen(), moves: ['e2e4', 'e7e5'], sourceUrl: 'https://lichess.org/training/x' }));
+});
+
+test('Guias de abertura só referenciam famílias e aulas existentes', async () => {
+  const [openings, lessons, guideDocument] = await Promise.all([
+    readJson(resolve(DATA, 'openings.json')),
+    readJson(resolve(DATA, 'lessons.json')),
+    readJson(resolve(DATA, 'opening-guides.json')),
+  ]);
+  assert.deepEqual(Object.keys(guideDocument), ['guides']);
+  assert.equal(guideDocument.guides.length, 30);
+  const families = new Set(openings.map((opening) => opening.family));
+  const openingLessons = new Map(lessons.filter((lesson) => lesson.category === 'openings').map((lesson) => [lesson.id, lesson]));
+  let coveredLines = 0;
+  for (const guide of guideDocument.guides) {
+    assert.deepEqual(Object.keys(guide).sort(), ['blackPlan', 'commonMistakes', 'family', 'lessonIds', 'overview', 'whitePlan'].sort());
+    assert.ok(families.has(guide.family), `Família ausente do catálogo: ${guide.family}`);
+    assert.ok(guide.overview.length >= 80);
+    for (const field of ['whitePlan', 'blackPlan', 'commonMistakes']) {
+      assert.ok(Array.isArray(guide[field]) && guide[field].length >= 2, `${guide.family}: ${field} insuficiente`);
+      assert.ok(guide[field].every((item) => typeof item === 'string' && item.length >= 25));
+    }
+    for (const lessonId of guide.lessonIds) assert.ok(openingLessons.has(lessonId), `${guide.family}: aula de abertura inexistente: ${lessonId}`);
+    coveredLines += openings.filter((opening) => opening.family === guide.family).length;
+  }
+  assert.ok(coveredLines >= 2800, 'Guias precisam cobrir a maior parte do catálogo');
 });
 
 test('Todos os artefatos correspondem às fontes e têm linhas legais', async () => {

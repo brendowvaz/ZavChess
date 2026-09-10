@@ -14,6 +14,9 @@ class PageQuery {
 class OpeningQuery extends PageQuery {
   @IsOptional() @IsString() @MaxLength(100) search = '';
 }
+class OpeningFamilyQuery extends PageQuery {
+  @IsOptional() @IsString() @MaxLength(100) search = '';
+}
 class PuzzleQuery extends PageQuery {
   @IsOptional() @Type(() => Number) @IsInt() @Min(0) @Max(4000) minRating = 600;
   @IsOptional() @Type(() => Number) @IsInt() @Min(0) @Max(4000) maxRating = 1800;
@@ -33,6 +36,8 @@ export class ContentController {
   @Get('lessons/:id') lesson(@Param('id') id: string) { return this.content.lesson(id); }
   @Post('lessons/:id/complete') @UseGuards(AuthGuard)
   complete(@CurrentUser() user: User, @Param('id') id: string, @Body() body: AnswerDto) { return this.content.completeLesson(user.id, id, body.answer); }
+  @Get('opening-families') openingFamilies(@Query() query: OpeningFamilyQuery) { return this.content.openingFamilies(query.search, query.page, query.pageSize); }
+  @Get('opening-families/:family') openingFamily(@Param('family') family: string) { return this.content.openingFamily(family); }
   @Get('openings') openings(@Query() query: OpeningQuery) { return this.content.openings(query.search, query.page, query.pageSize); }
   @Get('openings/:id') opening(@Param('id') id: string) { return this.content.opening(id); }
   @Get('puzzles') puzzles(@Query() query: PuzzleQuery) { return this.content.puzzles(query.minRating, query.maxRating, query.theme, query.page, query.pageSize); }

@@ -17,11 +17,24 @@ async function upsertInBatches(rows, operation) {
 async function seed() {
   const lessons = read('lessons');
   const openings = read('openings');
+  const openingGuides = read('opening-guides').guides;
   const puzzles = read('puzzles');
   const endgames = read('endgames');
 
+  const openingFamilies = new Set(openings.map(({ family }) => family));
+  const lessonIds = new Set(lessons.map(({ id }) => id));
+  for (const guide of openingGuides) {
+    if (!openingFamilies.has(guide.family)) throw new Error(`Guia sem família no catálogo: ${guide.family}`);
+    for (const lessonId of guide.lessonIds) {
+      if (!lessonIds.has(lessonId)) throw new Error(`Guia ${guide.family} aponta para aula inexistente: ${lessonId}`);
+    }
+  }
+
   for (const row of lessons) await db.lesson.upsert({ where: { id: row.id }, create: row, update: row });
   for (const row of endgames) await db.endgame.upsert({ where: { id: row.id }, create: row, update: row });
+  for (const guide of openingGuides) {
+    await db.openingGuide.upsert({ where: { family: guide.family }, create: guide, update: guide });
+  }
   // Bulk imports preserve student progress and are safe to repeat.
   await upsertInBatches(openings, (data) => db.opening.createMany({ data, skipDuplicates: true }));
   await upsertInBatches(puzzles, (data) => db.puzzle.createMany({ data, skipDuplicates: true }));
@@ -29,6 +42,7 @@ async function seed() {
   console.log({
     lessons: await db.lesson.count(),
     openings: await db.opening.count(),
+    openingGuides: await db.openingGuide.count(),
     puzzles: await db.puzzle.count(),
     endgames: await db.endgame.count(),
   });

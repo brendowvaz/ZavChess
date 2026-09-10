@@ -1,10 +1,21 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { Prisma, User } from '@prisma/client';
+import { Opening, OpeningGuide, Prisma, User } from '@prisma/client';
 import { PrismaService } from '../database/prisma.service';
 import { publicUser } from '../auth/auth.service';
 import { calculateStreak, puzzlePosition, validatePuzzle } from '../chess/chess-rules';
 
 type Quiz = { question: string; options: string[]; answer: number; explanation: string };
+type RelatedLesson = { id: string; slug: string; title: string; level: string };
+type StudyGuide = {
+  kind: 'family' | 'introductory';
+  family: string;
+  overview: string;
+  whitePlan: string[];
+  blackPlan: string[];
+  commonMistakes: string[];
+  lessons: RelatedLesson[];
+};
+type OpeningVariantSummary = { id: string; eco: string; name: string; pgn: string; moveCount: number };
 
 @Injectable()
 export class ContentService {
@@ -49,10 +60,128 @@ export class ContentService {
     return { items, total, page, pageSize };
   }
 
+  async openingFamilies(search: string, page: number, pageSize: number) {
+    const where: Prisma.OpeningWhereInput = search
+      ? { OR: [{ family: { contains: search } }, { name: { contains: search } }, { eco: { contains: search } }] }
+      : {};
+    const [matchingRows, grouped] = await Promise.all([
+      search ? this.db.opening.findMany({ where, distinct: ['family'], select: { family: true } }) : Promise.resolve([]),
+      this.db.opening.groupBy({ by: ['family'], _count: { _all: true }, _min: { eco: true } }),
+    ]);
+    const matchingFamilies = new Set(matchingRows.map((row) => row.family));
+    const families = grouped
+      .filter((row) => !search || matchingFamilies.has(row.family))
+      .sort((a, b) => a.family.localeCompare(b.family));
+    const itemsForPage = families.slice((page - 1) * pageSize, page * pageSize);
+    const guides = itemsForPage.length
+      ? await this.db.openingGuide.findMany({ where: { family: { in: itemsForPage.map((row) => row.family) } }, select: { family: true } })
+      : [];
+    const guidedFamilies = new Set(guides.map((guide) => guide.family));
+    return {
+      items: itemsForPage.map((row) => ({
+        family: row.family,
+        variationCount: row._count._all,
+        firstEco: row._min.eco ?? '—',
+        guideKind: guidedFamilies.has(row.family) ? 'family' : 'introductory',
+      })),
+      total: families.length,
+      page,
+      pageSize,
+    };
+  }
+
+  async openingFamily(family: string) {
+    const variations = await this.db.opening.findMany({
+      where: { family },
+      orderBy: [{ eco: 'asc' }, { name: 'asc' }, { pgn: 'asc' }],
+    });
+    if (!variations.length) throw new NotFoundException('Família de abertura não encontrada.');
+    return {
+      family,
+      variationCount: variations.length,
+      studyGuide: await this.studyGuideForFamily(family),
+      variations: variations.map((variation) => this.variantSummary(variation)),
+    };
+  }
+
   async opening(id: string) {
     const opening = await this.db.opening.findUnique({ where: { id } });
     if (!opening) throw new NotFoundException('Abertura não encontrada.');
-    return opening;
+    const [studyGuide, siblings] = await Promise.all([
+      this.studyGuideForFamily(opening.family),
+      this.db.opening.findMany({ where: { family: opening.family }, orderBy: [{ eco: 'asc' }, { name: 'asc' }, { pgn: 'asc' }] }),
+    ]);
+    const index = siblings.findIndex((sibling) => sibling.id === opening.id);
+    return {
+      ...opening,
+      studyGuide,
+      familyNavigation: {
+        family: opening.family,
+        index: index + 1,
+        total: siblings.length,
+        previous: index > 0 ? this.variantSummary(siblings[index - 1]!) : null,
+        next: index < siblings.length - 1 ? this.variantSummary(siblings[index + 1]!) : null,
+      },
+    };
+  }
+
+  private stringList(value: unknown) {
+    return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : [];
+  }
+
+  private variantSummary(opening: Pick<Opening, 'id' | 'eco' | 'name' | 'pgn' | 'moves'>): OpeningVariantSummary {
+    return { id: opening.id, eco: opening.eco, name: opening.name, pgn: opening.pgn, moveCount: this.stringList(opening.moves).length };
+  }
+
+  private async studyGuideForFamily(family: string): Promise<StudyGuide> {
+    const guide = await this.db.openingGuide.findUnique({ where: { family } });
+    const lessonIds = guide ? this.stringList(guide.lessonIds) : [];
+    const lessons = lessonIds.length
+      ? await this.db.lesson.findMany({
+        where: { id: { in: lessonIds } },
+        select: { id: true, slug: true, title: true, level: true },
+      })
+      : [];
+    return this.studyGuide(family, guide, lessons);
+  }
+
+  private studyGuide(family: string, guide: OpeningGuide | null, lessons: RelatedLesson[]): StudyGuide {
+    if (guide) {
+      const lessonsById = new Map(lessons.map((lesson) => [lesson.id, lesson]));
+      return {
+        kind: 'family',
+        family,
+        overview: guide.overview,
+        whitePlan: this.stringList(guide.whitePlan),
+        blackPlan: this.stringList(guide.blackPlan),
+        commonMistakes: this.stringList(guide.commonMistakes),
+        // Preserve the editorial order from the guide instead of database order.
+        lessons: this.stringList(guide.lessonIds).flatMap((id) => {
+          const lesson = lessonsById.get(id);
+          return lesson ? [lesson] : [];
+        }),
+      };
+    }
+
+    return {
+      kind: 'introductory',
+      family,
+      overview: `${family} é uma família registrada no catálogo. Cada variante serve para estudar uma sequência e reconhecer a estrutura; o nome da família não torna lances obrigatórios nem substitui analisar a resposta concreta do adversário.`,
+      whitePlan: [
+        'Desenvolva as peças menores, dispute o centro e deixe o rei seguro antes de tentar repetir a linha de memória.',
+        'Se a partida sair da sequência publicada, volte a princípios concretos: atividade das peças, segurança do rei e cálculo de ameaças.',
+      ],
+      blackPlan: [
+        'Responda ao centro com desenvolvimento e mantenha opções para o rei antes de abrir linhas.',
+        'Use a estrutura criada pelos lances para escolher um plano, em vez de copiar uma continuação sem considerar o oponente.',
+      ],
+      commonMistakes: [
+        'Tratar a sequência publicada como uma linha forçada.',
+        'Avançar peões de flanco antes de concluir o desenvolvimento.',
+        'Ignorar a segurança do rei ao tentar memorizar uma variante.',
+      ],
+      lessons: [],
+    };
   }
 
   async puzzles(minRating: number, maxRating: number, theme: string, page: number, pageSize: number) {

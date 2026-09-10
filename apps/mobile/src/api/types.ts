@@ -18,7 +18,16 @@ export interface LessonDetail extends Lesson {
   quiz: { question: string; options: string[] };
 }
 export interface LessonResult { correct: boolean; explanation: string; xpEarned: number }
-export interface Opening { id: string; eco: string; name: string; family: string; pgn: string; fen: string; moves: string[]; sourceUrl: string }
+export interface OpeningStudyGuide {
+  kind: 'family' | 'introductory'; family: string; overview: string;
+  whitePlan: string[]; blackPlan: string[]; commonMistakes: string[];
+  lessons: { id: string; slug: string; title: string; level: Level }[];
+}
+export interface OpeningVariant { id: string; eco: string; name: string; pgn: string; moveCount: number }
+export interface OpeningFamily { family: string; variationCount: number; firstEco: string; guideKind: 'family' | 'introductory' }
+export interface OpeningFamilyDetail { family: string; variationCount: number; studyGuide: OpeningStudyGuide; variations: OpeningVariant[] }
+export interface OpeningFamilyNavigation { family: string; index: number; total: number; previous: OpeningVariant | null; next: OpeningVariant | null }
+export interface Opening { id: string; eco: string; name: string; family: string; pgn: string; fen: string; moves: string[]; sourceUrl: string; studyGuide?: OpeningStudyGuide; familyNavigation?: OpeningFamilyNavigation }
 export interface Puzzle { id: string; rating: number; themes: string[]; fen: string; sourceUrl: string }
 export interface PuzzleResult { status: 'correct' | 'incorrect' | 'solved'; fen: string; reply?: string; expectedMove?: string; xpEarned?: number }
 export interface Endgame { id: string; slug: string; title: string; description: string; fen: string; goal: string; level: Level; side: Side; tips: string[] }

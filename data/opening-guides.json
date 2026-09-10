@@ -1,0 +1,244 @@
+{
+  "guides": [
+    {
+      "family": "Sicilian Defense",
+      "overview": "Com ...c5, as pretas contestam d4 sem espelhar o centro. A estrutura costuma ser assimétrica: os dois lados jogam em alas diferentes e precisam saber qual tensão central manter ou resolver.",
+      "whitePlan": ["Use o desenvolvimento para apoiar d4 e abrir linhas antes que as pretas coordenem as peças.", "Depois do roque, escolha um plano coerente com a estrutura; não ataque os dois flancos sem preparo."],
+      "blackPlan": ["Complete o desenvolvimento e decida se o contra-jogo virá por ...d5, ...e5 ou na coluna c.", "Trate a segurança do rei como parte do plano: a assimetria dá chances aos dois lados."],
+      "commonMistakes": ["Atacar no flanco antes de terminar o desenvolvimento.", "Capturar ou avançar no centro sem calcular quais colunas e casas ficam fracas.", "Decorar uma variante e ignorar a resposta concreta do adversário."],
+      "lessonIds": ["lesson-siciliana"]
+    },
+    {
+      "family": "Ruy Lopez",
+      "overview": "A Espanhola começa com pressão sobre o cavalo de c6, que ajuda a defender e5. A ideia inicial é aumentar a tensão central com desenvolvimento, não ganhar um peão imediatamente.",
+      "whitePlan": ["Desenvolva, roce e use a pressão sobre e5 para ganhar espaço ou preparar d4.", "Pergunte sempre o que acontece com o bispo depois de ...a6: recuo, troca ou avanço mudam o plano."],
+      "blackPlan": ["Defenda e5 sem perder coordenação e desenvolva as peças antes de buscar atividade no flanco da dama.", "Use ...a6 e ...b5 apenas quando a posição justificar o ganho de espaço."],
+      "commonMistakes": ["Trocar em c6 automaticamente sem avaliar a estrutura resultante.", "Fazer lances de peão no flanco da dama enquanto o rei continua no centro.", "Tratar o ataque a e5 como uma ameaça isolada e esquecer d4."],
+      "lessonIds": ["lesson-espanhola"]
+    },
+    {
+      "family": "French Defense",
+      "overview": "As pretas preparam ...d5 com ...e6 e aceitam temporariamente menos espaço. O centro costuma definir quando cada lado deve atacar e qual bispo precisará de atenção.",
+      "whitePlan": ["Use o espaço central para desenvolver e escolher o momento de avançar ou tensionar os peões.", "Observe o bispo de c8 das pretas, mas não suponha que ele ficará passivo para sempre."],
+      "blackPlan": ["Questione o centro branco com ...c5 ou ...f6 quando as peças estiverem prontas.", "Planeje uma saída útil para o bispo de c8 e mantenha o rei seguro antes de abrir linhas."],
+      "commonMistakes": ["Avançar peões centrais sem ter casas de recuo para as peças.", "Abrir o centro enquanto o próprio rei ainda está exposto.", "Confundir espaço com vantagem decisiva e deixar o adversário criar contra-jogo."],
+      "lessonIds": ["lesson-francesa"]
+    },
+    {
+      "family": "Caro-Kann Defense",
+      "overview": "Com ...c6, as pretas sustentam a disputa por d5 e procuram desenvolver o bispo de c8 antes de fechar a diagonal com ...e6. A partida gira em torno do centro e do ritmo de desenvolvimento.",
+      "whitePlan": ["Ganhe espaço no centro sem abandonar o desenvolvimento e a segurança do rei.", "Use a iniciativa de espaço para colocar as peças em casas ativas, em vez de empurrar peões sem objetivo."],
+      "blackPlan": ["Confronte o centro com ...d5 e priorize a saída do bispo de c8 quando a linha permitir.", "Não deixe a estrutura ficar passiva: escolha um momento para desafiar os peões centrais."],
+      "commonMistakes": ["Manter o bispo de c8 preso por hábito.", "As brancas avançarem o centro sem calcular as casas enfraquecidas.", "Trocar peças centrais sem avaliar quem ficará com mais espaço."],
+      "lessonIds": ["lesson-caro-kann"]
+    },
+    {
+      "family": "Italian Game",
+      "overview": "A Italiana desenvolve o bispo para uma diagonal voltada a f7 e prepara um jogo de desenvolvimento rápido. A pressão em f7 só funciona quando há peças suficientes para sustentá-la.",
+      "whitePlan": ["Roque cedo, desenvolva o cavalo e considere d4 quando as peças apoiarem o centro.", "Use o bispo em c4 para criar perguntas; não trate f7 como alvo automático."],
+      "blackPlan": ["Defenda f7 pela coordenação e desenvolva as peças antes de tentar expulsar o bispo.", "Escolha entre jogo central e expansão no flanco da dama de acordo com a segurança do rei."],
+      "commonMistakes": ["Sacrificar em f7 sem cálculo concreto.", "Mover a mesma peça várias vezes enquanto outras continuam na casa inicial.", "Abrir o centro antes de rocar."],
+      "lessonIds": ["lesson-italiana"]
+    },
+    {
+      "family": "Scotch Game",
+      "overview": "A Escocesa abre cedo o centro com d4. Isso valoriza desenvolvimento, cálculo e segurança do rei, porque as peças passam a encontrar linhas abertas rapidamente.",
+      "whitePlan": ["Use a abertura do centro para desenvolver com tempo e colocar as peças em casas ativas.", "Recupere material somente quando a sequência não custar coordenação ou segurança do rei."],
+      "blackPlan": ["Responda ao centro com desenvolvimento e pressão nas casas que os peões avançados deixaram para trás.", "Evite caçar peões se isso atrasar o rei ou as peças menores."],
+      "commonMistakes": ["Abrir linhas e deixar o rei no centro.", "Ganhar um peão e perder tempos de desenvolvimento.", "Trocar no centro sem notar qual peça passa a ficar ativa."],
+      "lessonIds": ["lesson-escocesa"]
+    },
+    {
+      "family": "Four Knights Game",
+      "overview": "Os quatro cavalos colocam o desenvolvimento em primeiro plano. A simplicidade inicial não elimina decisões: o momento de avançar no centro e a colocação dos bispos definem os planos.",
+      "whitePlan": ["Complete o desenvolvimento e use d4 ou outras rupturas quando as peças estiverem coordenadas.", "Escolha casas para os bispos que contribuam para o centro, não apenas para seguir uma ordem conhecida."],
+      "blackPlan": ["Iguale o desenvolvimento e responda às rupturas centrais sem criar fraquezas desnecessárias.", "Mantenha opções para os bispos e para o roque antes de expandir."],
+      "commonMistakes": ["Achar que posições simétricas não exigem cálculo.", "Avançar o peão central sem apoio suficiente.", "Repetir a linha sem observar as alternativas do oponente."],
+      "lessonIds": ["lesson-quatro-cavalos"]
+    },
+    {
+      "family": "Vienna Game",
+      "overview": "A Vienense desenvolve o cavalo de f3 antes de definir o peão de d. Ela pode levar a jogo central ou a ataques, mas a prioridade continua sendo desenvolver e manter o rei seguro.",
+      "whitePlan": ["Use o cavalo em f3 para apoiar e5 e preparar desenvolvimento harmonioso.", "Se buscar iniciativa, confirme que as peças acompanham os peões avançados."],
+      "blackPlan": ["Questione o centro branco e desenvolva sem permitir táticas simples no rei.", "Não reaja a ameaças de ataque com novos enfraquecimentos ao redor do rei."],
+      "commonMistakes": ["Buscar ataque antes de desenvolver o bispo e rocar.", "Avançar f4 sem avaliar a diagonal do rei.", "Esquecer que o centro pode abrir rapidamente."],
+      "lessonIds": []
+    },
+    {
+      "family": "King's Gambit Accepted",
+      "overview": "As brancas oferecem o peão de f para ganhar tempos e linhas de ataque. A posição exige cálculo concreto: iniciativa não é compensação automática pelo material cedido.",
+      "whitePlan": ["Desenvolva com ganho de tempo e use linhas abertas antes que as pretas consolidem o peão extra.", "Mantenha o rei seguro; abrir a coluna f não obriga um ataque imediato."],
+      "blackPlan": ["Aceite ou devolva o peão apenas quando puder desenvolver e proteger o rei.", "Neutralize a iniciativa com peças ativas, não somente defendendo peões."],
+      "commonMistakes": ["Sacrificar mais material sem uma continuação calculada.", "Defender o peão extra a qualquer custo e atrasar o desenvolvimento.", "Abrir diagonais perto do próprio rei sem necessidade."],
+      "lessonIds": []
+    },
+    {
+      "family": "Queen's Gambit Declined",
+      "overview": "As pretas sustentam d5 e não aceitam o peão de c4. O centro fica sob tensão e os planos dependem de desenvolvimento, rupturas como ...c5 ou ...e5 e do tratamento do bispo de c8.",
+      "whitePlan": ["Use a pressão no centro para desenvolver e decidir entre manter a tensão ou trocar em d5.", "Não transforme o ganho de espaço em alvo: proteja os peões centrais com peças."],
+      "blackPlan": ["Complete o desenvolvimento e prepare uma ruptura central em boas condições.", "Planeje a atividade do bispo de c8 antes de fechar a estrutura definitivamente."],
+      "commonMistakes": ["Trocar em d5 por reflexo, sem saber qual estrutura deseja.", "Atrasar a ruptura central até ficar sem espaço.", "Confundir a proteção de d5 com uma posição passiva obrigatória."],
+      "lessonIds": ["lesson-gambito-da-dama", "lesson-gambito-recusado"]
+    },
+    {
+      "family": "Queen's Gambit Accepted",
+      "overview": "Ao aceitar o peão de c4, as pretas ganham material temporário e permitem que as brancas ocupem o centro. O ponto central é decidir quando devolver ou sustentar o peão sem perder desenvolvimento.",
+      "whitePlan": ["Use o centro e o desenvolvimento para recuperar o peão em condições favoráveis.", "Evite perseguir c4 com poucas peças enquanto as pretas ganham tempo."],
+      "blackPlan": ["Desenvolva antes de tentar defender c4 a qualquer custo.", "Se devolver o peão, escolha uma forma que resolva um problema de desenvolvimento ou gere atividade."],
+      "commonMistakes": ["Tratar o peão de c4 como ganho permanente.", "As brancas gastarem tempos demais para recuperá-lo.", "Abrir o centro com o rei ainda vulnerável."],
+      "lessonIds": ["lesson-gambito-da-dama"]
+    },
+    {
+      "family": "Slav Defense",
+      "overview": "A Eslava protege d5 com o peão c e preserva, em muitas linhas, a diagonal do bispo de c8. A luta costuma ser por desenvolvimento e pela oportunidade correta de desafiar o centro.",
+      "whitePlan": ["Desenvolva pressionando o centro e escolha uma ruptura que não deixe os peões avançados indefesos.", "Use a vantagem de espaço para melhorar peças antes de abrir a posição."],
+      "blackPlan": ["Sustente d5 sem abandonar o desenvolvimento e mantenha o bispo de c8 ativo quando possível.", "Prepare ...c5 ou ...e5 somente quando a posição das peças der suporte."],
+      "commonMistakes": ["Confundir solidez com ausência de contra-jogo.", "Defender d5 com muitas peças e esquecer o rei.", "Forçar uma ruptura central sem calcular as trocas."],
+      "lessonIds": ["lesson-eslava", "lesson-gambito-da-dama"]
+    },
+    {
+      "family": "Semi-Slav Defense",
+      "overview": "A Semi-Eslava combina a proteção de d5 com ...e6 e cria uma estrutura sólida, mas com decisões táticas importantes. O desenvolvimento do bispo de c8 e as rupturas centrais exigem atenção.",
+      "whitePlan": ["Use desenvolvimento e pressão no centro para impedir que as pretas resolvam todos os problemas de uma vez.", "Calcule antes de abrir linhas: muitas variantes mudam rapidamente de estratégicas para táticas."],
+      "blackPlan": ["Coordene as peças antes de desafiar o centro e tenha um plano para o bispo de c8.", "Não aceite passividade eterna: procure atividade quando a segurança do rei permitir."],
+      "commonMistakes": ["Aplicar planos da Eslava sem considerar o peão em e6.", "Abrir a posição sem desenvolvimento suficiente.", "Memorizar sequências táticas sem entender a estrutura."],
+      "lessonIds": ["lesson-eslava", "lesson-gambito-recusado"]
+    },
+    {
+      "family": "English Opening",
+      "overview": "Com c4, as brancas controlam d5 à distância e deixam a estrutura central mais flexível. Muitas linhas transpoem; reconheça a estrutura antes de aplicar um plano pelo nome da abertura.",
+      "whitePlan": ["Desenvolva para apoiar d5 e escolha o momento de jogar d4 ou manter o centro flexível.", "Use a flexibilidade para responder à estrutura das pretas, não para adiar todas as decisões."],
+      "blackPlan": ["Dispute d5 e e4 com peças e peões, sem assumir que c4 impede todo jogo central.", "Observe possíveis transposições e escolha uma estrutura que você conheça."],
+      "commonMistakes": ["Seguir um plano fixo apesar de uma transposição diferente.", "Trocar no centro sem saber qual diagonal e coluna será aberta.", "Confundir desenvolvimento lento com flexibilidade."],
+      "lessonIds": ["lesson-inglesa"]
+    },
+    {
+      "family": "King's Indian Defense",
+      "overview": "As pretas permitem espaço central e procuram atacá-lo mais tarde com peças fianquetadas e rupturas. O lado que define o centro precisa estar pronto para a reação do outro.",
+      "whitePlan": ["Use o espaço central para desenvolver e escolher se o jogo será no centro, no flanco da dama ou nos dois momentos.", "Não avance peões centrais sem calcular as casas que eles deixam para trás."],
+      "blackPlan": ["Termine o fianqueto e o roque antes de iniciar uma ruptura ou ataque de flanco.", "Ataque o centro branco com peças coordenadas; esperar demais pode deixar as brancas estabilizarem tudo."],
+      "commonMistakes": ["Começar um ataque ao rei sem desenvolvimento completo.", "As brancas fecharem o centro sem prever em qual ala as pretas terão jogo.", "Confundir espaço com segurança permanente."],
+      "lessonIds": []
+    },
+    {
+      "family": "Nimzo-Indian Defense",
+      "overview": "As pretas desenvolvem com pressão sobre o centro e aceitam discutir a estrutura após uma possível troca em c3. A posição pede atenção a pares de bispos, peões dobrados e casas centrais.",
+      "whitePlan": ["Decida se quer preservar o par de bispos ou ganhar espaço central; ambas as escolhas têm custo.", "Use as peças para sustentar o centro antes de avançar peões."],
+      "blackPlan": ["Use a pressão sobre c3 e e4 para questionar o centro sem ceder desenvolvimento.", "Se trocar em c3, avalie a estrutura criada em vez de tratar a troca como objetivo por si só."],
+      "commonMistakes": ["Aceitar peões dobrados sem obter compensação dinâmica.", "Trocar o bispo de b4 automaticamente.", "Ignorar a segurança do rei enquanto disputa o centro."],
+      "lessonIds": []
+    },
+    {
+      "family": "Queen's Indian Defense",
+      "overview": "As pretas combinam desenvolvimento do bispo em b7 com pressão indireta no centro. A abertura pede paciência: as peças precisam cooperar antes de uma ruptura central.",
+      "whitePlan": ["Use o espaço no centro para desenvolver e decidir como responder à pressão na diagonal longa.", "Evite enfraquecer casas escuras somente para ganhar espaço imediato."],
+      "blackPlan": ["Complete o fianqueto e desenvolva antes de desafiar os peões centrais.", "Faça a pressão na diagonal valer junto com a atividade das outras peças."],
+      "commonMistakes": ["Mover a dama cedo para defender tudo sozinha.", "Fianquetar e esquecer de desenvolver as demais peças.", "Abrir o centro sem aproveitar a diagonal do bispo."],
+      "lessonIds": []
+    },
+    {
+      "family": "Grünfeld Defense",
+      "overview": "As pretas permitem um centro amplo para atacá-lo com peças e rupturas. É uma defesa concreta: o centro branco dá espaço, mas também pode se tornar alvo se avançar sem apoio.",
+      "whitePlan": ["Construa o centro com desenvolvimento e tenha uma resposta pronta às rupturas das pretas.", "Não interprete espaço como permissão para ignorar atividade inimiga."],
+      "blackPlan": ["Ataque o centro com desenvolvimento e cálculo; a pressão precisa chegar antes que ele se estabilize.", "Mantenha o rei seguro enquanto abre linhas contra os peões centrais."],
+      "commonMistakes": ["As brancas defenderem o centro só com peões.", "As pretas atacarem o centro sem peças suficientes.", "Abrir diagonais quando o rei ainda está no centro."],
+      "lessonIds": []
+    },
+    {
+      "family": "Benoni Defense",
+      "overview": "A Benoni cria uma estrutura assimétrica em que as pretas aceitam menos espaço para buscar atividade. Casas centrais, rupturas e flancos costumam importar mais do que material imediato.",
+      "whitePlan": ["Use a vantagem de espaço para melhorar peças e limitar as rupturas das pretas.", "Antes de avançar, veja quais casas suas peças perderão."],
+      "blackPlan": ["Procure atividade nas casas e rupturas oferecidas pela estrutura, sem ficar apenas defendendo.", "Coordene as peças antes de abrir linhas ou buscar jogo de flanco."],
+      "commonMistakes": ["As pretas aceitarem passividade sem contra-jogo.", "As brancas avançarem peões e entregarem casas importantes.", "Copiar ataques de uma variante em outra estrutura."],
+      "lessonIds": []
+    },
+    {
+      "family": "Dutch Defense",
+      "overview": "Com ...f5, as pretas disputam e4 e assumem responsabilidade pelas casas perto do rei. A abertura recompensa coordenação e punição a lances de peão feitos sem cobertura.",
+      "whitePlan": ["Observe as casas enfraquecidas por ...f5 e use desenvolvimento para pressioná-las.", "Não ataque o rei preto antes de ter peças suficientes na região."],
+      "blackPlan": ["Use o controle de e4 para desenvolver com propósito e proteja as casas enfraquecidas.", "Escolha a estrutura de peões de acordo com a segurança do rei."],
+      "commonMistakes": ["Empurrar mais peões do rei sem calcular as diagonais abertas.", "Confundir a pressão em e4 com um ataque imediato.", "Deixar o rei sem uma casa segura."],
+      "lessonIds": []
+    },
+    {
+      "family": "Scandinavian Defense",
+      "overview": "As pretas desafiam e4 imediatamente com ...d5. A troca central pode simplificar, mas a dama e o desenvolvimento precisam ser tratados com cuidado.",
+      "whitePlan": ["Desenvolva com tempo contra a dama apenas se isso melhorar a posição das peças.", "Use o centro aberto para acelerar o roque e a coordenação."],
+      "blackPlan": ["Recupere ou reposicione a dama sem deixá-la se tornar alvo de muitos tempos.", "Compense qualquer tempo de dama com desenvolvimento ativo e segurança do rei."],
+      "commonMistakes": ["Perseguir a dama com peças mal colocadas.", "Mover a dama repetidamente sem concluir o desenvolvimento.", "Abrir a coluna e sem rocar."],
+      "lessonIds": ["lesson-escandinava"]
+    },
+    {
+      "family": "Petrov's Defense",
+      "overview": "A Petrov contesta e4 de modo direto e costuma levar a posições equilibradas em que o desenvolvimento e a atividade das peças pesam mais que ataques forçados.",
+      "whitePlan": ["Desenvolva sem tentar refutar a defesa por tática automática.", "Use a iniciativa de ter o primeiro lance para colocar peças em casas melhores."],
+      "blackPlan": ["Recupere o peão e desenvolva sem permitir que o cavalo avançado vire alvo.", "Mantenha a posição coordenada; igualdade de material não basta se as peças ficarem passivas."],
+      "commonMistakes": ["Tentar ganhar o cavalo em e4 sem calcular a recuperação.", "Trocar peças apenas para simplificar e perder atividade.", "Ignorar o desenvolvimento por confiar na simetria."],
+      "lessonIds": []
+    },
+    {
+      "family": "Pirc Defense",
+      "overview": "As pretas deixam as brancas ocupar o centro e procuram atacá-lo com desenvolvimento, fianqueto e rupturas. A abertura exige saber quando o centro é forte e quando virou alvo.",
+      "whitePlan": ["Use o centro para ganhar espaço, mas desenvolva antes de avançar demais os peões.", "Defina em qual ala terá iniciativa antes de iniciar um ataque."],
+      "blackPlan": ["Complete o fianqueto e o roque antes de questionar o centro.", "Ataque os peões centrais com peças coordenadas; não apenas com lances de peão."],
+      "commonMistakes": ["As brancas fecharem o centro e deixarem o rei vulnerável.", "As pretas esperarem demais para pressionar o centro.", "Subestimar o valor de desenvolvimento em posições fechadas."],
+      "lessonIds": []
+    },
+    {
+      "family": "Modern Defense",
+      "overview": "A Moderna usa o fianqueto do bispo de g7 para pressionar o centro de longe. As pretas aceitam menos ocupação inicial e precisam transformar a pressão em atividade concreta.",
+      "whitePlan": ["Ocupe o centro com desenvolvimento e mantenha peças prontas para protegê-lo.", "Não avance todos os peões centrais antes de decidir onde o rei ficará seguro."],
+      "blackPlan": ["Use a diagonal longa junto com rupturas centrais, não como única ideia.", "Escolha uma estrutura que permita desenvolver sem sufocar as peças."],
+      "commonMistakes": ["Achar que o fianqueto sozinho resolve a disputa pelo centro.", "As brancas expandirem sem prever as rupturas das pretas.", "Abrir o centro com um rei mal protegido."],
+      "lessonIds": []
+    },
+    {
+      "family": "Catalan Opening",
+      "overview": "A Catalã combina centro de peões com o bispo fianquetado em g2. A diagonal longa é um recurso de pressão, enquanto as peças definem se o jogo será aberto ou de manobra.",
+      "whitePlan": ["Desenvolva para valorizar a diagonal do bispo de g2 e sustentar o centro.", "Use pressão de longo alcance sem esquecer a recuperação de peões e a atividade imediata."],
+      "blackPlan": ["Conteste o centro e avalie se segurar peões extras atrasa o desenvolvimento.", "Não bloqueie a própria atividade somente para fechar a diagonal do bispo."],
+      "commonMistakes": ["Confiar apenas no bispo fianquetado para recuperar material.", "Defender peões extras sem desenvolver.", "Abrir o centro antes de coordenar os reis."],
+      "lessonIds": []
+    },
+    {
+      "family": "London System",
+      "overview": "O Sistema Londres organiza as peças brancas de modo estável, mas não elimina a necessidade de responder ao centro escolhido pelas pretas. O plano deve se adaptar à estrutura real.",
+      "whitePlan": ["Desenvolva com segurança e escolha a ruptura central que combine com a formação das peças.", "Use o bispo fora da cadeia de peões, mas não o mova repetidamente sem necessidade."],
+      "blackPlan": ["Dispute o centro cedo para impedir que as brancas montem a formação sem oposição.", "Ative as peças em vez de reagir apenas aos lances de desenvolvimento branco."],
+      "commonMistakes": ["Repetir a mesma configuração contra qualquer resposta.", "Empurrar e4 ou c4 sem preparação.", "Confundir uma estrutura sólida com uma posição automaticamente melhor."],
+      "lessonIds": []
+    },
+    {
+      "family": "Réti Opening",
+      "overview": "A Réti desenvolve o cavalo e controla o centro de longe, mantendo opções de transposição. O valor da abertura está na flexibilidade, desde que ela leve a uma estrutura compreendida.",
+      "whitePlan": ["Desenvolva e escolha uma estrutura central quando a posição das pretas estiver clara.", "Use a flexibilidade para evitar compromissos ruins, não para atrasar o desenvolvimento."],
+      "blackPlan": ["Ocupe ou conteste o centro sem deixar as brancas escolherem todas as transposições confortavelmente.", "Desenvolva de modo que suas peças continuem úteis contra diferentes estruturas."],
+      "commonMistakes": ["Manter tudo flexível e ficar sem plano central.", "Ignorar transposições para aberturas conhecidas.", "Trocar peças cedo e perder a iniciativa."],
+      "lessonIds": []
+    },
+    {
+      "family": "Queen's Pawn Game",
+      "overview": "Linhas iniciadas por d4 podem chegar a muitas estruturas diferentes. O nome da família é menos importante que reconhecer quem controla o centro, quais bispos têm diagonais e onde cada lado pode romper.",
+      "whitePlan": ["Use o primeiro lance no centro para desenvolver e escolher uma estrutura que você entenda.", "Antes de trocar peões centrais, identifique quais colunas e casas a troca vai alterar."],
+      "blackPlan": ["Responda ao centro com desenvolvimento e uma estrutura clara, evitando passividade por excesso de defesa.", "Prepare rupturas centrais com peças, não somente com peões."],
+      "commonMistakes": ["Aplicar um sistema fixo sem observar a resposta das pretas.", "Trocar no centro por hábito.", "Deixar o bispo de c8 sem plano."],
+      "lessonIds": ["lesson-gambito-da-dama"]
+    },
+    {
+      "family": "Bishop's Opening",
+      "overview": "O bispo em c4 aponta para f7 e mantém opções de transposição para jogos abertos. A pressão inicial deve ser sustentada por desenvolvimento e segurança do rei.",
+      "whitePlan": ["Desenvolva o cavalo e roce antes de converter a pressão em ataque.", "Use o controle central para decidir se d4 será útil."],
+      "blackPlan": ["Desenvolva defendendo f7 com peças coordenadas e não apenas com lances de peão.", "Conteste o centro para reduzir a iniciativa do bispo em c4."],
+      "commonMistakes": ["Buscar sacrifícios em f7 sem cálculo.", "Mover o bispo várias vezes enquanto o rei permanece no centro.", "Ignorar a disputa por d4."],
+      "lessonIds": ["lesson-italiana"]
+    },
+    {
+      "family": "King's Indian Attack",
+      "overview": "O Ataque Índio do Rei busca uma formação flexível das brancas, geralmente com fianqueto. A formação é um começo; a escolha da ruptura e do flanco de jogo depende da estrutura preta.",
+      "whitePlan": ["Complete desenvolvimento e roque antes de iniciar avanços de peões.", "Escolha uma ruptura central ou de flanco que responda à estrutura das pretas."],
+      "blackPlan": ["Ocupe espaço no centro e não permita uma formação branca sem ser questionada.", "Use desenvolvimento ativo para impedir que o ataque branco chegue com todas as peças."],
+      "commonMistakes": ["Jogar sempre os mesmos peões, independentemente da posição.", "Atacar o rei sem desenvolvimento completo.", "Esquecer que o centro pode abrir contra o rei fianquetado."],
+      "lessonIds": []
+    }
+  ]
+}
