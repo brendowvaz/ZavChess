@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/peao-oposicao-pretas.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20b%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:22.376Z",
+  "completedAt": "2026-09-09T19:35:22.615Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20b%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 1399,
+  "sha256": "b23322fe850ce89be27c3000b699b99259131ca958ea291725509216622443b3",
+  "hashScope": "complete-response-body"
+}

@@ -1,0 +1,1003 @@
+{
+  "schemaVersion": 1,
+  "generator": "scripts/content/import.mjs",
+  "hashAlgorithm": "SHA-256",
+  "validation": {
+    "library": "chess.js",
+    "version": "1.4.0",
+    "scope": "Legalidade de posições e lances; não avalia a qualidade editorial nem a melhor jogada."
+  },
+  "openings": {
+    "revision": "4b8622759e7ae6f93f011cc6c83a3823401ab45e",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+    "counts": {
+      "a": 817,
+      "b": 772,
+      "c": 1250,
+      "d": 614,
+      "e": 357
+    },
+    "sources": [
+      {
+        "file": "data/upstream/openings-commit.json",
+        "url": "https://api.github.com/repos/lichess-org/chess-openings/commits/master",
+        "downloadedAt": "2026-09-09T19:25:51.719Z",
+        "completedAt": "2026-09-09T19:25:52.183Z",
+        "resolvedUrl": "https://api.github.com/repos/lichess-org/chess-openings/commits/master",
+        "status": 200,
+        "etag": "W/\"e690d03bb5dedffe4e580222f023824114ccc6fdb9fb0b48fd31badcd101f01a\"",
+        "lastModified": "Tue, 04 Aug 2026 02:17:01 GMT",
+        "contentLength": null,
+        "contentRange": null,
+        "bytes": 6903,
+        "sha256": "91683eb0edbdef249cdb49e64be7f2cd176dfffd2589e0c0083466ce088237a3",
+        "hashScope": "complete-response-body"
+      },
+      {
+        "file": "data/upstream/openings-CC0.txt",
+        "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+        "downloadedAt": "2026-09-09T19:25:52.196Z",
+        "completedAt": "2026-09-09T19:25:52.465Z",
+        "resolvedUrl": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+        "status": 200,
+        "etag": "W/\"1981163a2b19ba65607eb2e6c555295266dd4cac5e4fd83be71689ffaeb28bb9\"",
+        "lastModified": null,
+        "contentLength": "2826",
+        "contentRange": null,
+        "bytes": 7048,
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+        "hashScope": "complete-response-body"
+      },
+      {
+        "file": "data/upstream/a.tsv",
+        "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+        "downloadedAt": "2026-09-09T19:25:52.482Z",
+        "completedAt": "2026-09-09T19:25:52.937Z",
+        "resolvedUrl": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv",
+        "status": 200,
+        "etag": "W/\"b646b13743350a0dfc31ccf6f1ebe1333e7bd14d9ef4811da3ca2b55e8108fd9\"",
+        "lastModified": null,
+        "contentLength": "11376",
+        "contentRange": null,
+        "bytes": 66338,
+        "sha256": "41722fa3d44f294357326fe2ca1b956d9e56490b30efcfa68db61114c9df7e10",
+        "hashScope": "complete-response-body"
+      },
+      {
+        "file": "data/upstream/b.tsv",
+        "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+        "downloadedAt": "2026-09-09T19:25:55.080Z",
+        "completedAt": "2026-09-09T19:25:55.499Z",
+        "resolvedUrl": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv",
+        "status": 200,
+        "etag": "W/\"eebe0b015ee1b9eb5702e4bba4918307aa6820db4aad0ffcca3e77adfbefb425\"",
+        "lastModified": null,
+        "contentLength": "11229",
+        "contentRange": null,
+        "bytes": 77372,
+        "sha256": "310f0997d5a26ac6c9abfabac028e47e78f24356a6ba322cfffbf8f5a3f88d25",
+        "hashScope": "complete-response-body"
+      },
+      {
+        "file": "data/upstream/c.tsv",
+        "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+        "downloadedAt": "2026-09-09T19:25:58.248Z",
+        "completedAt": "2026-09-09T19:25:59.036Z",
+        "resolvedUrl": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv",
+        "status": 200,
+        "etag": "W/\"09d2b3c03a47d7dee90092ae0652cc9b22ab89227ac6c16d74b675546ec4fa27\"",
+        "lastModified": null,
+        "contentLength": "17970",
+        "contentRange": null,
+        "bytes": 132306,
+        "sha256": "b2e64f32e42e6418b327d03a55af65f3a18e762f7cbc0efffc7e9d1ed3aa7343",
+        "hashScope": "complete-response-body"
+      },
+      {
+        "file": "data/upstream/d.tsv",
+        "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+        "downloadedAt": "2026-09-09T19:26:02.794Z",
+        "completedAt": "2026-09-09T19:26:03.221Z",
+        "resolvedUrl": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv",
+        "status": 200,
+        "etag": "W/\"b57e2b78929d08771f903f39fda98ada72fd5baa5822b70fe3820c137769788c\"",
+        "lastModified": null,
+        "contentLength": "8967",
+        "contentRange": null,
+        "bytes": 69199,
+        "sha256": "58cad40b886bd499717eabcce281d4bfcf00eeadbdc00552f42042cf4aac50d2",
+        "hashScope": "complete-response-body"
+      },
+      {
+        "file": "data/upstream/e.tsv",
+        "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+        "downloadedAt": "2026-09-09T19:26:05.798Z",
+        "completedAt": "2026-09-09T19:26:06.837Z",
+        "resolvedUrl": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv",
+        "status": 200,
+        "etag": "W/\"7574170de67a46e946cb6a8a285e367fe95eee0e71c799ed482efc59902c2cba\"",
+        "lastModified": null,
+        "contentLength": "5436",
+        "contentRange": null,
+        "bytes": 42837,
+        "sha256": "f1f8494f488f660e284f23527d5acfbeccdbbc3acc76e74f05d125f39d2f8a74",
+        "hashScope": "complete-response-body"
+      }
+    ]
+  },
+  "puzzles": {
+    "file": "data/upstream/puzzles-sample.csv",
+    "url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://database.lichess.org/#puzzles",
+    "downloadedAt": "2026-09-09T19:35:09.912Z",
+    "completedAt": "2026-09-09T19:35:16.510Z",
+    "resolvedUrl": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+    "status": 206,
+    "etag": "\"6aa199fe-12253910\"",
+    "lastModified": "Wed, 09 Sep 2026 17:40:14 GMT",
+    "contentLength": "8388608",
+    "contentRange": "bytes 0-8388607/304429328",
+    "bytes": 558122,
+    "sha256": "c9ac0c3812ee9d6bd12bbedfc094a6be70d89368e578de709cafab0111d51d1d",
+    "hashScope": "selected-original-csv-rows-with-header-LF",
+    "sampling": {
+      "method": "smallest-sha256-priority-per-rating-band-from-bounded-prefix",
+      "seed": "zav-chess-content-v1",
+      "maxRows": 75000,
+      "scannedRows": 75000,
+      "maxCompressedBytes": 8388608,
+      "compressedBytes": 3980928,
+      "maxDecompressedBytes": 33554432,
+      "decompressedBytes": 13893632,
+      "stopReason": "row-limit",
+      "compressedPrefixSha256": "b0066c1634e14748d2f00f03ee1081cff27db48a218f20ed775b81f3eb21dd66",
+      "compressedHashScope": "bytes-consumed-by-counter-before-abort; NOT the full dump",
+      "scannedRowsSha256": "795fe8bdfd0b720af2e816cf24514c31e7c0f95ef5c8a4103d07122d369ee1f0",
+      "scannedHashScope": "first-75000-data-rows-normalized-LF-no-header",
+      "bands": [
+        {
+          "level": "beginner",
+          "min": 400,
+          "max": 899,
+          "count": 500,
+          "eligibleInPrefix": 11367
+        },
+        {
+          "level": "beginner",
+          "min": 900,
+          "max": 1399,
+          "count": 500,
+          "eligibleInPrefix": 25886
+        },
+        {
+          "level": "intermediate",
+          "min": 1400,
+          "max": 1699,
+          "count": 500,
+          "eligibleInPrefix": 12868
+        },
+        {
+          "level": "intermediate",
+          "min": 1700,
+          "max": 1999,
+          "count": 500,
+          "eligibleInPrefix": 10686
+        },
+        {
+          "level": "advanced",
+          "min": 2000,
+          "max": 2399,
+          "count": 500,
+          "eligibleInPrefix": 9850
+        },
+        {
+          "level": "advanced",
+          "min": 2400,
+          "max": 3200,
+          "count": 500,
+          "eligibleInPrefix": 4290
+        }
+      ],
+      "limitations": "Amostra estratificada de um prefixo, sem representatividade global. Sem cotas por tema. O prefixo comprimido não é arquivado; preservamos as linhas selecionadas."
+    }
+  },
+  "endgames": {
+    "origin": "Posições didáticas compostas originalmente; não atribuídas a partidas históricas.",
+    "validation": "Legalidade com chess.js; resultado e lista completa de lances consultados na API Syzygy do Lichess.",
+    "perspective": "category da posição = lado com a vez; category de um lance = adversário após esse lance.",
+    "evidence": [
+      {
+        "id": "endgame-dama-reduzir-espaco",
+        "fenSha256": "af7a6f2c673d00eaf51ff8e3051e98da11686971694d05b2bea9c992ff4fdf46",
+        "category": "win",
+        "dtz": 3,
+        "dtm": 3,
+        "source": {
+          "file": "data/upstream/tablebase/dama-reduzir-espaco.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=7k%2F8%2F5K2%2F8%2F8%2F3Q4%2F8%2F8%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:19.672Z",
+          "completedAt": "2026-09-09T19:35:20.523Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=7k%2F8%2F5K2%2F8%2F8%2F3Q4%2F8%2F8%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 7989,
+          "sha256": "215461176cb10769ddde95f2d79c9fc903c5923602ba558890007c937193caa5",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-dama-rei-central",
+        "fenSha256": "1c907fb27860957ff22af52da523b19188b5659ee4fbff00dda2b825194c87e0",
+        "category": "win",
+        "dtz": 9,
+        "dtm": 9,
+        "source": {
+          "file": "data/upstream/tablebase/dama-rei-central.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F4k3%2F8%2F8%2F3K4%2F8%2F8%2FQ7%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:20.556Z",
+          "completedAt": "2026-09-09T19:35:20.799Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F4k3%2F8%2F8%2F3K4%2F8%2F8%2FQ7%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 6117,
+          "sha256": "a7681e25b7cb9f9971c9a17087a7c1c3760294534d4047b7a1f4e98db13b400a",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-dama-defesa",
+        "fenSha256": "5d9fca6556beafb79bdbe3e186b31e9795c819f9f4650d507afd2ac26cc1f0d3",
+        "category": "loss",
+        "dtz": -12,
+        "dtm": -12,
+        "source": {
+          "file": "data/upstream/tablebase/dama-defesa.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F4k3%2F8%2F8%2F3K4%2F8%2F8%2FQ7%20b%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:20.822Z",
+          "completedAt": "2026-09-09T19:35:21.065Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F4k3%2F8%2F8%2F3K4%2F8%2F8%2FQ7%20b%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 2125,
+          "sha256": "74069881b1b056463464e53dd9ea5c3da839a2cab35830aabc0d11fc24113e23",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-torre-cortar-rei",
+        "fenSha256": "f6c90f02d3711c4d640152604a618156ba743f30216372806e1d15e3627d2817",
+        "category": "win",
+        "dtz": 3,
+        "dtm": 3,
+        "source": {
+          "file": "data/upstream/tablebase/torre-cortar-rei.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=7k%2F8%2F5K2%2F8%2F8%2F8%2F8%2FR7%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:21.078Z",
+          "completedAt": "2026-09-09T19:35:21.345Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=7k%2F8%2F5K2%2F8%2F8%2F8%2F8%2FR7%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 5324,
+          "sha256": "8d0a478385622b9df48f0f9951011135823e95ebc2a076f3df3d1e7008e60b6f",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-torre-rei-central",
+        "fenSha256": "1af241b464e4aa8306cf82d92b8e6d0147eb63e6513c7f8409f43b9ee749324b",
+        "category": "win",
+        "dtz": 17,
+        "dtm": 17,
+        "source": {
+          "file": "data/upstream/tablebase/torre-rei-central.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F5k2%2F8%2F8%2F3K4%2F8%2F1R6%2F8%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:21.370Z",
+          "completedAt": "2026-09-09T19:35:21.601Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F5k2%2F8%2F8%2F3K4%2F8%2F1R6%2F8%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 5628,
+          "sha256": "641e9c798f176b83bc8503d652c961d1b68e36e270cd4c27434bef1ac73cf699",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-torre-defesa",
+        "fenSha256": "87fe884d322f35d2664102878ca7df83ce03f71ffaa16e297f5f89df89c0dcb8",
+        "category": "loss",
+        "dtz": -22,
+        "dtm": -22,
+        "source": {
+          "file": "data/upstream/tablebase/torre-defesa.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F5k2%2F8%2F8%2F3K4%2F8%2F1R6%2F8%20b%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:21.621Z",
+          "completedAt": "2026-09-09T19:35:21.857Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F5k2%2F8%2F8%2F3K4%2F8%2F1R6%2F8%20b%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 2140,
+          "sha256": "bc64968863fe518d84ee0ab729053be0a351dd2b2ec8cce8f20d03800d9f27cd",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-peao-rei-na-sexta",
+        "fenSha256": "18b895db1c63b3029cf4958242edff6e2d6a44f49a4dd9f1661568e119009cde",
+        "category": "win",
+        "dtz": 3,
+        "dtm": 21,
+        "source": {
+          "file": "data/upstream/tablebase/peao-rei-na-sexta.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=4k3%2F8%2F4K3%2F4P3%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:21.868Z",
+          "completedAt": "2026-09-09T19:35:22.114Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=4k3%2F8%2F4K3%2F4P3%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 1162,
+          "sha256": "8c4dd584c189f70e092463a6426efe04e3adb09a9f1d223ad18f6f2696451efc",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-peao-oposicao",
+        "fenSha256": "adedffb8e0b2d8bc4effb3c1f2ce41c01de26fcb266da29654f489263ed7f287",
+        "category": "draw",
+        "dtz": 0,
+        "dtm": 0,
+        "source": {
+          "file": "data/upstream/tablebase/peao-oposicao.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:22.123Z",
+          "completedAt": "2026-09-09T19:35:22.365Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 1154,
+          "sha256": "c2bbe5e33f8c24b6d1a33d654c59e0b37ffb25f29af47caacd82cf8a77732cb1",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-peao-oposicao-pretas",
+        "fenSha256": "63bea745f0f4bac9daac5a14a090ed956decfbaca9ca2f7b014b10d3888c84d5",
+        "category": "loss",
+        "dtz": -8,
+        "dtm": -36,
+        "source": {
+          "file": "data/upstream/tablebase/peao-oposicao-pretas.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20b%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:22.376Z",
+          "completedAt": "2026-09-09T19:35:22.615Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20b%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 1399,
+          "sha256": "b23322fe850ce89be27c3000b699b99259131ca958ea291725509216622443b3",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-peao-torre-canto",
+        "fenSha256": "ffb7c9a7905cbeb540f1e03ef53f89bbd343a2ed5bbb252592df64731a820c3f",
+        "category": "draw",
+        "dtz": 0,
+        "dtm": 0,
+        "source": {
+          "file": "data/upstream/tablebase/peao-torre-canto.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FK7%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:22.624Z",
+          "completedAt": "2026-09-09T19:35:22.864Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FK7%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 912,
+          "sha256": "c99741757b14cfe83fd8286a3944c9d6d852163b6d6f4668489e524ef186ec9d",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-peao-promocao",
+        "fenSha256": "d7f576a1fe27b02be8041a0ab2d116eb5bbfdf30188a2ac93ed9f0739525d71f",
+        "category": "win",
+        "dtz": 1,
+        "dtm": 7,
+        "source": {
+          "file": "data/upstream/tablebase/peao-promocao.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F2P3k1%2F4K3%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:22.873Z",
+          "completedAt": "2026-09-09T19:35:23.114Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F2P3k1%2F4K3%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 2629,
+          "sha256": "c4382c70d0164379a90834388c18069630f7f6d44fbb687d093d68beb3a7a802",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-peao-preto-promocao",
+        "fenSha256": "eddbcc1c22251e2fda1bd12698497bb6b7e4b6a4b0f9252bf9939455a397e1a7",
+        "category": "win",
+        "dtz": 1,
+        "dtm": 9,
+        "source": {
+          "file": "data/upstream/tablebase/peao-preto-promocao.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F8%2F4k3%2F4p3%2FK7%20b%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:23.126Z",
+          "completedAt": "2026-09-09T19:35:23.363Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F8%2F4k3%2F4p3%2FK7%20b%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 2876,
+          "sha256": "5317cc1dfd9ccec43bb1fb82be90fd1fbc36af3bb62c436def9d0b8dbd9810fb",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-bispo-peao-torre",
+        "fenSha256": "d00c0bafc0027867f8a0e6291d874fe91d3963e3bfa27994b1e839772f33afa0",
+        "category": "draw",
+        "dtz": 0,
+        "dtm": 0,
+        "source": {
+          "file": "data/upstream/tablebase/bispo-peao-torre.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FKB6%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:23.376Z",
+          "completedAt": "2026-09-09T19:35:23.609Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FKB6%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 2592,
+          "sha256": "0c68732319f5f5e764778fe3e06a0f3d64dad3918fbff8fbc541be3da2caf3a9",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-torre-contra-peao",
+        "fenSha256": "5d34089eaa12f8b9853e1c7a2df92baf5fb4be06c6633068d1ec4d30b4de75c6",
+        "category": "win",
+        "dtz": 11,
+        "dtm": 37,
+        "source": {
+          "file": "data/upstream/tablebase/torre-contra-peao.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F4k3%2F4p3%2FK7%2F7R%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:23.622Z",
+          "completedAt": "2026-09-09T19:35:23.865Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F4k3%2F4p3%2FK7%2F7R%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 4790,
+          "sha256": "877081b44be47d0a7bef379e80b7faee36690ba4f8df2502f42bdd6fcef7c958",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-dama-contra-peao",
+        "fenSha256": "99ec851bf7712a89b3daab85cc0c7328387062b88dbe234fca69512359f22ab1",
+        "category": "win",
+        "dtz": 4,
+        "dtm": 7,
+        "source": {
+          "file": "data/upstream/tablebase/dama-contra-peao.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F8%2F2p5%2FK1k5%2F7Q%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:23.883Z",
+          "completedAt": "2026-09-09T19:35:24.116Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F8%2F2p5%2FK1k5%2F7Q%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 5822,
+          "sha256": "277c728ecef67b60a64b5eca2b6a9ec9d4be4b77f0c59aa2ac0bf679896fe125",
+          "hashScope": "complete-response-body"
+        }
+      },
+      {
+        "id": "endgame-peoes-corrida",
+        "fenSha256": "9e39d4261214de9c7497e92db0c348cb1c4d87dedc9161a43c9c47fe84f152be",
+        "category": "win",
+        "dtz": 1,
+        "dtm": 23,
+        "source": {
+          "file": "data/upstream/tablebase/peoes-corrida.json",
+          "url": "https://tablebase.lichess.ovh/standard?fen=7k%2FP7%2F8%2F8%2F8%2F8%2F7p%2FK7%20w%20-%20-%200%201",
+          "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+          "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+          "downloadedAt": "2026-09-09T19:35:24.141Z",
+          "completedAt": "2026-09-09T19:35:24.375Z",
+          "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=7k%2FP7%2F8%2F8%2F8%2F8%2F7p%2FK7%20w%20-%20-%200%201",
+          "status": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentLength": null,
+          "contentRange": null,
+          "bytes": 1883,
+          "sha256": "9f8613524116d95f0e48eb06b08c15c26989da15a92fa0c236f233aee17c5376",
+          "hashScope": "complete-response-body"
+        }
+      }
+    ]
+  },
+  "lessons": {
+    "language": "pt-BR",
+    "authorship": "Textos originais preparados com assistência de IA para Zav Chess.",
+    "license": "Sem licença adicional atribuída ao texto original; sujeito à licença definida pelo projeto.",
+    "editorialStatus": "pending-human-review",
+    "motorValidatedText": false,
+    "notice": "Texto original em pt-BR; revisão editorial humana pendente.",
+    "origins": [
+      {
+        "id": "lesson-mapa-do-tabuleiro",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-objetivo-do-jogo",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-movimento-da-torre",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-movimento-do-bispo",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-movimento-da-dama",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-movimento-do-cavalo",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-movimento-do-rei",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-movimento-do-peao",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-capturas-e-defensores",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-responder-ao-xeque",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-mate-e-afogamento",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-roque-com-seguranca",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-captura-en-passant",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-escolha-da-promocao",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-valor-e-atividade",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-rotina-antes-de-jogar",
+        "type": "original-editorial",
+        "reference": "https://lichess.org/learn"
+      },
+      {
+        "id": "lesson-mate-em-um",
+        "type": "lichess-puzzle",
+        "puzzleId": "0eFUC",
+        "theme": "mateIn1",
+        "sourceUrl": "https://lichess.org/training/0eFUC"
+      },
+      {
+        "id": "lesson-mate-em-dois",
+        "type": "lichess-puzzle",
+        "puzzleId": "0fOdT",
+        "theme": "mateIn2",
+        "sourceUrl": "https://lichess.org/training/0fOdT"
+      },
+      {
+        "id": "lesson-garfo",
+        "type": "lichess-puzzle",
+        "puzzleId": "04eXD",
+        "theme": "fork",
+        "sourceUrl": "https://lichess.org/training/04eXD"
+      },
+      {
+        "id": "lesson-cravada",
+        "type": "lichess-puzzle",
+        "puzzleId": "07VlQ",
+        "theme": "pin",
+        "sourceUrl": "https://lichess.org/training/07VlQ"
+      },
+      {
+        "id": "lesson-espeto",
+        "type": "lichess-puzzle",
+        "puzzleId": "0aRGU",
+        "theme": "skewer",
+        "sourceUrl": "https://lichess.org/training/0aRGU"
+      },
+      {
+        "id": "lesson-ataque-descoberto",
+        "type": "lichess-puzzle",
+        "puzzleId": "0Vz8w",
+        "theme": "discoveredAttack",
+        "sourceUrl": "https://lichess.org/training/0Vz8w"
+      },
+      {
+        "id": "lesson-xeque-duplo",
+        "type": "lichess-puzzle",
+        "puzzleId": "0ebUk",
+        "theme": "doubleCheck",
+        "sourceUrl": "https://lichess.org/training/0ebUk"
+      },
+      {
+        "id": "lesson-desvio-do-defensor",
+        "type": "lichess-puzzle",
+        "puzzleId": "0b2kE",
+        "theme": "deflection",
+        "sourceUrl": "https://lichess.org/training/0b2kE"
+      },
+      {
+        "id": "lesson-atracao",
+        "type": "lichess-puzzle",
+        "puzzleId": "0ei0O",
+        "theme": "attraction",
+        "sourceUrl": "https://lichess.org/training/0ei0O"
+      },
+      {
+        "id": "lesson-peca-pendurada",
+        "type": "lichess-puzzle",
+        "puzzleId": "03j6z",
+        "theme": "hangingPiece",
+        "sourceUrl": "https://lichess.org/training/03j6z"
+      },
+      {
+        "id": "lesson-peca-presa",
+        "type": "lichess-puzzle",
+        "puzzleId": "0Cgt8",
+        "theme": "trappedPiece",
+        "sourceUrl": "https://lichess.org/training/0Cgt8"
+      },
+      {
+        "id": "lesson-liberacao",
+        "type": "lichess-puzzle",
+        "puzzleId": "0Cc7d",
+        "theme": "clearance",
+        "sourceUrl": "https://lichess.org/training/0Cc7d"
+      },
+      {
+        "id": "lesson-interferencia",
+        "type": "lichess-puzzle",
+        "puzzleId": "06CAz",
+        "theme": "interference",
+        "sourceUrl": "https://lichess.org/training/06CAz"
+      },
+      {
+        "id": "lesson-sacrificio-calculado",
+        "type": "lichess-puzzle",
+        "puzzleId": "0ejF1",
+        "theme": "sacrifice",
+        "sourceUrl": "https://lichess.org/training/0ejF1"
+      },
+      {
+        "id": "lesson-promocao-tatica",
+        "type": "lichess-puzzle",
+        "puzzleId": "0Z8os",
+        "theme": "promotion",
+        "sourceUrl": "https://lichess.org/training/0Z8os"
+      },
+      {
+        "id": "lesson-defesa-ativa",
+        "type": "lichess-puzzle",
+        "puzzleId": "0907J",
+        "theme": "defensiveMove",
+        "sourceUrl": "https://lichess.org/training/0907J"
+      },
+      {
+        "id": "lesson-italiana",
+        "type": "lichess-opening",
+        "openingId": "opening-980a24b5ac92ef66c6234bb3",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv"
+      },
+      {
+        "id": "lesson-espanhola",
+        "type": "lichess-opening",
+        "openingId": "opening-3ddadd403445125f80a27706",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv"
+      },
+      {
+        "id": "lesson-escocesa",
+        "type": "lichess-opening",
+        "openingId": "opening-2e84353376cc02e6b9a22e4a",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv"
+      },
+      {
+        "id": "lesson-quatro-cavalos",
+        "type": "lichess-opening",
+        "openingId": "opening-fd2b5a00e930deb3bffdb365",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv"
+      },
+      {
+        "id": "lesson-siciliana",
+        "type": "lichess-opening",
+        "openingId": "opening-25d9e91bc18c0bb529ea4838",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv"
+      },
+      {
+        "id": "lesson-francesa",
+        "type": "lichess-opening",
+        "openingId": "opening-d9731ff7cd6919206bed417b",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv"
+      },
+      {
+        "id": "lesson-caro-kann",
+        "type": "lichess-opening",
+        "openingId": "opening-d20a3d6c573d2a84ce6aa73e",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv"
+      },
+      {
+        "id": "lesson-escandinava",
+        "type": "lichess-opening",
+        "openingId": "opening-922349f36e54b898e912aa33",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv"
+      },
+      {
+        "id": "lesson-gambito-da-dama",
+        "type": "lichess-opening",
+        "openingId": "opening-df3dbb2e3313660ce1ac69b2",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv"
+      },
+      {
+        "id": "lesson-gambito-recusado",
+        "type": "lichess-opening",
+        "openingId": "opening-bbd56ef7dce9a4f6de80ef4c",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv"
+      },
+      {
+        "id": "lesson-eslava",
+        "type": "lichess-opening",
+        "openingId": "opening-7f5c9b3d0516434e3ba50128",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv"
+      },
+      {
+        "id": "lesson-inglesa",
+        "type": "lichess-opening",
+        "openingId": "opening-1a12fb2981ddc0a877c44976",
+        "sourceUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv"
+      },
+      {
+        "id": "lesson-rei-ativo",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-peao-rei-na-sexta",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=4k3%2F8%2F4K3%2F4P3%2F8%2F8%2F8%2F8%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-oposicao-direta",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-peao-oposicao",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-tempos-no-final",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-peao-oposicao-pretas",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20b%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-peao-de-torre",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-peao-torre-canto",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FK7%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-converter-promocao",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-peao-promocao",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F2P3k1%2F4K3%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-promocao-das-pretas",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-peao-preto-promocao",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F8%2F4k3%2F4p3%2FK7%20b%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-mate-com-dama",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-dama-reduzir-espaco",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=7k%2F8%2F5K2%2F8%2F8%2F3Q4%2F8%2F8%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-mate-com-torre",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-torre-cortar-rei",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=7k%2F8%2F5K2%2F8%2F8%2F8%2F8%2FR7%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-bispo-cor-promocao",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-bispo-peao-torre",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FKB6%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-torre-peao-passado",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-torre-contra-peao",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F4k3%2F4p3%2FK7%2F7R%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-corrida-de-peoes",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-peoes-corrida",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=7k%2FP7%2F8%2F8%2F8%2F8%2F7p%2FK7%20w%20-%20-%200%201"
+      },
+      {
+        "id": "lesson-ler-syzygy",
+        "type": "original-endgame-probed-by-syzygy",
+        "endgameId": "endgame-dama-contra-peao",
+        "sourceUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F8%2F2p5%2FK1k5%2F7Q%20w%20-%20-%200%201"
+      }
+    ],
+    "editorialFiles": [
+      {
+        "file": "scripts/content/lessons.mjs",
+        "sha256": "863f3a34b4e6f2de68a73e57442b40647c61cab924dd4211db73debcab03b983"
+      },
+      {
+        "file": "scripts/content/endgames.mjs",
+        "sha256": "bcb5c05468cdf94e1ecf8eb5a68496e8bf093950f7341d60db6f663f02a090fe"
+      }
+    ]
+  },
+  "stockfish": {
+    "sourceUrl": "https://stockfishchess.org/",
+    "license": "GPL-3.0",
+    "licenseUrl": "https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt",
+    "use": "Proveniência indireta: o Lichess documenta análise Stockfish NNUE na geração dos puzzles oficiais.",
+    "evidenceUrl": "https://database.lichess.org/#puzzles",
+    "localEngineExecuted": false,
+    "textValidatedByEngine": false,
+    "downloadTimestamp": null,
+    "hash": null,
+    "reason": "Nenhum binário Stockfish foi baixado ou redistribuído por estes scripts."
+  },
+  "artifacts": [
+    {
+      "file": "data/openings.json",
+      "count": 3810,
+      "bytes": 2236577,
+      "sha256": "fdc35949fd76aba81737c7ead14b8d9dc928d03118f763cd12dfac709e7d751b"
+    },
+    {
+      "file": "data/puzzles.json",
+      "count": 3000,
+      "bytes": 1087291,
+      "sha256": "7c994d87c24e961ab53b69bfe3f76284b803835a2648a942ef52890d68957700"
+    },
+    {
+      "file": "data/endgames.json",
+      "count": 16,
+      "bytes": 9011,
+      "sha256": "1675cdacae4748739e4043b78645dbe995ace0d8921c28cdb8c5646016db4ac7"
+    },
+    {
+      "file": "data/lessons.json",
+      "count": 56,
+      "bytes": 91926,
+      "sha256": "8393ce7ca611573c3157c64350289c9a8cff9d5faeed5b14013e302b4a191d4a"
+    }
+  ]
+}

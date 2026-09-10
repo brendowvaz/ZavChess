@@ -1,0 +1,15 @@
+{
+  "file": "data/upstream/openings-commit.json",
+  "url": "https://api.github.com/repos/lichess-org/chess-openings/commits/master",
+  "downloadedAt": "2026-09-09T19:25:51.719Z",
+  "completedAt": "2026-09-09T19:25:52.183Z",
+  "resolvedUrl": "https://api.github.com/repos/lichess-org/chess-openings/commits/master",
+  "status": 200,
+  "etag": "W/\"e690d03bb5dedffe4e580222f023824114ccc6fdb9fb0b48fd31badcd101f01a\"",
+  "lastModified": "Tue, 04 Aug 2026 02:17:01 GMT",
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 6903,
+  "sha256": "91683eb0edbdef249cdb49e64be7f2cd176dfffd2589e0c0083466ce088237a3",
+  "hashScope": "complete-response-body"
+}

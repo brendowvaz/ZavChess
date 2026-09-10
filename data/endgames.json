@@ -1,0 +1,242 @@
+[
+  {
+    "id": "endgame-dama-reduzir-espaco",
+    "slug": "dama-reduzir-espaco",
+    "title": "Dama: reduzir o espaço do rei",
+    "description": "Coordene rei e dama para conduzir o rei adversário à borda.",
+    "fen": "7k/8/5K2/8/8/3Q4/8/8 w - - 0 1",
+    "goal": "Dar xeque-mate sem afogar o rei.",
+    "level": "beginner",
+    "side": "w",
+    "tips": [
+      "Restrinja uma fileira ou coluna de cada vez.",
+      "Aproxime seu rei para proteger as casas de fuga.",
+      "Antes de um lance sem xeque, confira se o adversário ainda pode jogar."
+    ]
+  },
+  {
+    "id": "endgame-dama-rei-central",
+    "slug": "dama-rei-central",
+    "title": "Dama contra rei no centro",
+    "description": "Comece a técnica de mate com o rei defensor ainda ativo.",
+    "fen": "8/4k3/8/8/3K4/8/8/Q7 w - - 0 1",
+    "goal": "Levar o rei à borda e completar o mate.",
+    "level": "beginner",
+    "side": "w",
+    "tips": [
+      "A dama corta caminhos; o rei ajuda a fechar a rede.",
+      "Evite perseguir o rei só com xeques.",
+      "Mantenha a dama fora do alcance do rei adversário."
+    ]
+  },
+  {
+    "id": "endgame-dama-defesa",
+    "slug": "dama-defesa",
+    "title": "Defender contra a dama",
+    "description": "Jogue com as pretas e observe como o rei atacante precisa colaborar.",
+    "fen": "8/4k3/8/8/3K4/8/8/Q7 b - - 0 1",
+    "goal": "Prolongar a resistência e identificar oportunidades de afogamento.",
+    "level": "intermediate",
+    "side": "b",
+    "tips": [
+      "Procure casas centrais seguras.",
+      "Ataque uma dama desprotegida quando isso for legal.",
+      "A resistência correta não garante empate nesta posição."
+    ]
+  },
+  {
+    "id": "endgame-torre-cortar-rei",
+    "slug": "torre-cortar-rei",
+    "title": "Torre: cortar o rei",
+    "description": "Use a torre para limitar o rei adversário e aproxime o seu rei.",
+    "fen": "7k/8/5K2/8/8/8/8/R7 w - - 0 1",
+    "goal": "Dar mate com rei e torre.",
+    "level": "beginner",
+    "side": "w",
+    "tips": [
+      "A torre pode cortar uma fileira inteira.",
+      "Proteja a torre se ela se aproximar do rei adversário.",
+      "O rei atacante precisa controlar casas de fuga."
+    ]
+  },
+  {
+    "id": "endgame-torre-rei-central",
+    "slug": "torre-rei-central",
+    "title": "Torre contra rei no centro",
+    "description": "Pratique a coordenação sem depender de um mate imediato.",
+    "fen": "8/5k2/8/8/3K4/8/1R6/8 w - - 0 1",
+    "goal": "Conduzir o rei à borda e dar mate.",
+    "level": "intermediate",
+    "side": "w",
+    "tips": [
+      "Crie uma barreira com a torre.",
+      "Aproxime o rei antes de reduzir novamente o espaço.",
+      "Um lance de espera pode melhorar a oposição dos reis."
+    ]
+  },
+  {
+    "id": "endgame-torre-defesa",
+    "slug": "torre-defesa",
+    "title": "Resistir contra a torre",
+    "description": "O defensor procura manter mobilidade enquanto o atacante coordena as peças.",
+    "fen": "8/5k2/8/8/3K4/8/1R6/8 b - - 0 1",
+    "goal": "Encontrar a defesa mais longa indicada pela tablebase.",
+    "level": "intermediate",
+    "side": "b",
+    "tips": [
+      "Fique longe da borda quando possível.",
+      "Aproxime-se de uma torre que não esteja protegida.",
+      "Compare a resistência em lances; não confunda isso com empate."
+    ]
+  },
+  {
+    "id": "endgame-peao-rei-na-sexta",
+    "slug": "peao-rei-na-sexta",
+    "title": "Peão: rei na sexta fileira",
+    "description": "O rei branco já ocupa uma casa importante à frente do peão.",
+    "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1",
+    "goal": "Promover o peão mantendo a coordenação.",
+    "level": "beginner",
+    "side": "w",
+    "tips": [
+      "O rei abre caminho antes de o peão avançar.",
+      "Confira a resposta do rei adversário a cada lance.",
+      "Não permita que o peão fique sem proteção."
+    ]
+  },
+  {
+    "id": "endgame-peao-oposicao",
+    "slug": "peao-oposicao",
+    "title": "Oposição em final de peão",
+    "description": "Observe como a vez de jogar influencia a passagem do rei.",
+    "fen": "8/8/4k3/8/4K3/4P3/8/8 w - - 0 1",
+    "goal": "Determinar o resultado e escolher um lance que o preserve.",
+    "level": "intermediate",
+    "side": "w",
+    "tips": [
+      "Reis na mesma coluna podem disputar a oposição.",
+      "O peão oferece tempos de espera, mas eles são finitos.",
+      "Consulte a categoria da posição antes de prometer vitória."
+    ]
+  },
+  {
+    "id": "endgame-peao-oposicao-pretas",
+    "slug": "peao-oposicao-pretas",
+    "title": "Oposição: a vez das pretas",
+    "description": "A mesma disposição de peças permite comparar a importância do tempo.",
+    "fen": "8/8/4k3/8/4K3/4P3/8/8 b - - 0 1",
+    "goal": "Defender o melhor resultado disponível para as pretas.",
+    "level": "intermediate",
+    "side": "b",
+    "tips": [
+      "Compare com a posição em que as brancas têm a vez.",
+      "Mantenha o rei diante do peão quando isso sustentar a defesa.",
+      "A categoria de cada resposta muda de perspectiva."
+    ]
+  },
+  {
+    "id": "endgame-peao-torre-canto",
+    "slug": "peao-torre-canto",
+    "title": "Peão de torre e rei no canto",
+    "description": "O rei defensor ocupa a casa de promoção do peão da coluna a.",
+    "fen": "k7/P7/K7/8/8/8/8/8 w - - 0 1",
+    "goal": "Reconhecer o recurso de empate e explicar por que o peão não passa.",
+    "level": "beginner",
+    "side": "w",
+    "tips": [
+      "O peão de torre não tem uma coluna do outro lado para contornar o rei.",
+      "Observe o afogamento quando o rei não dispõe de casas.",
+      "Não aplique automaticamente regras de peões centrais."
+    ]
+  },
+  {
+    "id": "endgame-peao-promocao",
+    "slug": "peao-promocao",
+    "title": "Promover com segurança",
+    "description": "Um peão passado está a um passo da promoção, com os reis afastados.",
+    "fen": "8/2P3k1/4K3/8/8/8/8/8 w - - 0 1",
+    "goal": "Promover e converter a vantagem material.",
+    "level": "beginner",
+    "side": "w",
+    "tips": [
+      "Escolha explicitamente a peça de promoção.",
+      "Uma dama costuma facilitar a conversão, mas ainda é preciso evitar afogamento.",
+      "O treino continua depois de promover."
+    ]
+  },
+  {
+    "id": "endgame-peao-preto-promocao",
+    "slug": "peao-preto-promocao",
+    "title": "Promoção com as pretas",
+    "description": "Pratique a direção do peão preto e a mudança de perspectiva.",
+    "fen": "8/8/8/8/8/4k3/4p3/K7 b - - 0 1",
+    "goal": "Promover o peão preto e vencer o final.",
+    "level": "beginner",
+    "side": "b",
+    "tips": [
+      "Peões pretos promovem na primeira fileira.",
+      "A cor com a vez está no campo side.",
+      "Confira as casas legais do rei branco após a promoção."
+    ]
+  },
+  {
+    "id": "endgame-bispo-peao-torre",
+    "slug": "bispo-peao-torre",
+    "title": "Bispo e peão de torre: o canto",
+    "description": "Investigue a relação entre a cor do bispo e a casa de promoção.",
+    "fen": "k7/P7/KB6/8/8/8/8/8 w - - 0 1",
+    "goal": "Explicar o empate com o rei defensor no canto.",
+    "level": "advanced",
+    "side": "w",
+    "tips": [
+      "O bispo não controla a casa a8 nesta posição.",
+      "Material extra não basta para expulsar o rei do canto.",
+      "Teste movimentos do rei e observe as posições de afogamento."
+    ]
+  },
+  {
+    "id": "endgame-torre-contra-peao",
+    "slug": "torre-contra-peao",
+    "title": "Torre contra peão passado",
+    "description": "A torre enfrenta um peão preto que se aproxima da promoção.",
+    "fen": "8/8/8/8/4k3/4p3/K7/7R w - - 0 1",
+    "goal": "Encontrar um plano que preserve o resultado da tablebase.",
+    "level": "intermediate",
+    "side": "w",
+    "tips": [
+      "Calcule a promoção antes de dar um xeque lateral.",
+      "O rei deve colaborar se houver tempo.",
+      "Compare bloqueio, ataque ao peão e xeques."
+    ]
+  },
+  {
+    "id": "endgame-dama-contra-peao",
+    "slug": "dama-contra-peao",
+    "title": "Dama contra peão avançado",
+    "description": "Calcule os xeques e o risco de promoção do peão preto.",
+    "fen": "8/8/8/8/8/2p5/K1k5/7Q w - - 0 1",
+    "goal": "Coordenar dama e rei sem permitir uma promoção favorável ao adversário.",
+    "level": "advanced",
+    "side": "w",
+    "tips": [
+      "Não suponha que todos os peões na penúltima fileira sejam equivalentes.",
+      "Verifique o alcance da dama em cada diagonal.",
+      "Use a tablebase para comparar os lances candidatos."
+    ]
+  },
+  {
+    "id": "endgame-peoes-corrida",
+    "slug": "peoes-corrida",
+    "title": "Corrida de peões passados",
+    "description": "Dois peões afastados exigem contar lances e considerar os reis.",
+    "fen": "7k/P7/8/8/8/8/7p/K7 w - - 0 1",
+    "goal": "Calcular a corrida e escolher a promoção adequada.",
+    "level": "intermediate",
+    "side": "w",
+    "tips": [
+      "Conte quem promove primeiro.",
+      "Uma promoção com xeque pode mudar o ritmo da corrida.",
+      "Depois de promover, reavalie a posição inteira."
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/peao-torre-canto.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FK7%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:22.624Z",
+  "completedAt": "2026-09-09T19:35:22.864Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FK7%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 912,
+  "sha256": "c99741757b14cfe83fd8286a3944c9d6d852163b6d6f4668489e524ef186ec9d",
+  "hashScope": "complete-response-body"
+}

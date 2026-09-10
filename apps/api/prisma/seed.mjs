@@ -1,0 +1,39 @@
+import 'dotenv/config';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { PrismaClient } from '@prisma/client';
+
+const db = new PrismaClient();
+const seedDirectory = resolve(fileURLToPath(new URL('.', import.meta.url)), '../../../data');
+const read = (name) => JSON.parse(readFileSync(resolve(seedDirectory, `${name}.json`), 'utf8'));
+
+async function upsertInBatches(rows, operation) {
+  for (let offset = 0; offset < rows.length; offset += 250) {
+    await operation(rows.slice(offset, offset + 250));
+  }
+}
+
+async function seed() {
+  const lessons = read('lessons');
+  const openings = read('openings');
+  const puzzles = read('puzzles');
+  const endgames = read('endgames');
+
+  for (const row of lessons) await db.lesson.upsert({ where: { id: row.id }, create: row, update: row });
+  for (const row of endgames) await db.endgame.upsert({ where: { id: row.id }, create: row, update: row });
+  // Bulk imports preserve student progress and are safe to repeat.
+  await upsertInBatches(openings, (data) => db.opening.createMany({ data, skipDuplicates: true }));
+  await upsertInBatches(puzzles, (data) => db.puzzle.createMany({ data, skipDuplicates: true }));
+
+  console.log({
+    lessons: await db.lesson.count(),
+    openings: await db.opening.count(),
+    puzzles: await db.puzzle.count(),
+    endgames: await db.endgame.count(),
+  });
+}
+
+seed()
+  .catch((error) => { console.error(error); process.exitCode = 1; })
+  .finally(() => db.$disconnect());

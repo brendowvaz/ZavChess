@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Zav Chess",
+    "slug": "zav-chess",
+    "version": "1.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F6F4ED",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zav.chess",
+      "infoPlist": { "NSAppTransportSecurity": { "NSAllowsLocalNetworking": true } }
+    },
+    "android": {
+      "package": "com.zav.chess"
+    },
+    "web": { "bundler": "metro", "output": "single", "name": "Zav Chess", "lang": "pt-BR" },
+    "plugins": ["expo-secure-store"]
+  }
+}

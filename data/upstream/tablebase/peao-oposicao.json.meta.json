@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/peao-oposicao.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:22.123Z",
+  "completedAt": "2026-09-09T19:35:22.365Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4k3%2F8%2F4K3%2F4P3%2F8%2F8%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 1154,
+  "sha256": "c2bbe5e33f8c24b6d1a33d654c59e0b37ffb25f29af47caacd82cf8a77732cb1",
+  "hashScope": "complete-response-body"
+}

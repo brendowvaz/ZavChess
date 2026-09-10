@@ -1,0 +1,2157 @@
+[
+  {
+    "id": "lesson-mapa-do-tabuleiro",
+    "slug": "mapa-do-tabuleiro",
+    "title": "Encontre uma casa no tabuleiro",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Leia coordenadas e use o centro como referência. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 1,
+    "minutes": 3,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "As colunas recebem letras de a até h; as fileiras, números de 1 até 8. Uma casa é identificada primeiro pela coluna, depois pela fileira: e4. As casas d4, e4, d5 e e5 formam o centro."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Imagine a posição inicial com as brancas embaixo. Localize a1, h8 e e4. Ao virar o tabuleiro para as pretas, os nomes das casas continuam iguais: muda apenas o ponto de vista."
+      }
+    ],
+    "quiz": {
+      "question": "Qual nome identifica uma casa da coluna e e da quarta fileira?",
+      "options": [
+        "4e",
+        "e4",
+        "d4",
+        "e5"
+      ],
+      "answer": 1,
+      "explanation": "A coordenada começa pela letra da coluna e termina com o número da fileira: e4."
+    }
+  },
+  {
+    "id": "lesson-objetivo-do-jogo",
+    "slug": "objetivo-do-jogo",
+    "title": "O objetivo é dar xeque-mate",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Diferencie ganhar material de encerrar a partida. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 2,
+    "minutes": 3,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "Você vence por xeque-mate quando o rei adversário está atacado e não existe lance legal que elimine o ataque. O rei não é capturado. Ganhar peças costuma ajudar, mas uma vantagem material não impede um mate contra você."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Antes de procurar uma captura, verifique a segurança dos dois reis. Se seu rei está em xeque, sua resposta precisa resolver esse xeque; uma ameaça do outro lado do tabuleiro não basta."
+      }
+    ],
+    "quiz": {
+      "question": "Qual situação define xeque-mate?",
+      "options": [
+        "Capturar a dama",
+        "Ter mais peças",
+        "Rei atacado sem defesa legal",
+        "Rei sem lances, mesmo sem xeque"
+      ],
+      "answer": 2,
+      "explanation": "Mate exige xeque e ausência de qualquer resposta legal. Sem xeque, a falta de lances legais é afogamento."
+    }
+  },
+  {
+    "id": "lesson-movimento-da-torre",
+    "slug": "movimento-da-torre",
+    "title": "Torre: linhas e colunas",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Trace caminhos retos e reconheça bloqueios. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 3,
+    "minutes": 3,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "A torre anda quantas casas puder em linha reta, pela mesma coluna ou fileira. Ela não salta peças. Uma peça sua bloqueia o caminho; uma adversária pode ser capturada, encerrando o movimento naquela casa."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Imagine uma torre em d4 num tabuleiro vazio. Ela alcança d8 e h4, mas não g7. Coloque mentalmente um peão branco em d6: a torre branca não pode atravessá-lo para chegar a d7."
+      }
+    ],
+    "quiz": {
+      "question": "Sem bloqueios, qual casa uma torre em d4 alcança em um lance?",
+      "options": [
+        "g7",
+        "e5",
+        "f5",
+        "d8"
+      ],
+      "answer": 3,
+      "explanation": "d8 pertence à mesma coluna de d4. As outras casas exigiriam movimento diagonal ou de cavalo."
+    }
+  },
+  {
+    "id": "lesson-movimento-do-bispo",
+    "slug": "movimento-do-bispo",
+    "title": "Bispo: diagonais e cores",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Reconheça o alcance diagonal e a cor permanente do bispo. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 4,
+    "minutes": 3,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "O bispo anda pelas diagonais sem saltar peças. Como cada diagonal preserva a cor das casas, um bispo que começa numa casa clara permanece em casas claras durante toda a partida."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "De c1, acompanhe a diagonal d2, e3, f4, g5 e h6. Na posição inicial, o peão de d2 bloqueia essa saída. Avançar um peão pode abrir uma diagonal para o bispo."
+      }
+    ],
+    "quiz": {
+      "question": "O que um bispo faz ao mover-se normalmente?",
+      "options": [
+        "Permanece na mesma cor de casas",
+        "Troca de cor a cada lance",
+        "Salta a primeira peça",
+        "Move-se apenas uma casa"
+      ],
+      "answer": 0,
+      "explanation": "Todos os movimentos diagonais de um bispo preservam a cor das casas."
+    }
+  },
+  {
+    "id": "lesson-movimento-da-dama",
+    "slug": "movimento-da-dama",
+    "title": "Dama: alcance e responsabilidade",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Combine linhas retas e diagonais sem confundir poder com segurança. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 5,
+    "minutes": 3,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "A dama combina os movimentos da torre e do bispo: fileiras, colunas e diagonais. Ela não salta peças. Seu grande alcance torna a dama forte, mas também faz perder tempos quando sai cedo e é atacada por peças menores."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Imagine uma dama em d4. Ela pode ir a d7, g4 ou g7 se o caminho estiver livre. Não pode ir a f5. Antes de aproximá-la do rei adversário, confira se ela ficará protegida."
+      }
+    ],
+    "quiz": {
+      "question": "Qual movimento não corresponde ao da dama em d4?",
+      "options": [
+        "d4–g7",
+        "d4–f5",
+        "d4–d7",
+        "d4–g4"
+      ],
+      "answer": 1,
+      "explanation": "f5 não está na mesma fileira, coluna ou diagonal de d4."
+    }
+  },
+  {
+    "id": "lesson-movimento-do-cavalo",
+    "slug": "movimento-do-cavalo",
+    "title": "Cavalo: salto em L",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Encontre destinos do cavalo mesmo com peças no caminho. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 6,
+    "minutes": 4,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "O cavalo desloca-se duas casas em uma direção e uma na direção perpendicular. Ele pode saltar peças, mas não termina sobre uma peça da própria cor. Cada salto muda a cor da casa ocupada."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "De g1, o cavalo branco pode saltar para f3 mesmo com peões na segunda fileira. Num tabuleiro vazio, procure todos os destinos de um cavalo em d4 e depois compare com um cavalo em a1."
+      }
+    ],
+    "quiz": {
+      "question": "Qual lance do cavalo branco é possível na posição inicial?",
+      "options": [
+        "g1–g3",
+        "g1–e1",
+        "g1–f3",
+        "g1–h1"
+      ],
+      "answer": 2,
+      "explanation": "g1–f3 tem o deslocamento em L; o cavalo salta as peças intermediárias e f3 está livre."
+    }
+  },
+  {
+    "id": "lesson-movimento-do-rei",
+    "slug": "movimento-do-rei",
+    "title": "Rei: proximidade com segurança",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Entenda por que os reis não podem ficar lado a lado. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 7,
+    "minutes": 3,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "O rei move-se uma casa em qualquer direção, desde que a casa de destino não esteja atacada. Os reis atacam as casas vizinhas; por isso, não podem ocupar casas adjacentes."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Num final, desenhe mentalmente as oito casas ao redor do rei adversário. Elas ficam proibidas para o seu rei. Uma captura com o rei só é legal se a peça capturada não estiver protegida por um ataque que continue existindo."
+      }
+    ],
+    "quiz": {
+      "question": "Por que um rei não pode se colocar ao lado do outro?",
+      "options": [
+        "Porque só anda em diagonal",
+        "Porque deve ficar na primeira fileira",
+        "Porque reis não participam dos finais",
+        "Porque entraria numa casa atacada"
+      ],
+      "answer": 3,
+      "explanation": "Um rei controla as casas adjacentes. Entrar no alcance do outro rei deixaria o próprio rei em xeque."
+    }
+  },
+  {
+    "id": "lesson-movimento-do-peao",
+    "slug": "movimento-do-peao",
+    "title": "Peão: avanço e captura",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Separe a direção de avanço da direção de captura. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 8,
+    "minutes": 4,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "O peão avança uma casa para a frente se ela estiver vazia. Partindo da fileira inicial, pode avançar duas se ambas estiverem livres. Ele captura uma casa na diagonal para a frente e nunca recua."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Para as brancas, um peão em e4 avança para e5 e captura em d5 ou f5. Para as pretas, um peão em e5 avança para e4 e captura em d4 ou f4. A orientação da tela não muda essas regras."
+      }
+    ],
+    "quiz": {
+      "question": "Um peão branco em e4 pode capturar normalmente em qual casa?",
+      "options": [
+        "d5",
+        "e5",
+        "d3",
+        "e3"
+      ],
+      "answer": 0,
+      "explanation": "A captura do peão branco ocorre uma casa na diagonal rumo à oitava fileira: d5 ou f5."
+    }
+  },
+  {
+    "id": "lesson-capturas-e-defensores",
+    "slug": "capturas-e-defensores",
+    "title": "Antes de capturar, conte defensores",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Avalie a recaptura antes de comemorar uma peça ganha. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 9,
+    "minutes": 4,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "Uma peça aparentemente disponível pode estar protegida. Antes de capturar, imagine a posição resultante e procure as recapturas legais do adversário. Contar atacantes ajuda, mas a ordem das trocas e os xeques podem mudar o resultado."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Use a sequência: quem captura, quem recaptura e qual material sobra? Refaça a contagem depois de cada troca, pois uma coluna aberta pode revelar o ataque de uma torre que antes estava bloqueada."
+      }
+    ],
+    "quiz": {
+      "question": "Qual é a melhor verificação antes de uma captura?",
+      "options": [
+        "Somente o valor da peça alvo",
+        "As recapturas e a posição resultante",
+        "A cor da casa de origem",
+        "O número do lance"
+      ],
+      "answer": 1,
+      "explanation": "A captura altera linhas e defensores. A posição depois da resposta importa mais do que a aparência inicial da peça alvo."
+    }
+  },
+  {
+    "id": "lesson-responder-ao-xeque",
+    "slug": "responder-ao-xeque",
+    "title": "Três maneiras de enfrentar um xeque",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Organize a busca por respostas legais. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 10,
+    "minutes": 4,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "Contra um xeque, considere mover o rei, capturar a peça atacante ou bloquear a linha de ataque. Nem sempre as três opções existem. Um xeque de cavalo não pode ser bloqueado; num xeque duplo, é necessário mover o rei."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Ao receber um xeque, identifique a peça que ataca e trace o caminho até o rei. Depois teste cada defesa, verificando se ela realmente remove todos os ataques ao rei."
+      }
+    ],
+    "quiz": {
+      "question": "Qual resposta não resolve um xeque de cavalo por si só?",
+      "options": [
+        "Mover o rei para casa segura",
+        "Capturar o cavalo legalmente",
+        "Colocar uma peça entre cavalo e rei",
+        "Capturar o cavalo com o rei, se seguro"
+      ],
+      "answer": 2,
+      "explanation": "O cavalo salta; não há uma linha intermediária que possa ser bloqueada."
+    }
+  },
+  {
+    "id": "lesson-mate-e-afogamento",
+    "slug": "mate-e-afogamento",
+    "title": "Mate ou afogamento?",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Observe o xeque antes de concluir que o jogo foi vencido. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 11,
+    "minutes": 4,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "Se o lado com a vez não dispõe de lance legal, olhe para o rei: atacado significa xeque-mate; sem ataque significa afogamento e empate. Considere os lances de todas as peças, não apenas os movimentos do rei."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Em finais de dama contra rei, faça duas perguntas antes de um lance sem xeque: o rei adversário terá casa legal? Há outra peça adversária que possa jogar? Se ambas as respostas forem não, há risco de afogamento."
+      }
+    ],
+    "quiz": {
+      "question": "O lado com a vez não tem lance legal e seu rei não está em xeque. Qual o resultado?",
+      "options": [
+        "Vitória de quem tem mais material",
+        "Xeque-mate",
+        "A partida continua com passe",
+        "Empate por afogamento"
+      ],
+      "answer": 3,
+      "explanation": "Sem xeque e sem qualquer lance legal, a posição é de afogamento."
+    }
+  },
+  {
+    "id": "lesson-roque-com-seguranca",
+    "slug": "roque-com-seguranca",
+    "title": "Quando o roque é permitido",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Confira caminho, histórico e ataques antes de rocar. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 12,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "No roque, rei e torre se movem no mesmo lance. Eles não podem ter se movido antes; o caminho entre eles deve estar livre. O rei não pode estar em xeque nem atravessar ou terminar em casa atacada."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "No roque pequeno branco, o rei vai de e1 a g1 e a torre de h1 a f1. Um ataque à torre não proíbe o roque por si só. Já um ataque à casa f1 impede a passagem do rei."
+      }
+    ],
+    "quiz": {
+      "question": "Qual situação impede o roque pequeno branco?",
+      "options": [
+        "A casa f1 está atacada",
+        "A torre h1 está atacada, sem afetar o rei",
+        "O adversário já fez roque",
+        "A dama ainda está em d1"
+      ],
+      "answer": 0,
+      "explanation": "O rei não pode atravessar f1 se essa casa estiver atacada."
+    }
+  },
+  {
+    "id": "lesson-captura-en-passant",
+    "slug": "captura-en-passant",
+    "title": "En passant: uma oportunidade imediata",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Reconheça a captura especial logo após o avanço duplo. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 13,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "Se um peão adversário avança duas casas e termina ao lado do seu peão, pode existir captura en passant: seu peão vai à casa atravessada e o peão adversário é retirado. A oportunidade vale apenas na resposta imediatamente seguinte."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Imagine um peão branco em e5 e um preto que acaba de jogar d7–d5. As brancas podem considerar e5–d6 en passant. A captura ainda precisa respeitar a segurança do rei, pois a retirada dos dois peões pode abrir uma linha."
+      }
+    ],
+    "quiz": {
+      "question": "Quando a captura en passant deve ser feita?",
+      "options": [
+        "A qualquer momento da partida",
+        "Na resposta imediata ao avanço duplo",
+        "Somente depois do roque",
+        "Apenas na promoção"
+      ],
+      "answer": 1,
+      "explanation": "Se você escolhe outra resposta, perde aquela oportunidade de capturar en passant."
+    }
+  },
+  {
+    "id": "lesson-escolha-da-promocao",
+    "slug": "escolha-da-promocao",
+    "title": "Promoção: você escolhe a peça",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Conheça todas as escolhas e o motivo de considerar alternativas. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 14,
+    "minutes": 4,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "Ao chegar à última fileira, o peão é substituído por dama, torre, bispo ou cavalo da mesma cor. Não é necessário ter perdido essa peça antes. A dama costuma ser a escolha mais forte, mas uma promoção menor pode evitar afogamento ou dar um xeque útil."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Antes de confirmar a promoção, verifique xeques, afogamento e ameaças do adversário. Em UCI, a escolha aparece no fim do lance: e7e8q promove a dama; e7e8n promove a cavalo."
+      }
+    ],
+    "quiz": {
+      "question": "Qual conjunto contém todas as promoções permitidas?",
+      "options": [
+        "Dama e rei",
+        "Apenas dama",
+        "Dama, torre, bispo e cavalo",
+        "Qualquer peça capturada"
+      ],
+      "answer": 2,
+      "explanation": "Essas quatro peças são permitidas; não se promove a rei nem se mantém o peão."
+    }
+  },
+  {
+    "id": "lesson-valor-e-atividade",
+    "slug": "valor-e-atividade",
+    "title": "Valor das peças e atividade",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Use valores aproximados sem tratar a posição como uma soma cega. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 15,
+    "minutes": 4,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "Como referência inicial, use peão 1, cavalo e bispo cerca de 3, torre 5 e dama 9. Esses números ajudam a comparar trocas, mas atividade, segurança do rei e possibilidade de promoção podem pesar mais."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Trocar uma torre por um bispo sem compensação costuma perder material. Porém, antes de rejeitar uma troca, procure um mate forçado ou um peão prestes a promover. O rei não recebe um preço de troca."
+      }
+    ],
+    "quiz": {
+      "question": "Como devem ser usados os valores das peças?",
+      "options": [
+        "Como regra que supera qualquer mate",
+        "Como garantia de vitória",
+        "Como pontuação oficial do resultado",
+        "Como estimativa que depende da posição"
+      ],
+      "answer": 3,
+      "explanation": "Os valores são uma ferramenta de avaliação material. Eles não substituem cálculo nem segurança do rei."
+    }
+  },
+  {
+    "id": "lesson-rotina-antes-de-jogar",
+    "slug": "rotina-antes-de-jogar",
+    "title": "Uma rotina antes de cada lance",
+    "category": "fundamentals",
+    "level": "beginner",
+    "description": "Crie um hábito curto para reduzir perdas de peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 16,
+    "minutes": 4,
+    "steps": [
+      {
+        "title": "Entenda a ideia",
+        "text": "Comece pela ameaça do último lance adversário. Depois procure xeques, capturas e ameaças para ambos os lados. Escolha candidatos e imagine a resposta mais forte contra cada um antes de mover."
+      },
+      {
+        "title": "Pratique a observação",
+        "text": "Ao decidir um lance, faça uma última inspeção: meu rei continua seguro? Deixei uma peça sem defesa? O adversário tem um xeque ou captura que eu não calculei? Uma rotina curta é mais útil do que jogar apenas por impulso."
+      }
+    ],
+    "quiz": {
+      "question": "Qual pergunta deve abrir a análise após o lance adversário?",
+      "options": [
+        "O que esse lance ameaça ou modifica?",
+        "Como posso repetir meu lance anterior?",
+        "Qual peça ainda não movi, sem olhar o tabuleiro?",
+        "Como dar qualquer xeque imediatamente?"
+      ],
+      "answer": 0,
+      "explanation": "Entender a mudança criada pelo adversário ajuda a evitar que seu plano ignore uma ameaça urgente."
+    }
+  },
+  {
+    "id": "lesson-mate-em-um",
+    "slug": "mate-em-um",
+    "title": "Mate em um: feche todas as fugas",
+    "category": "tactics",
+    "level": "beginner",
+    "description": "Reconheça o motivo mate em um em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 17,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Procure um xeque que não permita captura, bloqueio ou fuga. Não basta atacar o rei: todas as respostas precisam falhar."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0eFUC, rating 951. O último lance adversário é Qe2. Reproduza esse lance para chegar ao problema.",
+        "fen": "2r4k/4p2P/p2pN1Q1/1p1P3p/8/2P1q3/PP3r2/K2R4 b - - 6 30",
+        "moves": [
+          "e3e2"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Antes de reproduzir a solução, enumere as casas de fuga do rei e veja quais peças suas as controlam. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "2r4k/4p2P/p2pN1Q1/1p1P3p/8/2P5/PP2qr2/K2R4 w - - 7 31",
+        "moves": [
+          "g6g7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que precisa ser confirmado num candidato a mate em um?",
+      "options": [
+        "Só que a dama dá xeque",
+        "Que não existe resposta legal ao xeque",
+        "Que uma torre será ganha depois",
+        "Que o lance é uma captura"
+      ],
+      "answer": 1,
+      "explanation": "Um xeque é mate apenas se o adversário não pode eliminá-lo de nenhuma forma legal."
+    }
+  },
+  {
+    "id": "lesson-mate-em-dois",
+    "slug": "mate-em-dois",
+    "title": "Mate em dois: calcule a defesa",
+    "category": "tactics",
+    "level": "beginner",
+    "description": "Reconheça o motivo mate em dois em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 18,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Planeje seu primeiro lance, a melhor resposta adversária e o lance de mate. Um primeiro lance atraente não basta se existir uma defesa que você esqueceu."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0fOdT, rating 950. O último lance adversário é Qe6. Reproduza esse lance para chegar ao problema.",
+        "fen": "6k1/p2q1p1p/5Pp1/2p1Q3/1pP5/1P3P2/1P5P/7K b - - 0 37",
+        "moves": [
+          "d7e6"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Pause após a primeira jogada da solução e tente encontrar a resposta defensiva antes de continuar o replay. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "6k1/p4p1p/4qPp1/2p1Q3/1pP5/1P3P2/1P5P/7K w - - 1 38",
+        "moves": [
+          "e5b8",
+          "e6c8",
+          "b8c8"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Ao calcular mate em dois, de qual lado você também deve procurar os melhores lances?",
+      "options": [
+        "Apenas do atacante",
+        "De nenhum, basta decorar",
+        "Do defensor",
+        "Somente de quem tem mais peças"
+      ],
+      "answer": 2,
+      "explanation": "A combinação precisa funcionar contra a melhor defesa, não só contra uma resposta conveniente."
+    }
+  },
+  {
+    "id": "lesson-garfo",
+    "slug": "garfo",
+    "title": "Garfo: duas ameaças em um lance",
+    "category": "tactics",
+    "level": "beginner",
+    "description": "Reconheça o motivo garfo em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 19,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Um garfo ataca dois ou mais alvos de uma vez. Cavalos produzem garfos conhecidos, mas peões, bispos, torres, dama e até o rei também podem criar ataques duplos."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 04eXD, rating 950. O último lance adversário é a3. Reproduza esse lance para chegar ao problema.",
+        "fen": "r5k1/1q4p1/3pNrPp/pp1P3P/1Pn1QpB1/1K6/P7/R3R3 w - - 0 33",
+        "moves": [
+          "a2a3"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Identifique os dois alvos no exemplo e confira se a peça que dá o garfo pode ser capturada com segurança. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "r5k1/1q4p1/3pNrPp/pp1P3P/1Pn1QpB1/PK6/8/R3R3 b - - 0 33",
+        "moves": [
+          "c4d2",
+          "b3b2",
+          "d2e4"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Por que um garfo com xeque costuma ser forte?",
+      "options": [
+        "Porque cavalos valem mais que damas",
+        "Porque o adversário perde a vez",
+        "Porque o rei pode ser capturado",
+        "Porque responder ao xeque tem prioridade"
+      ],
+      "answer": 3,
+      "explanation": "O adversário precisa resolver o xeque, o que pode deixar o segundo alvo exposto."
+    }
+  },
+  {
+    "id": "lesson-cravada",
+    "slug": "cravada",
+    "title": "Cravada: uma peça com mobilidade limitada",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo cravada em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 20,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Uma peça cravada encobre um alvo importante numa linha de ataque. Se o alvo é o rei, movimentos que o exponham a xeque são ilegais; se é outra peça, a decisão depende do custo material e das ameaças."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 07VlQ, rating 1700. O último lance adversário é Na4. Reproduza esse lance para chegar ao problema.",
+        "fen": "r6r/p5pp/1n2R3/kp1p4/5B2/2P5/5PPP/R5K1 b - - 1 26",
+        "moves": [
+          "b6a4"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Localize atacante, peça intermediária e alvo atrás dela. Antes de explorar a cravada, confira se o adversário pode quebrar a linha ou atacar a peça que crava. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "r6r/p5pp/4R3/kp1p4/n4B2/2P5/5PPP/R5K1 w - - 2 27",
+        "moves": [
+          "f4c7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Quando uma cravada impede legalmente a peça de sair da linha?",
+      "options": [
+        "Quando sair expõe o próprio rei a xeque",
+        "Sempre que há uma dama atrás",
+        "Somente na abertura",
+        "Quando a peça é um cavalo, em qualquer posição"
+      ],
+      "answer": 0,
+      "explanation": "A segurança do próprio rei é uma obrigação legal. Cravadas a outras peças podem ser rompidas se a compensação justificar."
+    }
+  },
+  {
+    "id": "lesson-espeto",
+    "slug": "espeto",
+    "title": "Espeto: o alvo mais valioso vem à frente",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo espeto em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 21,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "No espeto, uma peça importante é atacada na frente de outra na mesma linha. Ao se afastar, ela pode deixar a peça de trás disponível para captura."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0aRGU, rating 1662. O último lance adversário é Rxd7. Reproduza esse lance para chegar ao problema.",
+        "fen": "qn3rk1/1R1bp1bp/p1p1p1p1/8/8/1QP3P1/1P1NPP1P/5RK1 w - - 0 19",
+        "moves": [
+          "b7d7"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Trace a linha do atacante e observe a ordem dos alvos. Calcule para onde a peça da frente pode ir e se essa resposta cria uma ameaça maior. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "qn3rk1/3Rp1bp/p1p1p1p1/8/8/1QP3P1/1P1NPP1P/5RK1 b - - 0 19",
+        "moves": [
+          "b8d7",
+          "b3e6",
+          "g8h8",
+          "e6d7",
+          "f8d8",
+          "d7e7",
+          "d8d2"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual descrição corresponde melhor a um espeto?",
+      "options": [
+        "Uma peça bloqueia um ataque ao próprio rei",
+        "Um alvo valioso na frente precisa sair, expondo outro atrás",
+        "Dois cavalos se defendem",
+        "Um peão avança sem captura"
+      ],
+      "answer": 1,
+      "explanation": "A sequência de alvos numa mesma linha é a característica central do espeto."
+    }
+  },
+  {
+    "id": "lesson-ataque-descoberto",
+    "slug": "ataque-descoberto",
+    "title": "Ataque descoberto: abra a linha",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo ataque descoberto em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 22,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Mover uma peça pode liberar o ataque de outra que estava atrás. O lance fica especialmente forte quando a peça que sai também cria uma ameaça."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0Vz8w, rating 1695. O último lance adversário é Qh5. Reproduza esse lance para chegar ao problema.",
+        "fen": "r4rk1/pb1nbppp/2p2n2/1p1q4/5P2/1N1BP1B1/PPP1QP1P/R2R2K1 b - - 3 16",
+        "moves": [
+          "d5h5"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Compare a posição antes e depois do movimento: qual linha foi aberta? Depois encontre a ameaça produzida pela peça que se moveu. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "r4rk1/pb1nbppp/2p2n2/1p5q/5P2/1N1BP1B1/PPP1QP1P/R2R2K1 w - - 4 17",
+        "moves": [
+          "e2h5",
+          "f6h5",
+          "d3h7",
+          "g8h7",
+          "d1d7",
+          "e7f6",
+          "d7b7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que cria um ataque descoberto?",
+      "options": [
+        "Mover apenas o rei",
+        "Repetir a posição",
+        "Retirar um bloqueio da linha de outra peça",
+        "Promover obrigatoriamente a dama"
+      ],
+      "answer": 2,
+      "explanation": "A peça que se desloca revela a ação de uma peça de longo alcance atrás dela."
+    }
+  },
+  {
+    "id": "lesson-xeque-duplo",
+    "slug": "xeque-duplo",
+    "title": "Xeque duplo: dois ataques ao rei",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo xeque duplo em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 23,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "No xeque duplo, duas peças atacam o rei ao mesmo tempo. A defesa precisa mover o rei; bloquear ou capturar apenas um dos atacantes não elimina o outro ataque."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0ebUk, rating 1703. O último lance adversário é Nxc8. Reproduza esse lance para chegar ao problema.",
+        "fen": "2r5/3k4/3Np3/4P3/1r1p4/1pp5/P1P2Q2/1K6 w - - 4 41",
+        "moves": [
+          "d6c8"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Localize as duas peças que dão xeque. Liste as casas legais do rei antes de avançar para o próximo lance da linha. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "2N5/3k4/4p3/4P3/1r1p4/1pp5/P1P2Q2/1K6 b - - 0 41",
+        "moves": [
+          "b3c2",
+          "b1c1",
+          "b4b1",
+          "c1c2",
+          "b1b2"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual tipo de resposta é necessário num xeque duplo?",
+      "options": [
+        "Mover qualquer peão",
+        "Bloquear apenas uma linha",
+        "Atacar a dama rival",
+        "Mover o rei para resolver os dois ataques"
+      ],
+      "answer": 3,
+      "explanation": "O rei deve sair dos dois ataques. A nova casa também precisa estar segura."
+    }
+  },
+  {
+    "id": "lesson-desvio-do-defensor",
+    "slug": "desvio-do-defensor",
+    "title": "Desvio: afaste o defensor",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo desvio em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 24,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Uma peça pode sustentar uma defesa essencial. O desvio procura obrigá-la ou induzi-la a abandonar essa função, permitindo uma captura ou ataque decisivo."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0b2kE, rating 1701. O último lance adversário é Qb4. Reproduza esse lance para chegar ao problema.",
+        "fen": "3kr3/ppR1q1p1/5pQ1/3p3p/3PnB1P/6P1/PP6/6K1 b - - 3 29",
+        "moves": [
+          "e7b4"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Pergunte qual peça defende o alvo principal e como sua função muda durante a combinação. Calcule também se ela pode recusar a oferta. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "3kr3/ppR3p1/5pQ1/3p3p/1q1PnB1P/6P1/PP6/6K1 w - - 4 30",
+        "moves": [
+          "c7c8",
+          "d8c8",
+          "g6e8"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual é a ideia do desvio?",
+      "options": [
+        "Afastar uma peça de sua função defensiva",
+        "Trocar sempre as damas",
+        "Evitar qualquer captura",
+        "Mover todos os peões"
+      ],
+      "answer": 0,
+      "explanation": "O alvo imediato pode ser apenas um meio de remover o defensor de uma casa ou peça mais importante."
+    }
+  },
+  {
+    "id": "lesson-atracao",
+    "slug": "atracao",
+    "title": "Atração: leve o alvo à casa certa",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo atração em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 25,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "A atração procura levar uma peça adversária a uma casa onde uma sequência tática funciona. A casa de destino importa tanto quanto a peça atraída."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0ei0O, rating 1712. O último lance adversário é Rc3. Reproduza esse lance para chegar ao problema.",
+        "fen": "2r2k2/4Rpb1/3p2p1/3P3p/2P4P/Pr4P1/5PBK/1qB1Q3 b - - 0 37",
+        "moves": [
+          "b3c3"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Encontre a casa desejada pelo atacante e a continuação que só passa a funcionar quando o adversário chega ali. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "2r2k2/4Rpb1/3p2p1/3P3p/2P4P/P1r3P1/5PBK/1qB1Q3 w - - 1 38",
+        "moves": [
+          "e7f7",
+          "f8f7",
+          "e1e6"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que você deve identificar primeiro numa combinação de atração?",
+      "options": [
+        "O número da partida",
+        "A casa para a qual o alvo será levado",
+        "A peça de menor valor no tabuleiro",
+        "Uma troca de peões aleatória"
+      ],
+      "answer": 1,
+      "explanation": "A força da combinação depende da vulnerabilidade criada na casa de destino."
+    }
+  },
+  {
+    "id": "lesson-peca-pendurada",
+    "slug": "peca-pendurada",
+    "title": "Peça pendurada: ganhe sem se precipitar",
+    "category": "tactics",
+    "level": "beginner",
+    "description": "Reconheça o motivo peça pendurada em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 26,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Uma peça pendurada está disponível para ganho material sem compensação suficiente. Mesmo assim, confira se capturá-la permite um mate, uma promoção ou uma sequência de xeques contra você."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 03j6z, rating 956. O último lance adversário é Qxc1. Reproduza esse lance para chegar ao problema.",
+        "fen": "5rk1/pppR2p1/7r/3bP3/5Q2/1P3BP1/5P1p/2q4K w - - 9 37",
+        "moves": [
+          "f4c1"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Identifique a peça vulnerável, faça a captura mentalmente e só então procure a melhor resposta adversária. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "5rk1/pppR2p1/7r/3bP3/8/1P3BP1/5P1p/2Q4K b - - 0 37",
+        "moves": [
+          "d5f3"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual cuidado é necessário ao capturar uma peça sem defesa aparente?",
+      "options": [
+        "Nenhum, toda captura ganha",
+        "Ver apenas seu valor",
+        "Verificar ameaças e respostas táticas adversárias",
+        "Capturar sempre com a dama"
+      ],
+      "answer": 2,
+      "explanation": "Uma peça pode funcionar como isca. O ganho só é real depois de considerar a resposta mais forte."
+    }
+  },
+  {
+    "id": "lesson-peca-presa",
+    "slug": "peca-presa",
+    "title": "Peça presa: elimine as saídas",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo peça presa em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 27,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Uma peça pode estar defendida e ainda assim ficar presa, sem casas seguras diante de um ataque. O plano é controlar suas saídas antes de atacá-la definitivamente."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0Cgt8, rating 1690. O último lance adversário é Bd1. Reproduza esse lance para chegar ao problema.",
+        "fen": "8/8/p2k1p2/p4Pp1/3N2Pp/1PP4P/2b2K2/8 b - - 5 41",
+        "moves": [
+          "c2d1"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Liste as casas de fuga da peça alvo e marque quais já estão controladas. Verifique se uma troca pode criar uma saída inesperada. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "8/8/p2k1p2/p4Pp1/3N2Pp/1PP4P/5K2/3b4 w - - 6 42",
+        "moves": [
+          "f2e1",
+          "d1b3",
+          "d4b3"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que caracteriza uma peça presa?",
+      "options": [
+        "Ela nunca se moveu",
+        "Ela é sempre um bispo",
+        "Ela está na primeira fileira",
+        "Ela não encontra saída segura diante da ameaça"
+      ],
+      "answer": 3,
+      "explanation": "O elemento decisivo é a falta de mobilidade segura, e não o tipo da peça ou sua casa inicial."
+    }
+  },
+  {
+    "id": "lesson-liberacao",
+    "slug": "liberacao",
+    "title": "Liberação: desocupe a casa ou a linha",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo liberação em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 28,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Às vezes uma peça sua ocupa a casa ou bloqueia a linha de que outra peça precisa. Um lance de liberação remove esse obstáculo, podendo envolver uma oferta de material."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0Cc7d, rating 1693. O último lance adversário é Ra5. Reproduza esse lance para chegar ao problema.",
+        "fen": "2rr2k1/6p1/4p1b1/2P4p/2P4P/2Kp1P2/6P1/R4N1R w - - 3 29",
+        "moves": [
+          "a1a5"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Observe qual espaço fica livre após o primeiro lance tático e qual peça passa a usá-lo. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "2rr2k1/6p1/4p1b1/R1P4p/2P4P/2Kp1P2/6P1/5N1R b - - 4 29",
+        "moves": [
+          "d3d2",
+          "f1d2",
+          "d8d3",
+          "c3b4",
+          "d3d2"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual resultado um lance de liberação busca?",
+      "options": [
+        "Disponibilizar uma casa ou linha para outra peça",
+        "Fechar todas as diagonais próprias",
+        "Apenas ganhar um peão isolado",
+        "Trocar o lado com a vez"
+      ],
+      "answer": 0,
+      "explanation": "O movimento prepara a ação de outra peça ao retirar um obstáculo da própria posição."
+    }
+  },
+  {
+    "id": "lesson-interferencia",
+    "slug": "interferencia",
+    "title": "Interferência: corte a comunicação",
+    "category": "tactics",
+    "level": "advanced",
+    "description": "Reconheça o motivo interferência em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 29,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "A interferência coloca uma peça numa linha importante do adversário para cortar a defesa ou a comunicação entre peças. É preciso calcular as possíveis capturas na casa de bloqueio."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 06CAz, rating 2294. O último lance adversário é Bf4. Reproduza esse lance para chegar ao problema.",
+        "fen": "r1b1r1k1/ppp1pp1p/5bpP/8/2Pq4/2NB1Q2/PP5P/R1B1K2R w KQ - 1 14",
+        "moves": [
+          "c1f4"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Encontre a linha defensiva interrompida e compare as consequências de cada peça adversária capturar o bloqueador. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "r1b1r1k1/ppp1pp1p/5bpP/8/2Pq1B2/2NB1Q2/PP5P/R3K2R b KQ - 2 14",
+        "moves": [
+          "e7e5",
+          "f4e3",
+          "d4d3"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual é a função de uma interferência?",
+      "options": [
+        "Aumentar a distância entre seus reis",
+        "Interromper uma linha útil ao adversário",
+        "Repetir lances sem objetivo",
+        "Promover um peão automaticamente"
+      ],
+      "answer": 1,
+      "explanation": "Ao cortar a linha, uma peça defensora pode deixar de proteger o alvo principal."
+    }
+  },
+  {
+    "id": "lesson-sacrificio-calculado",
+    "slug": "sacrificio-calculado",
+    "title": "Sacrifício: exija uma continuação concreta",
+    "category": "tactics",
+    "level": "advanced",
+    "description": "Reconheça o motivo sacrifício em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 30,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Um sacrifício oferece material por uma vantagem concreta, como mate, recuperação de material ou ataque duradouro. A oferta não se justifica apenas por parecer bonita."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0ejF1, rating 2339. O último lance adversário é Qd8. Reproduza esse lance para chegar ao problema.",
+        "fen": "r5rk/1p1bb1pp/1q2p3/3pPp2/2nP1P1N/P5R1/2B2P1P/R1BQ3K b - - 5 22",
+        "moves": [
+          "b6d8"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Reproduza a linha do puzzle e marque quando o material é oferecido. Antes disso, calcule a aceitação e uma recusa plausível. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "r2q2rk/1p1bb1pp/4p3/3pPp2/2nP1P1N/P5R1/2B2P1P/R1BQ3K w - - 6 23",
+        "moves": [
+          "h4g6",
+          "h7g6",
+          "g3g6"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que deve sustentar um sacrifício tático?",
+      "options": [
+        "A esperança de um erro",
+        "O desejo de surpreender, sem calcular",
+        "Uma continuação concreta que compense o material",
+        "A regra de sempre atacar"
+      ],
+      "answer": 2,
+      "explanation": "Cálculo e avaliação da posição final ajudam a distinguir uma combinação de uma perda de material."
+    }
+  },
+  {
+    "id": "lesson-promocao-tatica",
+    "slug": "promocao-tatica",
+    "title": "Promoção como recurso tático",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo promoção como recurso tático em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 31,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Um peão próximo da última fileira cria ameaças que podem superar o valor das peças. Calcule a promoção, possíveis capturas e os xeques da nova peça."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0Z8os, rating 1710. O último lance adversário é Kg4. Reproduza esse lance para chegar ao problema.",
+        "fen": "8/8/8/2B5/5K2/6pp/7k/8 w - - 0 44",
+        "moves": [
+          "f4g4"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Localize o peão que pode promover e conte os tempos necessários. No replay, observe a letra final do lance UCI para identificar a peça escolhida. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "8/8/8/2B5/6K1/6pp/7k/8 b - - 1 44",
+        "moves": [
+          "h2g2",
+          "c5d6",
+          "h3h2",
+          "d6g3",
+          "h2h1q"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual lance UCI indica promoção a cavalo?",
+      "options": [
+        "e7e8q",
+        "e7e8r",
+        "e7e8b",
+        "e7e8n"
+      ],
+      "answer": 3,
+      "explanation": "Em UCI, n representa knight, o cavalo; q, r e b representam dama, torre e bispo."
+    }
+  },
+  {
+    "id": "lesson-defesa-ativa",
+    "slug": "defesa-ativa",
+    "title": "Lance defensivo: resolva a ameaça",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Reconheça o motivo lance defensivo em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 32,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Reconheça o padrão",
+        "text": "Uma tática também pode servir para defender: eliminar uma ameaça, criar fuga para o rei ou devolver material. Comece identificando o que o adversário faria se você ignorasse a posição."
+      },
+      {
+        "title": "Observe o lance adversário",
+        "text": "Puzzle Lichess 0907J, rating 1698. O último lance adversário é Re8. Reproduza esse lance para chegar ao problema.",
+        "fen": "2rr1k2/4Rppp/8/p4P2/P2p4/3P4/6PP/4R1K1 b - - 0 29",
+        "moves": [
+          "d8e8"
+        ]
+      },
+      {
+        "title": "Calcule e confira",
+        "text": "Escreva a ameaça adversária em uma frase. Só depois compare as defesas e verifique se alguma também cria uma contra-ameaça. A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.",
+        "fen": "2r1rk2/4Rppp/8/p4P2/P2p4/3P4/6PP/4R1K1 w - - 1 30",
+        "moves": [
+          "e7e8",
+          "c8e8",
+          "e1e8",
+          "f8e8",
+          "g1f2"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual é o primeiro passo para encontrar uma boa defesa?",
+      "options": [
+        "Procurar qualquer xeque",
+        "Capturar a peça mais próxima",
+        "Mover a dama sem calcular",
+        "Identificar a ameaça concreta"
+      ],
+      "answer": 3,
+      "explanation": "Sem compreender a ameaça, um lance aparentemente ativo pode deixar o problema principal sem resposta."
+    }
+  },
+  {
+    "id": "lesson-italiana",
+    "slug": "italiana",
+    "title": "Italiana: desenvolva mirando o centro",
+    "category": "openings",
+    "level": "beginner",
+    "description": "Estude a ideia inicial da abertura Italiana. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 33,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A Italiana desenvolve o bispo para c4 depois de e4, e5 e Cf3. O bispo pressiona f7, mas isso não dispensa desenvolvimento, roque e atenção às respostas centrais."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha C50 — Italian Game, do catálogo Lichess. Após a linha, procure como retirar o cavalo de b1 e preparar a segurança do rei. Evite mover o mesmo bispo repetidamente sem uma razão concreta.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Qual prioridade combina com a Italiana?",
+      "options": [
+        "Trazer peças ao jogo e cuidar do rei",
+        "Mover a dama várias vezes para caçar peões",
+        "Abandonar o centro",
+        "Prometer mate em f7 contra toda defesa"
+      ],
+      "answer": 0,
+      "explanation": "A pressão em f7 é uma característica da posição; desenvolvimento e segurança continuam fundamentais."
+    }
+  },
+  {
+    "id": "lesson-espanhola",
+    "slug": "espanhola",
+    "title": "Espanhola: pressão sobre o cavalo de c6",
+    "category": "openings",
+    "level": "beginner",
+    "description": "Estude a ideia inicial da abertura Espanhola. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 34,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Na Espanhola, o bispo branco vai a b5 e pressiona o cavalo de c6, que ajuda a sustentar e5. A abertura envolve tensão central; a pressão não significa que o peão e5 já esteja ganho."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha C60 — Ruy Lopez, do catálogo Lichess. Identifique o defensor de e5 e calcule possíveis recapturas antes de trocar em c6. Pergunte como a troca altera os peões e libera linhas.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1b5"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "O que Bb5 faz na posição básica da Espanhola?",
+      "options": [
+        "Dá xeque-mate",
+        "Pressiona o cavalo de c6",
+        "Promove um peão",
+        "Impede todo roque das pretas"
+      ],
+      "answer": 1,
+      "explanation": "O bispo ataca o cavalo de c6, peça relacionada à defesa do centro preto."
+    }
+  },
+  {
+    "id": "lesson-escocesa",
+    "slug": "escocesa",
+    "title": "Escocesa: abra o centro com preparo",
+    "category": "openings",
+    "level": "beginner",
+    "description": "Estude a ideia inicial da abertura Escocesa. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 35,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A Escocesa usa d4 cedo para confrontar o peão e5. Abrir o centro aumenta a importância do desenvolvimento e da segurança do rei, porque as peças passam a atuar por linhas mais livres."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha C44 — Scotch Game, do catálogo Lichess. Depois da linha, veja quais colunas e diagonais podem se abrir após uma captura em d4. Conte as peças desenvolvidas dos dois lados.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "d2d4"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Qual é a ideia central de d4 na Escocesa?",
+      "options": [
+        "Fechar o jogo para sempre",
+        "Levar o rei ao centro",
+        "Confrontar e5 e abrir o centro",
+        "Atacar a torre a8 imediatamente"
+      ],
+      "answer": 2,
+      "explanation": "O avanço d4 disputa o centro e permite trocas que abrem linhas."
+    }
+  },
+  {
+    "id": "lesson-quatro-cavalos",
+    "slug": "quatro-cavalos",
+    "title": "Quatro Cavalos: desenvolvimento coerente",
+    "category": "openings",
+    "level": "beginner",
+    "description": "Estude a ideia inicial da abertura Quatro Cavalos. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 36,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Os dois lados desenvolvem os cavalos para casas naturais e disputam o centro. A simetria inicial não dispensa escolhas: a saída dos bispos e o momento de avançar d4 ou d5 mudam os planos."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha C47 — Four Knights Game, do catálogo Lichess. Observe como os cavalos apoiam casas centrais. Escolha uma peça ainda parada e explique qual casa de desenvolvimento melhora sua ação.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "b1c3",
+          "g8f6"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "O desenvolvimento dos quatro cavalos garante o quê?",
+      "options": [
+        "Vitória das brancas",
+        "Empate obrigatório",
+        "Ausência de táticas",
+        "Peças mais próximas da disputa central"
+      ],
+      "answer": 3,
+      "explanation": "Desenvolver melhora a atividade, mas o resultado depende das decisões seguintes."
+    }
+  },
+  {
+    "id": "lesson-siciliana",
+    "slug": "siciliana",
+    "title": "Siciliana: resposta assimétrica a e4",
+    "category": "openings",
+    "level": "intermediate",
+    "description": "Estude a ideia inicial da abertura Siciliana. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 37,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Ao responder e4 com c5, as pretas disputam d4 com um peão lateral. A estrutura fica assimétrica, o que pode oferecer planos diferentes para cada lado sem garantir vantagem imediata."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha B20 — Sicilian Defense, do catálogo Lichess. Marque a casa d4, atacada pelo peão de c5. Ao explorar variantes mais longas, observe quando ocorre cxd4 e como a coluna c pode se abrir para as pretas.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "c7c5"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Qual casa o peão preto de c5 controla?",
+      "options": [
+        "d4",
+        "d6",
+        "c4",
+        "e4"
+      ],
+      "answer": 0,
+      "explanation": "O peão preto captura na diagonal rumo à primeira fileira; de c5, controla b4 e d4."
+    }
+  },
+  {
+    "id": "lesson-francesa",
+    "slug": "francesa",
+    "title": "Francesa: prepare o contra-ataque central",
+    "category": "openings",
+    "level": "intermediate",
+    "description": "Estude a ideia inicial da abertura Francesa. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 38,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A resposta e6 prepara d5 contra o centro branco. Ela também ocupa a diagonal do bispo de c8; desenvolver esse bispo e atacar a cadeia de peões são problemas importantes em muitas variantes."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha C00 — French Defense, do catálogo Lichess. Na posição após e6, localize o peão de d7 e imagine sua chegada a d5. Observe como o peão de e6 apoia esse avanço e limita a saída do bispo de c8.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "e7e6"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Qual avanço central e6 normalmente prepara?",
+      "options": [
+        "h5",
+        "d5",
+        "a5",
+        "g5"
+      ],
+      "answer": 1,
+      "explanation": "O peão em e6 protege d5, permitindo confrontar o centro branco."
+    }
+  },
+  {
+    "id": "lesson-caro-kann",
+    "slug": "caro-kann",
+    "title": "Caro-Kann: sustente d5 com c6",
+    "category": "openings",
+    "level": "beginner",
+    "description": "Estude a ideia inicial da abertura Caro-Kann. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 39,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A resposta c6 prepara d5 apoiado pelo peão da coluna c. Diferentemente de e6 imediato, c6 não fecha a diagonal do bispo de c8; o desenvolvimento desse bispo dependerá da variante."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha B10 — Caro-Kann Defense, do catálogo Lichess. Identifique a casa d5 e compare os caminhos do bispo de c8 com os da Defesa Francesa. Não confunda essa possibilidade de desenvolvimento com uma obrigação de jogar o bispo cedo em toda linha.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "c7c6"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Qual avanço c6 prepara na Caro-Kann?",
+      "options": [
+        "b5 obrigatório",
+        "f5 obrigatório",
+        "d5",
+        "h6"
+      ],
+      "answer": 2,
+      "explanation": "c6 sustenta d5 e organiza a disputa do centro."
+    }
+  },
+  {
+    "id": "lesson-escandinava",
+    "slug": "escandinava",
+    "title": "Escandinava: confronte e4 imediatamente",
+    "category": "openings",
+    "level": "beginner",
+    "description": "Estude a ideia inicial da abertura Escandinava. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 40,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A Escandinava responde e4 com d5, atacando o peão central branco já no primeiro lance. Após a troca, existem planos com a dama ou com o cavalo; desenvolver com tempos úteis continua importante."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha B01 — Scandinavian Defense, do catálogo Lichess. Se a dama recapturar cedo em d5, procure lances de desenvolvimento que possam atacá-la. Evite concluir que toda saída de dama é um erro: compare a posição concreta.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "d7d5"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Qual tensão define a posição inicial da Escandinava?",
+      "options": [
+        "Bispo em b5 contra cavalo c6",
+        "Peão c5 contra d4",
+        "Reis em oposição",
+        "Peão d5 atacando e4"
+      ],
+      "answer": 3,
+      "explanation": "O avanço preto d5 confronta diretamente o peão branco em e4."
+    }
+  },
+  {
+    "id": "lesson-gambito-da-dama",
+    "slug": "gambito-da-dama",
+    "title": "Gambito da Dama: pressione o centro",
+    "category": "openings",
+    "level": "beginner",
+    "description": "Estude a ideia inicial da abertura Gambito da Dama. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 41,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Depois de d4 e d5, c4 oferece um peão lateral para pressionar o centro preto. Aceitar o peão não encerra a discussão: as brancas podem buscar recuperá-lo e construir atividade."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha D06 — Queen's Gambit, do catálogo Lichess. Trace o ataque do peão de c4 sobre d5. Ao estudar a aceitação, observe o custo de tentar manter o peão extra com muitos avanços laterais.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Qual objetivo combina com c4 no Gambito da Dama?",
+      "options": [
+        "Pressionar o peão central de d5",
+        "Dar xeque imediato",
+        "Abrir a coluna h",
+        "Preparar o roque sem desenvolver peças"
+      ],
+      "answer": 0,
+      "explanation": "c4 confronta d5 e procura modificar a estrutura central."
+    }
+  },
+  {
+    "id": "lesson-gambito-recusado",
+    "slug": "gambito-recusado",
+    "title": "Gambito da Dama Recusado: sustente o centro",
+    "category": "openings",
+    "level": "intermediate",
+    "description": "Estude a ideia inicial da abertura Gambito da Dama Recusado. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 42,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Com e6, as pretas sustentam d5 e mantêm a tensão central. O bispo de c8 exige um plano de desenvolvimento, e as trocas no centro alteram quais diagonais ficam abertas."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha D30 — Queen's Gambit Declined, do catálogo Lichess. Observe quais peões defendem d5 e qual peça tem a saída limitada por e6. Ao avançar no estudo, compare desenvolver primeiro com resolver a tensão imediatamente.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4",
+          "e7e6"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Qual peça costuma exigir atenção após e6?",
+      "options": [
+        "Torre h8 já ativa",
+        "Bispo c8",
+        "Rei branco em g1 desde o início",
+        "Dama branca promovida"
+      ],
+      "answer": 1,
+      "explanation": "O peão e6 ocupa uma casa da diagonal do bispo de c8, tornando seu desenvolvimento uma questão de planejamento."
+    }
+  },
+  {
+    "id": "lesson-eslava",
+    "slug": "eslava",
+    "title": "Eslava: proteja d5 com o peão c",
+    "category": "openings",
+    "level": "intermediate",
+    "description": "Estude a ideia inicial da abertura Eslava. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 43,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A Eslava sustenta d5 com c6 após d4, d5 e c4. Isso mantém a diagonal inicial do bispo de c8 disponível, embora o momento de desenvolvê-lo dependa das ameaças sobre o centro e a ala da dama."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha D10 — Slav Defense, do catálogo Lichess. Compare c6 com e6: quais casas cada peão controla e qual diagonal muda? Depois observe as possibilidades de captura em c4 sem tentar decorar todas as variantes.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4",
+          "c7c6"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "Como as pretas sustentam d5 na Eslava básica?",
+      "options": [
+        "Com h6",
+        "Com uma torre em d8 no primeiro lance",
+        "Com c6",
+        "Com roque imediato"
+      ],
+      "answer": 2,
+      "explanation": "O peão de c6 defende d5 e preserva, inicialmente, a diagonal do bispo de c8."
+    }
+  },
+  {
+    "id": "lesson-inglesa",
+    "slug": "inglesa",
+    "title": "Inglesa: controle d5 de longe",
+    "category": "openings",
+    "level": "intermediate",
+    "description": "Estude a ideia inicial da abertura Inglesa. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 44,
+    "minutes": 5,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A Inglesa começa com c4 e controla d5 com um peão lateral. Ela permite estruturas variadas e transposições: ordens de lances diferentes podem chegar à mesma posição."
+      },
+      {
+        "title": "Reproduza a linha de referência",
+        "text": "Linha A10 — English Opening, do catálogo Lichess. Identifique d5 e pense como um cavalo em c3 pode aumentar o controle central. Compare posições completas, incluindo a vez de jogar, em vez de apenas o nome da abertura.",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "c2c4"
+        ]
+      },
+      {
+        "title": "Revise sem decorar",
+        "text": "Volte à posição inicial e repita a linha explicando cada disputa central e cada desenvolvimento. A linha de catálogo identifica a abertura; não é uma garantia de melhor jogo em todas as variantes."
+      }
+    ],
+    "quiz": {
+      "question": "O que significa uma transposição de abertura?",
+      "options": [
+        "Trocar as cores das peças",
+        "Mover duas peças sem roque",
+        "Repetir sempre a mesma jogada",
+        "Chegar à mesma posição por outra ordem de lances"
+      ],
+      "answer": 3,
+      "explanation": "As posições podem coincidir mesmo quando a sequência de lances foi diferente."
+    }
+  },
+  {
+    "id": "lesson-rei-ativo",
+    "slug": "rei-ativo",
+    "title": "Ative o rei no final",
+    "category": "endgames",
+    "level": "beginner",
+    "description": "Pratique ative o rei no final numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 45,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Com poucas peças, o rei pode apoiar peões e controlar casas de entrada. Ativá-lo não significa ignorar ataques: cada passo ainda deve terminar em casa segura."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Promover o peão mantendo a coordenação. O rei abre caminho antes de o peão avançar. Confira a resposta do rei adversário a cada lance. Não permita que o peão fique sem proteção.",
+        "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Por que o rei ganha importância prática em muitos finais?",
+      "options": [
+        "Porque pode ajudar a promover e bloquear peões",
+        "Porque passa a saltar peças",
+        "Porque não pode mais receber xeque",
+        "Porque pode ser trocado"
+      ],
+      "answer": 0,
+      "explanation": "Com menos ameaças de mate, o rei costuma participar mais da disputa de casas e da promoção."
+    }
+  },
+  {
+    "id": "lesson-oposicao-direta",
+    "slug": "oposicao-direta",
+    "title": "Entenda a oposição direta",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Pratique entenda a oposição direta numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 46,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Na oposição direta, os reis se enfrentam numa mesma coluna ou fileira com uma casa entre eles. A vez de jogar importa: ceder passagem pode permitir que o outro rei avance."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Determinar o resultado e escolher um lance que o preserve. Reis na mesma coluna podem disputar a oposição. O peão oferece tempos de espera, mas eles são finitos. Consulte a categoria da posição antes de prometer vitória.",
+        "fen": "8/8/4k3/8/4K3/4P3/8/8 w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Que elemento precisa acompanhar a disposição dos reis ao avaliar a oposição?",
+      "options": [
+        "A cor do tabuleiro na tela",
+        "Quem tem a vez e os tempos de peão disponíveis",
+        "A quantidade de torres capturadas",
+        "O nome da partida"
+      ],
+      "answer": 1,
+      "explanation": "A oposição depende da obrigação de jogar e dos lances de espera que ainda existem."
+    }
+  },
+  {
+    "id": "lesson-tempos-no-final",
+    "slug": "tempos-no-final",
+    "title": "Um tempo pode mudar o resultado",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Pratique um tempo pode mudar o resultado numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 47,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Duas posições com peças nas mesmas casas podem ter resultados diferentes se mudar o lado com a vez. Um avanço de peão pode funcionar como tempo de espera, mas também abandona casas e não pode ser desfeito."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Defender o melhor resultado disponível para as pretas. Compare com a posição em que as brancas têm a vez. Mantenha o rei diante do peão quando isso sustentar a defesa. A categoria de cada resposta muda de perspectiva.",
+        "fen": "8/8/4k3/8/4K3/4P3/8/8 b - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Qual característica torna o avanço de peão um recurso que exige cuidado?",
+      "options": [
+        "O peão pode voltar depois",
+        "O adversário perde a vez",
+        "O avanço é irreversível",
+        "Todo avanço dá xeque"
+      ],
+      "answer": 2,
+      "explanation": "Como o peão não recua, gastar um tempo de peão pode mudar permanentemente a estrutura."
+    }
+  },
+  {
+    "id": "lesson-peao-de-torre",
+    "slug": "peao-de-torre",
+    "title": "Por que o peão de torre é especial",
+    "category": "endgames",
+    "level": "beginner",
+    "description": "Pratique por que o peão de torre é especial numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 48,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "No canto, o rei defensor tem poucos caminhos, mas o atacante também perde espaço para contornar. Um peão de torre com o rei rival na casa de promoção pode levar a empate apesar do peão extra."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Reconhecer o recurso de empate e explicar por que o peão não passa. O peão de torre não tem uma coluna do outro lado para contornar o rei. Observe o afogamento quando o rei não dispõe de casas. Não aplique automaticamente regras de peões centrais.",
+        "fen": "k7/P7/K7/8/8/8/8/8 w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Qual detalhe diferencia o peão da coluna a de um peão central?",
+      "options": [
+        "Ele anda duas casas sempre",
+        "Ele promove a rei",
+        "Ele captura para trás",
+        "Só há espaço de manobra de um lado da coluna"
+      ],
+      "answer": 3,
+      "explanation": "A borda reduz as possibilidades de contorno e ajuda a explicar certos empates com peão de torre."
+    }
+  },
+  {
+    "id": "lesson-converter-promocao",
+    "slug": "converter-promocao",
+    "title": "A partida continua depois da promoção",
+    "category": "endgames",
+    "level": "beginner",
+    "description": "Pratique a partida continua depois da promoção numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 49,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Promover muda o material, mas não encerra automaticamente a partida. Com dama contra rei, restrinja o espaço, aproxime seu rei e confira o risco de afogamento antes de cada lance sem xeque."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Promover e converter a vantagem material. Escolha explicitamente a peça de promoção. Uma dama costuma facilitar a conversão, mas ainda é preciso evitar afogamento. O treino continua depois de promover.",
+        "fen": "8/2P3k1/4K3/8/8/8/8/8 w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Depois de promover a dama, qual cuidado continua necessário?",
+      "options": [
+        "Evitar afogamento e coordenar o rei",
+        "Parar porque a vitória é automática",
+        "Mover apenas a dama para sempre",
+        "Oferecer empate em toda posição"
+      ],
+      "answer": 0,
+      "explanation": "A conversão exige lances legais e uma rede de mate; uma dama extra não impede um empate por afogamento."
+    }
+  },
+  {
+    "id": "lesson-promocao-das-pretas",
+    "slug": "promocao-das-pretas",
+    "title": "Conte a promoção das pretas",
+    "category": "endgames",
+    "level": "beginner",
+    "description": "Pratique conte a promoção das pretas numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 50,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Peões pretos avançam em direção à primeira fileira. Ao treinar com o tabuleiro invertido, use as coordenadas para evitar confundir a direção de avanço com a posição da tela."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Promover o peão preto e vencer o final. Peões pretos promovem na primeira fileira. A cor com a vez está no campo side. Confira as casas legais do rei branco após a promoção.",
+        "fen": "8/8/8/8/8/4k3/4p3/K7 b - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Em qual fileira um peão preto promove?",
+      "options": [
+        "Oitava",
+        "Primeira",
+        "Quarta",
+        "Segunda"
+      ],
+      "answer": 1,
+      "explanation": "As pretas avançam rumo à primeira fileira; as brancas, rumo à oitava."
+    }
+  },
+  {
+    "id": "lesson-mate-com-dama",
+    "slug": "mate-com-dama",
+    "title": "Dama e rei: construa a rede",
+    "category": "endgames",
+    "level": "beginner",
+    "description": "Pratique dama e rei: construa a rede numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 51,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Use a dama para reduzir a área do rei adversário e o rei para controlar as casas restantes. Dar xeques sem um plano pode apenas deslocar o defensor sem aproximar o mate."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Dar xeque-mate sem afogar o rei. Restrinja uma fileira ou coluna de cada vez. Aproxime seu rei para proteger as casas de fuga. Antes de um lance sem xeque, confira se o adversário ainda pode jogar.",
+        "fen": "7k/8/5K2/8/8/3Q4/8/8 w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Qual coordenação facilita o mate de dama e rei?",
+      "options": [
+        "Deixar o rei próprio sempre distante",
+        "Encostar a dama sem proteção no rei rival",
+        "Dama restringe espaço e rei fecha fugas",
+        "Capturar o rei adversário"
+      ],
+      "answer": 2,
+      "explanation": "A ação conjunta reduz as casas legais do defensor e permite criar um xeque sem resposta."
+    }
+  },
+  {
+    "id": "lesson-mate-com-torre",
+    "slug": "mate-com-torre",
+    "title": "Torre e rei: corte e aproxime",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Pratique torre e rei: corte e aproxime numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 52,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A torre cria uma barreira numa fileira ou coluna. O rei se aproxima para apoiar a redução do espaço. Proteja a torre quando o rei adversário puder alcançá-la."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Dar mate com rei e torre. A torre pode cortar uma fileira inteira. Proteja a torre se ela se aproximar do rei adversário. O rei atacante precisa controlar casas de fuga.",
+        "fen": "7k/8/5K2/8/8/8/8/R7 w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Qual é uma função típica da torre nessa técnica?",
+      "options": [
+        "Saltar sobre o rei",
+        "Controlar diagonais",
+        "Promover um peão inexistente",
+        "Cortar uma fileira ou coluna"
+      ],
+      "answer": 3,
+      "explanation": "A barreira da torre limita a movimentação do rei defensor enquanto o rei atacante se aproxima."
+    }
+  },
+  {
+    "id": "lesson-bispo-cor-promocao",
+    "slug": "bispo-cor-promocao",
+    "title": "Bispo: confira a cor da promoção",
+    "category": "endgames",
+    "level": "advanced",
+    "description": "Pratique bispo: confira a cor da promoção numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 53,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Com bispo e peão de torre, o controle da casa de promoção pode decidir a conversão. Neste exercício, o bispo não controla a8 e o rei defensor já está no canto; a tablebase confirma o empate."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Explicar o empate com o rei defensor no canto. O bispo não controla a casa a8 nesta posição. Material extra não basta para expulsar o rei do canto. Teste movimentos do rei e observe as posições de afogamento.",
+        "fen": "k7/P7/KB6/8/8/8/8/8 w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Que relação precisa ser verificada nesse final?",
+      "options": [
+        "A cor das casas do bispo e da casa de promoção",
+        "A altura visual da peça",
+        "A última abertura jogada",
+        "O valor da dama fora do tabuleiro"
+      ],
+      "answer": 0,
+      "explanation": "Um bispo que não controla a casa de promoção pode ser incapaz de expulsar o rei defensor do canto."
+    }
+  },
+  {
+    "id": "lesson-torre-peao-passado",
+    "slug": "torre-peao-passado",
+    "title": "Torre contra peão: calcule a corrida",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Pratique torre contra peão: calcule a corrida numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 54,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Contra um peão avançado, a torre precisa considerar promoção, xeques e apoio do rei. Um xeque lateral só ajuda se não permitir que o peão avance em melhores condições depois."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Encontrar um plano que preserve o resultado da tablebase. Calcule a promoção antes de dar um xeque lateral. O rei deve colaborar se houver tempo. Compare bloqueio, ataque ao peão e xeques.",
+        "fen": "8/8/8/8/4k3/4p3/K7/7R w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Antes de dar um xeque lateral, o que merece cálculo?",
+      "options": [
+        "Somente o valor da torre",
+        "O avanço do peão e a segurança do bloqueio",
+        "A cor do fundo da tela",
+        "A possibilidade de roque neste final"
+      ],
+      "answer": 1,
+      "explanation": "É necessário verificar a corrida de promoção e como a resposta do rei afeta o controle do peão."
+    }
+  },
+  {
+    "id": "lesson-corrida-de-peoes",
+    "slug": "corrida-de-peoes",
+    "title": "Corrida: promover com xeque importa",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Pratique corrida: promover com xeque importa numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 55,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "Conte os lances de cada peão, mas observe o efeito da promoção. Se a nova peça dá xeque, o adversário precisa responder antes de continuar sua própria corrida."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Calcular a corrida e escolher a promoção adequada. Conte quem promove primeiro. Uma promoção com xeque pode mudar o ritmo da corrida. Depois de promover, reavalie a posição inteira.",
+        "fen": "7k/P7/8/8/8/8/7p/K7 w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Por que uma promoção com xeque pode mudar uma corrida?",
+      "options": [
+        "Porque promove dois peões",
+        "Porque encerra toda partida",
+        "Porque obriga uma resposta ao xeque",
+        "Porque muda as cores dos reis"
+      ],
+      "answer": 2,
+      "explanation": "Responder ao xeque pode consumir o tempo que o adversário usaria para promover."
+    }
+  },
+  {
+    "id": "lesson-ler-syzygy",
+    "slug": "ler-syzygy",
+    "title": "Leia a tablebase sem inverter o resultado",
+    "category": "endgames",
+    "level": "advanced",
+    "description": "Pratique leia a tablebase sem inverter o resultado numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "sortOrder": 56,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Entenda o plano",
+        "text": "A categoria geral da API descreve o lado com a vez. A categoria listada dentro de um lance descreve o adversário depois desse lance. DTZ se relaciona ao próximo lance de peão ou captura; não é uma contagem universal até o mate."
+      },
+      {
+        "title": "Treine a posição",
+        "text": "Coordenar dama e rei sem permitir uma promoção favorável ao adversário. Não suponha que todos os peões na penúltima fileira sejam equivalentes. Verifique o alcance da dama em cada diagonal. Use a tablebase para comparar os lances candidatos.",
+        "fen": "8/8/8/8/8/2p5/K1k5/7Q w - - 0 1"
+      },
+      {
+        "title": "Compare suas escolhas",
+        "text": "Consulte a tablebase para os lances candidatos. Interprete a categoria da posição pela cor com a vez e a categoria de cada lance pela cor adversária após esse lance. DTZ não substitui a explicação do plano, e resultados condicionais exigem atenção à regra dos 50 lances."
+      }
+    ],
+    "quiz": {
+      "question": "Como interpretar a categoria de um movimento retornado pela API de finais?",
+      "options": [
+        "Sempre do ponto de vista das brancas",
+        "Sempre do ponto de vista de quem iniciou o treino",
+        "Como número de lances até o mate",
+        "Do ponto de vista de quem jogará depois dele"
+      ],
+      "answer": 3,
+      "explanation": "Após o movimento, a vez muda. Além disso, categorias condicionais exigem atenção à regra dos 50 lances."
+    }
+  }
+]

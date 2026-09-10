@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/bispo-peao-torre.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FKB6%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:23.376Z",
+  "completedAt": "2026-09-09T19:35:23.609Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=k7%2FP7%2FKB6%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 2592,
+  "sha256": "0c68732319f5f5e764778fe3e06a0f3d64dad3918fbff8fbc541be3da2caf3a9",
+  "hashScope": "complete-response-body"
+}

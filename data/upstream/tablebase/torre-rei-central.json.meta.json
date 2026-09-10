@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/torre-rei-central.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=8%2F5k2%2F8%2F8%2F3K4%2F8%2F1R6%2F8%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:21.370Z",
+  "completedAt": "2026-09-09T19:35:21.601Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F5k2%2F8%2F8%2F3K4%2F8%2F1R6%2F8%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 5628,
+  "sha256": "641e9c798f176b83bc8503d652c961d1b68e36e270cd4c27434bef1ac73cf699",
+  "hashScope": "complete-response-body"
+}

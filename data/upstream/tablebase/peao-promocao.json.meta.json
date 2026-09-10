@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/peao-promocao.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=8%2F2P3k1%2F4K3%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:22.873Z",
+  "completedAt": "2026-09-09T19:35:23.114Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F2P3k1%2F4K3%2F8%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 2629,
+  "sha256": "c4382c70d0164379a90834388c18069630f7f6d44fbb687d093d68beb3a7a802",
+  "hashScope": "complete-response-body"
+}

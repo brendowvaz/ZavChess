@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/torre-cortar-rei.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=7k%2F8%2F5K2%2F8%2F8%2F8%2F8%2FR7%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:21.078Z",
+  "completedAt": "2026-09-09T19:35:21.345Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=7k%2F8%2F5K2%2F8%2F8%2F8%2F8%2FR7%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 5324,
+  "sha256": "8d0a478385622b9df48f0f9951011135823e95ebc2a076f3df3d1e7008e60b6f",
+  "hashScope": "complete-response-body"
+}

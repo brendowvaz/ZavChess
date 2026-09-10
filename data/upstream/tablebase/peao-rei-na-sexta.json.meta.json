@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/peao-rei-na-sexta.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=4k3%2F8%2F4K3%2F4P3%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:21.868Z",
+  "completedAt": "2026-09-09T19:35:22.114Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=4k3%2F8%2F4K3%2F4P3%2F8%2F8%2F8%2F8%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 1162,
+  "sha256": "8c4dd584c189f70e092463a6426efe04e3adb09a9f1d223ad18f6f2696451efc",
+  "hashScope": "complete-response-body"
+}

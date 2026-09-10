@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/e.tsv",
+  "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/COPYING.txt",
+  "downloadedAt": "2026-09-09T19:26:05.798Z",
+  "completedAt": "2026-09-09T19:26:06.837Z",
+  "resolvedUrl": "https://raw.githubusercontent.com/lichess-org/chess-openings/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv",
+  "status": 200,
+  "etag": "W/\"7574170de67a46e946cb6a8a285e367fe95eee0e71c799ed482efc59902c2cba\"",
+  "lastModified": null,
+  "contentLength": "5436",
+  "contentRange": null,
+  "bytes": 42837,
+  "sha256": "f1f8494f488f660e284f23527d5acfbeccdbbc3acc76e74f05d125f39d2f8a74",
+  "hashScope": "complete-response-body"
+}

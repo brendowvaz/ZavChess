@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/dama-rei-central.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=8%2F4k3%2F8%2F8%2F3K4%2F8%2F8%2FQ7%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:20.556Z",
+  "completedAt": "2026-09-09T19:35:20.799Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F4k3%2F8%2F8%2F3K4%2F8%2F8%2FQ7%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 6117,
+  "sha256": "a7681e25b7cb9f9971c9a17087a7c1c3760294534d4047b7a1f4e98db13b400a",
+  "hashScope": "complete-response-body"
+}

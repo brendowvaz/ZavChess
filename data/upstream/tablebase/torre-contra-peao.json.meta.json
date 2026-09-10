@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/torre-contra-peao.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F4k3%2F4p3%2FK7%2F7R%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:23.622Z",
+  "completedAt": "2026-09-09T19:35:23.865Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F8%2F4k3%2F4p3%2FK7%2F7R%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 4790,
+  "sha256": "877081b44be47d0a7bef379e80b7faee36690ba4f8df2502f42bdd6fcef7c958",
+  "hashScope": "complete-response-body"
+}

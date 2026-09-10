@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/torre-defesa.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=8%2F5k2%2F8%2F8%2F3K4%2F8%2F1R6%2F8%20b%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:21.621Z",
+  "completedAt": "2026-09-09T19:35:21.857Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F5k2%2F8%2F8%2F3K4%2F8%2F1R6%2F8%20b%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 2140,
+  "sha256": "bc64968863fe518d84ee0ab729053be0a351dd2b2ec8cce8f20d03800d9f27cd",
+  "hashScope": "complete-response-body"
+}

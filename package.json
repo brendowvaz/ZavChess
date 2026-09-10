@@ -1,0 +1,39 @@
+{
+  "name": "zav-chess",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,app -c cyan,green \"npm run dev -w @zav/api\" \"npm run web -w @zav/mobile\"",
+    "api": "npm run dev -w @zav/api",
+    "mobile": "npm run start -w @zav/mobile",
+    "web": "npm run web -w @zav/mobile",
+    "preview": "node scripts/serve-web.mjs",
+    "android": "powershell -ExecutionPolicy Bypass -File scripts/start-android.ps1",
+    "db:generate": "npm run db:generate -w @zav/api",
+    "db:migrate": "npm run db:migrate -w @zav/api",
+    "db:seed": "npm run db:seed -w @zav/api",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "overrides": {
+    "@nestjs/platform-express": {"multer": "2.3.0"},
+    "@prisma/config": {"deepmerge-ts": "8.0.2"},
+    "xcode": {"uuid": "11.1.1"}
+  },
+  "allowScripts": {
+    "prisma@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "@prisma/client@6.19.3": true,
+    "esbuild@0.28.2": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/dama-defesa.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=8%2F4k3%2F8%2F8%2F3K4%2F8%2F8%2FQ7%20b%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:20.822Z",
+  "completedAt": "2026-09-09T19:35:21.065Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=8%2F4k3%2F8%2F8%2F3K4%2F8%2F8%2FQ7%20b%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 2125,
+  "sha256": "74069881b1b056463464e53dd9ea5c3da839a2cab35830aabc0d11fc24113e23",
+  "hashScope": "complete-response-body"
+}

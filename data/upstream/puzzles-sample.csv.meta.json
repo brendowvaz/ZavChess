@@ -1,0 +1,77 @@
+{
+  "file": "data/upstream/puzzles-sample.csv",
+  "url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://database.lichess.org/#puzzles",
+  "downloadedAt": "2026-09-09T19:35:09.912Z",
+  "completedAt": "2026-09-09T19:35:16.510Z",
+  "resolvedUrl": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+  "status": 206,
+  "etag": "\"6aa199fe-12253910\"",
+  "lastModified": "Wed, 09 Sep 2026 17:40:14 GMT",
+  "contentLength": "8388608",
+  "contentRange": "bytes 0-8388607/304429328",
+  "bytes": 558122,
+  "sha256": "c9ac0c3812ee9d6bd12bbedfc094a6be70d89368e578de709cafab0111d51d1d",
+  "hashScope": "selected-original-csv-rows-with-header-LF",
+  "sampling": {
+    "method": "smallest-sha256-priority-per-rating-band-from-bounded-prefix",
+    "seed": "zav-chess-content-v1",
+    "maxRows": 75000,
+    "scannedRows": 75000,
+    "maxCompressedBytes": 8388608,
+    "compressedBytes": 3980928,
+    "maxDecompressedBytes": 33554432,
+    "decompressedBytes": 13893632,
+    "stopReason": "row-limit",
+    "compressedPrefixSha256": "b0066c1634e14748d2f00f03ee1081cff27db48a218f20ed775b81f3eb21dd66",
+    "compressedHashScope": "bytes-consumed-by-counter-before-abort; NOT the full dump",
+    "scannedRowsSha256": "795fe8bdfd0b720af2e816cf24514c31e7c0f95ef5c8a4103d07122d369ee1f0",
+    "scannedHashScope": "first-75000-data-rows-normalized-LF-no-header",
+    "bands": [
+      {
+        "level": "beginner",
+        "min": 400,
+        "max": 899,
+        "count": 500,
+        "eligibleInPrefix": 11367
+      },
+      {
+        "level": "beginner",
+        "min": 900,
+        "max": 1399,
+        "count": 500,
+        "eligibleInPrefix": 25886
+      },
+      {
+        "level": "intermediate",
+        "min": 1400,
+        "max": 1699,
+        "count": 500,
+        "eligibleInPrefix": 12868
+      },
+      {
+        "level": "intermediate",
+        "min": 1700,
+        "max": 1999,
+        "count": 500,
+        "eligibleInPrefix": 10686
+      },
+      {
+        "level": "advanced",
+        "min": 2000,
+        "max": 2399,
+        "count": 500,
+        "eligibleInPrefix": 9850
+      },
+      {
+        "level": "advanced",
+        "min": 2400,
+        "max": 3200,
+        "count": 500,
+        "eligibleInPrefix": 4290
+      }
+    ],
+    "limitations": "Amostra estratificada de um prefixo, sem representatividade global. Sem cotas por tema. O prefixo comprimido não é arquivado; preservamos as linhas selecionadas."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "file": "data/upstream/tablebase/peoes-corrida.json",
+  "url": "https://tablebase.lichess.ovh/standard?fen=7k%2FP7%2F8%2F8%2F8%2F8%2F7p%2FK7%20w%20-%20-%200%201",
+  "license": "Tablebase facts; freely redistributable (Syzygy terms)",
+  "licenseUrl": "https://github.com/syzygy1/tb#terms-of-use",
+  "downloadedAt": "2026-09-09T19:35:24.141Z",
+  "completedAt": "2026-09-09T19:35:24.375Z",
+  "resolvedUrl": "https://tablebase.lichess.ovh/standard?fen=7k%2FP7%2F8%2F8%2F8%2F8%2F7p%2FK7%20w%20-%20-%200%201",
+  "status": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentLength": null,
+  "contentRange": null,
+  "bytes": 1883,
+  "sha256": "9f8613524116d95f0e48eb06b08c15c26989da15a92fa0c236f233aee17c5376",
+  "hashScope": "complete-response-body"
+}

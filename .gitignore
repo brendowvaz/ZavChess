@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+!.env.example
+dist/
+.expo/
+coverage/
+*.log
+.local/
+apps/api/src/generated/
+apps/mobile/android/
+apps/mobile/ios/
+*.tsbuildinfo

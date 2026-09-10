@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String   @db.VarChar(80)
+  email        String   @unique @db.VarChar(191)
+  passwordHash String   @db.VarChar(255)
+  rating       Int      @default(1000)
+  xp           Int      @default(0)
+  createdAt    DateTime @default(now())
+  sessions     Session[]
+  lessons      LessonProgress[]
+  puzzles      PuzzleAttempt[]
+  activities   Activity[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique @db.VarChar(64)
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model Lesson {
+  id          String @id
+  slug        String @unique
+  title       String
+  category    String
+  level       String
+  description String @db.Text
+  sortOrder   Int
+  minutes     Int
+  steps       Json
+  quiz        Json
+  progress    LessonProgress[]
+  @@index([category, sortOrder])
+}
+
+model LessonProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  lessonId    String
+  completedAt DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson      Lesson   @relation(fields: [lessonId], references: [id])
+  @@unique([userId, lessonId])
+}
+
+model Opening {
+  id        String @id
+  eco       String @db.VarChar(3)
+  name      String @db.VarChar(500)
+  family    String
+  pgn       String @db.Text
+  fen       String
+  moves     Json
+  sourceUrl String @db.VarChar(500)
+  @@index([eco])
+  @@index([family])
+}
+
+model Puzzle {
+  /// Lichess PuzzleId is base62 and case-sensitive. Migration uses utf8mb4_bin.
+  id        String @id
+  rating    Int
+  themes    Json
+  fen       String
+  moves     Json
+  sourceUrl String @db.VarChar(500)
+  attempts  PuzzleAttempt[]
+  @@index([rating])
+}
+
+model PuzzleAttempt {
+  id        String    @id @default(cuid())
+  userId    String
+  /// Must use the same case-sensitive collation as Puzzle.id.
+  puzzleId  String
+  solved    Boolean   @default(false)
+  hintUsed  Boolean   @default(false)
+  mistakes  Int       @default(0)
+  solvedAt  DateTime?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  puzzle    Puzzle    @relation(fields: [puzzleId], references: [id])
+  @@unique([userId, puzzleId])
+}
+
+model Endgame {
+  id          String @id
+  slug        String @unique
+  title       String
+  description String @db.Text
+  fen         String
+  goal        String
+  level       String
+  side        String @db.VarChar(1)
+  tips        Json
+}
+
+model Activity {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String
+  title     String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, createdAt])
+}
