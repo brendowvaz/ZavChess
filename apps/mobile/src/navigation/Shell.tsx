@@ -44,7 +44,7 @@ export function Shell({ children }: React.PropsWithChildren) {
         <Text style={[s.small, { fontSize: 10 }]}>FEITO PARA APRENDER, LANCE A LANCE.</Text></View>
     </View> : null}
     <View style={{ flex: 1, minWidth: 0 }}>
-      <View style={{ minHeight: wide ? 82 : 65, paddingHorizontal: wide ? 38 : 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: colors.line, backgroundColor: colors.surface }}>
+      <View style={{ minHeight: wide ? 60 : 58, paddingHorizontal: wide ? 30 : 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: colors.line, backgroundColor: colors.surface }}>
         {wide ? <View style={s.row}><Text style={s.small}>Seu aprendizado</Text><Icon name="chevron" size={13} color={colors.muted} /><Text style={[s.small, { color: colors.ink }]}>{screenLabel}</Text></View>
           : <View style={[s.row, { gap: 9 }]}><BrandMark size={31} /><Text style={{ fontFamily: serif, fontSize: 23, color: colors.forest }}>zav chess</Text></View>}
         <View style={[s.row, { gap: wide ? 18 : 10 }]}>

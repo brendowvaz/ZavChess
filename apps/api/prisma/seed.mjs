@@ -33,7 +33,15 @@ async function seed() {
   for (const row of lessons) await db.lesson.upsert({ where: { id: row.id }, create: row, update: row });
   for (const row of endgames) await db.endgame.upsert({ where: { id: row.id }, create: row, update: row });
   for (const guide of openingGuides) {
-    await db.openingGuide.upsert({ where: { family: guide.family }, create: guide, update: guide });
+    const persistedGuide = {
+      family: guide.family,
+      overview: guide.overview,
+      whitePlan: guide.whitePlan,
+      blackPlan: guide.blackPlan,
+      commonMistakes: guide.commonMistakes,
+      lessonIds: guide.lessonIds,
+    };
+    await db.openingGuide.upsert({ where: { family: guide.family }, create: persistedGuide, update: persistedGuide });
   }
   // Bulk imports preserve student progress and are safe to repeat.
   await upsertInBatches(openings, (data) => db.opening.createMany({ data, skipDuplicates: true }));

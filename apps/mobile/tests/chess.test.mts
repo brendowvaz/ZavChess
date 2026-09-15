@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Chess } from 'chess.js';
-import { DEFAULT_POSITION, gameFromHistory, linePositions, moveUci, positionStatus, pvToSan, whiteScore } from '../src/chess/logic.ts';
+import { DEFAULT_POSITION, gameFromHistory, linePositions, moveUci, normalizeCastlingTarget, positionStatus, pvToSan, whiteScore } from '../src/chess/logic.ts';
 import { categoryLabel, invertCategory } from '../src/chess/tablebase.ts';
 
 test('aplica lances UCI legais e rejeita entradas ilegais', () => {
@@ -9,6 +9,16 @@ test('aplica lances UCI legais e rejeita entradas ilegais', () => {
   assert.equal(moveUci(game, 'e2e4').san, 'e4');
   assert.throws(() => moveUci(game, 'e7e4'));
   assert.throws(() => moveUci(game, 'e7-e5'));
+});
+
+test('aceita a casa da torre como alvo alternativo do roque', () => {
+  const game = new Chess('r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1');
+  assert.equal(normalizeCastlingTarget(game, 'e1', 'h1'), 'g1');
+  assert.equal(normalizeCastlingTarget(game, 'e1', 'a1'), 'c1');
+  assert.equal(normalizeCastlingTarget(game, 'e1', 'e2'), 'e2');
+
+  const withoutRights = new Chess('4k3/8/8/8/8/8/8/R3K2R w - - 0 1');
+  assert.equal(normalizeCastlingTarget(withoutRights, 'e1', 'h1'), 'h1');
 });
 
 test('reconstrói replay, histórico e notação sem inventar continuação', () => {

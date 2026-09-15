@@ -3,8 +3,16 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-Add-Type -AssemblyName System.Drawing
-Add-Type -ReferencedAssemblies 'System.Drawing.dll' -TypeDefinition @'
+Add-Type -AssemblyName System.Drawing.Common
+$drawingAssemblies = @(
+  [System.Drawing.Bitmap].Assembly.Location,
+  [System.Drawing.Color].Assembly.Location,
+  [System.Reflection.Assembly]::Load('System.Private.Windows.GdiPlus').Location,
+  [System.Reflection.Assembly]::Load('System.Private.Windows.Core').Location,
+  [System.Reflection.Assembly]::Load('System.Runtime').Location,
+  [object].Assembly.Location
+)
+Add-Type -ReferencedAssemblies $drawingAssemblies -TypeDefinition @'
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -95,6 +103,18 @@ $specs = @(
   @{ Name = 'rounded'; Split = 650 },
   @{ Name = 'sculpted'; Split = 605 }
 )
+
+$webSpecs = @(
+  @{ Name = 'classic-web'; Split = 362 },
+  @{ Name = 'geometric-web'; Split = 362 },
+  @{ Name = 'rounded-web'; Split = 362 },
+  @{ Name = 'sculpted-web'; Split = 362 }
+)
+
+foreach ($spec in $webSpecs) {
+  $candidate = Join-Path $AssetsDirectory "$($spec.Name).png"
+  if (Test-Path -LiteralPath $candidate) { $specs += $spec }
+}
 
 foreach ($spec in $specs) {
   $source = Join-Path $AssetsDirectory "$($spec.Name).png"

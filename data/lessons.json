@@ -5,7 +5,7 @@
     "title": "Encontre uma casa no tabuleiro",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Leia coordenadas e use o centro como referência. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Leia coordenadas e use o centro como referência.",
     "sortOrder": 1,
     "minutes": 3,
     "steps": [
@@ -36,7 +36,7 @@
     "title": "O objetivo é dar xeque-mate",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Diferencie ganhar material de encerrar a partida. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Diferencie ganhar material de encerrar a partida.",
     "sortOrder": 2,
     "minutes": 3,
     "steps": [
@@ -67,7 +67,7 @@
     "title": "Torre: linhas e colunas",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Trace caminhos retos e reconheça bloqueios. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Trace caminhos retos e reconheça bloqueios.",
     "sortOrder": 3,
     "minutes": 3,
     "steps": [
@@ -98,7 +98,7 @@
     "title": "Bispo: diagonais e cores",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Reconheça o alcance diagonal e a cor permanente do bispo. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o alcance diagonal e a cor permanente do bispo.",
     "sortOrder": 4,
     "minutes": 3,
     "steps": [
@@ -129,7 +129,7 @@
     "title": "Dama: alcance e responsabilidade",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Combine linhas retas e diagonais sem confundir poder com segurança. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Combine linhas retas e diagonais sem confundir poder com segurança.",
     "sortOrder": 5,
     "minutes": 3,
     "steps": [
@@ -160,7 +160,7 @@
     "title": "Cavalo: salto em L",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Encontre destinos do cavalo mesmo com peças no caminho. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Encontre destinos do cavalo mesmo com peças no caminho.",
     "sortOrder": 6,
     "minutes": 4,
     "steps": [
@@ -191,7 +191,7 @@
     "title": "Rei: proximidade com segurança",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Entenda por que os reis não podem ficar lado a lado. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Entenda por que os reis não podem ficar lado a lado.",
     "sortOrder": 7,
     "minutes": 3,
     "steps": [
@@ -222,7 +222,7 @@
     "title": "Peão: avanço e captura",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Separe a direção de avanço da direção de captura. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Separe a direção de avanço da direção de captura.",
     "sortOrder": 8,
     "minutes": 4,
     "steps": [
@@ -253,7 +253,7 @@
     "title": "Antes de capturar, conte defensores",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Avalie a recaptura antes de comemorar uma peça ganha. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Avalie a recaptura antes de comemorar uma peça ganha.",
     "sortOrder": 9,
     "minutes": 4,
     "steps": [
@@ -284,7 +284,7 @@
     "title": "Três maneiras de enfrentar um xeque",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Organize a busca por respostas legais. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Organize a busca por respostas legais.",
     "sortOrder": 10,
     "minutes": 4,
     "steps": [
@@ -315,7 +315,7 @@
     "title": "Mate ou afogamento?",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Observe o xeque antes de concluir que o jogo foi vencido. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Observe o xeque antes de concluir que o jogo foi vencido.",
     "sortOrder": 11,
     "minutes": 4,
     "steps": [
@@ -346,7 +346,7 @@
     "title": "Quando o roque é permitido",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Confira caminho, histórico e ataques antes de rocar. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Confira caminho, histórico e ataques antes de rocar.",
     "sortOrder": 12,
     "minutes": 5,
     "steps": [
@@ -377,7 +377,7 @@
     "title": "En passant: uma oportunidade imediata",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Reconheça a captura especial logo após o avanço duplo. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça a captura especial logo após o avanço duplo.",
     "sortOrder": 13,
     "minutes": 5,
     "steps": [
@@ -408,7 +408,7 @@
     "title": "Promoção: você escolhe a peça",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Conheça todas as escolhas e o motivo de considerar alternativas. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Conheça todas as escolhas e o motivo de considerar alternativas.",
     "sortOrder": 14,
     "minutes": 4,
     "steps": [
@@ -439,7 +439,7 @@
     "title": "Valor das peças e atividade",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Use valores aproximados sem tratar a posição como uma soma cega. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Use valores aproximados sem tratar a posição como uma soma cega.",
     "sortOrder": 15,
     "minutes": 4,
     "steps": [
@@ -470,7 +470,7 @@
     "title": "Uma rotina antes de cada lance",
     "category": "fundamentals",
     "level": "beginner",
-    "description": "Crie um hábito curto para reduzir perdas de peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Crie um hábito curto para reduzir perdas de peças.",
     "sortOrder": 16,
     "minutes": 4,
     "steps": [
@@ -501,7 +501,7 @@
     "title": "Mate em um: feche todas as fugas",
     "category": "tactics",
     "level": "beginner",
-    "description": "Reconheça o motivo mate em um em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo mate em um em um puzzle real.",
     "sortOrder": 17,
     "minutes": 6,
     "steps": [
@@ -544,7 +544,7 @@
     "title": "Mate em dois: calcule a defesa",
     "category": "tactics",
     "level": "beginner",
-    "description": "Reconheça o motivo mate em dois em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo mate em dois em um puzzle real.",
     "sortOrder": 18,
     "minutes": 6,
     "steps": [
@@ -589,7 +589,7 @@
     "title": "Garfo: duas ameaças em um lance",
     "category": "tactics",
     "level": "beginner",
-    "description": "Reconheça o motivo garfo em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo garfo em um puzzle real.",
     "sortOrder": 19,
     "minutes": 6,
     "steps": [
@@ -634,7 +634,7 @@
     "title": "Cravada: uma peça com mobilidade limitada",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo cravada em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo cravada em um puzzle real.",
     "sortOrder": 20,
     "minutes": 6,
     "steps": [
@@ -677,7 +677,7 @@
     "title": "Espeto: o alvo mais valioso vem à frente",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo espeto em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo espeto em um puzzle real.",
     "sortOrder": 21,
     "minutes": 6,
     "steps": [
@@ -726,7 +726,7 @@
     "title": "Ataque descoberto: abra a linha",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo ataque descoberto em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo ataque descoberto em um puzzle real.",
     "sortOrder": 22,
     "minutes": 6,
     "steps": [
@@ -775,7 +775,7 @@
     "title": "Xeque duplo: dois ataques ao rei",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo xeque duplo em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo xeque duplo em um puzzle real.",
     "sortOrder": 23,
     "minutes": 6,
     "steps": [
@@ -822,7 +822,7 @@
     "title": "Desvio: afaste o defensor",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo desvio em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo desvio em um puzzle real.",
     "sortOrder": 24,
     "minutes": 6,
     "steps": [
@@ -867,7 +867,7 @@
     "title": "Atração: leve o alvo à casa certa",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo atração em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo atração em um puzzle real.",
     "sortOrder": 25,
     "minutes": 6,
     "steps": [
@@ -912,7 +912,7 @@
     "title": "Peça pendurada: ganhe sem se precipitar",
     "category": "tactics",
     "level": "beginner",
-    "description": "Reconheça o motivo peça pendurada em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo peça pendurada em um puzzle real.",
     "sortOrder": 26,
     "minutes": 6,
     "steps": [
@@ -955,7 +955,7 @@
     "title": "Peça presa: elimine as saídas",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo peça presa em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo peça presa em um puzzle real.",
     "sortOrder": 27,
     "minutes": 6,
     "steps": [
@@ -1000,7 +1000,7 @@
     "title": "Liberação: desocupe a casa ou a linha",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo liberação em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo liberação em um puzzle real.",
     "sortOrder": 28,
     "minutes": 6,
     "steps": [
@@ -1047,7 +1047,7 @@
     "title": "Interferência: corte a comunicação",
     "category": "tactics",
     "level": "advanced",
-    "description": "Reconheça o motivo interferência em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo interferência em um puzzle real.",
     "sortOrder": 29,
     "minutes": 6,
     "steps": [
@@ -1092,7 +1092,7 @@
     "title": "Sacrifício: exija uma continuação concreta",
     "category": "tactics",
     "level": "advanced",
-    "description": "Reconheça o motivo sacrifício em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo sacrifício em um puzzle real.",
     "sortOrder": 30,
     "minutes": 6,
     "steps": [
@@ -1137,7 +1137,7 @@
     "title": "Promoção como recurso tático",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo promoção como recurso tático em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo promoção como recurso tático em um puzzle real.",
     "sortOrder": 31,
     "minutes": 6,
     "steps": [
@@ -1184,7 +1184,7 @@
     "title": "Lance defensivo: resolva a ameaça",
     "category": "tactics",
     "level": "intermediate",
-    "description": "Reconheça o motivo lance defensivo em um puzzle real. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Reconheça o motivo lance defensivo em um puzzle real.",
     "sortOrder": 32,
     "minutes": 6,
     "steps": [
@@ -1231,7 +1231,7 @@
     "title": "Italiana: desenvolva mirando o centro",
     "category": "openings",
     "level": "beginner",
-    "description": "Estude a ideia inicial da abertura Italiana. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Italiana.",
     "sortOrder": 33,
     "minutes": 5,
     "steps": [
@@ -1274,7 +1274,7 @@
     "title": "Espanhola: pressão sobre o cavalo de c6",
     "category": "openings",
     "level": "beginner",
-    "description": "Estude a ideia inicial da abertura Espanhola. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Espanhola.",
     "sortOrder": 34,
     "minutes": 5,
     "steps": [
@@ -1317,7 +1317,7 @@
     "title": "Escocesa: abra o centro com preparo",
     "category": "openings",
     "level": "beginner",
-    "description": "Estude a ideia inicial da abertura Escocesa. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Escocesa.",
     "sortOrder": 35,
     "minutes": 5,
     "steps": [
@@ -1360,7 +1360,7 @@
     "title": "Quatro Cavalos: desenvolvimento coerente",
     "category": "openings",
     "level": "beginner",
-    "description": "Estude a ideia inicial da abertura Quatro Cavalos. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Quatro Cavalos.",
     "sortOrder": 36,
     "minutes": 5,
     "steps": [
@@ -1404,7 +1404,7 @@
     "title": "Siciliana: resposta assimétrica a e4",
     "category": "openings",
     "level": "intermediate",
-    "description": "Estude a ideia inicial da abertura Siciliana. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Siciliana.",
     "sortOrder": 37,
     "minutes": 5,
     "steps": [
@@ -1444,7 +1444,7 @@
     "title": "Francesa: prepare o contra-ataque central",
     "category": "openings",
     "level": "intermediate",
-    "description": "Estude a ideia inicial da abertura Francesa. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Francesa.",
     "sortOrder": 38,
     "minutes": 5,
     "steps": [
@@ -1484,7 +1484,7 @@
     "title": "Caro-Kann: sustente d5 com c6",
     "category": "openings",
     "level": "beginner",
-    "description": "Estude a ideia inicial da abertura Caro-Kann. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Caro-Kann.",
     "sortOrder": 39,
     "minutes": 5,
     "steps": [
@@ -1524,7 +1524,7 @@
     "title": "Escandinava: confronte e4 imediatamente",
     "category": "openings",
     "level": "beginner",
-    "description": "Estude a ideia inicial da abertura Escandinava. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Escandinava.",
     "sortOrder": 40,
     "minutes": 5,
     "steps": [
@@ -1564,7 +1564,7 @@
     "title": "Gambito da Dama: pressione o centro",
     "category": "openings",
     "level": "beginner",
-    "description": "Estude a ideia inicial da abertura Gambito da Dama. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Gambito da Dama.",
     "sortOrder": 41,
     "minutes": 5,
     "steps": [
@@ -1605,7 +1605,7 @@
     "title": "Gambito da Dama Recusado: sustente o centro",
     "category": "openings",
     "level": "intermediate",
-    "description": "Estude a ideia inicial da abertura Gambito da Dama Recusado. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Gambito da Dama Recusado.",
     "sortOrder": 42,
     "minutes": 5,
     "steps": [
@@ -1647,7 +1647,7 @@
     "title": "Eslava: proteja d5 com o peão c",
     "category": "openings",
     "level": "intermediate",
-    "description": "Estude a ideia inicial da abertura Eslava. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Eslava.",
     "sortOrder": 43,
     "minutes": 5,
     "steps": [
@@ -1689,7 +1689,7 @@
     "title": "Inglesa: controle d5 de longe",
     "category": "openings",
     "level": "intermediate",
-    "description": "Estude a ideia inicial da abertura Inglesa. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Estude a ideia inicial da abertura Inglesa.",
     "sortOrder": 44,
     "minutes": 5,
     "steps": [
@@ -1728,7 +1728,7 @@
     "title": "Ative o rei no final",
     "category": "endgames",
     "level": "beginner",
-    "description": "Pratique ative o rei no final numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique ative o rei no final numa posição de poucas peças.",
     "sortOrder": 45,
     "minutes": 6,
     "steps": [
@@ -1764,7 +1764,7 @@
     "title": "Entenda a oposição direta",
     "category": "endgames",
     "level": "intermediate",
-    "description": "Pratique entenda a oposição direta numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique entenda a oposição direta numa posição de poucas peças.",
     "sortOrder": 46,
     "minutes": 6,
     "steps": [
@@ -1800,7 +1800,7 @@
     "title": "Um tempo pode mudar o resultado",
     "category": "endgames",
     "level": "intermediate",
-    "description": "Pratique um tempo pode mudar o resultado numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique um tempo pode mudar o resultado numa posição de poucas peças.",
     "sortOrder": 47,
     "minutes": 6,
     "steps": [
@@ -1836,7 +1836,7 @@
     "title": "Por que o peão de torre é especial",
     "category": "endgames",
     "level": "beginner",
-    "description": "Pratique por que o peão de torre é especial numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique por que o peão de torre é especial numa posição de poucas peças.",
     "sortOrder": 48,
     "minutes": 6,
     "steps": [
@@ -1872,7 +1872,7 @@
     "title": "A partida continua depois da promoção",
     "category": "endgames",
     "level": "beginner",
-    "description": "Pratique a partida continua depois da promoção numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique a partida continua depois da promoção numa posição de poucas peças.",
     "sortOrder": 49,
     "minutes": 6,
     "steps": [
@@ -1908,7 +1908,7 @@
     "title": "Conte a promoção das pretas",
     "category": "endgames",
     "level": "beginner",
-    "description": "Pratique conte a promoção das pretas numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique conte a promoção das pretas numa posição de poucas peças.",
     "sortOrder": 50,
     "minutes": 6,
     "steps": [
@@ -1944,7 +1944,7 @@
     "title": "Dama e rei: construa a rede",
     "category": "endgames",
     "level": "beginner",
-    "description": "Pratique dama e rei: construa a rede numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique dama e rei: construa a rede numa posição de poucas peças.",
     "sortOrder": 51,
     "minutes": 6,
     "steps": [
@@ -1980,7 +1980,7 @@
     "title": "Torre e rei: corte e aproxime",
     "category": "endgames",
     "level": "intermediate",
-    "description": "Pratique torre e rei: corte e aproxime numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique torre e rei: corte e aproxime numa posição de poucas peças.",
     "sortOrder": 52,
     "minutes": 6,
     "steps": [
@@ -2016,7 +2016,7 @@
     "title": "Bispo: confira a cor da promoção",
     "category": "endgames",
     "level": "advanced",
-    "description": "Pratique bispo: confira a cor da promoção numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique bispo: confira a cor da promoção numa posição de poucas peças.",
     "sortOrder": 53,
     "minutes": 6,
     "steps": [
@@ -2052,7 +2052,7 @@
     "title": "Torre contra peão: calcule a corrida",
     "category": "endgames",
     "level": "intermediate",
-    "description": "Pratique torre contra peão: calcule a corrida numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique torre contra peão: calcule a corrida numa posição de poucas peças.",
     "sortOrder": 54,
     "minutes": 6,
     "steps": [
@@ -2088,7 +2088,7 @@
     "title": "Corrida: promover com xeque importa",
     "category": "endgames",
     "level": "intermediate",
-    "description": "Pratique corrida: promover com xeque importa numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique corrida: promover com xeque importa numa posição de poucas peças.",
     "sortOrder": 55,
     "minutes": 6,
     "steps": [
@@ -2124,7 +2124,7 @@
     "title": "Leia a tablebase sem inverter o resultado",
     "category": "endgames",
     "level": "advanced",
-    "description": "Pratique leia a tablebase sem inverter o resultado numa posição de poucas peças. Texto original em pt-BR; revisão editorial humana pendente.",
+    "description": "Pratique leia a tablebase sem inverter o resultado numa posição de poucas peças.",
     "sortOrder": 56,
     "minutes": 6,
     "steps": [

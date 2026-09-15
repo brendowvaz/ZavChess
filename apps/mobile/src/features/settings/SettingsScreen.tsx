@@ -19,7 +19,7 @@ export function SettingsScreen() {
   const [lastMove, setLastMove] = useState<string>();
   const theme = boardThemes[appearance.boardTheme];
   return <View style={s.page}>
-    <Heading eyebrow="Do seu jeito" title="Configurações" description="Escolha suas peças e as cores do tabuleiro. Veja a combinação na prévia." />
+    <Heading eyebrow="Do seu jeito" title="Configurações" description="Escolha suas peças e as cores do tabuleiro." />
     {saveState === 'error' ? <Notice tone="error" action={<Button label="Tentar salvar novamente" onPress={retrySave} variant="secondary" compact />}>
       Não foi possível acessar suas preferências salvas. As escolhas funcionam agora, mas podem não ser mantidas ao reabrir o app.
     </Notice> : null}
@@ -57,15 +57,15 @@ export function SettingsScreen() {
           })}</View>
         </View>
         <View style={s.stack}>
-          <Text accessibilityLiveRegion="polite" style={s.small}>{saveState === 'saving' ? 'Salvando preferências…' : saveState === 'saved' ? 'Preferências salvas neste dispositivo. Aplicadas em todos os tabuleiros do app.' : 'Preferências ainda não salvas neste dispositivo.'}</Text>
+          {saveState !== 'saved' ? <Text accessibilityLiveRegion="polite" style={s.small}>{saveState === 'saving' ? 'Salvando preferências…' : 'Preferências ainda não salvas neste dispositivo.'}</Text> : null}
           <Button label="Restaurar aparência padrão" variant="secondary" icon="refresh" onPress={() => updateAppearance(defaultAppearance)}
             disabled={appearance.pieceStyle === defaultAppearance.pieceStyle && appearance.boardTheme === defaultAppearance.boardTheme} style={{ alignSelf: 'flex-start' }} />
         </View>
       </View>
-      <Card style={{ width: '100%', maxWidth: 520, alignSelf: 'center', gap: 16 }}>
+      <Card style={{ width: '100%', maxWidth: 760, alignSelf: 'center', gap: 16 }}>
         <View style={s.between}><Text accessibilityRole="header" style={s.h2}>Seu tabuleiro</Text><Icon name="opening" /></View>
         <Text style={s.small}>{pieceStyles.find(style => style.id === appearance.pieceStyle)?.name} · {theme.name}</Text>
-        <ChessBoard fen={fen} lastMove={lastMove} maxSize={440} onMove={uci => {
+        <ChessBoard fen={fen} lastMove={lastMove} onMove={uci => {
           const game = new Chess(fen); moveUci(game, uci); setFen(game.fen()); setLastMove(uci);
         }} />
         <Button label="Reiniciar prévia" variant="ghost" compact icon="refresh" onPress={() => { setFen(initialFen); setLastMove(undefined); }} />

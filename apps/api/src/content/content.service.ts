@@ -3,6 +3,19 @@ import { Opening, OpeningGuide, Prisma, User } from '@prisma/client';
 import { PrismaService } from '../database/prisma.service';
 import { publicUser } from '../auth/auth.service';
 import { calculateStreak, puzzlePosition, validatePuzzle } from '../chess/chess-rules';
+import { LearningService } from '../learning/learning.service';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import {
+  openingEducation,
+  openingSearchTerms,
+  type FamilyEducationFile,
+  type VariationEducationFile,
+} from './opening-education';
+
+const educationDirectory = resolve(__dirname, '../../../../data');
+const familyEducation = JSON.parse(readFileSync(resolve(educationDirectory, 'opening-guides.json'), 'utf8')) as FamilyEducationFile;
+const variationEducation = JSON.parse(readFileSync(resolve(educationDirectory, 'opening-variations.json'), 'utf8')) as VariationEducationFile;
 
 type Quiz = { question: string; options: string[]; answer: number; explanation: string };
 type RelatedLesson = { id: string; slug: string; title: string; level: string };
@@ -19,7 +32,7 @@ type OpeningVariantSummary = { id: string; eco: string; name: string; pgn: strin
 
 @Injectable()
 export class ContentService {
-  constructor(private readonly db: PrismaService) {}
+  constructor(private readonly db: PrismaService, private readonly learning: LearningService) {}
 
   lessons() {
     return this.db.lesson.findMany({ orderBy: { sortOrder: 'asc' }, select: { id: true, slug: true, title: true, category: true, level: true, description: true, sortOrder: true, minutes: true } });
@@ -32,23 +45,26 @@ export class ContentService {
     return { ...lesson, quiz: { question: quiz.question, options: quiz.options } };
   }
 
-  async completeLesson(userId: string, lessonId: string, answer: number) {
+  async completeLesson(userId: string, lessonId: string, answer: number, requestId?: string) {
     const lesson = await this.db.lesson.findUnique({ where: { id: lessonId } });
     if (!lesson) throw new NotFoundException('Aula não encontrada.');
     const quiz = lesson.quiz as unknown as Quiz;
     if (answer >= quiz.options.length) throw new BadRequestException('Alternativa inválida.');
-    if (quiz.answer !== answer) return { correct: false, explanation: quiz.explanation, xpEarned: 0 };
-    try {
-      await this.db.$transaction(async (tx) => {
-        await tx.lessonProgress.create({ data: { userId, lessonId } });
-        await tx.user.update({ where: { id: userId }, data: { xp: { increment: 25 } } });
+    return this.learning.capture(userId, { kind: 'lesson', contentId: lessonId, requestId }, async tx => {
+      const correct = quiz.answer === answer;
+      let xpEarned = 0;
+      if (correct) {
+        const alreadyCompleted = await tx.lessonProgress.findUnique({ where: { userId_lessonId: { userId, lessonId } } });
+        if (!alreadyCompleted) {
+          await tx.lessonProgress.create({ data: { userId, lessonId } });
+          await tx.user.update({ where: { id: userId }, data: { xp: { increment: 25 } } });
+          xpEarned = 25;
+        }
         await tx.activity.create({ data: { userId, type: 'lesson', title: lesson.title } });
-      });
-      return { correct: true, explanation: quiz.explanation, xpEarned: 25 };
-    } catch (error) {
-      if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') return { correct: true, explanation: quiz.explanation, xpEarned: 0 };
-      throw error;
-    }
+      }
+      return { response: { correct, explanation: quiz.explanation, xpEarned }, completed: true, success: correct,
+        mistakes: correct ? 0 : 1, recall: correct ? 'good' : 'again' };
+    });
   }
 
   async openings(search: string, page: number, pageSize: number) {
@@ -61,8 +77,9 @@ export class ContentService {
   }
 
   async openingFamilies(search: string, page: number, pageSize: number) {
+    const searchTerms = openingSearchTerms(search, familyEducation, variationEducation);
     const where: Prisma.OpeningWhereInput = search
-      ? { OR: [{ family: { contains: search } }, { name: { contains: search } }, { eco: { contains: search } }] }
+      ? { OR: searchTerms.flatMap(term => [{ family: { contains: term } }, { name: { contains: term } }, { eco: { contains: term } }]) }
       : {};
     const [matchingRows, grouped] = await Promise.all([
       search ? this.db.opening.findMany({ where, distinct: ['family'], select: { family: true } }) : Promise.resolve([]),
@@ -101,6 +118,7 @@ export class ContentService {
       variationCount: variations.length,
       studyGuide: await this.studyGuideForFamily(family),
       variations: variations.map((variation) => this.variantSummary(variation)),
+      education: openingEducation(variations[0]!, familyEducation, variationEducation),
     };
   }
 
@@ -115,12 +133,14 @@ export class ContentService {
     return {
       ...opening,
       studyGuide,
+      education: openingEducation(opening, familyEducation, variationEducation),
       familyNavigation: {
         family: opening.family,
         index: index + 1,
         total: siblings.length,
         previous: index > 0 ? this.variantSummary(siblings[index - 1]!) : null,
         next: index < siblings.length - 1 ? this.variantSummary(siblings[index + 1]!) : null,
+        nearby: siblings.slice(Math.max(0, index - 2), Math.min(siblings.length, index + 3)).map(sibling => this.variantSummary(sibling)),
       },
     };
   }
@@ -195,7 +215,14 @@ export class ContentService {
     return { items, total, page, pageSize };
   }
 
-  async attemptPuzzle(userId: string, puzzleId: string, moves: string[], hintUsed: boolean) {
+  async puzzle(id: string) {
+    const puzzle = await this.db.puzzle.findUnique({ where: { id } });
+    if (!puzzle) throw new NotFoundException('Puzzle não encontrado.');
+    const { moves, ...row } = puzzle;
+    return { ...row, fen: puzzlePosition(row.fen, moves as string[]).fen() };
+  }
+
+  async attemptPuzzle(userId: string, puzzleId: string, moves: string[], hintUsed: boolean, requestId?: string, practiceId = 'legacy') {
     const puzzle = await this.db.puzzle.findUnique({ where: { id: puzzleId } });
     if (!puzzle) throw new NotFoundException('Puzzle não encontrado.');
     let result;
@@ -203,29 +230,39 @@ export class ContentService {
     catch { throw new BadRequestException('Sequência de lances inválida.'); }
     const { expectedMove, ...publicResult } = result;
     const where = { userId_puzzleId: { userId, puzzleId } };
-    // A hint is saved immediately, so omitting hintUsed in a later request cannot restore XP.
-    await this.db.puzzleAttempt.upsert({
-      where,
-      create: { userId, puzzleId, hintUsed, mistakes: result.status === 'incorrect' ? 1 : 0 },
-      update: { ...(hintUsed ? { hintUsed: true } : {}), ...(result.status === 'incorrect' ? { mistakes: { increment: 1 } } : {}) },
-    });
-    if (result.status !== 'solved') return { ...publicResult, ...(hintUsed ? { expectedMove } : {}) };
-
-    const xpEarned = await this.db.$transaction(async (tx) => {
-      const changed = await tx.puzzleAttempt.updateMany({ where: { userId, puzzleId, solved: false }, data: { solved: true, solvedAt: new Date() } });
-      if (!changed.count) return 0;
-      const attempt = await tx.puzzleAttempt.findUniqueOrThrow({ where });
-      const earned = attempt.hintUsed ? 0 : attempt.mistakes > 0 ? 5 : 15;
-      const user = await tx.user.findUniqueOrThrow({ where: { id: userId } });
-      // This is a local training estimate, never a Lichess/FIDE rating.
-      const expected = 1 / (1 + 10 ** ((puzzle.rating - user.rating) / 400));
-      const performance = attempt.hintUsed ? 0 : attempt.mistakes > 0 ? 0.5 : 1;
-      const ratingChange = Math.round(20 * (performance - expected));
-      await tx.user.update({ where: { id: userId }, data: { xp: { increment: earned }, rating: { increment: ratingChange } } });
+    return this.learning.capture(userId, { kind: 'puzzle', contentId: puzzleId, requestId }, async tx => {
+      const incorrect = result.status === 'incorrect';
+      const practiceKey = { userId, puzzleId, practiceId };
+      const existingPractice = await tx.puzzlePractice.findUnique({ where: { userId_puzzleId_practiceId: practiceKey } });
+      if (existingPractice?.solved) return { response: { ...publicResult, xpEarned: 0 }, completed: false, success: false, recall: null };
+      const practice = await tx.puzzlePractice.upsert({
+        where: { userId_puzzleId_practiceId: practiceKey },
+        create: { ...practiceKey, hintUsed, mistakes: incorrect ? 1 : 0 },
+        update: { ...(hintUsed ? { hintUsed: true } : {}), ...(incorrect ? { mistakes: { increment: 1 } } : {}) },
+      });
+      // Historical hints stay sticky for XP; each new practice has its own recall quality.
+      const attempt = await tx.puzzleAttempt.upsert({ where,
+        create: { userId, puzzleId, hintUsed, mistakes: incorrect ? 1 : 0 },
+        update: { ...(hintUsed ? { hintUsed: true } : {}), ...(incorrect ? { mistakes: { increment: 1 } } : {}) },
+      });
+      if (result.status !== 'solved') return { response: { ...publicResult, ...(hintUsed ? { expectedMove } : {}) }, completed: false, success: false,
+        mistakes: practice.mistakes, hintUsed: practice.hintUsed, recall: incorrect ? 'again' : null };
+      await tx.puzzlePractice.update({ where: { id: practice.id }, data: { solved: true } });
+      let xpEarned = 0;
+      if (!attempt.solved) {
+        await tx.puzzleAttempt.update({ where, data: { solved: true, solvedAt: new Date() } });
+        xpEarned = attempt.hintUsed ? 0 : attempt.mistakes > 0 ? 5 : 15;
+        const user = await tx.user.findUniqueOrThrow({ where: { id: userId } });
+        const expected = 1 / (1 + 10 ** ((puzzle.rating - user.rating) / 400));
+        const performance = attempt.hintUsed ? 0 : attempt.mistakes > 0 ? 0.5 : 1;
+        const rating = Math.max(100, Math.min(3500, user.rating + Math.round(20 * (performance - expected))));
+        await tx.user.update({ where: { id: userId }, data: { xp: { increment: xpEarned }, rating } });
+      }
       await tx.activity.create({ data: { userId, type: 'puzzle', title: `Puzzle ${puzzle.id} · ${puzzle.rating}` } });
-      return earned;
+      const clean = !practice.hintUsed && practice.mistakes === 0;
+      return { response: { ...publicResult, xpEarned }, completed: true, success: clean, mistakes: practice.mistakes,
+        hintUsed: practice.hintUsed, recall: clean ? 'good' : 'hard' };
     });
-    return { ...publicResult, xpEarned };
   }
 
   async progress(userId: string) {

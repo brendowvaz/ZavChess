@@ -17,7 +17,7 @@ export interface LessonDetail extends Lesson {
   steps: { title: string; text: string; fen?: string; moves?: string[] }[];
   quiz: { question: string; options: string[] };
 }
-export interface LessonResult { correct: boolean; explanation: string; xpEarned: number }
+export interface LessonResult { correct: boolean; explanation: string; xpEarned: number; nextReviewAt?: string }
 export interface OpeningStudyGuide {
   kind: 'family' | 'introductory'; family: string; overview: string;
   whitePlan: string[]; blackPlan: string[]; commonMistakes: string[];
@@ -26,10 +26,10 @@ export interface OpeningStudyGuide {
 export interface OpeningVariant { id: string; eco: string; name: string; pgn: string; moveCount: number }
 export interface OpeningFamily { family: string; variationCount: number; firstEco: string; guideKind: 'family' | 'introductory' }
 export interface OpeningFamilyDetail { family: string; variationCount: number; studyGuide: OpeningStudyGuide; variations: OpeningVariant[] }
-export interface OpeningFamilyNavigation { family: string; index: number; total: number; previous: OpeningVariant | null; next: OpeningVariant | null }
+export interface OpeningFamilyNavigation { family: string; index: number; total: number; previous: OpeningVariant | null; next: OpeningVariant | null; nearby?: OpeningVariant[] }
 export interface Opening { id: string; eco: string; name: string; family: string; pgn: string; fen: string; moves: string[]; sourceUrl: string; studyGuide?: OpeningStudyGuide; familyNavigation?: OpeningFamilyNavigation }
 export interface Puzzle { id: string; rating: number; themes: string[]; fen: string; sourceUrl: string }
-export interface PuzzleResult { status: 'correct' | 'incorrect' | 'solved'; fen: string; reply?: string; expectedMove?: string; xpEarned?: number }
+export interface PuzzleResult { status: 'correct' | 'incorrect' | 'solved'; fen: string; reply?: string; expectedMove?: string; xpEarned?: number; nextReviewAt?: string }
 export interface Endgame { id: string; slug: string; title: string; description: string; fen: string; goal: string; level: Level; side: Side; tips: string[] }
 export type TablebaseCategory = 'win' | 'loss' | 'draw' | 'cursed-win' | 'blessed-loss' | 'unknown' | 'maybe-win' | 'maybe-loss';
 export interface Tablebase {

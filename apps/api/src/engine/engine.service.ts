@@ -3,9 +3,19 @@ import { Chess } from 'chess.js';
 import { spawn } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import type { EngineAnalysis, EngineMove } from './analysis-contract';
+import { analyzeMoveWithEngine, legalAnalysisLine, parseAnalysisPosition, validateAnalysisDepth } from './analysis-coach';
+import { parseExactUciInfo } from './analysis-uci';
+import { chooseWeakenedMove, parseRankedEngineMove, type RankedEngineMove } from './weakened-move';
+import {
+  emptyStrengthCapabilities,
+  readStrengthOption,
+  strengthSettings,
+  type EngineDifficulty,
+} from './engine-strength';
 
-type Score = { type: 'cp' | 'mate'; value: number };
 type Evaluation = { category: string; dtz: number | null; dtm: number | null; moves: { uci: string; san: string; category: string; dtz: number | null }[] };
+type StockfishRequest = { kind: 'analysis'; depth: number } | { kind: 'move'; difficulty: EngineDifficulty };
 
 function parsePosition(fen: string) {
   try { return new Chess(fen); }
@@ -47,35 +57,55 @@ export class EngineService {
     } catch { throw new ServiceUnavailableException('A tablebase está indisponível. Verifique a conexão e tente novamente.'); }
   }
 
-  async analyze(fen: string, depth: number) {
-    const chess = parsePosition(fen);
+  async analyzeMove(fen: string, move: string, depth = 12) {
+    return analyzeMoveWithEngine(fen, move, depth, (position, requestedDepth) => this.analyze(position, requestedDepth));
+  }
+
+  async analyze(fen: string, depth: number): Promise<EngineAnalysis> {
+    validateAnalysisDepth(depth);
+    const chess = parseAnalysisPosition(fen);
     if (chess.isGameOver()) return { fen: chess.fen(), bestMove: null, score: { type: chess.isCheckmate() ? 'mate' : 'cp', value: 0 }, depth: 0, pv: [], engine: 'Regras do xadrez: posição terminada' };
+    return this.executeStockfish(chess.fen(), { kind: 'analysis', depth });
+  }
+
+  async play(fen: string, difficulty: EngineDifficulty): Promise<EngineMove> {
+    const chess = parseAnalysisPosition(fen);
+    if (chess.isGameOver()) return { fen: chess.fen(), bestMove: null, engine: 'Regras do xadrez: posição terminada', difficulty, elo: null };
+    return this.executeStockfish(chess.fen(), { kind: 'move', difficulty });
+  }
+
+  private executeStockfish(fen: string, request: { kind: 'analysis'; depth: number }): Promise<EngineAnalysis>;
+  private executeStockfish(fen: string, request: { kind: 'move'; difficulty: EngineDifficulty }): Promise<EngineMove>;
+  private async executeStockfish(fen: string, request: StockfishRequest): Promise<EngineAnalysis | EngineMove> {
     const enginePath = process.env.STOCKFISH_PATH || resolve(__dirname, '../../../../.local/stockfish/stockfish.exe');
     if (!existsSync(enginePath)) throw new ServiceUnavailableException('Stockfish não instalado. Execute scripts/setup-stockfish.ps1.');
     if (this.activeAnalyses >= 2) throw new ServiceUnavailableException('O motor está ocupado. Tente novamente em alguns segundos.');
     this.activeAnalyses++;
-    try { return await this.runStockfish(enginePath, chess.fen(), depth); }
+    try { return await this.runStockfish(enginePath, fen, request); }
     finally { this.activeAnalyses--; }
   }
 
-  private runStockfish(enginePath: string, fen: string, requestedDepth: number) {
-    return new Promise<{ fen: string; bestMove: string | null; score: Score; depth: number; pv: string[]; engine: string }>((resolveResult, reject) => {
+  private runStockfish(enginePath: string, fen: string, request: StockfishRequest) {
+    return new Promise<EngineAnalysis | EngineMove>((resolveResult, reject) => {
       const process = spawn(enginePath, [], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] });
       let buffer = '';
       let engine = 'Stockfish';
-      let depth = 0;
-      let score: Score = { type: 'cp', value: 0 };
-      let pv: string[] = [];
+      let evaluation: ReturnType<typeof parseExactUciInfo> = null;
+      let capabilities = emptyStrengthCapabilities();
+      let selectedElo: number | null = null;
+      let moveSearch: { depth: number | null; movetimeMs: number; weakening: NonNullable<ReturnType<typeof strengthSettings>>['weakening'] } | null = null;
+      const rankedMovesByDepth = new Map<number, Map<number, RankedEngineMove>>();
       let finished = false;
       const fail = () => finish(new ServiceUnavailableException('Não foi possível concluir a análise do Stockfish.'));
       const timer = setTimeout(fail, 12_000);
-      const finish = (error?: Error, bestMove: string | null = null) => {
+      const finish = (error?: Error, result?: EngineAnalysis | EngineMove) => {
         if (finished) return;
         finished = true;
         clearTimeout(timer);
         process.kill();
         if (error) reject(error);
-        else resolveResult({ fen, bestMove, score, depth, pv, engine });
+        else if (result) resolveResult(result);
+        else reject(new ServiceUnavailableException('O motor não retornou uma resposta completa.'));
       };
       process.on('error', fail);
       process.stdin.on('error', fail);
@@ -86,18 +116,62 @@ export class EngineService {
         const lines = buffer.split(/\r?\n/);
         buffer = lines.pop() || '';
         for (const line of lines) {
+          if (finished) break;
           if (line.startsWith('id name ')) engine = line.slice(8);
-          if (line === 'uciok') process.stdin.write('setoption name Threads value 1\nsetoption name Hash value 32\nisready\n');
-          if (line === 'readyok') process.stdin.write(`position fen ${fen}\ngo depth ${requestedDepth} movetime 1800\n`);
-          const scoreMatch = line.match(/\bscore (cp|mate) (-?\d+)/);
-          if (line.startsWith('info ') && scoreMatch) {
-            score = { type: scoreMatch[1] as 'cp' | 'mate', value: Number(scoreMatch[2]) };
-            depth = Number(line.match(/\bdepth (\d+)/)?.[1] || depth);
-            pv = line.match(/\bpv (.+)$/)?.[1].trim().split(' ') || [];
+          if (line.startsWith('option name ')) capabilities = readStrengthOption(line, capabilities);
+          if (line === 'uciok') {
+            const commands = ['setoption name Threads value 1', 'setoption name Hash value 32'];
+            if (request.kind === 'move') {
+              const settings = strengthSettings(request.difficulty, capabilities);
+              if (!settings) {
+                finish(new ServiceUnavailableException('Esta instalação do Stockfish não oferece controle de dificuldade.'));
+                continue;
+              }
+              selectedElo = settings.elo;
+              moveSearch = { depth: settings.depth, movetimeMs: settings.movetimeMs, weakening: settings.weakening };
+              commands.push(...settings.commands);
+            }
+            process.stdin.write(`${commands.join('\n')}\nisready\n`);
+          }
+          if (line === 'readyok') {
+            if (request.kind === 'analysis') {
+              process.stdin.write(`position fen ${fen}\ngo depth ${request.depth} movetime 1800\n`);
+            } else if (moveSearch) {
+              const depth = moveSearch.depth === null ? '' : ` depth ${moveSearch.depth}`;
+              process.stdin.write(`position fen ${fen}\ngo movetime ${moveSearch.movetimeMs}${depth}\n`);
+            } else {
+              fail();
+            }
+          }
+          const info = parseExactUciInfo(line);
+          if (info && (!evaluation || info.depth >= evaluation.depth)) evaluation = info;
+          if (request.kind === 'move' && moveSearch?.weakening) {
+            const candidate = parseRankedEngineMove(line);
+            if (candidate) {
+              const atDepth = rankedMovesByDepth.get(candidate.depth) ?? new Map<number, RankedEngineMove>();
+              atDepth.set(candidate.multipv, candidate);
+              rankedMovesByDepth.set(candidate.depth, atDepth);
+            }
           }
           if (line.startsWith('bestmove ')) {
-            const move = line.split(' ')[1];
-            finish(undefined, move === '(none)' || move === '0000' ? null : move);
+            const engineMove = line.split(/\s+/)[1];
+            if (request.kind === 'move') {
+              const rankedMoves = [...rankedMovesByDepth.values()].sort((a, b) => {
+                if (a.size !== b.size) return b.size - a.size;
+                return (b.values().next().value?.depth ?? 0) - (a.values().next().value?.depth ?? 0);
+              })[0]?.values() ?? [];
+              const move = moveSearch?.weakening
+                ? chooseWeakenedMove(rankedMoves, moveSearch.weakening) ?? engineMove
+                : engineMove;
+              if (!move || legalAnalysisLine(fen, [move], 'alternative-pv').moves.length !== 1) { fail(); continue; }
+              finish(undefined, { fen, bestMove: move, engine, difficulty: request.difficulty, elo: selectedElo });
+              continue;
+            }
+            if (!evaluation || evaluation.pv[0] !== engineMove) { fail(); continue; }
+            const legal = legalAnalysisLine(fen, evaluation.pv, 'alternative-pv');
+            if (!legal.moves.length) { fail(); continue; }
+            evaluation.pv = legal.moves;
+            finish(undefined, { fen, bestMove: engineMove, ...evaluation, engine });
           }
         }
       });

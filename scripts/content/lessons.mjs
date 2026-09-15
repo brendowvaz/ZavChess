@@ -1,7 +1,6 @@
 import assert from 'node:assert/strict';
 import { DEFAULT_POSITION, legalPosition, playUci, replay } from './lib.mjs';
 
-const EDITORIAL_NOTICE = 'Texto original em pt-BR; revisão editorial humana pendente.';
 const quiz = (question, options, answer, explanation) => ({ question, options, answer, explanation });
 const step = (title, text, board = {}) => ({ title, text, ...board });
 
@@ -284,7 +283,7 @@ export function buildLessons(openings, puzzles, endgames) {
   const origins = [];
   function add(slug, title, category, level, description, minutes, steps, question, source) {
     const id = `lesson-${slug}`;
-    lessons.push({ id, slug, title, category, level, description: `${description} ${EDITORIAL_NOTICE}`,
+    lessons.push({ id, slug, title, category, level, description,
       sortOrder: lessons.length + 1, minutes, steps, quiz: question });
     origins.push({ id, ...source });
   }
@@ -334,6 +333,6 @@ export function buildLessons(openings, puzzles, endgames) {
     language: 'pt-BR', authorship: 'Textos originais preparados com assistência de IA para Zav Chess.',
     license: 'Sem licença adicional atribuída ao texto original; sujeito à licença definida pelo projeto.',
     editorialStatus: 'pending-human-review', motorValidatedText: false,
-    notice: EDITORIAL_NOTICE, origins,
+    origins,
   } };
 }

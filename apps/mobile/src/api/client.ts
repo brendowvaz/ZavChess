@@ -66,5 +66,5 @@ export async function request<T>(path: string, options: {
 
 export const api = {
   get: <T,>(path: string, signal?: AbortSignal) => request<T>(path, { signal }),
-  post: <T,>(path: string, body: unknown, signal?: AbortSignal) => request<T>(path, { method: 'POST', body, signal, timeout: path === '/analysis' ? 60000 : 25000 }),
+  post: <T,>(path: string, body: unknown, signal?: AbortSignal) => request<T>(path, { method: 'POST', body, signal, timeout: path.startsWith('/analysis') ? 60000 : 25000 }),
 };

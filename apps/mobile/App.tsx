@@ -8,7 +8,8 @@ import { EndgameScreen, EndgamesScreen } from './src/features/endgames/EndgamesS
 import { HomeScreen } from './src/features/home/HomeScreen';
 import { LessonScreen, LessonsScreen } from './src/features/lessons/LessonsScreen';
 import { OpeningFamilyScreen, OpeningScreen, OpeningsScreen } from './src/features/openings/OpeningsScreen';
-import { PuzzlesScreen } from './src/features/puzzles/PuzzlesScreen';
+import { PuzzleScreen, PuzzlesScreen } from './src/features/puzzles/PuzzlesScreen';
+import { ReportScreen } from './src/features/learning/ReportScreen';
 import { NavigationProvider, useNavigation } from './src/navigation/Navigation';
 import { Shell } from './src/navigation/Shell';
 import { AppearanceProvider } from './src/appearance/AppearanceProvider';
@@ -21,11 +22,13 @@ function CurrentScreen() {
     case 'auth': return <AuthScreen />;
     case 'settings': return <SettingsScreen />;
     case 'lessons': return <LessonsScreen />;
-    case 'lesson': return <LessonScreen id={route.id} />;
+    case 'lesson': return <LessonScreen key={route.id} id={route.id} />;
+    case 'report': return <ReportScreen />;
     case 'openings': return <OpeningsScreen />;
     case 'opening-family': return <OpeningFamilyScreen family={route.id} />;
-    case 'opening': return <OpeningScreen id={route.id} />;
+    case 'opening': return <OpeningScreen id={route.id} initialSide={route.studySide} />;
     case 'puzzles': return <PuzzlesScreen />;
+    case 'puzzle': return <PuzzleScreen key={route.id} id={route.id} />;
     case 'endgames': return <EndgamesScreen />;
     case 'endgame': return <EndgameScreen id={route.id} />;
     case 'analysis': return <AnalysisScreen />;

@@ -9,6 +9,7 @@ import { Icon, type IconName } from '../../ui/Icon';
 import { colors, s, serif } from '../../ui/theme';
 import { ChessBoard } from '../../chess/ChessBoard';
 import { DEFAULT_POSITION } from '../../chess/logic';
+import { StudyPlan } from '../learning/StudyPlan';
 
 const practice: { screen: Tab; icon: IconName; title: string; description: string; tag: string }[] = [
   { screen: 'puzzles', icon: 'puzzle', title: 'Encontre o melhor lance', description: 'Treine o olhar para as oportunidades.', tag: 'TÁTICA' },
@@ -34,8 +35,9 @@ export function HomeScreen() {
         <View style={[s.wrap, { marginTop: 4 }]}><Button label="Explorar aulas" variant="light" icon="arrow" onPress={() => navigate({ screen: 'lessons' })} />
           <Pressable accessibilityRole="button" onPress={() => navigate({ screen: 'analysis' })} style={{ padding: 13, minHeight: 46 }}><Text style={{ color: '#F3F4DF', fontSize: 14 }}>Ir para o tabuleiro ↗</Text></Pressable></View>
       </View>
-      {width >= 1150 ? <View style={{ width: 220, justifyContent: 'center', transform: [{ rotate: '-6deg' }], opacity: 0.93 }}><ChessBoard fen={DEFAULT_POSITION} maxSize={220} hideStatus /></View> : null}
+      {width >= 1150 ? <View style={{ width: 220, justifyContent: 'center', transform: [{ rotate: '-6deg' }], opacity: 0.93 }}><ChessBoard fen={DEFAULT_POSITION} maxSize={220} hideStatus edgeToEdge={false} /></View> : null}
     </View>
+    <StudyPlan />
     {restoring ? <Loading label="Buscando sua sessão…" /> : user ? <>
       <View style={s.between}><Text accessibilityRole="header" style={s.h2}>Sua evolução</Text><Button label="Atualizar" icon="refresh" variant="ghost" compact onPress={() => { dashboard.reload(); progress.reload(); }} /></View>
       {dashboard.loading ? <Loading label="Carregando seu progresso…" /> : dashboard.error ? <ErrorState message={dashboard.error} retry={dashboard.reload} /> : data ? <>

@@ -1,244 +1,2090 @@
 {
+  "schemaVersion": 1,
+  "revision": "4b8622759e7ae6f93f011cc6c83a3823401ab45e",
+  "reviewedAt": "2026-09-10",
+  "authorship": "Zav Chess · rascunho assistido por IA, sem atribuição a mestre ou revisor humano",
+  "sourceScope": "Fontes primárias verificam identidade e lances. Planos e anotações são análise editorial original da posição, ainda sem revisão humana.",
+  "coverage": {
+    "catalogFamilies": 149,
+    "guidedFamilies": 42,
+    "originalGuidesRevised": 30,
+    "variationGuides": 21,
+    "uncoveredFamilies": [
+      "Amar Opening",
+      "Amazon Attack",
+      "Amsterdam Attack",
+      "Anderssen's Opening",
+      "Australian Defense",
+      "Barnes Defense",
+      "Barnes Opening",
+      "Basque Opening",
+      "Benko Gambit Declined",
+      "Blackmar-Diemer Gambit",
+      "Blackmar-Diemer Gambit Accepted",
+      "Blackmar-Diemer Gambit Declined",
+      "Blumenfeld Countergambit",
+      "Blumenfeld Countergambit Accepted",
+      "Bongcloud Attack",
+      "Borg Defense",
+      "Canard Opening",
+      "Carr Defense",
+      "Center Game",
+      "Center Game Accepted",
+      "Clemenz Opening",
+      "Creepy Crawly Formation",
+      "Czech Defense",
+      "Danish Gambit",
+      "Danish Gambit Accepted",
+      "Danish Gambit Declined",
+      "Dresden Opening",
+      "Duras Gambit",
+      "Döry Defense",
+      "East Indian Defense",
+      "Elephant Gambit",
+      "English Defense",
+      "English Orangutan",
+      "Englund Gambit",
+      "Englund Gambit Declined",
+      "Formation",
+      "Fried Fox Defense",
+      "Global Opening",
+      "Goldsmith Defense",
+      "Grob Opening",
+      "Gunderam Defense",
+      "Hippopotamus Defense",
+      "Horwitz Defense",
+      "Hungarian Opening",
+      "Indian Defense",
+      "Irish Gambit",
+      "Kangaroo Defense",
+      "King's Gambit",
+      "King's Indian Attack, with Bf5",
+      "King's Indian Attack, with e6",
+      "King's Knight Opening",
+      "King's Pawn Game",
+      "King's Pawn Opening",
+      "Kádas Opening",
+      "Lasker Simul Special",
+      "Latvian Gambit",
+      "Latvian Gambit Accepted",
+      "Lemming Defense",
+      "Lion Defense",
+      "London System, with Bd3",
+      "London System, with Be2",
+      "Marienbad System",
+      "Mexican Defense",
+      "Mieses Opening",
+      "Mikenas Defense",
+      "Montevideo Defense",
+      "Neo-Grünfeld Defense",
+      "Nimzowitsch Defense",
+      "Old Indian Defense",
+      "Owen Defense",
+      "Paleface Attack",
+      "Polish Defense",
+      "Polish Opening",
+      "Polish Opening, with d5",
+      "Ponziani Opening",
+      "Portuguese Opening",
+      "Pseudo Queen's Indian Defense",
+      "Pterodactyl Defense",
+      "Queen's Gambit",
+      "Queen's Indian Accelerated",
+      "Queen's Indian Defense, with e3",
+      "Queen's Indian Defense, with e3, Bb4+ Line",
+      "Queen's Pawn, Mengarini Attack",
+      "Rapport-Jobava System",
+      "Rapport-Jobava System, with e6",
+      "Rat Defense",
+      "Richter-Veresov Attack",
+      "Robatsch Defense",
+      "Rubinstein Opening",
+      "Saragossa Opening",
+      "Semi-Slav Defense Accepted",
+      "Slav Indian",
+      "Sodium Attack",
+      "St. George Defense",
+      "Three Knights Opening",
+      "Valencia Opening",
+      "Van Geet Opening",
+      "Van't Kruijs Opening",
+      "Vienna Gambit, with Max Lange Defense",
+      "Vulture Defense",
+      "Wade Defense",
+      "Ware Defense",
+      "Ware Opening",
+      "Yusupov-Rubinstein System",
+      "Zaire Defense",
+      "Zukertort Defense",
+      "Zukertort Opening"
+    ],
+    "humanReview": "pending"
+  },
   "guides": [
     {
       "family": "Sicilian Defense",
-      "overview": "Com ...c5, as pretas contestam d4 sem espelhar o centro. A estrutura costuma ser assimétrica: os dois lados jogam em alas diferentes e precisam saber qual tensão central manter ou resolver.",
-      "whitePlan": ["Use o desenvolvimento para apoiar d4 e abrir linhas antes que as pretas coordenem as peças.", "Depois do roque, escolha um plano coerente com a estrutura; não ataque os dois flancos sem preparo."],
-      "blackPlan": ["Complete o desenvolvimento e decida se o contra-jogo virá por ...d5, ...e5 ou na coluna c.", "Trate a segurança do rei como parte do plano: a assimetria dá chances aos dois lados."],
-      "commonMistakes": ["Atacar no flanco antes de terminar o desenvolvimento.", "Capturar ou avançar no centro sem calcular quais colunas e casas ficam fracas.", "Decorar uma variante e ignorar a resposta concreta do adversário."],
-      "lessonIds": ["lesson-siciliana"]
+      "displayName": "Defesa Siciliana",
+      "aliases": [
+        "Defesa Siciliana",
+        "Siciliana"
+      ],
+      "overview": "1.e4 c5 disputa d4 e cria assimetria. Na Siciliana Aberta, ...cxd4 troca o peão c pelo peão d branco: as pretas obtêm a coluna c semiaberta e as brancas desenvolvimento ativo. Alapin e sistemas fechados têm outra estrutura.",
+      "whitePlan": [
+        "Na Aberta, apoie e4 com Nc3 e escolha o desenvolvimento do bispo de c1 conforme ...a6, ...e6 ou ...g6.",
+        "Prepare d4 com Nf3; com 2.c3, a ideia é recapturar em d4 com um peão."
+      ],
+      "blackPlan": [
+        "Na Aberta, pressione c2 pela coluna c e prepare ...d5 quando as peças sustentarem a ruptura.",
+        "Compare os compromissos: ...e5 cede d5; ...g6 coloca o bispo na diagonal longa; ...e6 preserva d5, mas fecha c8."
+      ],
+      "commonMistakes": [
+        "Copiar o ataque Iugoslavo contra qualquer Siciliana.",
+        "Jogar ...e5 sem avaliar a casa d5 e o peão d6."
+      ],
+      "lessonIds": [
+        "lesson-siciliana"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Separada a estrutura da Aberta das anti-Sicilianas; retiradas recomendações universais de flanco.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L374",
+          "scope": "identity-and-moves",
+          "openingId": "opening-25d9e91bc18c0bb529ea4838"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-25d9e91bc18c0bb529ea4838",
+        "name": "Sicilian Defense",
+        "pgn": "1. e4 c5",
+        "moves": [
+          "e2e4",
+          "c7c5"
+        ],
+        "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "annotations": []
+      }
     },
     {
       "family": "Ruy Lopez",
-      "overview": "A Espanhola começa com pressão sobre o cavalo de c6, que ajuda a defender e5. A ideia inicial é aumentar a tensão central com desenvolvimento, não ganhar um peão imediatamente.",
-      "whitePlan": ["Desenvolva, roce e use a pressão sobre e5 para ganhar espaço ou preparar d4.", "Pergunte sempre o que acontece com o bispo depois de ...a6: recuo, troca ou avanço mudam o plano."],
-      "blackPlan": ["Defenda e5 sem perder coordenação e desenvolva as peças antes de buscar atividade no flanco da dama.", "Use ...a6 e ...b5 apenas quando a posição justificar o ganho de espaço."],
-      "commonMistakes": ["Trocar em c6 automaticamente sem avaliar a estrutura resultante.", "Fazer lances de peão no flanco da dama enquanto o rei continua no centro.", "Tratar o ataque a e5 como uma ameaça isolada e esquecer d4."],
-      "lessonIds": ["lesson-espanhola"]
+      "displayName": "Abertura Espanhola",
+      "aliases": [
+        "Abertura Espanhola",
+        "Espanhola"
+      ],
+      "overview": "1.e4 e5 2.Nf3 Nc6 3.Bb5 pressiona o defensor de e5. Bxc6 seguido de Nxe5 não ganha automaticamente um peão: a resposta ...Qd4 pode atacar cavalo e e4. Berlim, Trocas e linhas fechadas pedem planos distintos.",
+      "whitePlan": [
+        "Nas linhas fechadas, c3 sustenta d4 e Re1 protege e4 antes de manobrar o cavalo de b1.",
+        "Após ...a6, escolha entre Ba4, preservando o bispo, e Bxc6, alterando a estrutura."
+      ],
+      "blackPlan": [
+        "...Nf6 ataca e4; confirme se capturar permite d4 com tempo.",
+        "Na Morphy, ...b5 ganha espaço e afasta o bispo, mas deixa casas a proteger na ala da dama."
+      ],
+      "commonMistakes": [
+        "Supor que Bxc6 ganha e5 imediatamente.",
+        "Repetir manobras da Espanhola fechada no final da Berlim."
+      ],
+      "lessonIds": [
+        "lesson-espanhola"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Acrescentada a defesa tática de e5 e diferenciadas estruturas.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L1017",
+          "scope": "identity-and-moves",
+          "openingId": "opening-3ddadd403445125f80a27706"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-3ddadd403445125f80a27706",
+        "name": "Ruy Lopez",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1b5"
+        ],
+        "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+        "annotations": []
+      }
     },
     {
       "family": "French Defense",
-      "overview": "As pretas preparam ...d5 com ...e6 e aceitam temporariamente menos espaço. O centro costuma definir quando cada lado deve atacar e qual bispo precisará de atenção.",
-      "whitePlan": ["Use o espaço central para desenvolver e escolher o momento de avançar ou tensionar os peões.", "Observe o bispo de c8 das pretas, mas não suponha que ele ficará passivo para sempre."],
-      "blackPlan": ["Questione o centro branco com ...c5 ou ...f6 quando as peças estiverem prontas.", "Planeje uma saída útil para o bispo de c8 e mantenha o rei seguro antes de abrir linhas."],
-      "commonMistakes": ["Avançar peões centrais sem ter casas de recuo para as peças.", "Abrir o centro enquanto o próprio rei ainda está exposto.", "Confundir espaço com vantagem decisiva e deixar o adversário criar contra-jogo."],
-      "lessonIds": ["lesson-francesa"]
+      "displayName": "Defesa Francesa",
+      "aliases": [
+        "Defesa Francesa",
+        "Francesa"
+      ],
+      "overview": "1.e4 e6 2.d4 d5 ataca e4. Se as brancas avançam e5, a cadeia d4–e5 aponta planos concretos: ...c5 ataca a base d4 e ...f6 questiona e5. Na variante das Trocas, essa cadeia não existe.",
+      "whitePlan": [
+        "No Avanço, c3 reforça d4; desenvolva sem deixar ...cxd4 expor a base da cadeia.",
+        "Escolha Nc3, permitindo a cravada ...Bb4, ou Nd2, preservando c3 para o peão."
+      ],
+      "blackPlan": [
+        "Pressione d4 com ...c5, ...Nc6 e, conforme a linha, ...Qb6.",
+        "Procure ...b6 e ...Ba6 ou outra saída para c8; ...f6 exige calcular as linhas abertas contra seu rei."
+      ],
+      "commonMistakes": [
+        "Achar que ...c5 precisa esperar o roque: é frequentemente uma ruptura precoce.",
+        "Aplicar planos de centro fechado após exd5 exd5."
+      ],
+      "lessonIds": [
+        "lesson-francesa"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Removida proibição de rupturas antes do roque; separadas Trocas e Avanço.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L2",
+          "scope": "identity-and-moves",
+          "openingId": "opening-d9731ff7cd6919206bed417b"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-d9731ff7cd6919206bed417b",
+        "name": "French Defense",
+        "pgn": "1. e4 e6",
+        "moves": [
+          "e2e4",
+          "e7e6"
+        ],
+        "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "annotations": []
+      }
     },
     {
       "family": "Caro-Kann Defense",
-      "overview": "Com ...c6, as pretas sustentam a disputa por d5 e procuram desenvolver o bispo de c8 antes de fechar a diagonal com ...e6. A partida gira em torno do centro e do ritmo de desenvolvimento.",
-      "whitePlan": ["Ganhe espaço no centro sem abandonar o desenvolvimento e a segurança do rei.", "Use a iniciativa de espaço para colocar as peças em casas ativas, em vez de empurrar peões sem objetivo."],
-      "blackPlan": ["Confronte o centro com ...d5 e priorize a saída do bispo de c8 quando a linha permitir.", "Não deixe a estrutura ficar passiva: escolha um momento para desafiar os peões centrais."],
-      "commonMistakes": ["Manter o bispo de c8 preso por hábito.", "As brancas avançarem o centro sem calcular as casas enfraquecidas.", "Trocar peças centrais sem avaliar quem ficará com mais espaço."],
-      "lessonIds": ["lesson-caro-kann"]
+      "displayName": "Defesa Caro-Kann",
+      "aliases": [
+        "Defesa Caro-Kann",
+        "Caro-Kann"
+      ],
+      "overview": "1.e4 c6 2.d4 d5 sustenta d5 com o peão c. Na Clássica, ...dxe4 e ...Bf5 desenvolvem c8 fora da cadeia; no Avanço, ...Bf5 e a alternativa imediata ...c5 levam a decisões diferentes.",
+      "whitePlan": [
+        "Após e5, use o espaço e vigie o bispo em f5; h4 só tem sentido com cálculo.",
+        "Após exd5 cxd5, c4 leva a estruturas do Panov, com possível peão isolado em d4."
+      ],
+      "blackPlan": [
+        "Desenvolva c8 quando a linha permitir, sem tratar ...Bf5 como obrigação universal.",
+        "Prepare ...c5 ou ...e5 para impedir que o espaço branco se torne estável."
+      ],
+      "commonMistakes": [
+        "Confundir o centro do Panov com o centro fechado do Avanço.",
+        "Perder tempos com o bispo enquanto d5 fica sem defesa."
+      ],
+      "lessonIds": [
+        "lesson-caro-kann"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Incluídos Panov e alternativa ...c5; qualificada a saída de c8.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L264",
+          "scope": "identity-and-moves",
+          "openingId": "opening-d20a3d6c573d2a84ce6aa73e"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-d20a3d6c573d2a84ce6aa73e",
+        "name": "Caro-Kann Defense",
+        "pgn": "1. e4 c6",
+        "moves": [
+          "e2e4",
+          "c7c6"
+        ],
+        "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "annotations": []
+      }
     },
     {
       "family": "Italian Game",
-      "overview": "A Italiana desenvolve o bispo para uma diagonal voltada a f7 e prepara um jogo de desenvolvimento rápido. A pressão em f7 só funciona quando há peças suficientes para sustentá-la.",
-      "whitePlan": ["Roque cedo, desenvolva o cavalo e considere d4 quando as peças apoiarem o centro.", "Use o bispo em c4 para criar perguntas; não trate f7 como alvo automático."],
-      "blackPlan": ["Defenda f7 pela coordenação e desenvolva as peças antes de tentar expulsar o bispo.", "Escolha entre jogo central e expansão no flanco da dama de acordo com a segurança do rei."],
-      "commonMistakes": ["Sacrificar em f7 sem cálculo concreto.", "Mover a mesma peça várias vezes enquanto outras continuam na casa inicial.", "Abrir o centro antes de rocar."],
-      "lessonIds": ["lesson-italiana"]
+      "displayName": "Abertura Italiana",
+      "aliases": [
+        "Abertura Italiana",
+        "Italiana"
+      ],
+      "overview": "1.e4 e5 2.Nf3 Nc6 3.Bc4 desenvolve contra f7. ...Bc5 permite jogo com c3 e d4 ou o Pianissimo com d3; ...Nf6 ataca e4 imediatamente e muda as possibilidades táticas.",
+      "whitePlan": [
+        "Com c3 e d4, calcule ...exd4 e xeques em b4 antes de abrir o centro.",
+        "Com d3, preserve o bispo por Bb3 e prepare d4 com peças coordenadas."
+      ],
+      "blackPlan": [
+        "Na Dois Cavalos, responda a Ng5 com cálculo central, incluindo ...d5.",
+        "No Pianissimo, ...d6 sustenta e5; prepare ...d5 em condições favoráveis."
+      ],
+      "commonMistakes": [
+        "Sacrificar em f7 só porque o bispo aponta para lá.",
+        "Proibir d4 antes do roque: há linhas principais que abrem cedo o centro."
+      ],
+      "lessonIds": [
+        "lesson-italiana"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Retirada regra incorreta de rocar antes de abrir o centro.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L830",
+          "scope": "identity-and-moves",
+          "openingId": "opening-980a24b5ac92ef66c6234bb3"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-980a24b5ac92ef66c6234bb3",
+        "name": "Italian Game",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4"
+        ],
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+        "annotations": []
+      }
     },
     {
       "family": "Scotch Game",
-      "overview": "A Escocesa abre cedo o centro com d4. Isso valoriza desenvolvimento, cálculo e segurança do rei, porque as peças passam a encontrar linhas abertas rapidamente.",
-      "whitePlan": ["Use a abertura do centro para desenvolver com tempo e colocar as peças em casas ativas.", "Recupere material somente quando a sequência não custar coordenação ou segurança do rei."],
-      "blackPlan": ["Responda ao centro com desenvolvimento e pressão nas casas que os peões avançados deixaram para trás.", "Evite caçar peões se isso atrasar o rei ou as peças menores."],
-      "commonMistakes": ["Abrir linhas e deixar o rei no centro.", "Ganhar um peão e perder tempos de desenvolvimento.", "Trocar no centro sem notar qual peça passa a ficar ativa."],
-      "lessonIds": ["lesson-escocesa"]
+      "displayName": "Abertura Escocesa",
+      "aliases": [
+        "Abertura Escocesa",
+        "Escocesa"
+      ],
+      "overview": "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 elimina cedo os peões centrais d e e. O cavalo em d4 pode ser pressionado por ...Bc5; ...Nf6 ataca e4. Essas respostas exigem decisões diferentes.",
+      "whitePlan": [
+        "Contra ...Bc5, avalie Be3 para sustentar d4 sem expor a dama cedo.",
+        "Após Nxc6 bxc6, reconheça o centro preto reforçado e as colunas abertas."
+      ],
+      "blackPlan": [
+        "Desenvolva com ...Bc5 ou ...Nf6, atacando o centro enquanto as brancas coordenam as peças.",
+        "Se trocar em d4, veja se Qxd4 dá à dama branca uma casa ativa difícil de atacar."
+      ],
+      "commonMistakes": [
+        "Tratar ...Nxd4 como ganho automático de tempo.",
+        "Caçar peões deixando xeques centrais contra o rei."
+      ],
+      "lessonIds": [
+        "lesson-escocesa"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Especificadas ...Bc5 e ...Nf6; removido texto intercambiável.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L722",
+          "scope": "identity-and-moves",
+          "openingId": "opening-2e84353376cc02e6b9a22e4a"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-2e84353376cc02e6b9a22e4a",
+        "name": "Scotch Game",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. d4",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "d2d4"
+        ],
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+        "annotations": []
+      }
     },
     {
       "family": "Four Knights Game",
-      "overview": "Os quatro cavalos colocam o desenvolvimento em primeiro plano. A simplicidade inicial não elimina decisões: o momento de avançar no centro e a colocação dos bispos definem os planos.",
-      "whitePlan": ["Complete o desenvolvimento e use d4 ou outras rupturas quando as peças estiverem coordenadas.", "Escolha casas para os bispos que contribuam para o centro, não apenas para seguir uma ordem conhecida."],
-      "blackPlan": ["Iguale o desenvolvimento e responda às rupturas centrais sem criar fraquezas desnecessárias.", "Mantenha opções para os bispos e para o roque antes de expandir."],
-      "commonMistakes": ["Achar que posições simétricas não exigem cálculo.", "Avançar o peão central sem apoio suficiente.", "Repetir a linha sem observar as alternativas do oponente."],
-      "lessonIds": ["lesson-quatro-cavalos"]
+      "displayName": "Abertura dos Quatro Cavalos",
+      "aliases": [
+        "Abertura dos Quatro Cavalos",
+        "dos Quatro Cavalos"
+      ],
+      "overview": "Após 1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6, os quatro cavalos estão desenvolvidos. Bb5 cria uma estrutura espanhola; d4 pode transpor para a Escocesa dos Quatro Cavalos. Bc4 permite a ideia concreta ...Nxe4 e ...d5 em algumas linhas.",
+      "whitePlan": [
+        "Escolha Bb5 ou d4 conforme a estrutura que quer estudar.",
+        "Antes de Bc4, calcule ...Nxe4, Nxe4 e ...d5, que ganha tempo no bispo."
+      ],
+      "blackPlan": [
+        "Use ...Bb4 ou ...Bc5 conforme a colocação do bispo branco.",
+        "Procure ...d5 com suporte; não copie todos os lances brancos depois de uma ameaça concreta."
+      ],
+      "commonMistakes": [
+        "Supor que simetria elimina táticas no centro.",
+        "Desenvolver o bispo ignorando o tema ...Nxe4 e ...d5."
+      ],
+      "lessonIds": [
+        "lesson-quatro-cavalos"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Adicionado o motivo tático que o guia anterior omitia.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L781",
+          "scope": "identity-and-moves",
+          "openingId": "opening-fd2b5a00e930deb3bffdb365"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-fd2b5a00e930deb3bffdb365",
+        "name": "Four Knights Game",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "b1c3",
+          "g8f6"
+        ],
+        "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4",
+        "annotations": []
+      }
     },
     {
       "family": "Vienna Game",
-      "overview": "A Vienense desenvolve o cavalo de f3 antes de definir o peão de d. Ela pode levar a jogo central ou a ataques, mas a prioridade continua sendo desenvolver e manter o rei seguro.",
-      "whitePlan": ["Use o cavalo em f3 para apoiar e5 e preparar desenvolvimento harmonioso.", "Se buscar iniciativa, confirme que as peças acompanham os peões avançados."],
-      "blackPlan": ["Questione o centro branco e desenvolva sem permitir táticas simples no rei.", "Não reaja a ameaças de ataque com novos enfraquecimentos ao redor do rei."],
-      "commonMistakes": ["Buscar ataque antes de desenvolver o bispo e rocar.", "Avançar f4 sem avaliar a diagonal do rei.", "Esquecer que o centro pode abrir rapidamente."],
-      "lessonIds": []
+      "displayName": "Abertura Vienense",
+      "aliases": [
+        "Abertura Vienense",
+        "Vienense"
+      ],
+      "overview": "A Vienense começa com 1.e4 e5 2.Nc3: o cavalo sai de b1 para c3, protege e4 e controla d5. O cavalo de g1 ainda não se moveu; isso mantém f2–f4 disponível. Não é 2.Nf3.",
+      "whitePlan": [
+        "Contra ...Nf6, 3.f4 escolhe o Gambito Vienense; calcule a resposta central ...d5.",
+        "Com Bc4 e d3, desenvolva de modo mais contido e decida depois entre Nf3 e f4."
+      ],
+      "blackPlan": [
+        "...Nf6 pressiona e4; após 3.f4, estude ...d5 em vez de aceitar o gambito por hábito.",
+        "...Nc6 sustenta e5 e pode levar a outras posições que o sistema com ...Nf6."
+      ],
+      "commonMistakes": [
+        "Confundir Nc3 com Nf3 ou dizer que o cavalo de c3 ataca e5.",
+        "Copiar respostas ao Gambito do Rei sem observar que Nc3 já foi jogado."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "CORREÇÃO: b1–c3, defesa de e4 e controle de d5; removidas ambas as referências erradas a f3.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L320",
+          "scope": "identity-and-moves",
+          "openingId": "opening-095eb698f82ff7abf313b0a6"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-095eb698f82ff7abf313b0a6",
+        "name": "Vienna Game",
+        "pgn": "1. e4 e5 2. Nc3",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "b1c3"
+        ],
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2",
+        "annotations": []
+      }
     },
     {
       "family": "King's Gambit Accepted",
-      "overview": "As brancas oferecem o peão de f para ganhar tempos e linhas de ataque. A posição exige cálculo concreto: iniciativa não é compensação automática pelo material cedido.",
-      "whitePlan": ["Desenvolva com ganho de tempo e use linhas abertas antes que as pretas consolidem o peão extra.", "Mantenha o rei seguro; abrir a coluna f não obriga um ataque imediato."],
-      "blackPlan": ["Aceite ou devolva o peão apenas quando puder desenvolver e proteger o rei.", "Neutralize a iniciativa com peças ativas, não somente defendendo peões."],
-      "commonMistakes": ["Sacrificar mais material sem uma continuação calculada.", "Defender o peão extra a qualquer custo e atrasar o desenvolvimento.", "Abrir diagonais perto do próprio rei sem necessidade."],
-      "lessonIds": []
+      "displayName": "Gambito do Rei Aceito",
+      "aliases": [
+        "Gambito do Rei Aceito",
+        "Gambito do Rei Aceito"
+      ],
+      "overview": "1.e4 e5 2.f4 exf4 cede o peão f para desviar o peão e5 e abrir linhas. Em 3.Nf3, o cavalo controla h4; 3.Bc4 permite ...Qh4+ e conduz a outro tipo de jogo com o rei.",
+      "whitePlan": [
+        "Use d4 e desenvolvimento para disputar o centro enquanto o peão preto permanece em f4.",
+        "Antes de recuperar f4, calcule a defesa ...g5 e o que ela enfraquece."
+      ],
+      "blackPlan": [
+        "Escolha entre sustentar f4 com ...g5 ou devolver material para acelerar ...d5 e o desenvolvimento.",
+        "Contra Bc4, avalie ...Qh4+ concretamente: xeque não substitui desenvolvimento."
+      ],
+      "commonMistakes": [
+        "Tratar a coluna f como aberta enquanto o peão preto ainda está em f4.",
+        "Defender o peão extra a qualquer custo."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Distinguido o cavalo em f3 do Gambito do Bispo e corrigida a ideia de coluna já aberta.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L421",
+          "scope": "identity-and-moves",
+          "openingId": "opening-f4318b3c80cbe65fa7cd8db7"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-f4318b3c80cbe65fa7cd8db7",
+        "name": "King's Gambit Accepted",
+        "pgn": "1. e4 e5 2. f4 exf4",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "f2f4",
+          "e5f4"
+        ],
+        "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3",
+        "annotations": []
+      }
     },
     {
       "family": "Queen's Gambit Declined",
-      "overview": "As pretas sustentam d5 e não aceitam o peão de c4. O centro fica sob tensão e os planos dependem de desenvolvimento, rupturas como ...c5 ou ...e5 e do tratamento do bispo de c8.",
-      "whitePlan": ["Use a pressão no centro para desenvolver e decidir entre manter a tensão ou trocar em d5.", "Não transforme o ganho de espaço em alvo: proteja os peões centrais com peças."],
-      "blackPlan": ["Complete o desenvolvimento e prepare uma ruptura central em boas condições.", "Planeje a atividade do bispo de c8 antes de fechar a estrutura definitivamente."],
-      "commonMistakes": ["Trocar em d5 por reflexo, sem saber qual estrutura deseja.", "Atrasar a ruptura central até ficar sem espaço.", "Confundir a proteção de d5 com uma posição passiva obrigatória."],
-      "lessonIds": ["lesson-gambito-da-dama", "lesson-gambito-recusado"]
+      "displayName": "Gambito da Dama Recusado",
+      "aliases": [
+        "Gambito da Dama Recusado",
+        "Gambito da Dama Recusado"
+      ],
+      "overview": "1.d4 d5 2.c4 e6 sustenta d5 e fecha a diagonal inicial de c8. A troca cxd5 exd5 pode produzir a estrutura de Carlsbad; enquanto a tensão permanece, ...c5 disputa diretamente d4.",
+      "whitePlan": [
+        "Na Carlsbad, considere o ataque de minoria b4–b5 para criar um alvo em c6, se a estrutura o permitir.",
+        "Com a tensão central, desenvolva e prepare e4 em vez de trocar automaticamente em d5."
+      ],
+      "blackPlan": [
+        "Prepare ...c5 para ativar as peças e aliviar a pressão em d5.",
+        "Resolva c8 por ...b6 e ...Bb7 ou por trocas e rupturas que abram sua diagonal."
+      ],
+      "commonMistakes": [
+        "Usar ataque de minoria sem a estrutura que lhe dá sentido.",
+        "Manter d5 a qualquer custo e permitir e4 sem reação."
+      ],
+      "lessonIds": [
+        "lesson-gambito-da-dama",
+        "lesson-gambito-recusado"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Acrescentada Carlsbad sem generalizar o ataque de minoria.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L285",
+          "scope": "identity-and-moves",
+          "openingId": "opening-bbd56ef7dce9a4f6de80ef4c"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-bbd56ef7dce9a4f6de80ef4c",
+        "name": "Queen's Gambit Declined",
+        "pgn": "1. d4 d5 2. c4 e6",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4",
+          "e7e6"
+        ],
+        "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "annotations": []
+      }
     },
     {
       "family": "Queen's Gambit Accepted",
-      "overview": "Ao aceitar o peão de c4, as pretas ganham material temporário e permitem que as brancas ocupem o centro. O ponto central é decidir quando devolver ou sustentar o peão sem perder desenvolvimento.",
-      "whitePlan": ["Use o centro e o desenvolvimento para recuperar o peão em condições favoráveis.", "Evite perseguir c4 com poucas peças enquanto as pretas ganham tempo."],
-      "blackPlan": ["Desenvolva antes de tentar defender c4 a qualquer custo.", "Se devolver o peão, escolha uma forma que resolva um problema de desenvolvimento ou gere atividade."],
-      "commonMistakes": ["Tratar o peão de c4 como ganho permanente.", "As brancas gastarem tempos demais para recuperá-lo.", "Abrir o centro com o rei ainda vulnerável."],
-      "lessonIds": ["lesson-gambito-da-dama"]
+      "displayName": "Gambito da Dama Aceito",
+      "aliases": [
+        "Gambito da Dama Aceito",
+        "Gambito da Dama Aceito"
+      ],
+      "overview": "1.d4 d5 2.c4 dxc4 entrega o centro temporariamente. O peão em c4 costuma ser recuperado com Bxc4; as pretas procuram ...c5 ou ...e5 para atacar o centro branco, não guardar um peão para sempre.",
+      "whitePlan": [
+        "Com e3, abra o bispo de f1 para recuperar c4 e desenvolver.",
+        "Com e4 imediato, prepare-se para a contestação ...e5: o centro amplo precisa de apoio."
+      ],
+      "blackPlan": [
+        "Desenvolva com ...Nf6 e ...e6 quando adequado, devolvendo c4 sem perder coordenação.",
+        "Use ...c5 para questionar d4; a sequência de trocas pode criar um peão isolado branco."
+      ],
+      "commonMistakes": [
+        "Jogar ...b5 para segurar c4 sem calcular a4 e o enfraquecimento da ala.",
+        "Confundir o centro após e3 com as linhas de e4 imediato."
+      ],
+      "lessonIds": [
+        "lesson-gambito-da-dama"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Especificadas recuperação Bxc4 e rupturas ...c5/...e5.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L227",
+          "scope": "identity-and-moves",
+          "openingId": "opening-c16da6d3a9091a374ccf9359"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-c16da6d3a9091a374ccf9359",
+        "name": "Queen's Gambit Accepted",
+        "pgn": "1. d4 d5 2. c4 dxc4",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4",
+          "d5c4"
+        ],
+        "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "annotations": []
+      }
     },
     {
       "family": "Slav Defense",
-      "overview": "A Eslava protege d5 com o peão c e preserva, em muitas linhas, a diagonal do bispo de c8. A luta costuma ser por desenvolvimento e pela oportunidade correta de desafiar o centro.",
-      "whitePlan": ["Desenvolva pressionando o centro e escolha uma ruptura que não deixe os peões avançados indefesos.", "Use a vantagem de espaço para melhorar peças antes de abrir a posição."],
-      "blackPlan": ["Sustente d5 sem abandonar o desenvolvimento e mantenha o bispo de c8 ativo quando possível.", "Prepare ...c5 ou ...e5 somente quando a posição das peças der suporte."],
-      "commonMistakes": ["Confundir solidez com ausência de contra-jogo.", "Defender d5 com muitas peças e esquecer o rei.", "Forçar uma ruptura central sem calcular as trocas."],
-      "lessonIds": ["lesson-eslava", "lesson-gambito-da-dama"]
+      "displayName": "Defesa Eslava",
+      "aliases": [
+        "Defesa Eslava",
+        "Eslava"
+      ],
+      "overview": "1.d4 d5 2.c4 c6 mantém c8 com diagonal disponível. Contudo, desenvolver ...Bf5 cedo demais pode deixar b7 e d5 vulneráveis; a Eslava principal frequentemente resolve antes a tensão com ...dxc4.",
+      "whitePlan": [
+        "Pressione d5 com Nc3 e vigie b7 se o bispo de c8 sair.",
+        "Contra ...dxc4 e ...b5, a4 questiona a cadeia que tenta sustentar c4."
+      ],
+      "blackPlan": [
+        "Calcule ...dxc4 e a atividade de c8 em conjunto, em vez de fianquetar ou sair por hábito.",
+        "Na estrutura de Trocas cxd5 cxd5, desenvolva sem supor que a simetria implica empate."
+      ],
+      "commonMistakes": [
+        "Jogar ...Bf5 automaticamente antes de verificar Qb3.",
+        "Aplicar planos da Semi-Eslava sem o peão e6."
+      ],
+      "lessonIds": [
+        "lesson-eslava",
+        "lesson-gambito-da-dama"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Corrigida a impressão de saída gratuita de c8; incluído alvo b7.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L175",
+          "scope": "identity-and-moves",
+          "openingId": "opening-7f5c9b3d0516434e3ba50128"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-7f5c9b3d0516434e3ba50128",
+        "name": "Slav Defense",
+        "pgn": "1. d4 d5 2. c4 c6",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4",
+          "c7c6"
+        ],
+        "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "annotations": []
+      }
     },
     {
       "family": "Semi-Slav Defense",
-      "overview": "A Semi-Eslava combina a proteção de d5 com ...e6 e cria uma estrutura sólida, mas com decisões táticas importantes. O desenvolvimento do bispo de c8 e as rupturas centrais exigem atenção.",
-      "whitePlan": ["Use desenvolvimento e pressão no centro para impedir que as pretas resolvam todos os problemas de uma vez.", "Calcule antes de abrir linhas: muitas variantes mudam rapidamente de estratégicas para táticas."],
-      "blackPlan": ["Coordene as peças antes de desafiar o centro e tenha um plano para o bispo de c8.", "Não aceite passividade eterna: procure atividade quando a segurança do rei permitir."],
-      "commonMistakes": ["Aplicar planos da Eslava sem considerar o peão em e6.", "Abrir a posição sem desenvolvimento suficiente.", "Memorizar sequências táticas sem entender a estrutura."],
-      "lessonIds": ["lesson-eslava", "lesson-gambito-recusado"]
+      "displayName": "Defesa Semi-Eslava",
+      "aliases": [
+        "Defesa Semi-Eslava",
+        "Semi-Eslava"
+      ],
+      "overview": "Peões pretos em c6, d5 e e6 formam o triângulo da Semi-Eslava. Ao contrário da Eslava com bispo fora da cadeia, c8 fica fechado. Na Meran, ...dxc4 e ...b5 ganham tempo no bispo antes de ...c5.",
+      "whitePlan": [
+        "e3 permite Bd3 e uma disputa central na Meran; Bg5 mantém tensão e pode permitir linhas muito táticas.",
+        "Prepare e4 acompanhando o momento em que as pretas capturam c4."
+      ],
+      "blackPlan": [
+        "Desenvolva com ...Nbd7 para apoiar ...c5 ou ...e5.",
+        "Depois de ...dxc4 e Bxc4, ...b5 ganha espaço; use esse tempo para concluir a mobilização."
+      ],
+      "commonMistakes": [
+        "Usar ...b5 sem calcular a ruptura a4 ou o centro branco.",
+        "Ignorar que Bg5 e e3 conduzem a compromissos diferentes."
+      ],
+      "lessonIds": [
+        "lesson-eslava",
+        "lesson-gambito-recusado"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Diferenciada a estrutura e explicada a sequência da Meran.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L400",
+          "scope": "identity-and-moves",
+          "openingId": "opening-0acc0e257bdad0a65b4beccc"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-0acc0e257bdad0a65b4beccc",
+        "name": "Semi-Slav Defense",
+        "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4",
+          "c7c6",
+          "g1f3",
+          "g8f6",
+          "b1c3",
+          "e7e6"
+        ],
+        "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+        "annotations": []
+      }
     },
     {
       "family": "English Opening",
-      "overview": "Com c4, as brancas controlam d5 à distância e deixam a estrutura central mais flexível. Muitas linhas transpoem; reconheça a estrutura antes de aplicar um plano pelo nome da abertura.",
-      "whitePlan": ["Desenvolva para apoiar d5 e escolha o momento de jogar d4 ou manter o centro flexível.", "Use a flexibilidade para responder à estrutura das pretas, não para adiar todas as decisões."],
-      "blackPlan": ["Dispute d5 e e4 com peças e peões, sem assumir que c4 impede todo jogo central.", "Observe possíveis transposições e escolha uma estrutura que você conheça."],
-      "commonMistakes": ["Seguir um plano fixo apesar de uma transposição diferente.", "Trocar no centro sem saber qual diagonal e coluna será aberta.", "Confundir desenvolvimento lento com flexibilidade."],
-      "lessonIds": ["lesson-inglesa"]
+      "displayName": "Abertura Inglesa",
+      "aliases": [
+        "Abertura Inglesa",
+        "Inglesa"
+      ],
+      "overview": "1.c4 controla d5 com um peão de flanco. ...e5 cria uma Siciliana invertida com um tempo a mais para as brancas; ...c5 cria a Inglesa Simétrica. Jogar d4 pode transpor para aberturas do peão da dama.",
+      "whitePlan": [
+        "Com g3 e Bg2, pressione a diagonal longa sem bloquear o bispo com avanços sem propósito.",
+        "Contra ...c5, prepare d4 ou b4 conforme a posição das peças; contra ...e5, vigie d5."
+      ],
+      "blackPlan": [
+        "Contra o fianqueto, escolha como sustentar o centro: ...e5 e ...c5 não são equivalentes.",
+        "Prepare ...d5 quando conseguir responder às capturas centrais sem perder tempos."
+      ],
+      "commonMistakes": [
+        "Tratar toda Inglesa como Siciliana invertida.",
+        "Transpor com d4 e continuar executando planos da estrutura anterior."
+      ],
+      "lessonIds": [
+        "lesson-inglesa"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Separadas Simétrica e ...e5; corrigido o vago apoio a d5.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L281",
+          "scope": "identity-and-moves",
+          "openingId": "opening-1a12fb2981ddc0a877c44976"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-1a12fb2981ddc0a877c44976",
+        "name": "English Opening",
+        "pgn": "1. c4",
+        "moves": [
+          "c2c4"
+        ],
+        "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+        "annotations": []
+      }
     },
     {
       "family": "King's Indian Defense",
-      "overview": "As pretas permitem espaço central e procuram atacá-lo mais tarde com peças fianquetadas e rupturas. O lado que define o centro precisa estar pronto para a reação do outro.",
-      "whitePlan": ["Use o espaço central para desenvolver e escolher se o jogo será no centro, no flanco da dama ou nos dois momentos.", "Não avance peões centrais sem calcular as casas que eles deixam para trás."],
-      "blackPlan": ["Termine o fianqueto e o roque antes de iniciar uma ruptura ou ataque de flanco.", "Ataque o centro branco com peças coordenadas; esperar demais pode deixar as brancas estabilizarem tudo."],
-      "commonMistakes": ["Começar um ataque ao rei sem desenvolvimento completo.", "As brancas fecharem o centro sem prever em qual ala as pretas terão jogo.", "Confundir espaço com segurança permanente."],
-      "lessonIds": []
+      "displayName": "Defesa Índia do Rei",
+      "aliases": [
+        "Defesa Índia do Rei",
+        "Índia do Rei"
+      ],
+      "overview": "As pretas combinam ...Nf6, ...g6, ...Bg7 e ...d6 contra d4/c4/e4. Na estrutura fechada após ...e5 e d5, ...f5 pode iniciar jogo no rei enquanto as brancas buscam c5. Se o centro permanece aberto, essa corrida não se aplica automaticamente.",
+      "whitePlan": [
+        "Na estrutura fechada, prepare c5 para abrir a ala da dama e ocupar casas de entrada.",
+        "Na Sämisch, f3 sustenta e4, mas retira f3 do cavalo e exige outra coordenação."
+      ],
+      "blackPlan": [
+        "Escolha ...e5 ou ...c5 conforme a formação branca.",
+        "Depois de ...e5 e d5, prepare ...f5 reposicionando o cavalo de f6 e calculando a segurança do rei."
+      ],
+      "commonMistakes": [
+        "Atacar com ...f5 em qualquer estrutura só por estar na Índia do Rei.",
+        "Fechar o centro sem avaliar a corrida entre c5 e ...f5."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Adicionadas rupturas e condições do centro fechado.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv#L246",
+          "scope": "identity-and-moves",
+          "openingId": "opening-b9c795f15f87507905ef4e25"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-b9c795f15f87507905ef4e25",
+        "name": "King's Indian Defense",
+        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "g7g6",
+          "b1c3"
+        ],
+        "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3",
+        "annotations": []
+      }
     },
     {
       "family": "Nimzo-Indian Defense",
-      "overview": "As pretas desenvolvem com pressão sobre o centro e aceitam discutir a estrutura após uma possível troca em c3. A posição pede atenção a pares de bispos, peões dobrados e casas centrais.",
-      "whitePlan": ["Decida se quer preservar o par de bispos ou ganhar espaço central; ambas as escolhas têm custo.", "Use as peças para sustentar o centro antes de avançar peões."],
-      "blackPlan": ["Use a pressão sobre c3 e e4 para questionar o centro sem ceder desenvolvimento.", "Se trocar em c3, avalie a estrutura criada em vez de tratar a troca como objetivo por si só."],
-      "commonMistakes": ["Aceitar peões dobrados sem obter compensação dinâmica.", "Trocar o bispo de b4 automaticamente.", "Ignorar a segurança do rei enquanto disputa o centro."],
-      "lessonIds": []
+      "displayName": "Defesa Nimzoíndia",
+      "aliases": [
+        "Defesa Nimzoíndia",
+        "Nimzoíndia"
+      ],
+      "overview": "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 crava o cavalo que ajudaria e4. A troca ...Bxc3 pode dar o par de bispos às brancas e peões dobrados, mas Qc2 busca recapturar de dama e evitar essa estrutura.",
+      "whitePlan": [
+        "Com e3, desenvolva e aceite avaliar bxc3 caso o bispo troque.",
+        "Com Qc2, proteja a recaptura em c3, lembrando que a dama consome um tempo de desenvolvimento."
+      ],
+      "blackPlan": [
+        "Use ...c5 ou ...d5 para pressionar o centro enquanto e4 ainda não está consolidado.",
+        "Só faça ...Bxc3 se os alvos ou os tempos compensarem a entrega do bispo."
+      ],
+      "commonMistakes": [
+        "Dizer que as brancas escolhem entre espaço e par de bispos como opções excludentes.",
+        "Supor que toda Nimzo produz peões dobrados."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Corrigida a falsa escolha entre par de bispos e espaço; incluído Qc2.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv#L133",
+          "scope": "identity-and-moves",
+          "openingId": "opening-e7a1aea2b5286d3190894bee"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-e7a1aea2b5286d3190894bee",
+        "name": "Nimzo-Indian Defense",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "e7e6",
+          "b1c3",
+          "f8b4"
+        ],
+        "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+        "annotations": []
+      }
     },
     {
       "family": "Queen's Indian Defense",
-      "overview": "As pretas combinam desenvolvimento do bispo em b7 com pressão indireta no centro. A abertura pede paciência: as peças precisam cooperar antes de uma ruptura central.",
-      "whitePlan": ["Use o espaço no centro para desenvolver e decidir como responder à pressão na diagonal longa.", "Evite enfraquecer casas escuras somente para ganhar espaço imediato."],
-      "blackPlan": ["Complete o fianqueto e desenvolva antes de desafiar os peões centrais.", "Faça a pressão na diagonal valer junto com a atividade das outras peças."],
-      "commonMistakes": ["Mover a dama cedo para defender tudo sozinha.", "Fianquetar e esquecer de desenvolver as demais peças.", "Abrir o centro sem aproveitar a diagonal do bispo."],
-      "lessonIds": []
+      "displayName": "Defesa Índia da Dama",
+      "aliases": [
+        "Defesa Índia da Dama",
+        "Índia da Dama"
+      ],
+      "overview": "Após d4, c4 e Nf3 contra ...Nf6 e ...e6, ...b6 prepara pressão sobre e4. O bispo pode ir a b7 ou a a6, onde questiona c4. A ausência inicial de Nc3 é uma diferença importante em relação à Nimzoíndia.",
+      "whitePlan": [
+        "Com g3, desenvolva Bg2 para disputar a diagonal longa.",
+        "Contra ...Ba6, decida como defender c4 sem bloquear suas peças."
+      ],
+      "blackPlan": [
+        "Coordene ...Bb7 com ...Ne4 ou ...d5 quando o centro permitir.",
+        "Use ...Ba6 para provocar uma concessão na defesa de c4; não o trate como lance intercambiável com ...Bb7."
+      ],
+      "commonMistakes": [
+        "Descrever ...Bb7 como único desenvolvimento da família.",
+        "Disputar e4 e abandonar a pressão ou a defesa de c4."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Incluída a alternativa central ...Ba6.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv#L65",
+          "scope": "identity-and-moves",
+          "openingId": "opening-82e7ea1c15b5b49fa6966159"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-82e7ea1c15b5b49fa6966159",
+        "name": "Queen's Indian Defense",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 b6",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "e7e6",
+          "g1f3",
+          "b7b6"
+        ],
+        "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4",
+        "annotations": []
+      }
     },
     {
       "family": "Grünfeld Defense",
-      "overview": "As pretas permitem um centro amplo para atacá-lo com peças e rupturas. É uma defesa concreta: o centro branco dá espaço, mas também pode se tornar alvo se avançar sem apoio.",
-      "whitePlan": ["Construa o centro com desenvolvimento e tenha uma resposta pronta às rupturas das pretas.", "Não interprete espaço como permissão para ignorar atividade inimiga."],
-      "blackPlan": ["Ataque o centro com desenvolvimento e cálculo; a pressão precisa chegar antes que ele se estabilize.", "Mantenha o rei seguro enquanto abre linhas contra os peões centrais."],
-      "commonMistakes": ["As brancas defenderem o centro só com peões.", "As pretas atacarem o centro sem peças suficientes.", "Abrir diagonais quando o rei ainda está no centro."],
-      "lessonIds": []
+      "displayName": "Defesa Grünfeld",
+      "aliases": [
+        "Defesa Grünfeld",
+        "Grünfeld"
+      ],
+      "overview": "1.d4 Nf6 2.c4 g6 3.Nc3 d5 contesta o centro imediatamente. Nas Trocas, cxd5 Nxd5 e e4 Nxc3 bxc3 deixam às brancas peões c3/d4/e4; ...Bg7 e ...c5 procuram transformar d4 em alvo.",
+      "whitePlan": [
+        "Sustente d4 com desenvolvimento; o centro grande precisa de peças além de peões.",
+        "Prepare d5 ou e5 quando a expansão ganhar atividade sem soltar a base da cadeia."
+      ],
+      "blackPlan": [
+        "Combine ...Bg7, ...c5 e pressão de peças sobre d4.",
+        "Calcule capturas centrais: um peão ganho pode liberar a atividade do centro branco."
+      ],
+      "commonMistakes": [
+        "Confundir a ruptura imediata ...d5 com a estrutura ...d6 da Índia do Rei.",
+        "Atacar só com o bispo de g7, sem ...c5 e outras peças."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Explicada a estrutura de Trocas e a diferença para a Índia do Rei.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L559",
+          "scope": "identity-and-moves",
+          "openingId": "opening-59bb1487371b8a689f8892f4"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-59bb1487371b8a689f8892f4",
+        "name": "Grünfeld Defense",
+        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3 d5",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "g7g6",
+          "b1c3",
+          "d7d5"
+        ],
+        "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+        "annotations": []
+      }
     },
     {
       "family": "Benoni Defense",
-      "overview": "A Benoni cria uma estrutura assimétrica em que as pretas aceitam menos espaço para buscar atividade. Casas centrais, rupturas e flancos costumam importar mais do que material imediato.",
-      "whitePlan": ["Use a vantagem de espaço para melhorar peças e limitar as rupturas das pretas.", "Antes de avançar, veja quais casas suas peças perderão."],
-      "blackPlan": ["Procure atividade nas casas e rupturas oferecidas pela estrutura, sem ficar apenas defendendo.", "Coordene as peças antes de abrir linhas ou buscar jogo de flanco."],
-      "commonMistakes": ["As pretas aceitarem passividade sem contra-jogo.", "As brancas avançarem peões e entregarem casas importantes.", "Copiar ataques de uma variante em outra estrutura."],
-      "lessonIds": []
+      "displayName": "Defesa Benoni",
+      "aliases": [
+        "Defesa Benoni",
+        "Benoni"
+      ],
+      "overview": "...c5 contra d4 convida d5. A família inclui sistemas distintos: na Benoni Moderna, ...e6 e ...exd5 cxd5 criam maioria preta na ala da dama e branca no centro; uma Benoni com ...e5 mantém o centro fechado.",
+      "whitePlan": [
+        "Na Moderna, use e4 e prepare e5 com peças apoiando a ruptura.",
+        "Limite ...b5 e encontre casas para cavalos sem bloquear os próprios peões centrais."
+      ],
+      "blackPlan": [
+        "Na Moderna, ...g6 e ...Bg7 pressionam a diagonal, enquanto ...b5 é uma ruptura temática.",
+        "Reconheça quando ...e5 fechou o centro: os planos e as casas já não são os mesmos."
+      ],
+      "commonMistakes": [
+        "Aplicar a estrutura da Moderna a toda entrada chamada Benoni.",
+        "Deixar e5 chegar sem reação ou jogar ...b5 sem apoio."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Limitadas as afirmações à Moderna e distinguida a Benoni fechada.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L682",
+          "scope": "identity-and-moves",
+          "openingId": "opening-90d5889974555af6cea9c3bd"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-90d5889974555af6cea9c3bd",
+        "name": "Benoni Defense",
+        "pgn": "1. d4 Nf6 2. c4 c5",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "c7c5"
+        ],
+        "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "annotations": []
+      }
     },
     {
       "family": "Dutch Defense",
-      "overview": "Com ...f5, as pretas disputam e4 e assumem responsabilidade pelas casas perto do rei. A abertura recompensa coordenação e punição a lances de peão feitos sem cobertura.",
-      "whitePlan": ["Observe as casas enfraquecidas por ...f5 e use desenvolvimento para pressioná-las.", "Não ataque o rei preto antes de ter peças suficientes na região."],
-      "blackPlan": ["Use o controle de e4 para desenvolver com propósito e proteja as casas enfraquecidas.", "Escolha a estrutura de peões de acordo com a segurança do rei."],
-      "commonMistakes": ["Empurrar mais peões do rei sem calcular as diagonais abertas.", "Confundir a pressão em e4 com um ataque imediato.", "Deixar o rei sem uma casa segura."],
-      "lessonIds": []
+      "displayName": "Defesa Holandesa",
+      "aliases": [
+        "Defesa Holandesa",
+        "Holandesa"
+      ],
+      "overview": "1.d4 f5 controla e4 e enfraquece a diagonal e8–h5. Stonewall (...d5/...e6), Clássica (...d6/...e6) e Leningrado (...g6) têm bispos e rupturas diferentes.",
+      "whitePlan": [
+        "Com g3 e Bg2, pressione o centro e prepare c4.",
+        "Contra Stonewall, observe a casa e5 e o bispo preto de c8 limitado pelos próprios peões."
+      ],
+      "blackPlan": [
+        "No Leningrado, ...g6 e ...Bg7 apoiam a preparação de ...e5.",
+        "No Stonewall, procure uma função para c8 e apoie o posto e4 com peças."
+      ],
+      "commonMistakes": [
+        "Misturar o fianqueto do Leningrado com planos automáticos de Stonewall.",
+        "Mover a dama ou o peão g sem calcular xeques na diagonal do rei."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Diferenciados os três sistemas em vez de uma recomendação genérica de ataque.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L748",
+          "scope": "identity-and-moves",
+          "openingId": "opening-1d576747aeaafd8c6d1b7b61"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-1d576747aeaafd8c6d1b7b61",
+        "name": "Dutch Defense",
+        "pgn": "1. d4 f5",
+        "moves": [
+          "d2d4",
+          "f7f5"
+        ],
+        "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+        "annotations": []
+      }
     },
     {
       "family": "Scandinavian Defense",
-      "overview": "As pretas desafiam e4 imediatamente com ...d5. A troca central pode simplificar, mas a dama e o desenvolvimento precisam ser tratados com cuidado.",
-      "whitePlan": ["Desenvolva com tempo contra a dama apenas se isso melhorar a posição das peças.", "Use o centro aberto para acelerar o roque e a coordenação."],
-      "blackPlan": ["Recupere ou reposicione a dama sem deixá-la se tornar alvo de muitos tempos.", "Compense qualquer tempo de dama com desenvolvimento ativo e segurança do rei."],
-      "commonMistakes": ["Perseguir a dama com peças mal colocadas.", "Mover a dama repetidamente sem concluir o desenvolvimento.", "Abrir a coluna e sem rocar."],
-      "lessonIds": ["lesson-escandinava"]
+      "displayName": "Defesa Escandinava",
+      "aliases": [
+        "Defesa Escandinava",
+        "Escandinava"
+      ],
+      "overview": "1.e4 d5 2.exd5 permite ...Qxd5 ou ...Nf6. Na recaptura de dama, Nc3 desenvolve com ataque; ...Qa5, ...Qd6 e ...Qd8 conduzem a colocações diferentes. Com ...Nf6, as pretas adiam a recuperação do peão.",
+      "whitePlan": [
+        "Após ...Qxd5, Nc3 ganha tempo e d4 ocupa o centro.",
+        "Contra ...Nf6, escolha se sustenta d5 ou devolve o peão para concluir o desenvolvimento."
+      ],
+      "blackPlan": [
+        "Escolha uma retirada da dama que permita desenvolver c8 e o flanco do rei.",
+        "Com ...Nf6, use atividade para recuperar d5 sem entrar numa perseguição de peões."
+      ],
+      "commonMistakes": [
+        "Dizer que todas as linhas começam pela recaptura da dama.",
+        "Perseguir a dama com lances que enfraquecem o próprio centro."
+      ],
+      "lessonIds": [
+        "lesson-escandinava"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Incluída a recaptura adiada com ...Nf6.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L85",
+          "scope": "identity-and-moves",
+          "openingId": "opening-922349f36e54b898e912aa33"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-922349f36e54b898e912aa33",
+        "name": "Scandinavian Defense",
+        "pgn": "1. e4 d5",
+        "moves": [
+          "e2e4",
+          "d7d5"
+        ],
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "annotations": []
+      }
     },
     {
       "family": "Petrov's Defense",
-      "overview": "A Petrov contesta e4 de modo direto e costuma levar a posições equilibradas em que o desenvolvimento e a atividade das peças pesam mais que ataques forçados.",
-      "whitePlan": ["Desenvolva sem tentar refutar a defesa por tática automática.", "Use a iniciativa de ter o primeiro lance para colocar peças em casas melhores."],
-      "blackPlan": ["Recupere o peão e desenvolva sem permitir que o cavalo avançado vire alvo.", "Mantenha a posição coordenada; igualdade de material não basta se as peças ficarem passivas."],
-      "commonMistakes": ["Tentar ganhar o cavalo em e4 sem calcular a recuperação.", "Trocar peças apenas para simplificar e perder atividade.", "Ignorar o desenvolvimento por confiar na simetria."],
-      "lessonIds": []
+      "displayName": "Defesa Petrov",
+      "aliases": [
+        "Defesa Petrov",
+        "Petrov"
+      ],
+      "overview": "1.e4 e5 2.Nf3 Nf6 contra-ataca e4. Depois de 3.Nxe5, a resposta principal ...d6 expulsa o cavalo antes de ...Nxe4. A cópia imediata 3...Nxe4 permite 4.Qe2, criando problemas na coluna e.",
+      "whitePlan": [
+        "Após ...d6, recue o cavalo e prepare d4 para ganhar espaço.",
+        "Vigie a coluna e antes de supor que toda troca de peões é simétrica."
+      ],
+      "blackPlan": [
+        "Depois de Nxe5, use ...d6 para ganhar o tempo necessário à recuperação em e4.",
+        "Desenvolva o bispo de f8 e sustente o cavalo central com ...d5 quando adequado."
+      ],
+      "commonMistakes": [
+        "Responder a Nxe5 com ...Nxe4 por simetria automática.",
+        "Chamar a posição de empate antes de coordenar as peças."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Substituído texto impreciso pelo motivo concreto ...d6 antes de ...Nxe4.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L642",
+          "scope": "identity-and-moves",
+          "openingId": "opening-b0483115daef0759e70e1df2"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-b0483115daef0759e70e1df2",
+        "name": "Petrov's Defense",
+        "pgn": "1. e4 e5 2. Nf3 Nf6",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "g8f6"
+        ],
+        "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "annotations": []
+      }
     },
     {
       "family": "Pirc Defense",
-      "overview": "As pretas deixam as brancas ocupar o centro e procuram atacá-lo com desenvolvimento, fianqueto e rupturas. A abertura exige saber quando o centro é forte e quando virou alvo.",
-      "whitePlan": ["Use o centro para ganhar espaço, mas desenvolva antes de avançar demais os peões.", "Defina em qual ala terá iniciativa antes de iniciar um ataque."],
-      "blackPlan": ["Complete o fianqueto e o roque antes de questionar o centro.", "Ataque os peões centrais com peças coordenadas; não apenas com lances de peão."],
-      "commonMistakes": ["As brancas fecharem o centro e deixarem o rei vulnerável.", "As pretas esperarem demais para pressionar o centro.", "Subestimar o valor de desenvolvimento em posições fechadas."],
-      "lessonIds": []
+      "displayName": "Defesa Pirc",
+      "aliases": [
+        "Defesa Pirc",
+        "Pirc"
+      ],
+      "overview": "1.e4 d6 2.d4 Nf6 3.Nc3 g6 permite o centro branco e o ataca com peças. O cavalo em f6 pressiona e4: essa presença distingue a Pirc das ordens flexíveis da Moderna.",
+      "whitePlan": [
+        "No Ataque Austríaco, f4 reforça o espaço, mas exige atenção a ...c5 e à diagonal do rei.",
+        "Com Nf3 e Be2, desenvolva antes de decidir entre avançar e5 e manter a tensão."
+      ],
+      "blackPlan": [
+        "Combine ...Bg7 com ...c5 ou ...e5 para atacar a base do centro.",
+        "Calcule o momento da ruptura; ...c5 pode ser necessário antes do roque."
+      ],
+      "commonMistakes": [
+        "Esperar obrigatoriamente o roque antes de contestar o centro.",
+        "Tratar o centro branco como fraco só porque é grande."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Removida exigência indevida de roque antes das rupturas.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L69",
+          "scope": "identity-and-moves",
+          "openingId": "opening-c6e489fbd9ce503809486042"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-c6e489fbd9ce503809486042",
+        "name": "Pirc Defense",
+        "pgn": "1. e4 d6",
+        "moves": [
+          "e2e4",
+          "d7d6"
+        ],
+        "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "annotations": []
+      }
     },
     {
       "family": "Modern Defense",
-      "overview": "A Moderna usa o fianqueto do bispo de g7 para pressionar o centro de longe. As pretas aceitam menos ocupação inicial e precisam transformar a pressão em atividade concreta.",
-      "whitePlan": ["Ocupe o centro com desenvolvimento e mantenha peças prontas para protegê-lo.", "Não avance todos os peões centrais antes de decidir onde o rei ficará seguro."],
-      "blackPlan": ["Use a diagonal longa junto com rupturas centrais, não como única ideia.", "Escolha uma estrutura que permita desenvolver sem sufocar as peças."],
-      "commonMistakes": ["Achar que o fianqueto sozinho resolve a disputa pelo centro.", "As brancas expandirem sem prever as rupturas das pretas.", "Abrir o centro com um rei mal protegido."],
-      "lessonIds": []
+      "displayName": "Defesa Moderna",
+      "aliases": [
+        "Defesa Moderna",
+        "Moderna"
+      ],
+      "overview": "...g6 e ...Bg7 pressionam o centro sem definir cedo o cavalo de g8. Essa flexibilidade permite ...d6, ...c5 ou ...a6/...b5 em certas posições; quando ...Nf6 chega, pode haver transposição para a Pirc.",
+      "whitePlan": [
+        "Ocupe d4 e e4 e desenvolva sem supor que o bispo de g7 está sempre bloqueado.",
+        "Antes de avançar e5, calcule como ...d6 ou ...c5 atacam o centro."
+      ],
+      "blackPlan": [
+        "Escolha a ruptura segundo a estrutura branca e só depois fixe a casa do cavalo.",
+        "Se usar ...a6 e ...b5, acompanhe a expansão com desenvolvimento e cálculo central."
+      ],
+      "commonMistakes": [
+        "Aplicar obrigatoriamente ...Nf6 cedo e ainda chamar a flexibilidade de diferença central.",
+        "Confiar só no fianqueto para frear d4/e4."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Explicitada a diferença de ordem para a Pirc.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L187",
+          "scope": "identity-and-moves",
+          "openingId": "opening-4cdeb76c0201c8dcd9a362b3"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-4cdeb76c0201c8dcd9a362b3",
+        "name": "Modern Defense",
+        "pgn": "1. e4 g6",
+        "moves": [
+          "e2e4",
+          "g7g6"
+        ],
+        "fen": "rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "annotations": []
+      }
     },
     {
       "family": "Catalan Opening",
-      "overview": "A Catalã combina centro de peões com o bispo fianquetado em g2. A diagonal longa é um recurso de pressão, enquanto as peças definem se o jogo será aberto ou de manobra.",
-      "whitePlan": ["Desenvolva para valorizar a diagonal do bispo de g2 e sustentar o centro.", "Use pressão de longo alcance sem esquecer a recuperação de peões e a atividade imediata."],
-      "blackPlan": ["Conteste o centro e avalie se segurar peões extras atrasa o desenvolvimento.", "Não bloqueie a própria atividade somente para fechar a diagonal do bispo."],
-      "commonMistakes": ["Confiar apenas no bispo fianquetado para recuperar material.", "Defender peões extras sem desenvolver.", "Abrir o centro antes de coordenar os reis."],
-      "lessonIds": []
+      "displayName": "Abertura Catalã",
+      "aliases": [
+        "Abertura Catalã",
+        "Catalã"
+      ],
+      "overview": "d4/c4 e g3/Bg2 combinam espaço com pressão na diagonal h1–a8, tipicamente contra ...d5/...e6. Na Catalã Aberta, ...dxc4 entrega o centro em troca de um peão temporário; na Fechada a tensão permanece.",
+      "whitePlan": [
+        "Após ...dxc4, use a diagonal de Bg2 e desenvolvimento para preparar a recuperação de c4.",
+        "Enquanto o centro permanece fechado, prepare e4 ou pressão na coluna c sem neutralizar o próprio bispo."
+      ],
+      "blackPlan": [
+        "Na Aberta, avalie se ...b5 para sustentar c4 permite a4 e abre a diagonal branca.",
+        "Na Fechada, prepare ...c5 para disputar o centro e liberar suas peças."
+      ],
+      "commonMistakes": [
+        "Esperar que Bg2 recupere c4 sozinho.",
+        "Misturar os planos da Aberta e da Fechada sem observar ...dxc4."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Corrigida a expressão sem sentido sobre coordenar os reis; incluídas Aberta/Fechada.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv#L2",
+          "scope": "identity-and-moves",
+          "openingId": "opening-7430caed4b0b8330859a2b60"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-7430caed4b0b8330859a2b60",
+        "name": "Catalan Opening",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. g3",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "e7e6",
+          "g2g3"
+        ],
+        "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3",
+        "annotations": []
+      }
     },
     {
       "family": "London System",
-      "overview": "O Sistema Londres organiza as peças brancas de modo estável, mas não elimina a necessidade de responder ao centro escolhido pelas pretas. O plano deve se adaptar à estrutura real.",
-      "whitePlan": ["Desenvolva com segurança e escolha a ruptura central que combine com a formação das peças.", "Use o bispo fora da cadeia de peões, mas não o mova repetidamente sem necessidade."],
-      "blackPlan": ["Dispute o centro cedo para impedir que as brancas montem a formação sem oposição.", "Ative as peças em vez de reagir apenas aos lances de desenvolvimento branco."],
-      "commonMistakes": ["Repetir a mesma configuração contra qualquer resposta.", "Empurrar e4 ou c4 sem preparação.", "Confundir uma estrutura sólida com uma posição automaticamente melhor."],
-      "lessonIds": []
+      "displayName": "Sistema Londres",
+      "aliases": [
+        "Sistema Londres",
+        "Londres"
+      ],
+      "overview": "d4 e Bf4 desenvolvem o bispo de c1 antes de e3. O sistema pode incluir Nf3, c3 e Bd3, mas ...c5 e ...Qb6 questionam d4 e b2: a formação exige respostas concretas.",
+      "whitePlan": [
+        "Observe b2 depois de Bf4; contra ...Qb6, escolha uma defesa ativa ou uma concessão calculada.",
+        "Prepare e4 com Nbd2 e peças coordenadas quando o centro preto permitir."
+      ],
+      "blackPlan": [
+        "Use ...c5 para disputar d4 e ...Qb6 quando a pressão em b2 for útil.",
+        "Trocar o bispo de f4 por ...Bd6 pode reduzir o potencial de ataque branco."
+      ],
+      "commonMistakes": [
+        "Montar c3/e3/Bd3 sem reagir a ameaças em b2.",
+        "Jogar e4 sem peças suficientes para manter o centro."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Acrescentados alvos d4/b2 e a troca de bispos.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L636",
+          "scope": "identity-and-moves",
+          "openingId": "opening-e884b608649e091dbab7e8ae"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-e884b608649e091dbab7e8ae",
+        "name": "London System",
+        "pgn": "1. d4 Nf6 2. Nf3 g6 3. Bf4",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "g1f3",
+          "g7g6",
+          "c1f4"
+        ],
+        "fen": "rnbqkb1r/pppppp1p/5np1/8/3P1B2/5N2/PPP1PPPP/RN1QKB1R b KQkq - 1 3",
+        "annotations": []
+      }
     },
     {
       "family": "Réti Opening",
-      "overview": "A Réti desenvolve o cavalo e controla o centro de longe, mantendo opções de transposição. O valor da abertura está na flexibilidade, desde que ela leve a uma estrutura compreendida.",
-      "whitePlan": ["Desenvolva e escolha uma estrutura central quando a posição das pretas estiver clara.", "Use a flexibilidade para evitar compromissos ruins, não para atrasar o desenvolvimento."],
-      "blackPlan": ["Ocupe ou conteste o centro sem deixar as brancas escolherem todas as transposições confortavelmente.", "Desenvolva de modo que suas peças continuem úteis contra diferentes estruturas."],
-      "commonMistakes": ["Manter tudo flexível e ficar sem plano central.", "Ignorar transposições para aberturas conhecidas.", "Trocar peças cedo e perder a iniciativa."],
-      "lessonIds": []
+      "displayName": "Abertura Réti",
+      "aliases": [
+        "Abertura Réti",
+        "Réti"
+      ],
+      "overview": "Nf3 e c4 contra ...d5 pressionam o centro à distância. Nem toda posição com 1.Nf3 continua uma Réti: d4 pode transpor para o Gambito da Dama ou para a Catalã após g3.",
+      "whitePlan": [
+        "Com c4, questione d5; decida entre recuperar um peão central e manter pressão por Bg2.",
+        "Se jogar d4, reconheça a nova estrutura e adapte o plano."
+      ],
+      "blackPlan": [
+        "Sustente ...d5 com desenvolvimento e decida quando avançar ...d4 ou trocar em c4.",
+        "Contra Bg2, prepare ...c6 ou ...e6 conforme as diagonais que deseja preservar."
+      ],
+      "commonMistakes": [
+        "Chamar qualquer 1.Nf3 de um repertório completo de Réti.",
+        "Adiar indefinidamente a decisão central em nome de flexibilidade."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Limitada a identificação e explicada a pressão c4 contra d5.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L272",
+          "scope": "identity-and-moves",
+          "openingId": "opening-389aba118ae4d61804c1cf39"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-389aba118ae4d61804c1cf39",
+        "name": "Réti Opening",
+        "pgn": "1. Nf3 d5 2. c4",
+        "moves": [
+          "g1f3",
+          "d7d5",
+          "c2c4"
+        ],
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq - 0 2",
+        "annotations": []
+      }
     },
     {
       "family": "Queen's Pawn Game",
-      "overview": "Linhas iniciadas por d4 podem chegar a muitas estruturas diferentes. O nome da família é menos importante que reconhecer quem controla o centro, quais bispos têm diagonais e onde cada lado pode romper.",
-      "whitePlan": ["Use o primeiro lance no centro para desenvolver e escolher uma estrutura que você entenda.", "Antes de trocar peões centrais, identifique quais colunas e casas a troca vai alterar."],
-      "blackPlan": ["Responda ao centro com desenvolvimento e uma estrutura clara, evitando passividade por excesso de defesa.", "Prepare rupturas centrais com peças, não somente com peões."],
-      "commonMistakes": ["Aplicar um sistema fixo sem observar a resposta das pretas.", "Trocar no centro por hábito.", "Deixar o bispo de c8 sem plano."],
-      "lessonIds": ["lesson-gambito-da-dama"]
+      "displayName": "Jogo do Peão da Dama",
+      "aliases": [
+        "Jogo do Peão da Dama",
+        "Jogo do Peão da Dama"
+      ],
+      "overview": "Este nome no catálogo é amplo: d4 pode conduzir a sistemas sem c4 ou transpor para famílias específicas. O guia é uma orientação de família ampla, sem atribuir um plano exclusivo a todas as suas linhas.",
+      "whitePlan": [
+        "Observe se c4 já foi jogado; sem ele, a pressão sobre d5 e o desenvolvimento de c1 são diferentes.",
+        "Se usar e3, decida antes se o bispo de c1 deve sair para f4 ou g5."
+      ],
+      "blackPlan": [
+        "Conteste d4 com ...d5 ou pressão por ...Nf6 e ...c5 conforme a linha.",
+        "Quando as brancas omitem c4, verifique se ...Bf5 ou ...Bg4 pode sair antes de ...e6."
+      ],
+      "commonMistakes": [
+        "Tratar esse rótulo amplo como uma variante com plano único.",
+        "Copiar automaticamente o Gambito da Dama numa posição sem c4."
+      ],
+      "lessonIds": [
+        "lesson-gambito-da-dama"
+      ],
+      "scope": "broad-family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Marcado como escopo amplo; não se apresenta como guia específico de variantes obscuras.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L538",
+          "scope": "identity-and-moves",
+          "openingId": "opening-227bffabf4aaa1a9940baf83"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-227bffabf4aaa1a9940baf83",
+        "name": "Queen's Pawn Game",
+        "pgn": "1. d4",
+        "moves": [
+          "d2d4"
+        ],
+        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+        "annotations": []
+      }
     },
     {
       "family": "Bishop's Opening",
-      "overview": "O bispo em c4 aponta para f7 e mantém opções de transposição para jogos abertos. A pressão inicial deve ser sustentada por desenvolvimento e segurança do rei.",
-      "whitePlan": ["Desenvolva o cavalo e roce antes de converter a pressão em ataque.", "Use o controle central para decidir se d4 será útil."],
-      "blackPlan": ["Desenvolva defendendo f7 com peças coordenadas e não apenas com lances de peão.", "Conteste o centro para reduzir a iniciativa do bispo em c4."],
-      "commonMistakes": ["Buscar sacrifícios em f7 sem cálculo.", "Mover o bispo várias vezes enquanto o rei permanece no centro.", "Ignorar a disputa por d4."],
-      "lessonIds": ["lesson-italiana"]
+      "displayName": "Abertura do Bispo",
+      "aliases": [
+        "Abertura do Bispo",
+        "do Bispo"
+      ],
+      "overview": "1.e4 e5 2.Bc4 aponta para f7 e deixa o cavalo de g1 em casa. As brancas preservam a opção f4 e podem transpor para a Vienense com Nc3 ou para a Italiana com Nf3.",
+      "whitePlan": [
+        "Com d3, sustente e4 e escolha Nc3 ou Nf3 conforme a resposta preta.",
+        "Antes de f4, calcule a exposição do rei e a reação central ...d5."
+      ],
+      "blackPlan": [
+        "...Nf6 pressiona e4 e pode preparar ...d5 com ganho de tempo no bispo.",
+        "Evite defender f7 só com peões: desenvolvimento e contrajogo central são recursos."
+      ],
+      "commonMistakes": [
+        "Confundir Bc4 sem Nf3 com a ordem já definida da Italiana.",
+        "Sacrificar em f7 sem recuperar material ou obter ataque concreto."
+      ],
+      "lessonIds": [
+        "lesson-italiana"
+      ],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Acrescentada a opção f4 e a diferença da Italiana.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L271",
+          "scope": "identity-and-moves",
+          "openingId": "opening-986b55aa73e564f9fd6b7044"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-986b55aa73e564f9fd6b7044",
+        "name": "Bishop's Opening",
+        "pgn": "1. e4 e5 2. Bc4",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "f1c4"
+        ],
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+        "annotations": []
+      }
     },
     {
       "family": "King's Indian Attack",
-      "overview": "O Ataque Índio do Rei busca uma formação flexível das brancas, geralmente com fianqueto. A formação é um começo; a escolha da ruptura e do flanco de jogo depende da estrutura preta.",
-      "whitePlan": ["Complete desenvolvimento e roque antes de iniciar avanços de peões.", "Escolha uma ruptura central ou de flanco que responda à estrutura das pretas."],
-      "blackPlan": ["Ocupe espaço no centro e não permita uma formação branca sem ser questionada.", "Use desenvolvimento ativo para impedir que o ataque branco chegue com todas as peças."],
-      "commonMistakes": ["Jogar sempre os mesmos peões, independentemente da posição.", "Atacar o rei sem desenvolvimento completo.", "Esquecer que o centro pode abrir contra o rei fianquetado."],
-      "lessonIds": []
+      "displayName": "Ataque Índio do Rei",
+      "aliases": [
+        "Ataque Índio do Rei",
+        "Índio do Rei"
+      ],
+      "overview": "Nf3, g3, Bg2, d3 e e4 podem compor o Ataque Índio do Rei. Contra ...e6/...d5, e5 pode ganhar espaço e iniciar manobras no rei; contra ...c5 ou ...e5, a mesma sequência de ataque não é automática.",
+      "whitePlan": [
+        "Prepare e4 com Nbd2 quando necessário e só avance e5 se puder sustentar o peão.",
+        "Na estrutura com e5 contra ...e6/...d5, procure atividade das peças no rei sem abandonar d3."
+      ],
+      "blackPlan": [
+        "Use espaço no centro para desenvolver e prepare rupturas como ...c5.",
+        "Ataque d3 ou e5 conforme a cadeia que as brancas estabeleceram."
+      ],
+      "commonMistakes": [
+        "Executar e5 e um ataque de rei contra toda formação preta.",
+        "Supor que o sistema dispensa cálculo das rupturas centrais."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Limitado o ataque típico à cadeia correspondente.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L246",
+          "scope": "identity-and-moves",
+          "openingId": "opening-2eb6d09735126f8ef08feb9b"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-2eb6d09735126f8ef08feb9b",
+        "name": "King's Indian Attack",
+        "pgn": "1. Nf3 d5 2. g3",
+        "moves": [
+          "g1f3",
+          "d7d5",
+          "g2g3"
+        ],
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/5NP1/PPPPPP1P/RNBQKB1R b KQkq - 0 2",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Alekhine Defense",
+      "displayName": "Defesa Alekhine",
+      "aliases": [
+        "Defesa Alekhine",
+        "Alekhine"
+      ],
+      "overview": "1.e4 Nf6 provoca e5. O cavalo vai a d5 e as brancas podem persegui-lo com c4, construindo espaço enquanto as pretas preparam ...d6 contra e5.",
+      "whitePlan": [
+        "Avance e5 com um plano para desenvolver as peças atrás dos peões.",
+        "Nos Quatro Peões, sustente d4/e5: a massa central pode virar alvo de ...d6 e ...c5."
+      ],
+      "blackPlan": [
+        "Reposicione o cavalo e ataque a cadeia por ...d6.",
+        "Troque em e5 quando isso abrir linhas úteis e permita desenvolver c8."
+      ],
+      "commonMistakes": [
+        "Perseguir o cavalo sem concluir o desenvolvimento.",
+        "Aceitar menos espaço e nunca questionar o centro."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: provocação e5, cavalo d5 e ruptura ...d6.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L131",
+          "scope": "identity-and-moves",
+          "openingId": "opening-5a984db64c7bd23ddb7e1817"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-5a984db64c7bd23ddb7e1817",
+        "name": "Alekhine Defense",
+        "pgn": "1. e4 Nf6",
+        "moves": [
+          "e2e4",
+          "g8f6"
+        ],
+        "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Philidor Defense",
+      "displayName": "Defesa Philidor",
+      "aliases": [
+        "Defesa Philidor",
+        "Philidor"
+      ],
+      "overview": "1.e4 e5 2.Nf3 d6 sustenta e5 com um peão, mas restringe o bispo de f8. Após d4, manter a tensão ou jogar ...exd4 muda a estrutura e a atividade das peças.",
+      "whitePlan": [
+        "Use d4 para ganhar espaço e desenvolva o bispo de f1 antes de abrir mais linhas.",
+        "Após ...exd4, recapture com peças quando isso conservar desenvolvimento ativo."
+      ],
+      "blackPlan": [
+        "Desenvolva ...Nf6 e escolha ...Be7 ou outro caminho para f8.",
+        "Prepare ...c6 e ...d5 nas estruturas em que a ruptura libera as peças."
+      ],
+      "commonMistakes": [
+        "Defender e5 com peças passivas indefinidamente.",
+        "Supor que ...d6 impede qualquer ruptura central branca."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: custo da defesa de e5 e liberação ...d5.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L598",
+          "scope": "identity-and-moves",
+          "openingId": "opening-ad6e9339ab99f2148b647ae6"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-ad6e9339ab99f2148b647ae6",
+        "name": "Philidor Defense",
+        "pgn": "1. e4 e5 2. Nf3 d6",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "d7d6"
+        ],
+        "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Bogo-Indian Defense",
+      "displayName": "Defesa Bogoíndia",
+      "aliases": [
+        "Defesa Bogoíndia",
+        "Bogoíndia"
+      ],
+      "overview": "1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+ dá xeque em vez de cravar um cavalo em c3. Bd2, Nbd2 e Nc3 respondem de formas diferentes; Nc3 pode transpor para a Nimzoíndia.",
+      "whitePlan": [
+        "Com Bd2, ofereça a troca do bispo ou force uma decisão sobre sua retirada.",
+        "Com Nbd2, evite peões dobrados, mas planeje a saída de c1."
+      ],
+      "blackPlan": [
+        "Decida se ...Bxd2+ facilita sua posição ou entrega um bispo útil.",
+        "Prepare ...d5 ou ...c5 conforme a peça usada para bloquear o xeque."
+      ],
+      "commonMistakes": [
+        "Falar de peões dobrados em c3 antes que haja cavalo nessa casa.",
+        "Escolher a mesma estrutura contra Bd2 e Nbd2 sem avaliar as peças."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: xeque b4 e respostas diferentes da Nimzo.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv#L44",
+          "scope": "identity-and-moves",
+          "openingId": "opening-e14b6670e2e78ffd47e8444e"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-e14b6670e2e78ffd47e8444e",
+        "name": "Bogo-Indian Defense",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "e7e6",
+          "g1f3",
+          "f8b4"
+        ],
+        "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Tarrasch Defense",
+      "displayName": "Defesa Tarrasch",
+      "aliases": [
+        "Defesa Tarrasch",
+        "Tarrasch"
+      ],
+      "overview": "...d5, ...e6 e ...c5 contra d4/c4 confrontam o centro cedo. Após trocas, as pretas frequentemente aceitam um peão isolado em d5 em troca de linhas abertas para as peças.",
+      "whitePlan": [
+        "Bloqueie d5 com uma peça e procure trocas que reduzam a atividade preta.",
+        "Com g3 e Bg2, pressione d5 mantendo o rei seguro."
+      ],
+      "blackPlan": [
+        "Use as colunas abertas e prepare ...d4 se a ruptura ativar suas peças.",
+        "Evite trocas indiscriminadas quando o peão isolado se tornar um alvo sem compensação."
+      ],
+      "commonMistakes": [
+        "Achar que o peão isolado é sempre perdido ou sempre compensado.",
+        "Confundir essa defesa com 3.Nd2 da Francesa Tarrasch."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: isolado em d5; diferenciada da Francesa.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L322",
+          "scope": "identity-and-moves",
+          "openingId": "opening-b7b47b8253b8fec95679a546"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-b7b47b8253b8fec95679a546",
+        "name": "Tarrasch Defense",
+        "pgn": "1. d4 d5 2. c4 e6 3. Nc3 c5",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4",
+          "e7e6",
+          "b1c3",
+          "c7c5"
+        ],
+        "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Benko Gambit",
+      "displayName": "Gambito Benko",
+      "aliases": [
+        "Gambito Benko",
+        "Gambito Benko"
+      ],
+      "overview": "Após d4 ...Nf6, c4 ...c5 e d5, ...b5 oferece um peão para abrir a ala da dama. Aceitar com cxb5, recusar ou devolver depois o material leva a formas diferentes de disputar as colunas a e b.",
+      "whitePlan": [
+        "Escolha conscientemente entre aceitar cxb5 e manter a tensão.",
+        "Ao aceitar ...a6 e bxa6, planeje desenvolvimento e defesa das entradas nas colunas abertas."
+      ],
+      "blackPlan": [
+        "Use ...a6 para abrir colunas; o objetivo é atividade duradoura, não recuperar o peão imediatamente.",
+        "Coordene ...Bg7 e torres na ala da dama depois de desenvolver."
+      ],
+      "commonMistakes": [
+        "Prometer compensação suficiente em toda continuação.",
+        "Aceitar o peão e esquecer as casas de entrada em a2 e b2."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: oferta ...b5; aceitação completa tem guia próprio.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L689",
+          "scope": "identity-and-moves",
+          "openingId": "opening-24c0309b11cb642ec0352b7c"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-24c0309b11cb642ec0352b7c",
+        "name": "Benko Gambit",
+        "pgn": "1. d4 Nf6 2. c4 c5 3. d5 b5",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "c7c5",
+          "d4d5",
+          "b7b5"
+        ],
+        "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Benko Gambit Accepted",
+      "displayName": "Gambito Benko Aceito",
+      "aliases": [
+        "Gambito Benko Aceito",
+        "Gambito Benko Aceito"
+      ],
+      "overview": "cxb5 ...a6 bxa6 aceita a oferta completa do Benko. ...Bxa6 ativa o bispo e pode dificultar o roque branco; as colunas a e b semiabertas oferecem pressão preta de longo prazo.",
+      "whitePlan": [
+        "Resolva o desenvolvimento de f1 para completar o roque ou organizar o rei de outra forma.",
+        "Defenda b2 e evite que peças pretas ocupem as colunas a e b sem oposição."
+      ],
+      "blackPlan": [
+        "Combine ...Bxa6, ...Bg7 e torres nas colunas a/b.",
+        "Se as brancas consolidarem o peão extra, procure rupturas e atividade antes de simplificar."
+      ],
+      "commonMistakes": [
+        "Tratar o peão extra como vantagem pronta sem concluir o desenvolvimento.",
+        "Trocar peças ativas apenas para recuperar material."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura específica: aceitação completa, bispo a6 e colunas a/b.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L690",
+          "scope": "identity-and-moves",
+          "openingId": "opening-0d6e7f9a904832b374e0e0ff"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-0d6e7f9a904832b374e0e0ff",
+        "name": "Benko Gambit Accepted",
+        "pgn": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "c7c5",
+          "d4d5",
+          "b7b5",
+          "c4b5",
+          "a7a6"
+        ],
+        "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/8/PP2PPPP/RNBQKBNR w KQkq - 0 5",
+        "annotations": []
+      }
+    },
+    {
+      "family": "King's Gambit Declined",
+      "displayName": "Gambito do Rei Recusado",
+      "aliases": [
+        "Gambito do Rei Recusado",
+        "Gambito do Rei Recusado"
+      ],
+      "overview": "Depois de 1.e4 e5 2.f4, as pretas podem recusar ...exf4. ...Bc5 pressiona g1 e desencoraja roque descuidado; ...d5 escolhe o Contragambito Falkbeer e ataca o centro imediatamente.",
+      "whitePlan": [
+        "Contra ...Bc5, prepare Nf3 e c3/d4 conforme o desenvolvimento.",
+        "Contra ...d5, calcule as capturas centrais antes de continuar um ataque na coluna f."
+      ],
+      "blackPlan": [
+        "Com ...Bc5, mantenha pressão na diagonal a7–g1 e desenvolva.",
+        "Com ...d5, use a abertura central para contestar a iniciativa branca."
+      ],
+      "commonMistakes": [
+        "Usar os planos do Gambito Aceito quando o peão e5 ainda está no centro.",
+        "Ignorar a diagonal do bispo em c5 ao rocar."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: recusa clássica e Falkbeer separados.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L398",
+          "scope": "identity-and-moves",
+          "openingId": "opening-0576eb4d0aef705cd969cf03"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-0576eb4d0aef705cd969cf03",
+        "name": "King's Gambit Declined: Falkbeer Countergambit",
+        "pgn": "1. e4 e5 2. f4 d5",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "f2f4",
+          "d7d5"
+        ],
+        "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Trompowsky Attack",
+      "displayName": "Ataque Trompowsky",
+      "aliases": [
+        "Ataque Trompowsky",
+        "Trompowsky"
+      ],
+      "overview": "1.d4 Nf6 2.Bg5 ameaça trocar em f6 e alterar a estrutura preta. ...Ne4 ganha tempo no bispo, enquanto ...d5 ou ...e6 permitem outros tipos de centro.",
+      "whitePlan": [
+        "Antes de Bxf6, compare ...exf6 e ...gxf6 e as diagonais abertas.",
+        "Contra ...Ne4, escolha a casa do bispo sem abandonar o controle de e4."
+      ],
+      "blackPlan": [
+        "...Ne4 ataca o bispo e ocupa uma casa central, mas exige uma retirada segura futura.",
+        "Desenvolva e conteste d4 com ...d5 ou ...c5 conforme a estrutura."
+      ],
+      "commonMistakes": [
+        "Trocar em f6 apenas para dobrar peões sem considerar o par de bispos.",
+        "Confundir 2.Bg5 com a Torre, que já desenvolveu Nf3."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: troca f6 e resposta ...Ne4.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L604",
+          "scope": "identity-and-moves",
+          "openingId": "opening-f26552ec87f8d32bb35eeb70"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-f26552ec87f8d32bb35eeb70",
+        "name": "Trompowsky Attack",
+        "pgn": "1. d4 Nf6 2. Bg5",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c1g5"
+        ],
+        "fen": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Nimzo-Larsen Attack",
+      "displayName": "Ataque Nimzo-Larsen",
+      "aliases": [
+        "Ataque Nimzo-Larsen",
+        "Nimzo-Larsen"
+      ],
+      "overview": "1.b3 prepara Bb2 para pressionar a diagonal a1–h8. As pretas podem ocupar e5 e d5; o bispo branco precisa de rupturas e peças que tornem essa pressão efetiva.",
+      "whitePlan": [
+        "Use Bb2 com e3 e desenvolvimento; escolha c4 ou f4 conforme o centro preto.",
+        "Se ...e5 bloquear a diagonal, prepare uma forma de questionar esse peão."
+      ],
+      "blackPlan": [
+        "Ocupe o centro com ...e5 e/ou ...d5 e sustente os peões com desenvolvimento.",
+        "Observe a diagonal de b2 antes de enfraquecer g7 ou avançar o peão e."
+      ],
+      "commonMistakes": [
+        "Esperar que Bb2 sozinho impeça o centro preto.",
+        "Copiar planos de uma Índia da Dama invertida sem considerar os tempos."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: diagonal b2 e ruptura contra e5.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L146",
+          "scope": "identity-and-moves",
+          "openingId": "opening-2593d600eaed6b8714b5b8d7"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-2593d600eaed6b8714b5b8d7",
+        "name": "Nimzo-Larsen Attack",
+        "pgn": "1. b3",
+        "moves": [
+          "b2b3"
+        ],
+        "fen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Colle System",
+      "displayName": "Sistema Colle",
+      "aliases": [
+        "Sistema Colle",
+        "Colle"
+      ],
+      "overview": "d4, Nf3, e3 e Bd3 sustentam o centro e preparam e4, frequentemente com c3 e Nbd2. O bispo de c1 permanece atrás da cadeia; no Colle-Zukertort, b3 e Bb2 oferecem outro desenvolvimento.",
+      "whitePlan": [
+        "Prepare e4 com peças suficientes para responder a ...dxe4.",
+        "Escolha entre c3 e b3/Bb2 conforme a diagonal desejada para c1."
+      ],
+      "blackPlan": [
+        "Conteste d4 com ...c5 e desenvolva c8 antes de fechar com ...e6 quando for possível.",
+        "Vigie o ataque Bxh7+: calcule as peças disponíveis, sem presumir sacrifício correto."
+      ],
+      "commonMistakes": [
+        "Jogar e4 sem apoio só porque é a ruptura temática.",
+        "Confundir o Colle com o Londres, cujo bispo sai para f4."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: preparação e4 e custo do bispo c1.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L188",
+          "scope": "identity-and-moves",
+          "openingId": "opening-a9d8ce90b26915dcea531be9"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-a9d8ce90b26915dcea531be9",
+        "name": "Colle System: Rhamphorhynchus Variation",
+        "pgn": "1. Nf3 c5 2. e3 g6 3. d4 Bg7 4. dxc5 Qa5+",
+        "moves": [
+          "g1f3",
+          "c7c5",
+          "e2e3",
+          "g7g6",
+          "d2d4",
+          "f8g7",
+          "d4c5",
+          "d8a5"
+        ],
+        "fen": "rnb1k1nr/pp1pppbp/6p1/q1P5/8/4PN2/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Bird Opening",
+      "displayName": "Abertura Bird",
+      "aliases": [
+        "Abertura Bird",
+        "Bird"
+      ],
+      "overview": "1.f4 controla e5 e abre a diagonal e1–h4. ...d5 pode levar a uma Holandesa invertida; ...e5 oferece o Gambito From e exige cálculo imediato, antes de montar um sistema.",
+      "whitePlan": [
+        "Contra ...d5, desenvolva Nf3 e escolha e3 ou g3 segundo a estrutura.",
+        "Antes de aceitar ...e5, calcule ...d6 e ataques na diagonal do rei."
+      ],
+      "blackPlan": [
+        "Com ...d5, ocupe espaço e prepare ...c5.",
+        "No From, priorize desenvolvimento e ameaças ao rei em vez de recuperar o peão por hábito."
+      ],
+      "commonMistakes": [
+        "Montar uma Holandesa invertida ignorando ...e5.",
+        "Avançar g4 sem calcular a exposição do rei branco."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: diagonal e1–h4 e gambito From.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L161",
+          "scope": "identity-and-moves",
+          "openingId": "opening-ffc5d834ecbb13898b9f86c8"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-ffc5d834ecbb13898b9f86c8",
+        "name": "Bird Opening",
+        "pgn": "1. f4",
+        "moves": [
+          "f2f4"
+        ],
+        "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+        "annotations": []
+      }
+    },
+    {
+      "family": "Torre Attack",
+      "displayName": "Ataque Torre",
+      "aliases": [
+        "Ataque Torre",
+        "Torre"
+      ],
+      "overview": "d4, Nf3 e Bg5 combinam desenvolvimento do cavalo com pressão em f6, geralmente contra ...Nf6 e ...e6. O cavalo já em f3 diferencia a Torre da Trompowsky de 2.Bg5.",
+      "whitePlan": [
+        "Use e3 e Bd3 para desenvolver, preparando e4 se a estrutura permitir.",
+        "Decida quando retirar ou trocar Bg5 diante de ...h6 e ...g5, considerando as casas enfraquecidas."
+      ],
+      "blackPlan": [
+        "Conteste d4 por ...c5 ou ...d5 e evite comprometer o rei apenas para expulsar Bg5.",
+        "Desenvolva o bispo de f8 para reduzir a pressão da cravada."
+      ],
+      "commonMistakes": [
+        "Tratar toda cravada em f6 como ganho de material.",
+        "Copiar a Trompowsky sem contar o tempo usado por Nf3."
+      ],
+      "lessonIds": [],
+      "scope": "family",
+      "reviewStatus": "human-review-pending",
+      "audit": "Nova cobertura: cavalo f3, cravada e ruptura e4.",
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/a.tsv#L624",
+          "scope": "identity-and-moves",
+          "openingId": "opening-643b3e3d816fcdb70bf12f08"
+        }
+      ],
+      "referenceLine": {
+        "openingId": "opening-643b3e3d816fcdb70bf12f08",
+        "name": "Torre Attack: Classical Defense",
+        "pgn": "1. d4 Nf6 2. Nf3 e6 3. Bg5",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "g1f3",
+          "e7e6",
+          "c1g5"
+        ],
+        "fen": "rnbqkb1r/pppp1ppp/4pn2/6B1/3P4/5N2/PPP1PPPP/RN1QKB1R b KQkq - 1 3",
+        "annotations": []
+      }
     }
   ]
 }

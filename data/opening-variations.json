@@ -1,0 +1,3018 @@
+{
+  "schemaVersion": 1,
+  "revision": "4b8622759e7ae6f93f011cc6c83a3823401ab45e",
+  "reviewedAt": "2026-09-10",
+  "authorship": "Zav Chess · rascunho assistido por IA, sem atribuição a mestre ou revisor humano",
+  "sourceScope": "Fontes primárias verificam identidade e lances. Planos e anotações são análise editorial original da posição, ainda sem revisão humana.",
+  "coverage": {
+    "catalogFamilies": 149,
+    "guidedFamilies": 42,
+    "originalGuidesRevised": 30,
+    "variationGuides": 21,
+    "uncoveredFamilies": [
+      "Amar Opening",
+      "Amazon Attack",
+      "Amsterdam Attack",
+      "Anderssen's Opening",
+      "Australian Defense",
+      "Barnes Defense",
+      "Barnes Opening",
+      "Basque Opening",
+      "Benko Gambit Declined",
+      "Blackmar-Diemer Gambit",
+      "Blackmar-Diemer Gambit Accepted",
+      "Blackmar-Diemer Gambit Declined",
+      "Blumenfeld Countergambit",
+      "Blumenfeld Countergambit Accepted",
+      "Bongcloud Attack",
+      "Borg Defense",
+      "Canard Opening",
+      "Carr Defense",
+      "Center Game",
+      "Center Game Accepted",
+      "Clemenz Opening",
+      "Creepy Crawly Formation",
+      "Czech Defense",
+      "Danish Gambit",
+      "Danish Gambit Accepted",
+      "Danish Gambit Declined",
+      "Dresden Opening",
+      "Duras Gambit",
+      "Döry Defense",
+      "East Indian Defense",
+      "Elephant Gambit",
+      "English Defense",
+      "English Orangutan",
+      "Englund Gambit",
+      "Englund Gambit Declined",
+      "Formation",
+      "Fried Fox Defense",
+      "Global Opening",
+      "Goldsmith Defense",
+      "Grob Opening",
+      "Gunderam Defense",
+      "Hippopotamus Defense",
+      "Horwitz Defense",
+      "Hungarian Opening",
+      "Indian Defense",
+      "Irish Gambit",
+      "Kangaroo Defense",
+      "King's Gambit",
+      "King's Indian Attack, with Bf5",
+      "King's Indian Attack, with e6",
+      "King's Knight Opening",
+      "King's Pawn Game",
+      "King's Pawn Opening",
+      "Kádas Opening",
+      "Lasker Simul Special",
+      "Latvian Gambit",
+      "Latvian Gambit Accepted",
+      "Lemming Defense",
+      "Lion Defense",
+      "London System, with Bd3",
+      "London System, with Be2",
+      "Marienbad System",
+      "Mexican Defense",
+      "Mieses Opening",
+      "Mikenas Defense",
+      "Montevideo Defense",
+      "Neo-Grünfeld Defense",
+      "Nimzowitsch Defense",
+      "Old Indian Defense",
+      "Owen Defense",
+      "Paleface Attack",
+      "Polish Defense",
+      "Polish Opening",
+      "Polish Opening, with d5",
+      "Ponziani Opening",
+      "Portuguese Opening",
+      "Pseudo Queen's Indian Defense",
+      "Pterodactyl Defense",
+      "Queen's Gambit",
+      "Queen's Indian Accelerated",
+      "Queen's Indian Defense, with e3",
+      "Queen's Indian Defense, with e3, Bb4+ Line",
+      "Queen's Pawn, Mengarini Attack",
+      "Rapport-Jobava System",
+      "Rapport-Jobava System, with e6",
+      "Rat Defense",
+      "Richter-Veresov Attack",
+      "Robatsch Defense",
+      "Rubinstein Opening",
+      "Saragossa Opening",
+      "Semi-Slav Defense Accepted",
+      "Slav Indian",
+      "Sodium Attack",
+      "St. George Defense",
+      "Three Knights Opening",
+      "Valencia Opening",
+      "Van Geet Opening",
+      "Van't Kruijs Opening",
+      "Vienna Gambit, with Max Lange Defense",
+      "Vulture Defense",
+      "Wade Defense",
+      "Ware Defense",
+      "Ware Opening",
+      "Yusupov-Rubinstein System",
+      "Zaire Defense",
+      "Zukertort Defense",
+      "Zukertort Opening"
+    ],
+    "humanReview": "pending"
+  },
+  "variations": [
+    {
+      "id": "siciliana-najdorf",
+      "name": "Sicilian Defense: Najdorf Variation",
+      "title": "Siciliana: Najdorf",
+      "aliases": [
+        "Najdorf"
+      ],
+      "distinction": "5...a6 retira b5 dos cavalos e bispos brancos e prepara ...b5, mantendo a escolha entre ...e5 e ...e6. Não define o fianqueto do Dragão nem a dupla d6/e6 da Scheveningen.",
+      "whitePlan": [
+        "Escolha Bg5 para pressionar f6 ou Be3 para desenvolver antes de decidir o roque.",
+        "Contra ...e5, explore d5; contra ...e6, observe a ruptura ...d5."
+      ],
+      "blackPlan": [
+        "Use ...a6 para controlar b5 e preparar espaço na ala da dama.",
+        "Decida ...e5 ou ...e6 após ver a formação branca; depois de Bg5, ...e6 evita tratar a cravada como irrelevante."
+      ],
+      "commonMistakes": [
+        "Jogar ...b5 antes de calcular a pressão sobre e4/d6 e a segurança do rei.",
+        "Aplicar ...e5 a toda resposta branca sem avaliar d5 e a cravada em f6."
+      ],
+      "family": "Sicilian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Sicilian Defense: Najdorf Variation",
+          "Sicilian Defense: Najdorf Variation, Adams Attack",
+          "Sicilian Defense: Najdorf Variation, Amsterdam Variation",
+          "Sicilian Defense: Najdorf Variation, Browne Variation",
+          "Sicilian Defense: Najdorf Variation, Dekker Gambit",
+          "Sicilian Defense: Najdorf Variation, English Attack",
+          "Sicilian Defense: Najdorf Variation, English Attack, Anti-English",
+          "Sicilian Defense: Najdorf Variation, Goteborg Variation",
+          "Sicilian Defense: Najdorf Variation, Ivkov Variation",
+          "Sicilian Defense: Najdorf Variation, Lipnitsky Attack",
+          "Sicilian Defense: Najdorf Variation, Main Line",
+          "Sicilian Defense: Najdorf Variation, Neo-Classical Defense",
+          "Sicilian Defense: Najdorf Variation, Opocensky Variation",
+          "Sicilian Defense: Najdorf Variation, Opocensky Variation, Modern Line",
+          "Sicilian Defense: Najdorf Variation, Opocensky Variation, Traditional Line",
+          "Sicilian Defense: Najdorf Variation, Petronić Attack",
+          "Sicilian Defense: Najdorf Variation, Poisoned Pawn Accepted",
+          "Sicilian Defense: Najdorf Variation, Poisoned Pawn Variation",
+          "Sicilian Defense: Najdorf Variation, Polugaevsky Variation",
+          "Sicilian Defense: Najdorf Variation, Polugaevsky Variation, Simagin Line",
+          "Sicilian Defense: Najdorf Variation, Scheveningen Variation",
+          "Sicilian Defense: Najdorf Variation, Traditional Line",
+          "Sicilian Defense: Najdorf Variation, Yates Variation",
+          "Sicilian Defense: Najdorf Variation, Zagreb Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "a7a6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "g8f6",
+            "b1c3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "a7a6",
+            "f1e2",
+            "e7e5",
+            "d4b3",
+            "c8e6",
+            "c1e3"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L739",
+          "scope": "identity-and-moves",
+          "openingId": "opening-a6f4ca6d639064ec274bb589"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L756",
+          "scope": "identity-and-moves",
+          "openingId": "opening-996b300c502ea4e8f7409b1c"
+        }
+      ],
+      "line": {
+        "openingId": "opening-a6f4ca6d639064ec274bb589",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6",
+        "moves": [
+          "e2e4",
+          "c7c5",
+          "g1f3",
+          "d7d6",
+          "d2d4",
+          "c5d4",
+          "f3d4",
+          "g8f6",
+          "b1c3",
+          "a7a6"
+        ],
+        "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+        "annotations": [
+          {
+            "ply": 6,
+            "uci": "c5d4",
+            "san": "cxd4",
+            "text": "...cxd4 troca o peão de flanco pelo central e abre a coluna c para as pretas."
+          },
+          {
+            "ply": 10,
+            "uci": "a7a6",
+            "san": "a6",
+            "text": "...a6 define a Najdorf: controla b5 sem fechar ainda o bispo de c8 com ...e6."
+          }
+        ]
+      }
+    },
+    {
+      "id": "siciliana-dragao",
+      "name": "Sicilian Defense: Dragon Variation",
+      "title": "Siciliana: Dragão clássico",
+      "aliases": [
+        "Dragão",
+        "Dragão clássico"
+      ],
+      "distinction": "...d6 já foi jogado quando chega 5...g6. O bispo irá a g7; a ruptura ...d5 exige outro lance do peão d, diferença essencial em relação ao Dragão Acelerado.",
+      "whitePlan": [
+        "Be3, f3 e Qd2 podem preparar o Ataque Iugoslavo; Be2 com roque curto é uma escolha diferente.",
+        "Se rocar longo, calcule a corrida entre h4/h5 e a pressão preta na coluna c."
+      ],
+      "blackPlan": [
+        "Complete ...Bg7 e coordene o roque com a pressão sobre c3 e na coluna c.",
+        "Calcule ...d5 quando as peças o sustentarem; não transfira automaticamente as condições do Acelerado."
+      ],
+      "commonMistakes": [
+        "Confundir qualquer nome com Dragon com esta ordem que já contém ...d6.",
+        "Trocar o bispo de g7 sem avaliar a defesa das casas escuras perto do rei."
+      ],
+      "family": "Sicilian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Sicilian Defense: Dragon Variation",
+          "Sicilian Defense: Dragon Variation, Accelerated Dragon",
+          "Sicilian Defense: Dragon Variation, Classical Variation",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Alekhine Line",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Amsterdam Variation",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Battery Variation",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Bernard Defense",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Grigoriev Variation",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Maróczy Line",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Normal Line",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Spielmann Variation",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Stockholm Attack",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Tartakower Line",
+          "Sicilian Defense: Dragon Variation, Classical Variation, Zollner Gambit",
+          "Sicilian Defense: Dragon Variation, Fianchetto Variation",
+          "Sicilian Defense: Dragon Variation, Levenfish Variation",
+          "Sicilian Defense: Dragon Variation, Levenfish Variation, Main Line",
+          "Sicilian Defense: Dragon Variation, Modern Bc4 Variation",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Belezky Line",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Byrne Variation",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Chinese Dragon",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Czerniak Variation",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Early Deviations",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Hungarian Dragon",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Main Line",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Modern Line",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Old Line",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Panov Variation",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Soltis Variation",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Sosonko Variation",
+          "Sicilian Defense: Dragon Variation, Yugoslav Attack, Topalov Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g7g6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "g7g6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g7g6",
+            "b1c3",
+            "f8g7",
+            "c1e3",
+            "g8f6",
+            "f1c4",
+            "d7d6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "d7d6",
+            "f1e2",
+            "g7g6",
+            "c1e3",
+            "f8g7",
+            "d1d2"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g7g6",
+            "b1c3",
+            "f8g7",
+            "c1e3",
+            "g8f6",
+            "f1e2",
+            "e8g8",
+            "e1g1",
+            "d7d6",
+            "d4b3",
+            "a7a5"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g7g6",
+            "c1e3",
+            "f8g7",
+            "f1e2",
+            "g8f6",
+            "b1c3",
+            "e8g8",
+            "e1g1",
+            "d7d6",
+            "f2f4",
+            "d8b6",
+            "e4e5"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g7g6",
+            "b1c3",
+            "f8g7",
+            "c1e3",
+            "g8f6",
+            "f1e2",
+            "e8g8",
+            "d4b3",
+            "d7d6",
+            "e1g1",
+            "c8e6",
+            "f2f4",
+            "c6a5",
+            "f4f5",
+            "e6c4",
+            "e2d3"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "g7g6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "d7d6",
+            "f1e2",
+            "f8g7",
+            "e1g1",
+            "e8g8",
+            "c1e3",
+            "b8c6",
+            "d4b3",
+            "c8e6",
+            "f2f4",
+            "c6a5",
+            "f4f5",
+            "e6c4",
+            "e2d3",
+            "c4d3",
+            "c2d3",
+            "d6d5"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "b1c3",
+            "d7d6",
+            "f2f4",
+            "b8c6",
+            "g1f3",
+            "g7g6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "f8g7",
+            "c1e3",
+            "g8f6",
+            "f1e2",
+            "e8g8",
+            "d4b3",
+            "c8e6",
+            "e1g1",
+            "c6a5",
+            "f4f5",
+            "e6c4",
+            "b3a5",
+            "c4e2",
+            "d1e2",
+            "d8a5",
+            "g2g4"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L561",
+          "scope": "identity-and-moves",
+          "openingId": "opening-a419b09a3765b719aa5186e3"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L634",
+          "scope": "identity-and-moves",
+          "openingId": "opening-22f7e7f00735892f3cff0e6f"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L673",
+          "scope": "identity-and-moves",
+          "openingId": "opening-a4eecec4cce0a2d7cd94270e"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L682",
+          "scope": "identity-and-moves",
+          "openingId": "opening-09d217f53eead58fe9c1e5ad"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L686",
+          "scope": "identity-and-moves",
+          "openingId": "opening-a038e5afc10ca1087bdb158a"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L687",
+          "scope": "identity-and-moves",
+          "openingId": "opening-90c0e4d81feffe766dd96ebd"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L688",
+          "scope": "identity-and-moves",
+          "openingId": "opening-7fbe91a75144725ee69f3e63"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L691",
+          "scope": "identity-and-moves",
+          "openingId": "opening-1e4eda339e95cfdccebeb4c3"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L692",
+          "scope": "identity-and-moves",
+          "openingId": "opening-7eca5b26bc8b8537163d72b3"
+        }
+      ],
+      "line": {
+        "openingId": "opening-a4eecec4cce0a2d7cd94270e",
+        "name": "Sicilian Defense: Dragon Variation",
+        "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6",
+        "moves": [
+          "e2e4",
+          "c7c5",
+          "g1f3",
+          "d7d6",
+          "d2d4",
+          "c5d4",
+          "f3d4",
+          "g8f6",
+          "b1c3",
+          "g7g6"
+        ],
+        "fen": "rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+        "annotations": [
+          {
+            "ply": 4,
+            "uci": "d7d6",
+            "san": "d6",
+            "text": "...d6 sustenta e5, mas compromete um tempo do peão d."
+          },
+          {
+            "ply": 10,
+            "uci": "g7g6",
+            "san": "g6",
+            "text": "...g6 prepara Bg7 na diagonal h8–a1; as casas escuras ao redor do rei precisam desse bispo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "siciliana-dragao-acelerado",
+      "name": "Sicilian Defense: Accelerated Dragon",
+      "title": "Siciliana: Dragão Acelerado",
+      "aliases": [
+        "Dragão Acelerado"
+      ],
+      "distinction": "4...g6 chega com ...Nc6 e sem ...d6. As pretas conservam a possibilidade ...d7–d5 em um lance; as brancas ainda podem jogar c4, formando o cerco Maróczy.",
+      "whitePlan": [
+        "Considere c4 antes de Nc3 para controlar d5 pelo cerco Maróczy.",
+        "Se escolher Nc3, não copie f3/Qd2/roque longo sem calcular ...d5."
+      ],
+      "blackPlan": [
+        "Procure ...d5 em um só avanço quando a tática permitir.",
+        "Contra c4, melhore as peças e prepare ...b5 ou ...d5 sem forçar uma ruptura mal apoiada."
+      ],
+      "commonMistakes": [
+        "Jogar ...d6 automaticamente e perder a distinção da ordem acelerada.",
+        "Montar o Ataque Iugoslavo sem verificar ...d5 imediato."
+      ],
+      "family": "Sicilian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Sicilian Defense: Accelerated Dragon",
+          "Sicilian Defense: Accelerated Dragon, Exchange Variation",
+          "Sicilian Defense: Accelerated Dragon, Maróczy Bind",
+          "Sicilian Defense: Accelerated Dragon, Maróczy Bind, Breyer Variation",
+          "Sicilian Defense: Accelerated Dragon, Maróczy Bind, Gurgenidze Variation",
+          "Sicilian Defense: Accelerated Dragon, Modern Bc4 Variation",
+          "Sicilian Defense: Accelerated Dragon, Modern Variation",
+          "Sicilian Defense: Accelerated Dragon, Simagin Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g7g6"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L536",
+          "scope": "identity-and-moves",
+          "openingId": "opening-3c04ccb3de873c0ab844e31c"
+        }
+      ],
+      "line": {
+        "openingId": "opening-3c04ccb3de873c0ab844e31c",
+        "name": "Sicilian Defense: Accelerated Dragon",
+        "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6",
+        "moves": [
+          "e2e4",
+          "c7c5",
+          "g1f3",
+          "b8c6",
+          "d2d4",
+          "c5d4",
+          "f3d4",
+          "g7g6"
+        ],
+        "fen": "r1bqkbnr/pp1ppp1p/2n3p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+        "annotations": [
+          {
+            "ply": 4,
+            "uci": "b8c6",
+            "san": "Nc6",
+            "text": "...Nc6 desenvolve sem comprometer o peão d."
+          },
+          {
+            "ply": 8,
+            "uci": "g7g6",
+            "san": "g6",
+            "text": "...g6 define o Acelerado; c2–c4 ainda está disponível porque o cavalo branco não ocupa c3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "siciliana-scheveningen",
+      "name": "Sicilian Defense: Scheveningen Variation",
+      "title": "Siciliana: Scheveningen",
+      "aliases": [
+        "Scheveningen"
+      ],
+      "distinction": "Peões em e6 e d6 formam o pequeno centro, controlando d5 e e5. As pretas ainda não jogaram ...a6 nesta ordem. 6.g4, o Ataque Keres, questiona f6 antes do roque.",
+      "whitePlan": [
+        "Considere g4 como escolha concreta de ataque ao cavalo f6; exige cálculo de ...h6 e do centro.",
+        "Com Be2 e roque curto, prepare f4/e5 conforme a defesa preta."
+      ],
+      "blackPlan": [
+        "Desenvolva f8, coordene o rei e prepare ...d5 para liberar o centro.",
+        "Contra g4, estude as respostas específicas; não suponha que o pequeno centro neutraliza o ataque."
+      ],
+      "commonMistakes": [
+        "Chamar toda Najdorf com ...e6 de uma linha idêntica, ignorando o tempo de ...a6.",
+        "Esperar passivamente enquanto g4–g5 ganha espaço."
+      ],
+      "family": "Sicilian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Sicilian Defense: Scheveningen Variation",
+          "Sicilian Defense: Scheveningen Variation, Classical Main Line",
+          "Sicilian Defense: Scheveningen Variation, Classical Variation",
+          "Sicilian Defense: Scheveningen Variation, Classical Variation, Paulsen Variation",
+          "Sicilian Defense: Scheveningen Variation, Delayed Keres Attack",
+          "Sicilian Defense: Scheveningen Variation, Delayed Keres Attack, Perenyi Gambit",
+          "Sicilian Defense: Scheveningen Variation, English Attack, with Qd2",
+          "Sicilian Defense: Scheveningen Variation, English Attack, with f3",
+          "Sicilian Defense: Scheveningen Variation, Fianchetto Variation",
+          "Sicilian Defense: Scheveningen Variation, Keres Attack",
+          "Sicilian Defense: Scheveningen Variation, Matanovic Attack",
+          "Sicilian Defense: Scheveningen Variation, Modern Variation",
+          "Sicilian Defense: Scheveningen Variation, Tal Variation",
+          "Sicilian Defense: Scheveningen Variation, Vitolins Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "d7d6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "b8c6",
+            "b1c3",
+            "d7d6",
+            "f1e2",
+            "g8f6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "a7a6",
+            "f1e2",
+            "e7e6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "a7a6",
+            "c1e3",
+            "e7e6",
+            "d1d2"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "a7a6",
+            "c1e3",
+            "e7e6",
+            "g2g4"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "a7a6",
+            "c1e3",
+            "e7e6",
+            "f2f3"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "d7d6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "a7a6",
+            "f2f4",
+            "e7e6",
+            "f1e2",
+            "d8c7",
+            "e1g1",
+            "b8c6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "b8c6",
+            "b1c3",
+            "d8c7",
+            "f1e2",
+            "a7a6",
+            "e1g1",
+            "g8f6",
+            "c1e3",
+            "d7d6",
+            "f2f4"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "b8c6",
+            "b1c3",
+            "d8c7",
+            "f1e2",
+            "a7a6",
+            "e1g1",
+            "g8f6",
+            "g1h1",
+            "f8e7",
+            "f2f4",
+            "d7d6",
+            "a2a4"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "b8c6",
+            "b1c3",
+            "d8c7",
+            "f1e2",
+            "a7a6",
+            "e1g1",
+            "g8f6",
+            "c1e3",
+            "f8e7",
+            "f2f4",
+            "d7d6",
+            "d1e1",
+            "e8g8"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L714",
+          "scope": "identity-and-moves",
+          "openingId": "opening-52f82702afb56a7988558dba"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L715",
+          "scope": "identity-and-moves",
+          "openingId": "opening-4e95cbcebd8f7462400a5d26"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L722",
+          "scope": "identity-and-moves",
+          "openingId": "opening-5401796747f033ff1fb77aa6"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L726",
+          "scope": "identity-and-moves",
+          "openingId": "opening-b21a37d281c771d0bdd00356"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L728",
+          "scope": "identity-and-moves",
+          "openingId": "opening-e2f9744df897db55ab7ffc4d"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L729",
+          "scope": "identity-and-moves",
+          "openingId": "opening-36c76d85ff45ed880fcf2111"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L730",
+          "scope": "identity-and-moves",
+          "openingId": "opening-c4a85c3be8363b98a451830e"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L731",
+          "scope": "identity-and-moves",
+          "openingId": "opening-6345e5af38731642b1f549c6"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L751",
+          "scope": "identity-and-moves",
+          "openingId": "opening-ce320d3d6eb4cd2e222008a6"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L753",
+          "scope": "identity-and-moves",
+          "openingId": "opening-0e8da90b8a609092c1f61f1d"
+        }
+      ],
+      "line": {
+        "openingId": "opening-52f82702afb56a7988558dba",
+        "name": "Sicilian Defense: Scheveningen Variation",
+        "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
+        "moves": [
+          "e2e4",
+          "c7c5",
+          "g1f3",
+          "e7e6",
+          "d2d4",
+          "c5d4",
+          "f3d4",
+          "g8f6",
+          "b1c3",
+          "d7d6"
+        ],
+        "fen": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+        "annotations": [
+          {
+            "ply": 4,
+            "uci": "e7e6",
+            "san": "e6",
+            "text": "...e6 controla d5 e fecha temporariamente c8."
+          },
+          {
+            "ply": 10,
+            "uci": "d7d6",
+            "san": "d6",
+            "text": "...d6 completa a dupla e6/d6; sem ...a6, as possibilidades táticas diferem da Najdorf."
+          }
+        ]
+      }
+    },
+    {
+      "id": "siciliana-sveshnikov",
+      "name": "Sicilian Defense: Lasker-Pelikan Variation, Sveshnikov Variation",
+      "title": "Siciliana: Sveshnikov",
+      "aliases": [
+        "Sveshnikov",
+        "Pelikan"
+      ],
+      "distinction": "...e5 expulsa o cavalo de d4, mas cede d5 e deixa d6 potencialmente atrasado. ...a6 e ...b5 empurram o cavalo branco até a3 e produzem atividade em troca dessas concessões.",
+      "whitePlan": [
+        "Procure ocupar d5 e recolocar o cavalo de a3 em c2 ou c4 conforme a linha.",
+        "Decida Bxf6 pela estrutura resultante: ...gxf6 dá às pretas par de bispos e coluna g."
+      ],
+      "blackPlan": [
+        "Use ...b5 para atividade na ala da dama e controle de c4.",
+        "Compense d5 com peças ativas; prepare ...f5 nas linhas em que a estrutura e a tática permitirem."
+      ],
+      "commonMistakes": [
+        "Tratar d5 como vitória pronta e esquecer o cavalo em a3.",
+        "Aceitar d6 fraco sem criar atividade."
+      ],
+      "family": "Sicilian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Sicilian Defense: Lasker-Pelikan Variation, Sveshnikov Variation",
+          "Sicilian Defense: Lasker-Pelikan Variation, Sveshnikov Variation, Chelyabinsk Variation",
+          "Sicilian Defense: Lasker-Pelikan Variation, Sveshnikov Variation, Novosibirsk Variation",
+          "Sicilian Defense: Lasker-Pelikan Variation, Sveshnikov Variation, Peresypkin's Sacrifice"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "g8f6",
+            "b1c3",
+            "e7e5",
+            "d4b5",
+            "d7d6",
+            "c1g5",
+            "a7a6",
+            "b5a3",
+            "b7b5"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L552",
+          "scope": "identity-and-moves",
+          "openingId": "opening-63b4997e53a1e88db38a53b9"
+        }
+      ],
+      "line": {
+        "openingId": "opening-63b4997e53a1e88db38a53b9",
+        "name": "Sicilian Defense: Lasker-Pelikan Variation, Sveshnikov Variation",
+        "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5",
+        "moves": [
+          "e2e4",
+          "c7c5",
+          "g1f3",
+          "b8c6",
+          "d2d4",
+          "c5d4",
+          "f3d4",
+          "g8f6",
+          "b1c3",
+          "e7e5",
+          "d4b5",
+          "d7d6",
+          "c1g5",
+          "a7a6",
+          "b5a3",
+          "b7b5"
+        ],
+        "fen": "r1bqkb1r/5ppp/p1np1n2/1p2p1B1/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq - 0 9",
+        "annotations": [
+          {
+            "ply": 10,
+            "uci": "e7e5",
+            "san": "e5",
+            "text": "...e5 ganha tempo em d4, mas nenhum peão preto poderá controlar d5 a partir das colunas c ou e."
+          },
+          {
+            "ply": 16,
+            "uci": "b7b5",
+            "san": "b5",
+            "text": "...b5 controla c4 e ganha espaço enquanto o cavalo branco está em a3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "siciliana-taimanov",
+      "name": "Sicilian Defense: Taimanov Variation",
+      "title": "Siciliana: Taimanov",
+      "aliases": [
+        "Taimanov"
+      ],
+      "distinction": "...e6 e ...Nc6 colocam pressão de cavalo em d4 sem definir ...d6. Ao contrário da Kan com ...a6, o cavalo de b8 já está comprometido em c6; ...Qc7 é um recurso frequente.",
+      "whitePlan": [
+        "Desenvolva Nc3 para sustentar e4 e escolha como responder a ...Qc7.",
+        "Compare Be3 e Be2 sem pressupor que ...d6 já fechou a diagonal de f8."
+      ],
+      "blackPlan": [
+        "Use ...Qc7 para apoiar o centro e considere ...Bb4 quando a cravada for útil.",
+        "Preserve ...d5 em um lance quando as condições táticas permitirem."
+      ],
+      "commonMistakes": [
+        "Tratar Kan e Taimanov como nomes intercambiáveis.",
+        "Jogar ...d6 por hábito e restringir cedo o bispo de f8."
+      ],
+      "family": "Sicilian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Sicilian Defense: Taimanov Variation",
+          "Sicilian Defense: Taimanov Variation, Bastrikov Variation",
+          "Sicilian Defense: Taimanov Variation, Bastrikov Variation, English Attack",
+          "Sicilian Defense: Taimanov Variation, Bastrikov Variation, Ponomariov Gambit",
+          "Sicilian Defense: Taimanov Variation, Gary Gambit",
+          "Sicilian Defense: Taimanov Variation, Modern Line",
+          "Sicilian Defense: Taimanov Variation, Szén Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "b8c6"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L599",
+          "scope": "identity-and-moves",
+          "openingId": "opening-368aeb0caf914c2166144d43"
+        }
+      ],
+      "line": {
+        "openingId": "opening-368aeb0caf914c2166144d43",
+        "name": "Sicilian Defense: Taimanov Variation",
+        "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6",
+        "moves": [
+          "e2e4",
+          "c7c5",
+          "g1f3",
+          "e7e6",
+          "d2d4",
+          "c5d4",
+          "f3d4",
+          "b8c6"
+        ],
+        "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+        "annotations": [
+          {
+            "ply": 4,
+            "uci": "e7e6",
+            "san": "e6",
+            "text": "...e6 sustenta d5 sem desenvolver ainda o cavalo de g8."
+          },
+          {
+            "ply": 8,
+            "uci": "b8c6",
+            "san": "Nc6",
+            "text": "...Nc6 ataca d4 e define a Taimanov nesta ordem."
+          }
+        ]
+      }
+    },
+    {
+      "id": "siciliana-kan",
+      "name": "Sicilian Defense: Kan Variation",
+      "title": "Siciliana: Kan",
+      "aliases": [
+        "Kan",
+        "Paulsen"
+      ],
+      "distinction": "...e6 e 4...a6 mantêm ambos os cavalos pretos flexíveis. ...a6 impede Nb5 e prepara ...b5; as brancas podem jogar c4 antes de Nc3, diferente de muitas Sicilianas Abertas.",
+      "whitePlan": [
+        "Considere Bd3 para sustentar e4 ou c4 para controlar d5.",
+        "Use a vantagem de desenvolvimento sem avançar e5 com o centro mal defendido."
+      ],
+      "blackPlan": [
+        "Escolha ...Qc7, ...Nf6 ou ...Nc6 conforme a formação branca.",
+        "Prepare ...b5 sem esquecer que o rei e as peças menores ainda precisam desenvolver."
+      ],
+      "commonMistakes": [
+        "Confundir a flexibilidade dos cavalos com permissão para só mover peões.",
+        "Copiar a Taimanov supondo um cavalo preto já em c6."
+      ],
+      "family": "Sicilian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Sicilian Defense: Kan Variation",
+          "Sicilian Defense: Kan Variation, Gipslis Variation",
+          "Sicilian Defense: Kan Variation, Knight Variation",
+          "Sicilian Defense: Kan Variation, Maróczy Bind, Bronstein Variation",
+          "Sicilian Defense: Kan Variation, Maróczy Bind, Hedgehog Variation",
+          "Sicilian Defense: Kan Variation, Maróczy Bind, Réti Variation",
+          "Sicilian Defense: Kan Variation, Modern Variation",
+          "Sicilian Defense: Kan Variation, Polugaevsky Variation",
+          "Sicilian Defense: Kan Variation, Swiss Cheese Variation",
+          "Sicilian Defense: Kan Variation, Wing Attack",
+          "Sicilian Defense: Kan Variation, Wing Attack, Christiansen's Dream",
+          "Sicilian Defense: Kan Variation, Wing Attack, Fianchetto Variation",
+          "Sicilian Defense: Kan Variation, Wing Attack, Spraggett Attack"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "d2d4",
+            "c5d4",
+            "f3d4",
+            "a7a6"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "b1c3",
+            "a7a6",
+            "g2g3",
+            "b7b5",
+            "d2d4",
+            "c5d4",
+            "f3d4"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L576",
+          "scope": "identity-and-moves",
+          "openingId": "opening-466c7b310c24a235c63a6ca4"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L586",
+          "scope": "identity-and-moves",
+          "openingId": "opening-80ee13803e3824c8fc5e6a9b"
+        }
+      ],
+      "line": {
+        "openingId": "opening-80ee13803e3824c8fc5e6a9b",
+        "name": "Sicilian Defense: Kan Variation",
+        "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6",
+        "moves": [
+          "e2e4",
+          "c7c5",
+          "g1f3",
+          "e7e6",
+          "d2d4",
+          "c5d4",
+          "f3d4",
+          "a7a6"
+        ],
+        "fen": "rnbqkbnr/1p1p1ppp/p3p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+        "annotations": [
+          {
+            "ply": 4,
+            "uci": "e7e6",
+            "san": "e6",
+            "text": "...e6 mantém opções para o peão d."
+          },
+          {
+            "ply": 8,
+            "uci": "a7a6",
+            "san": "a6",
+            "text": "...a6 controla b5; nenhum dos cavalos pretos saiu ainda."
+          }
+        ]
+      }
+    },
+    {
+      "id": "siciliana-alapin",
+      "name": "Sicilian Defense: Alapin Variation",
+      "title": "Siciliana: Alapin",
+      "aliases": [
+        "Alapin",
+        "Siciliana c3"
+      ],
+      "distinction": "2.c3 prepara d4 com recaptura de peão e ocupa a casa natural do cavalo b1. As respostas imediatas ...d5 e ...Nf6 atacam o centro antes de a formação branca ficar pronta.",
+      "whitePlan": [
+        "Prepare d4, mas responda a ...Nf6 e à ameaça em e4 antes de seguir o plano.",
+        "Depois das trocas, reconheça se surgiu um peão isolado em d4."
+      ],
+      "blackPlan": [
+        "Com ...d5, use o fato de c3 impedir Nc3 imediato contra a dama.",
+        "Com ...Nf6, ataque e4 e escolha uma retirada ativa se e5 ganhar tempo."
+      ],
+      "commonMistakes": [
+        "Aplicar o esquema Nf3/d4/Nxd4 da Siciliana Aberta como se c3 não existisse.",
+        "Ignorar o ataque ...Nf6 a e4."
+      ],
+      "family": "Sicilian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Sicilian Defense: Alapin Variation",
+          "Sicilian Defense: Alapin Variation, Anti-Alapin Gambit",
+          "Sicilian Defense: Alapin Variation, Barmen Defense",
+          "Sicilian Defense: Alapin Variation, Barmen Defense, Central Exchange",
+          "Sicilian Defense: Alapin Variation, Barmen Defense, Endgame Variation",
+          "Sicilian Defense: Alapin Variation, Barmen Defense, Milner-Barry Attack",
+          "Sicilian Defense: Alapin Variation, Barmen Defense, Modern Line",
+          "Sicilian Defense: Alapin Variation, Sherzer Variation",
+          "Sicilian Defense: Alapin Variation, Smith-Morra Declined",
+          "Sicilian Defense: Alapin Variation, Stoltz Attack",
+          "Sicilian Defense: Alapin Variation, Stoltz Attack, Ivanchuk Line"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c5",
+            "c2c3"
+          ],
+          [
+            "e2e4",
+            "c7c5",
+            "g1f3",
+            "e7e6",
+            "c2c3",
+            "g8f6",
+            "e4e5",
+            "f6d5",
+            "d2d4",
+            "b8c6"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L438",
+          "scope": "identity-and-moves",
+          "openingId": "opening-33b3239fc9e7e3b908540e03"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L568",
+          "scope": "identity-and-moves",
+          "openingId": "opening-f70da9299b5fcc497701f563"
+        }
+      ],
+      "line": {
+        "openingId": "opening-33b3239fc9e7e3b908540e03",
+        "name": "Sicilian Defense: Alapin Variation",
+        "pgn": "1. e4 c5 2. c3",
+        "moves": [
+          "e2e4",
+          "c7c5",
+          "c2c3"
+        ],
+        "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2",
+        "annotations": [
+          {
+            "ply": 2,
+            "uci": "c7c5",
+            "san": "c5",
+            "text": "...c5 disputa d4 a partir do flanco."
+          },
+          {
+            "ply": 3,
+            "uci": "c2c3",
+            "san": "c3",
+            "text": "c3 prepara recapturar em d4 com peão, mas bloqueia temporariamente Nc3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "francesa-winawer",
+      "name": "French Defense: Winawer Variation",
+      "title": "Francesa: Winawer",
+      "aliases": [
+        "Winawer"
+      ],
+      "distinction": "3...Bb4 crava Nc3 contra o rei e aumenta a pressão sobre e4. Após e5 e ...Bxc3+, bxc3 costuma reforçar d4, mas cria peões dobrados e concede às brancas o par de bispos.",
+      "whitePlan": [
+        "Após e5, aceite ou evite a mudança estrutural em c3 conscientemente.",
+        "Com o bispo preto longe de f8, avalie pressão em g7 por Qg4 somente na linha apropriada."
+      ],
+      "blackPlan": [
+        "Ataque d4 com ...c5 e coordene a decisão ...Bxc3+ com o centro.",
+        "Se entregar o bispo de casas escuras, proteja g7 e as casas que ele defendia."
+      ],
+      "commonMistakes": [
+        "Tratar peões dobrados brancos como vantagem automática preta.",
+        "Jogar Qg4 sem calcular a defesa de d4 e o desenvolvimento."
+      ],
+      "family": "French Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "French Defense: Winawer Variation",
+          "French Defense: Winawer Variation, Advance Variation",
+          "French Defense: Winawer Variation, Advance Variation, Moscow Variation",
+          "French Defense: Winawer Variation, Advance Variation, Smyslov Variation",
+          "French Defense: Winawer Variation, Advance Variation, with Bd3",
+          "French Defense: Winawer Variation, Advance Variation, with h4",
+          "French Defense: Winawer Variation, Alekhine Gambit Accepted",
+          "French Defense: Winawer Variation, Alekhine Gambit, Alatortsev Variation",
+          "French Defense: Winawer Variation, Alekhine Gambit, Kan Variation",
+          "French Defense: Winawer Variation, Alekhine-Maróczy Gambit",
+          "French Defense: Winawer Variation, Bogoljubow Variation",
+          "French Defense: Winawer Variation, Bogoljubow Variation, Icelandic Defense",
+          "French Defense: Winawer Variation, Classical Variation",
+          "French Defense: Winawer Variation, Delayed Exchange Variation",
+          "French Defense: Winawer Variation, Eingorn Variation",
+          "French Defense: Winawer Variation, Exchange Variation, Canal Attack",
+          "French Defense: Winawer Variation, Fingerslip Variation",
+          "French Defense: Winawer Variation, Fingerslip Variation, Kunin Double Gambit",
+          "French Defense: Winawer Variation, Fingerslip Variation, Main Line",
+          "French Defense: Winawer Variation, Fingerslip Variation, Schwarz's Line",
+          "French Defense: Winawer Variation, Kondratiyev Variation",
+          "French Defense: Winawer Variation, Maróczy-Wallis Variation",
+          "French Defense: Winawer Variation, Petrosian Variation",
+          "French Defense: Winawer Variation, Poisoned Pawn Variation",
+          "French Defense: Winawer Variation, Poisoned Pawn Variation Declined",
+          "French Defense: Winawer Variation, Poisoned Pawn Variation, Main Line",
+          "French Defense: Winawer Variation, Poisoned Pawn Variation, Paoli Variation",
+          "French Defense: Winawer Variation, Portisch-Hook Variation",
+          "French Defense: Winawer Variation, Positional Variation",
+          "French Defense: Winawer Variation, Retreat Variation",
+          "French Defense: Winawer Variation, Retreat Variation, Armenian Line",
+          "French Defense: Winawer Variation, Warsaw Variation",
+          "French Defense: Winawer Variation, Winckelmann-Reimer Gambit"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "e7e6",
+            "d2d4",
+            "d7d5",
+            "b1c3",
+            "f8b4"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L161",
+          "scope": "identity-and-moves",
+          "openingId": "opening-fcd7a9583c3c7693fa96037f"
+        }
+      ],
+      "line": {
+        "openingId": "opening-fcd7a9583c3c7693fa96037f",
+        "name": "French Defense: Winawer Variation",
+        "pgn": "1. e4 e6 2. d4 d5 3. Nc3 Bb4",
+        "moves": [
+          "e2e4",
+          "e7e6",
+          "d2d4",
+          "d7d5",
+          "b1c3",
+          "f8b4"
+        ],
+        "fen": "rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4",
+        "annotations": [
+          {
+            "ply": 5,
+            "uci": "b1c3",
+            "san": "Nc3",
+            "text": "Nc3 defende e4, mas fica exposto à cravada."
+          },
+          {
+            "ply": 6,
+            "uci": "f8b4",
+            "san": "Bb4",
+            "text": "...Bb4 define a Winawer; o alvo indireto é e4, além da estrutura em c3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "francesa-tarrasch",
+      "name": "French Defense: Tarrasch Variation",
+      "title": "Francesa: Tarrasch",
+      "aliases": [
+        "Francesa Tarrasch",
+        "Tarrasch Nd2"
+      ],
+      "distinction": "3.Nd2 protege e4 e deixa c3 para o peão. Evita a cravada típica da Winawer sobre Nc3, mas bloqueia c1; ...c5 e ...Nf6 conduzem a estruturas diferentes.",
+      "whitePlan": [
+        "Use c3 para sustentar d4 nas linhas fechadas.",
+        "Planeje a saída de c1 e o reposicionamento de Nd2 quando o centro se resolver."
+      ],
+      "blackPlan": [
+        "...c5 desafia d4 cedo; ...Nf6 pode provocar e5 e uma cadeia fechada.",
+        "Se as trocas criarem peão isolado, use atividade em vez de defender passivamente."
+      ],
+      "commonMistakes": [
+        "Copiar as posições da Winawer sem cavalo em c3.",
+        "Confundir essa variante com a Defesa Tarrasch do Gambito da Dama."
+      ],
+      "family": "French Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "French Defense: Tarrasch Variation",
+          "French Defense: Tarrasch Variation, Botvinnik Variation",
+          "French Defense: Tarrasch Variation, Chistyakov Defense",
+          "French Defense: Tarrasch Variation, Chistyakov Defense, Modern Line",
+          "French Defense: Tarrasch Variation, Closed Variation",
+          "French Defense: Tarrasch Variation, Closed Variation, Main Line",
+          "French Defense: Tarrasch Variation, Eliskases Variation",
+          "French Defense: Tarrasch Variation, Guimard Defense",
+          "French Defense: Tarrasch Variation, Guimard Defense, Main Line",
+          "French Defense: Tarrasch Variation, Guimard Defense, Thunderbunny Variation",
+          "French Defense: Tarrasch Variation, Haberditz Variation",
+          "French Defense: Tarrasch Variation, Leningrad Variation",
+          "French Defense: Tarrasch Variation, Modern System",
+          "French Defense: Tarrasch Variation, Morozevich Variation",
+          "French Defense: Tarrasch Variation, Open System",
+          "French Defense: Tarrasch Variation, Open System, Advance Line",
+          "French Defense: Tarrasch Variation, Open System, Euwe-Keres Line",
+          "French Defense: Tarrasch Variation, Open System, Main Line",
+          "French Defense: Tarrasch Variation, Open System, Shaposhnikov Gambit",
+          "French Defense: Tarrasch Variation, Open System, Süchting Line",
+          "French Defense: Tarrasch Variation, Pawn Center Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "e7e6",
+            "d2d4",
+            "d7d5",
+            "b1d2"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L73",
+          "scope": "identity-and-moves",
+          "openingId": "opening-a59b188001f4f5c89452860a"
+        }
+      ],
+      "line": {
+        "openingId": "opening-a59b188001f4f5c89452860a",
+        "name": "French Defense: Tarrasch Variation",
+        "pgn": "1. e4 e6 2. d4 d5 3. Nd2",
+        "moves": [
+          "e2e4",
+          "e7e6",
+          "d2d4",
+          "d7d5",
+          "b1d2"
+        ],
+        "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq - 1 3",
+        "annotations": [
+          {
+            "ply": 4,
+            "uci": "d7d5",
+            "san": "d5",
+            "text": "...d5 contesta e4 com o suporte de e6."
+          },
+          {
+            "ply": 5,
+            "uci": "b1d2",
+            "san": "Nd2",
+            "text": "Nd2 preserva c3 para o peão e impede a saída imediata do bispo de c1."
+          }
+        ]
+      }
+    },
+    {
+      "id": "francesa-avanco",
+      "name": "French Defense: Advance Variation",
+      "title": "Francesa: Avanço",
+      "aliases": [
+        "Francesa Avanço"
+      ],
+      "distinction": "3.e5 fixa a cadeia d4/e5. O bispo preto de c8 já está fechado por e6, ao contrário do Avanço da Caro-Kann; ...c5 procura a base d4.",
+      "whitePlan": [
+        "Use c3 para sustentar d4 e desenvolva Nf3 para apoiar o centro.",
+        "Não avance f4 se isso deixar d4 exposto a ...Nc6 e ...Qb6."
+      ],
+      "blackPlan": [
+        "Jogue contra d4 com ...c5 e peças coordenadas.",
+        "Use ...f6 contra e5 quando a abertura da coluna f e diagonal do rei for aceitável."
+      ],
+      "commonMistakes": [
+        "Atacar só e5 e esquecer a base d4.",
+        "Esperar o roque por regra antes de jogar ...c5."
+      ],
+      "family": "French Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "French Defense: Advance Variation",
+          "French Defense: Advance Variation, Euwe Variation",
+          "French Defense: Advance Variation, Extended Bishop Swap",
+          "French Defense: Advance Variation, Frenkel Gambit",
+          "French Defense: Advance Variation, Kupreichik Variation",
+          "French Defense: Advance Variation, Lputian Variation",
+          "French Defense: Advance Variation, Main Line",
+          "French Defense: Advance Variation, Milner-Barry Gambit",
+          "French Defense: Advance Variation, Milner-Barry Gambit, Hector Variation",
+          "French Defense: Advance Variation, Milner-Barry Gambit, Main Line",
+          "French Defense: Advance Variation, Milner-Barry Gambit, Sørensen Variation",
+          "French Defense: Advance Variation, Nimzowitsch Attack",
+          "French Defense: Advance Variation, Nimzowitsch Gambit",
+          "French Defense: Advance Variation, Nimzowitsch System",
+          "French Defense: Advance Variation, Paulsen Attack",
+          "French Defense: Advance Variation, Ruisdonk Gambit",
+          "French Defense: Advance Variation, Steinitz Variation",
+          "French Defense: Advance Variation, Wade Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "e7e6",
+            "d2d4",
+            "d7d5",
+            "e4e5"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L51",
+          "scope": "identity-and-moves",
+          "openingId": "opening-03a73a08e3733082e034a517"
+        }
+      ],
+      "line": {
+        "openingId": "opening-03a73a08e3733082e034a517",
+        "name": "French Defense: Advance Variation",
+        "pgn": "1. e4 e6 2. d4 d5 3. e5",
+        "moves": [
+          "e2e4",
+          "e7e6",
+          "d2d4",
+          "d7d5",
+          "e4e5"
+        ],
+        "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+        "annotations": [
+          {
+            "ply": 2,
+            "uci": "e7e6",
+            "san": "e6",
+            "text": "...e6 fecha a saída do bispo c8 antes de o centro ser fixado."
+          },
+          {
+            "ply": 5,
+            "uci": "e4e5",
+            "san": "e5",
+            "text": "e5 ganha espaço e aponta d4 como base a defender."
+          }
+        ]
+      }
+    },
+    {
+      "id": "caro-kann-avanco",
+      "name": "Caro-Kann Defense: Advance Variation",
+      "title": "Caro-Kann: Avanço",
+      "aliases": [
+        "Caro-Kann Avanço"
+      ],
+      "distinction": "3.e5 fixa o centro, mas o peão preto ainda está em e7. Por isso ...Bf5 pode sair antes de ...e6; a alternativa 3...c5 questiona d4 diretamente.",
+      "whitePlan": [
+        "Use o espaço e desenvolva antes de perseguir Bf5 com muitos peões.",
+        "Contra ...c5, calcule a tensão em d4 sem pressupor a formação ...Bf5/...e6."
+      ],
+      "blackPlan": [
+        "Escolha ...Bf5 ou ...c5 conscientemente; são soluções diferentes para a atividade.",
+        "Depois de ...Bf5 e ...e6, prepare ...c5 com peças sustentando d4."
+      ],
+      "commonMistakes": [
+        "Descrever o bispo c8 como necessariamente preso, copiando a Francesa.",
+        "Avançar g4/h4 sem avaliar o próprio rei."
+      ],
+      "family": "Caro-Kann Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Caro-Kann Defense: Advance Variation",
+          "Caro-Kann Defense: Advance Variation, Bayonet Attack",
+          "Caro-Kann Defense: Advance Variation, Botvinnik-Carls Defense",
+          "Caro-Kann Defense: Advance Variation, Bronstein Variation",
+          "Caro-Kann Defense: Advance Variation, Prins Attack",
+          "Caro-Kann Defense: Advance Variation, Short Variation",
+          "Caro-Kann Defense: Advance Variation, Tal Variation",
+          "Caro-Kann Defense: Advance Variation, Van der Wiel Attack",
+          "Caro-Kann Defense: Advance Variation, Van der Wiel Attack, Dreyev Defense"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c6",
+            "d2d4",
+            "d7d5",
+            "e4e5"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L298",
+          "scope": "identity-and-moves",
+          "openingId": "opening-473e68c5efe9505126c051a8"
+        }
+      ],
+      "line": {
+        "openingId": "opening-473e68c5efe9505126c051a8",
+        "name": "Caro-Kann Defense: Advance Variation",
+        "pgn": "1. e4 c6 2. d4 d5 3. e5",
+        "moves": [
+          "e2e4",
+          "c7c6",
+          "d2d4",
+          "d7d5",
+          "e4e5"
+        ],
+        "fen": "rnbqkbnr/pp2pppp/2p5/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+        "annotations": [
+          {
+            "ply": 2,
+            "uci": "c7c6",
+            "san": "c6",
+            "text": "...c6 protege d5 mantendo e7 livre."
+          },
+          {
+            "ply": 5,
+            "uci": "e4e5",
+            "san": "e5",
+            "text": "e5 ganha espaço; a diagonal c8–f5 permanece aberta."
+          }
+        ]
+      }
+    },
+    {
+      "id": "caro-kann-classica",
+      "name": "Caro-Kann Defense: Classical Variation",
+      "title": "Caro-Kann: Clássica",
+      "aliases": [
+        "Caro-Kann Clássica"
+      ],
+      "distinction": "...dxe4 e Nxe4 resolvem a tensão antes de ...Bf5 atacar o cavalo. O centro já não é o do Avanço; o bispo sai com tempo e pode recuar a g6 após Ng3.",
+      "whitePlan": [
+        "Use Ng3 para ganhar tempo no bispo e escolha como desenvolver f1.",
+        "Se jogar h4, prepare a continuação sem abandonar a segurança do rei."
+      ],
+      "blackPlan": [
+        "Retire o bispo sem permitir seu aprisionamento e desenvolva com ...e6.",
+        "Prepare ...c5 para contestar d4 depois de organizar as peças."
+      ],
+      "commonMistakes": [
+        "Jogar como se o peão branco ainda estivesse em e5.",
+        "Ignorar a perseguição Ng3/h4 ao bispo."
+      ],
+      "family": "Caro-Kann Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Caro-Kann Defense: Classical Variation",
+          "Caro-Kann Defense: Classical Variation, Flohr Variation",
+          "Caro-Kann Defense: Classical Variation, Lobron System",
+          "Caro-Kann Defense: Classical Variation, Main Line",
+          "Caro-Kann Defense: Classical Variation, Maróczy Attack",
+          "Caro-Kann Defense: Classical Variation, Seirawan Variation",
+          "Caro-Kann Defense: Classical Variation, Spassky Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "c7c6",
+            "d2d4",
+            "d7d5",
+            "b1d2",
+            "d5e4",
+            "d2e4",
+            "c8f5"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/b.tsv#L365",
+          "scope": "identity-and-moves",
+          "openingId": "opening-33183d758138b8a9fd0ae4ee"
+        }
+      ],
+      "line": {
+        "openingId": "opening-33183d758138b8a9fd0ae4ee",
+        "name": "Caro-Kann Defense: Classical Variation",
+        "pgn": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bf5",
+        "moves": [
+          "e2e4",
+          "c7c6",
+          "d2d4",
+          "d7d5",
+          "b1d2",
+          "d5e4",
+          "d2e4",
+          "c8f5"
+        ],
+        "fen": "rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 1 5",
+        "annotations": [
+          {
+            "ply": 6,
+            "uci": "d5e4",
+            "san": "dxe4",
+            "text": "...dxe4 entrega o peão de d pela presença branca em e4."
+          },
+          {
+            "ply": 8,
+            "uci": "c8f5",
+            "san": "Bf5",
+            "text": "...Bf5 desenvolve com ataque ao cavalo em e4."
+          }
+        ]
+      }
+    },
+    {
+      "id": "italiana-pianissimo",
+      "name": "Italian Game: Giuoco Pianissimo",
+      "title": "Italiana: Giuoco Pianissimo",
+      "aliases": [
+        "Pianissimo",
+        "Italiana tranquila"
+      ],
+      "distinction": "Na linha de referência, d3 sustenta e4 sem abrir imediatamente o centro com d4. Isso permite manobras e preparação de d4; não significa que a posição seja isenta de táticas.",
+      "whitePlan": [
+        "Prepare c3, roque e Re1 para escolher o momento de d4.",
+        "Preserve o bispo com Bb3 se ...Na5 ameaçar trocá-lo em boas condições."
+      ],
+      "blackPlan": [
+        "Complete o desenvolvimento e busque ...d5 quando puder responder às capturas.",
+        "Use ...a6 e ...Ba7 se isso preservar o bispo e evitar tempos brancos."
+      ],
+      "commonMistakes": [
+        "Manobrar sem observar a ruptura central do adversário.",
+        "Chamar toda Italiana de tranquila, incluindo a Dois Cavalos com Ng5."
+      ],
+      "family": "Italian Game",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Italian Game: Giuoco Pianissimo",
+          "Italian Game: Giuoco Pianissimo, Canal Variation",
+          "Italian Game: Giuoco Pianissimo, Dubois Variation",
+          "Italian Game: Giuoco Pianissimo, Italian Four Knights Variation",
+          "Italian Game: Giuoco Pianissimo, Lucchini Gambit",
+          "Italian Game: Giuoco Pianissimo, Normal"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1c4",
+            "f8c5",
+            "d2d3"
+          ],
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1c4",
+            "g8f6",
+            "d2d3",
+            "f8c5"
+          ],
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1c4",
+            "f8c5",
+            "b1c3",
+            "g8f6",
+            "e1g1",
+            "e8g8"
+          ],
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1c4",
+            "g8f6",
+            "e1g1",
+            "f8c5",
+            "b1c3",
+            "d7d6",
+            "d2d3"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L835",
+          "scope": "identity-and-moves",
+          "openingId": "opening-18f7ec0e74296bd5735aaf81"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L836",
+          "scope": "identity-and-moves",
+          "openingId": "opening-20e049f3d23ca3ab7b6911e8"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L837",
+          "scope": "identity-and-moves",
+          "openingId": "opening-15b01453aefdb46ea312c013"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L843",
+          "scope": "identity-and-moves",
+          "openingId": "opening-0899a02ad71ac837a28e89ab"
+        }
+      ],
+      "line": {
+        "openingId": "opening-18f7ec0e74296bd5735aaf81",
+        "name": "Italian Game: Giuoco Pianissimo",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d3",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "f8c5",
+          "d2d3"
+        ],
+        "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4",
+        "annotations": [
+          {
+            "ply": 6,
+            "uci": "f8c5",
+            "san": "Bc5",
+            "text": "...Bc5 coloca ambos os bispos nas diagonais de f2/f7."
+          },
+          {
+            "ply": 7,
+            "uci": "d2d3",
+            "san": "d3",
+            "text": "d3 sustenta e4 e adia a abertura do centro."
+          }
+        ]
+      }
+    },
+    {
+      "id": "italiana-dois-cavalos",
+      "name": "Italian Game: Two Knights Defense",
+      "title": "Italiana: Defesa dos Dois Cavalos",
+      "aliases": [
+        "Dois Cavalos"
+      ],
+      "distinction": "3...Nf6 ataca e4 antes de desenvolver f8. 4.Ng5 pressiona f7 e pede cálculo de ...d5; 4.d3 permite uma partida mais contida.",
+      "whitePlan": [
+        "Se escolher Ng5, estude as respostas centrais em vez de presumir ganho em f7.",
+        "Com d3, proteja e4 e prepare desenvolvimento e roque."
+      ],
+      "blackPlan": [
+        "Contra Ng5, estude ...d5 e, após exd5, ...Na5 para ganhar tempo no bispo.",
+        "Não recapture automaticamente ...Nxd5 depois de Ng5 e exd5: pode permitir o Ataque Fegatello."
+      ],
+      "commonMistakes": [
+        "Tratar ...Nf6 apenas como desenvolvimento sem ameaça a e4.",
+        "Repetir capturas de uma linha tranquila na posição de Ng5."
+      ],
+      "family": "Italian Game",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Italian Game: Two Knights Defense",
+          "Italian Game: Two Knights Defense, Blackburne Variation",
+          "Italian Game: Two Knights Defense, Colman Variation",
+          "Italian Game: Two Knights Defense, Fegatello Attack, Leonhardt Variation",
+          "Italian Game: Two Knights Defense, Fried Liver Attack",
+          "Italian Game: Two Knights Defense, Fritz Variation",
+          "Italian Game: Two Knights Defense, Fritz, Gruber Variation",
+          "Italian Game: Two Knights Defense, Keidansky Variation",
+          "Italian Game: Two Knights Defense, Kloss Gambit",
+          "Italian Game: Two Knights Defense, Knight Attack",
+          "Italian Game: Two Knights Defense, Knight Attack, Normal Variation",
+          "Italian Game: Two Knights Defense, Knorre Variation",
+          "Italian Game: Two Knights Defense, Lolli Attack",
+          "Italian Game: Two Knights Defense, Maróczy Variation",
+          "Italian Game: Two Knights Defense, Max Lange Attack",
+          "Italian Game: Two Knights Defense, Max Lange Attack, Berger Variation",
+          "Italian Game: Two Knights Defense, Max Lange Attack, Krause Variation",
+          "Italian Game: Two Knights Defense, Max Lange Attack, Loman Defense",
+          "Italian Game: Two Knights Defense, Max Lange Attack, Rubinstein Variation",
+          "Italian Game: Two Knights Defense, Modern Bishop's Opening",
+          "Italian Game: Two Knights Defense, Open Variation",
+          "Italian Game: Two Knights Defense, Paoli Variation",
+          "Italian Game: Two Knights Defense, Perreux Variation",
+          "Italian Game: Two Knights Defense, Pincus Variation",
+          "Italian Game: Two Knights Defense, Polerio Defense",
+          "Italian Game: Two Knights Defense, Polerio Defense, Bishop Check Line",
+          "Italian Game: Two Knights Defense, Polerio Defense, Bogoljubow Variation",
+          "Italian Game: Two Knights Defense, Polerio Defense, Göring Variation",
+          "Italian Game: Two Knights Defense, Polerio Defense, Kieseritzky Variation",
+          "Italian Game: Two Knights Defense, Polerio Defense, Suhle Defense",
+          "Italian Game: Two Knights Defense, Polerio Defense, Yankovich Variation",
+          "Italian Game: Two Knights Defense, Ponziani-Steinitz Gambit",
+          "Italian Game: Two Knights Defense, Steinitz Variation",
+          "Italian Game: Two Knights Defense, Traxler Counterattack",
+          "Italian Game: Two Knights Defense, Traxler Counterattack, Bishop Sacrifice Line",
+          "Italian Game: Two Knights Defense, Traxler Counterattack, King March Line",
+          "Italian Game: Two Knights Defense, Traxler Counterattack, Knight Sacrifice Line",
+          "Italian Game: Two Knights Defense, Traxler Variation, Trencianske-Teplice Gambit",
+          "Italian Game: Two Knights Defense, Ulvestad Variation",
+          "Italian Game: Two Knights Defense, Ulvestad Variation, Kurkin Gambit",
+          "Italian Game: Two Knights Defense, Yurdansky Attack"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1c4",
+            "g8f6"
+          ],
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "e5d4",
+            "f1c4",
+            "g8f6",
+            "e1g1",
+            "f8c5",
+            "e4e5"
+          ],
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "e5d4",
+            "f1c4",
+            "f8c5",
+            "e1g1",
+            "g8f6",
+            "e4e5",
+            "d7d5",
+            "e5f6",
+            "d5c4",
+            "f1e1",
+            "c8e6",
+            "f3g5",
+            "g7g6"
+          ],
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "d2d4",
+            "e5d4",
+            "f1c4",
+            "g8f6",
+            "e1g1",
+            "f6e4",
+            "f1e1",
+            "d7d5",
+            "c4d5",
+            "d8d5",
+            "b1c3",
+            "d5a5",
+            "c3e4",
+            "c8e6",
+            "c1g5",
+            "h7h6",
+            "g5h4",
+            "g7g5",
+            "e4f6",
+            "e8e7",
+            "b2b4"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L956",
+          "scope": "identity-and-moves",
+          "openingId": "opening-448e0f32839ae6dfb4229faf"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L978",
+          "scope": "identity-and-moves",
+          "openingId": "opening-a9eed5a43420d21132f52a26"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L981",
+          "scope": "identity-and-moves",
+          "openingId": "opening-94df95889321952254738b04"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L985",
+          "scope": "identity-and-moves",
+          "openingId": "opening-7c2f1e20a41de4d4cad4361d"
+        }
+      ],
+      "line": {
+        "openingId": "opening-448e0f32839ae6dfb4229faf",
+        "name": "Italian Game: Two Knights Defense",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "g8f6"
+        ],
+        "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+        "annotations": [
+          {
+            "ply": 5,
+            "uci": "f1c4",
+            "san": "Bc4",
+            "text": "Bc4 pressiona f7 enquanto o peão e4 depende de defesa."
+          },
+          {
+            "ply": 6,
+            "uci": "g8f6",
+            "san": "Nf6",
+            "text": "...Nf6 contra-ataca e4, mudando o caráter da decisão branca."
+          }
+        ]
+      }
+    },
+    {
+      "id": "espanhola-berlim",
+      "name": "Ruy Lopez: Berlin Defense",
+      "title": "Espanhola: Defesa Berlim",
+      "aliases": [
+        "Berlim",
+        "Berlin"
+      ],
+      "distinction": "3...Nf6 ataca e4 sem ...a6. A Berlim pode chegar a um final após O-O Nxe4 e trocas, mas 4.d3 mantém damas e outra estrutura; o nome sozinho não garante o famoso final.",
+      "whitePlan": [
+        "Escolha O-O aceitando calcular ...Nxe4 ou d3 sustentando e4.",
+        "Se chegar ao final, explore atividade do rei e estrutura, sem usar um plano automático de ataque."
+      ],
+      "blackPlan": [
+        "Calcule a captura em e4 junto com a resposta d4 e a posição do cavalo.",
+        "Se trocar damas e perder o roque, ative o rei no momento apropriado."
+      ],
+      "commonMistakes": [
+        "Chamar a posição inicial da Berlim de final antes de as damas saírem.",
+        "Aplicar ...a6/...b5 da Morphy sem conferir os tempos."
+      ],
+      "family": "Ruy Lopez",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Ruy Lopez: Berlin Defense",
+          "Ruy Lopez: Berlin Defense, Anti-Berlin Variation",
+          "Ruy Lopez: Berlin Defense, Anti-Berlin Variation, Anderssen Variation",
+          "Ruy Lopez: Berlin Defense, Anti-Berlin Variation, Duras Variation",
+          "Ruy Lopez: Berlin Defense, Anti-Berlin Variation, Kaufmann Variation",
+          "Ruy Lopez: Berlin Defense, Anti-Berlin Variation, Mortimer Trap",
+          "Ruy Lopez: Berlin Defense, Anti-Berlin Variation, Mortimer Variation",
+          "Ruy Lopez: Berlin Defense, Berlin Wall",
+          "Ruy Lopez: Berlin Defense, Beverwijk Variation",
+          "Ruy Lopez: Berlin Defense, Closed Bernstein Variation",
+          "Ruy Lopez: Berlin Defense, Closed Showalter Variation",
+          "Ruy Lopez: Berlin Defense, Closed Wolf Variation",
+          "Ruy Lopez: Berlin Defense, Cordel Variation",
+          "Ruy Lopez: Berlin Defense, Fishing Pole Variation",
+          "Ruy Lopez: Berlin Defense, Hedgehog Variation",
+          "Ruy Lopez: Berlin Defense, Improved Steinitz Defense",
+          "Ruy Lopez: Berlin Defense, Minckwitz Variation",
+          "Ruy Lopez: Berlin Defense, Nyholm Attack",
+          "Ruy Lopez: Berlin Defense, Pillsbury Variation",
+          "Ruy Lopez: Berlin Defense, Rio Gambit Accepted",
+          "Ruy Lopez: Berlin Defense, Rio de Janeiro Variation",
+          "Ruy Lopez: Berlin Defense, Rosenthal Variation",
+          "Ruy Lopez: Berlin Defense, Tarrasch Trap",
+          "Ruy Lopez: Berlin Defense, Trifunovic Variation",
+          "Ruy Lopez: Berlin Defense, Winawer Attack",
+          "Ruy Lopez: Berlin Defense, Zukertort Variation",
+          "Ruy Lopez: Berlin Defense, l'Hermet Variation",
+          "Ruy Lopez: Berlin Defense, l'Hermet Variation, Berlin Wall Defense",
+          "Ruy Lopez: Berlin Defense, l'Hermet Variation, Westerinen Line"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1b5",
+            "g8f6"
+          ],
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1b5",
+            "d7d6",
+            "d2d4",
+            "c8d7",
+            "b1c3",
+            "g8f6",
+            "e1g1",
+            "f8e7",
+            "f1e1",
+            "e8g8"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L1062",
+          "scope": "identity-and-moves",
+          "openingId": "opening-a28af3b3dddd4259c7197ed2"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L1080",
+          "scope": "identity-and-moves",
+          "openingId": "opening-72d77a180ceac7da3b6d564f"
+        }
+      ],
+      "line": {
+        "openingId": "opening-a28af3b3dddd4259c7197ed2",
+        "name": "Ruy Lopez: Berlin Defense",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1b5",
+          "g8f6"
+        ],
+        "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+        "annotations": [
+          {
+            "ply": 5,
+            "uci": "f1b5",
+            "san": "Bb5",
+            "text": "Bb5 pressiona o cavalo que defende e5."
+          },
+          {
+            "ply": 6,
+            "uci": "g8f6",
+            "san": "Nf6",
+            "text": "...Nf6 escolhe o contra-ataque em e4, preservando o peão a7."
+          }
+        ]
+      }
+    },
+    {
+      "id": "espanhola-morphy",
+      "name": "Ruy Lopez: Morphy Defense",
+      "title": "Espanhola: Defesa Morphy",
+      "aliases": [
+        "Morphy"
+      ],
+      "distinction": "3...a6 pergunta ao bispo de b5 se troca em c6 ou recua a a4. Após Ba4, ...b5 pode ganhar outro tempo, mas não significa que as pretas já resolveram o centro.",
+      "whitePlan": [
+        "Escolha Bxc6 pela estrutura ou Ba4 para preservar o bispo.",
+        "Nas linhas fechadas após Ba4, prepare c3 e d4 com apoio de Re1."
+      ],
+      "blackPlan": [
+        "Use ...a6/...b5 para ganhar espaço sem descuidar de e5.",
+        "Desenvolva ...Nf6 e o bispo f8 e escolha o momento de ...d5."
+      ],
+      "commonMistakes": [
+        "Pensar que Bxc6 Nxe5 ganha peão automaticamente.",
+        "Mover só peões da ala da dama enquanto o centro pode abrir."
+      ],
+      "family": "Ruy Lopez",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Ruy Lopez: Morphy Defense",
+          "Ruy Lopez: Morphy Defense, Alapin's Defense Deferred",
+          "Ruy Lopez: Morphy Defense, Anderssen Variation",
+          "Ruy Lopez: Morphy Defense, Arkhangelsk Variation",
+          "Ruy Lopez: Morphy Defense, Bayreuth Variation",
+          "Ruy Lopez: Morphy Defense, Caro Variation",
+          "Ruy Lopez: Morphy Defense, Classical Defense Deferred",
+          "Ruy Lopez: Morphy Defense, Cozio Defense",
+          "Ruy Lopez: Morphy Defense, Duras Variation",
+          "Ruy Lopez: Morphy Defense, Fianchetto Defense Deferred",
+          "Ruy Lopez: Morphy Defense, Graz Variation",
+          "Ruy Lopez: Morphy Defense, Jaffe Gambit",
+          "Ruy Lopez: Morphy Defense, Mackenzie Variation",
+          "Ruy Lopez: Morphy Defense, Modern Steinitz Defense",
+          "Ruy Lopez: Morphy Defense, Modern Steinitz Defense, Fianchetto Variation",
+          "Ruy Lopez: Morphy Defense, Modern Steinitz Defense, Siesta Variation",
+          "Ruy Lopez: Morphy Defense, Møller Variation",
+          "Ruy Lopez: Morphy Defense, Neo-Arkhangelsk Variation",
+          "Ruy Lopez: Morphy Defense, Norwegian Variation",
+          "Ruy Lopez: Morphy Defense, Norwegian Variation, Nightingale Gambit",
+          "Ruy Lopez: Morphy Defense, Schliemann Defense Deferred",
+          "Ruy Lopez: Morphy Defense, Schliemann Defense Deferred, Jaenisch Gambit Deferred",
+          "Ruy Lopez: Morphy Defense, Steinitz Deferred",
+          "Ruy Lopez: Morphy Defense, Tarrasch Variation",
+          "Ruy Lopez: Morphy Defense, Tartakower Variation",
+          "Ruy Lopez: Morphy Defense, Wing Attack",
+          "Ruy Lopez: Morphy Defense, Wormald Attack"
+        ],
+        "uciPrefixes": [
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1b5",
+            "a7a6"
+          ],
+          [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1b5",
+            "g7g6",
+            "c2c3",
+            "a7a6",
+            "b5a4",
+            "d7d6",
+            "d2d4",
+            "c8d7"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L1110",
+          "scope": "identity-and-moves",
+          "openingId": "opening-d9c19e25201ec4c7eafa2128"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/c.tsv#L1134",
+          "scope": "identity-and-moves",
+          "openingId": "opening-52c8c42ba1b99f700692eaf9"
+        }
+      ],
+      "line": {
+        "openingId": "opening-d9c19e25201ec4c7eafa2128",
+        "name": "Ruy Lopez: Morphy Defense",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6",
+        "moves": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1b5",
+          "a7a6"
+        ],
+        "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+        "annotations": [
+          {
+            "ply": 5,
+            "uci": "f1b5",
+            "san": "Bb5",
+            "text": "Bb5 cria tensão sobre c6, não uma captura obrigatória."
+          },
+          {
+            "ply": 6,
+            "uci": "a7a6",
+            "san": "a6",
+            "text": "...a6 força a decisão do bispo e define a Morphy."
+          }
+        ]
+      }
+    },
+    {
+      "id": "india-rei-samisch",
+      "name": "King's Indian Defense: Sämisch Variation",
+      "title": "Índia do Rei: Sämisch",
+      "aliases": [
+        "Sämisch",
+        "Samisch"
+      ],
+      "distinction": "5.f3 sustenta e4 e prepara Be3, mas ocupa a casa natural do cavalo g1. As brancas podem escolher roque longo ou curto; ...c5 e ...e5 contestam esse centro de formas distintas.",
+      "whitePlan": [
+        "Desenvolva Be3 e decida onde colocar o cavalo g1, muitas vezes em e2.",
+        "Antes de lançar g4, resolva a segurança do rei e as rupturas no centro."
+      ],
+      "blackPlan": [
+        "Conteste d4 por ...c5 ou prepare ...e5 conforme a formação branca.",
+        "Se as brancas rocarem longo, coordene a pressão na ala da dama."
+      ],
+      "commonMistakes": [
+        "Tentar Nf3 depois de colocar o peão em f3.",
+        "Confundir f3 com um compromisso obrigatório de roque longo."
+      ],
+      "family": "King's Indian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "King's Indian Defense: Sämisch Variation",
+          "King's Indian Defense: Sämisch Variation, Bobotsov-Korchnoi-Petrosian Variation",
+          "King's Indian Defense: Sämisch Variation, Bronstein Defense",
+          "King's Indian Defense: Sämisch Variation, Byrne Defense",
+          "King's Indian Defense: Sämisch Variation, Closed Variation",
+          "King's Indian Defense: Sämisch Variation, Closed Variation, Main Line",
+          "King's Indian Defense: Sämisch Variation, Double Fianchetto",
+          "King's Indian Defense: Sämisch Variation, Normal Defense",
+          "King's Indian Defense: Sämisch Variation, Orthodox Variation",
+          "King's Indian Defense: Sämisch Variation, Orthodox Variation, Bronstein Variation",
+          "King's Indian Defense: Sämisch Variation, Panno Formation",
+          "King's Indian Defense: Sämisch Variation, Panno Main Line",
+          "King's Indian Defense: Sämisch Variation, Ruban Variation",
+          "King's Indian Defense: Sämisch Variation, Sämisch Gambit",
+          "King's Indian Defense: Sämisch Variation, Sämisch Gambit Accepted",
+          "King's Indian Defense: Sämisch Variation, Yates Defense"
+        ],
+        "uciPrefixes": [
+          [
+            "d2d4",
+            "g8f6",
+            "c2c4",
+            "g7g6",
+            "b1c3",
+            "f8g7",
+            "e2e4",
+            "d7d6",
+            "f2f3"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv#L306",
+          "scope": "identity-and-moves",
+          "openingId": "opening-e42d838a204fa7109733d158"
+        }
+      ],
+      "line": {
+        "openingId": "opening-e42d838a204fa7109733d158",
+        "name": "King's Indian Defense: Sämisch Variation",
+        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "g7g6",
+          "b1c3",
+          "f8g7",
+          "e2e4",
+          "d7d6",
+          "f2f3"
+        ],
+        "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N2P2/PP4PP/R1BQKBNR b KQkq - 0 5",
+        "annotations": [
+          {
+            "ply": 8,
+            "uci": "d7d6",
+            "san": "d6",
+            "text": "...d6 sustenta e5 e preserva a diagonal do bispo g7."
+          },
+          {
+            "ply": 9,
+            "uci": "f2f3",
+            "san": "f3",
+            "text": "f3 reforça e4, ao custo de uma casa para o cavalo e de um tempo de desenvolvimento."
+          }
+        ]
+      }
+    },
+    {
+      "id": "india-rei-ortodoxa",
+      "name": "King's Indian Defense: Orthodox Variation",
+      "title": "Índia do Rei: Ortodoxa",
+      "aliases": [
+        "Índia do Rei Clássica",
+        "Ortodoxa"
+      ],
+      "distinction": "Nf3 e Be2 preparam roque curto, preservando o peão f em f2. Após ...e5 e d5, o centro pode fechar e surgir a corrida c5 contra ...f5; a linha inicial ainda não obriga esse fechamento.",
+      "whitePlan": [
+        "Complete o roque e decida como responder a ...e5.",
+        "Se fechar com d5, prepare c5 e atividade na ala da dama."
+      ],
+      "blackPlan": [
+        "Use ...e5 para desafiar o centro e avalie a tensão antes de atacar no rei.",
+        "Após d5, prepare ...f5 com reposicionamento do cavalo f6."
+      ],
+      "commonMistakes": [
+        "Começar ...f5 como se d5 já tivesse fechado o centro.",
+        "Copiar a Sämisch colocando peças como se o peão estivesse em f3."
+      ],
+      "family": "King's Indian Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "King's Indian Defense: Orthodox Variation",
+          "King's Indian Defense: Orthodox Variation, Aronin-Taimanov Defense",
+          "King's Indian Defense: Orthodox Variation, Bayonet Attack",
+          "King's Indian Defense: Orthodox Variation, Bayonet Attack, Sokolov's Line",
+          "King's Indian Defense: Orthodox Variation, Bayonet Attack, Yepishin's Line",
+          "King's Indian Defense: Orthodox Variation, Classical System",
+          "King's Indian Defense: Orthodox Variation, Classical System, Benko Attack",
+          "King's Indian Defense: Orthodox Variation, Classical System, Kozul Gambit",
+          "King's Indian Defense: Orthodox Variation, Classical System, Neo-Classical Line",
+          "King's Indian Defense: Orthodox Variation, Classical System, Traditional Line",
+          "King's Indian Defense: Orthodox Variation, Donner Defense",
+          "King's Indian Defense: Orthodox Variation, Glek Defense",
+          "King's Indian Defense: Orthodox Variation, Gligoric-Taimanov System",
+          "King's Indian Defense: Orthodox Variation, Korchnoi Attack",
+          "King's Indian Defense: Orthodox Variation, Modern System",
+          "King's Indian Defense: Orthodox Variation, Positional Defense",
+          "King's Indian Defense: Orthodox Variation, Positional Defense, Closed Line",
+          "King's Indian Defense: Orthodox Variation, Positional Defense, Main Line",
+          "King's Indian Defense: Orthodox Variation, Ukrainian Defense"
+        ],
+        "uciPrefixes": [
+          [
+            "d2d4",
+            "g8f6",
+            "c2c4",
+            "g7g6",
+            "b1c3",
+            "f8g7",
+            "e2e4",
+            "d7d6",
+            "g1f3",
+            "e8g8",
+            "f1e2"
+          ],
+          [
+            "d2d4",
+            "g8f6",
+            "c2c4",
+            "d7d6",
+            "b1c3",
+            "b8d7",
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "g7g6",
+            "f1e2",
+            "f8g7",
+            "e1g1",
+            "e8g8"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv#L332",
+          "scope": "identity-and-moves",
+          "openingId": "opening-25297e4bdb47d88b98b2d0ff"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/e.tsv#L343",
+          "scope": "identity-and-moves",
+          "openingId": "opening-fdaf3fad332089aa53f01d20"
+        }
+      ],
+      "line": {
+        "openingId": "opening-25297e4bdb47d88b98b2d0ff",
+        "name": "King's Indian Defense: Orthodox Variation",
+        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "g7g6",
+          "b1c3",
+          "f8g7",
+          "e2e4",
+          "d7d6",
+          "g1f3",
+          "e8g8",
+          "f1e2"
+        ],
+        "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP2BPPP/R1BQK2R b KQ - 3 6",
+        "annotations": [
+          {
+            "ply": 9,
+            "uci": "g1f3",
+            "san": "Nf3",
+            "text": "Nf3 desenvolve sem o avanço f3 característico da Sämisch."
+          },
+          {
+            "ply": 11,
+            "uci": "f1e2",
+            "san": "Be2",
+            "text": "Be2 prepara roque curto e mantém opções sobre a tensão central."
+          }
+        ]
+      }
+    },
+    {
+      "id": "grunfeld-trocas",
+      "name": "Grünfeld Defense: Exchange Variation",
+      "title": "Grünfeld: Variante das Trocas",
+      "aliases": [
+        "Grünfeld Trocas",
+        "Grunfeld Trocas"
+      ],
+      "distinction": "cxd5 Nxd5 troca os peões c branco e d preto. Uma continuação central é e4 Nxc3 bxc3, com peões brancos c3/d4/e4 que serão pressionados por ...Bg7 e ...c5; essa continuação ainda não aconteceu na linha curta.",
+      "whitePlan": [
+        "Prepare e4 sabendo que ...Nxc3 pode transformar a estrutura.",
+        "Depois de bxc3, apoie d4 com peças e escolha o momento de d5."
+      ],
+      "blackPlan": [
+        "Combine ...Bg7 e ...c5 contra d4 se as brancas formarem o centro amplo.",
+        "Calcule a troca em c3 em vez de recuar automaticamente o cavalo."
+      ],
+      "commonMistakes": [
+        "Descrever peões em c3/e4 antes de a sequência chegar lá.",
+        "Confundir essas Trocas com a Neo-Grünfeld de fianqueto branco."
+      ],
+      "family": "Grünfeld Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Grünfeld Defense: Exchange Variation",
+          "Grünfeld Defense: Exchange Variation, Classical Variation",
+          "Grünfeld Defense: Exchange Variation, Larsen Variation",
+          "Grünfeld Defense: Exchange Variation, Modern Exchange Variation",
+          "Grünfeld Defense: Exchange Variation, Modern Exchange Variation, Kramnik's Line",
+          "Grünfeld Defense: Exchange Variation, Modern Exchange Variation, Pawn Grab Line",
+          "Grünfeld Defense: Exchange Variation, Nadanian Attack",
+          "Grünfeld Defense: Exchange Variation, Seville Variation",
+          "Grünfeld Defense: Exchange Variation, Simagin's Improved Variation",
+          "Grünfeld Defense: Exchange Variation, Simagin's Lesser Variation",
+          "Grünfeld Defense: Exchange Variation, Sokolsky Variation",
+          "Grünfeld Defense: Exchange Variation, Spassky Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "d2d4",
+            "g8f6",
+            "c2c4",
+            "g7g6",
+            "b1c3",
+            "d7d5",
+            "c4d5",
+            "f6d5"
+          ],
+          [
+            "d2d4",
+            "g8f6",
+            "g1f3",
+            "g7g6",
+            "c2c4",
+            "f8g7",
+            "b1c3",
+            "d7d5",
+            "c4d5",
+            "f6d5",
+            "e2e4",
+            "d5c3",
+            "b2c3",
+            "c7c5",
+            "a1b1"
+          ],
+          [
+            "d2d4",
+            "g8f6",
+            "g1f3",
+            "g7g6",
+            "c2c4",
+            "f8g7",
+            "b1c3",
+            "d7d5",
+            "c4d5",
+            "f6d5",
+            "e2e4",
+            "d5c3",
+            "b2c3",
+            "c7c5",
+            "h2h3"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L573",
+          "scope": "identity-and-moves",
+          "openingId": "opening-aad0c2491134b0aeeb495ce1"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L576",
+          "scope": "identity-and-moves",
+          "openingId": "opening-b8121484fb15c64fcf385acc"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L577",
+          "scope": "identity-and-moves",
+          "openingId": "opening-8037fa3c0ef09f098dfdff14"
+        }
+      ],
+      "line": {
+        "openingId": "opening-aad0c2491134b0aeeb495ce1",
+        "name": "Grünfeld Defense: Exchange Variation",
+        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5",
+        "moves": [
+          "d2d4",
+          "g8f6",
+          "c2c4",
+          "g7g6",
+          "b1c3",
+          "d7d5",
+          "c4d5",
+          "f6d5"
+        ],
+        "fen": "rnbqkb1r/ppp1pp1p/6p1/3n4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5",
+        "annotations": [
+          {
+            "ply": 6,
+            "uci": "d7d5",
+            "san": "d5",
+            "text": "...d5 desafia d4 imediatamente, diferença em relação à Índia do Rei."
+          },
+          {
+            "ply": 8,
+            "uci": "f6d5",
+            "san": "Nxd5",
+            "text": "...Nxd5 centraliza o cavalo; e4 pode atacá-lo ganhando espaço."
+          }
+        ]
+      }
+    },
+    {
+      "id": "semi-eslava-meran",
+      "name": "Semi-Slav Defense: Meran Variation",
+      "title": "Semi-Eslava: Meran",
+      "aliases": [
+        "Meran",
+        "Merano"
+      ],
+      "distinction": "Após Bd3, ...dxc4 Bxc4 ...b5 ganha tempo no bispo para preparar ...c5. A presença de e3 distingue essa luta central das linhas de Bg5 da Semi-Eslava.",
+      "whitePlan": [
+        "Retire o bispo preservando atividade e prepare e4 para disputar espaço.",
+        "Calcule o encontro entre e4/e5 e ...c5 antes de atacar no flanco."
+      ],
+      "blackPlan": [
+        "Use o tempo de ...b5 para preparar ...a6 e ...c5 conforme a linha.",
+        "Abra uma função para c8 após ganhar espaço na ala da dama."
+      ],
+      "commonMistakes": [
+        "Considerar ...b5 apenas expansão sem seu ganho de tempo no bispo.",
+        "Demorar a contestar o centro e permitir e4/e5 sem reação."
+      ],
+      "family": "Semi-Slav Defense",
+      "reviewStatus": "human-review-pending",
+      "match": {
+        "exactNames": [
+          "Semi-Slav Defense: Meran Variation",
+          "Semi-Slav Defense: Meran Variation, Blumenfeld Variation",
+          "Semi-Slav Defense: Meran Variation, Lundin Variation",
+          "Semi-Slav Defense: Meran Variation, Old Variation",
+          "Semi-Slav Defense: Meran Variation, Pirc Variation",
+          "Semi-Slav Defense: Meran Variation, Rabinovich Variation",
+          "Semi-Slav Defense: Meran Variation, Rellstab Attack",
+          "Semi-Slav Defense: Meran Variation, Reynolds' Variation",
+          "Semi-Slav Defense: Meran Variation, Sozin Variation",
+          "Semi-Slav Defense: Meran Variation, Stahlberg Variation",
+          "Semi-Slav Defense: Meran Variation, Wade Variation",
+          "Semi-Slav Defense: Meran Variation, Wade Variation, Kaidanov Gambit",
+          "Semi-Slav Defense: Meran Variation, Wade Variation, Larsen Variation"
+        ],
+        "uciPrefixes": [
+          [
+            "d2d4",
+            "d7d5",
+            "c2c4",
+            "c7c6",
+            "b1c3",
+            "g8f6",
+            "e2e3",
+            "e7e6",
+            "g1f3",
+            "b8d7",
+            "f1d3",
+            "d5c4",
+            "d3c4",
+            "b7b5"
+          ],
+          [
+            "d2d4",
+            "d7d5",
+            "c2c4",
+            "c7c6",
+            "g1f3",
+            "g8f6",
+            "b1c3",
+            "e7e6",
+            "e2e3",
+            "b8d7",
+            "f1d3",
+            "d5c4",
+            "d3c4",
+            "b7b5",
+            "c4d3",
+            "b5b4"
+          ],
+          [
+            "d2d4",
+            "d7d5",
+            "c2c4",
+            "e7e6",
+            "b1c3",
+            "c7c6",
+            "e2e3",
+            "g8f6",
+            "g1f3",
+            "b8d7",
+            "f1d3",
+            "d5c4",
+            "d3c4",
+            "b7b5",
+            "c4d3",
+            "a7a6",
+            "e3e4",
+            "b5b4"
+          ],
+          [
+            "d2d4",
+            "d7d5",
+            "c2c4",
+            "c7c6",
+            "g1f3",
+            "g8f6",
+            "b1c3",
+            "e7e6",
+            "e2e3",
+            "b8d7",
+            "f1d3",
+            "d5c4",
+            "d3c4",
+            "b7b5",
+            "c4d3",
+            "a7a6",
+            "e3e4",
+            "c6c5",
+            "d4d5"
+          ],
+          [
+            "d2d4",
+            "d7d5",
+            "c2c4",
+            "c7c6",
+            "g1f3",
+            "g8f6",
+            "b1c3",
+            "e7e6",
+            "e2e3",
+            "b8d7",
+            "f1d3",
+            "d5c4",
+            "d3c4",
+            "b7b5",
+            "c4d3",
+            "a7a6",
+            "e3e4",
+            "c6c5",
+            "e4e5",
+            "c5d4",
+            "c3b5",
+            "d7e5"
+          ],
+          [
+            "d2d4",
+            "d7d5",
+            "g1f3",
+            "g8f6",
+            "c2c4",
+            "c7c6",
+            "b1c3",
+            "e7e6",
+            "e2e3",
+            "b8d7",
+            "f1d3",
+            "d5c4",
+            "d3c4",
+            "b7b5",
+            "c4d3",
+            "a7a6",
+            "e3e4",
+            "c6c5",
+            "e4e5",
+            "c5d4",
+            "c3b5",
+            "d7e5",
+            "f3e5",
+            "a6b5",
+            "e1g1"
+          ],
+          [
+            "d2d4",
+            "d7d5",
+            "c2c4",
+            "c7c6",
+            "b1c3",
+            "g8f6",
+            "g1f3",
+            "e7e6",
+            "e2e3",
+            "b8d7",
+            "f1d3",
+            "d5c4",
+            "d3c4",
+            "b7b5",
+            "c4d3",
+            "a7a6",
+            "e3e4",
+            "c6c5",
+            "e4e5",
+            "c5d4",
+            "c3b5",
+            "d7e5",
+            "f3e5",
+            "a6b5",
+            "e1g1",
+            "d8d5",
+            "d1e2",
+            "c8a6",
+            "c1g5"
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L438",
+          "scope": "identity-and-moves",
+          "openingId": "opening-8da01fd411db60f27a364c89"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L439",
+          "scope": "identity-and-moves",
+          "openingId": "opening-21f33fced78804ac17b4b0d9"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L447",
+          "scope": "identity-and-moves",
+          "openingId": "opening-fe3b3e42f1db60d3af70670a"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L448",
+          "scope": "identity-and-moves",
+          "openingId": "opening-f3021c37c473216da4b3bcc0"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L451",
+          "scope": "identity-and-moves",
+          "openingId": "opening-689702bfc62ab04b09835eeb"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L452",
+          "scope": "identity-and-moves",
+          "openingId": "opening-5a6d543c29355f33981c9e01"
+        },
+        {
+          "title": "Lichess chess-openings · registro CC0",
+          "url": "https://github.com/lichess-org/chess-openings/blob/4b8622759e7ae6f93f011cc6c83a3823401ab45e/d.tsv#L453",
+          "scope": "identity-and-moves",
+          "openingId": "opening-01a36a4e770e525df711a2a3"
+        }
+      ],
+      "line": {
+        "openingId": "opening-8da01fd411db60f27a364c89",
+        "name": "Semi-Slav Defense: Meran Variation",
+        "pgn": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7 6. Bd3 dxc4 7. Bxc4 b5",
+        "moves": [
+          "d2d4",
+          "d7d5",
+          "c2c4",
+          "c7c6",
+          "b1c3",
+          "g8f6",
+          "e2e3",
+          "e7e6",
+          "g1f3",
+          "b8d7",
+          "f1d3",
+          "d5c4",
+          "d3c4",
+          "b7b5"
+        ],
+        "fen": "r1bqkb1r/p2n1ppp/2p1pn2/1p6/2BP4/2N1PN2/PP3PPP/R1BQK2R w KQkq - 0 8",
+        "annotations": [
+          {
+            "ply": 12,
+            "uci": "d5c4",
+            "san": "dxc4",
+            "text": "...dxc4 retira o peão de d5 e atrai o bispo branco para c4."
+          },
+          {
+            "ply": 14,
+            "uci": "b7b5",
+            "san": "b5",
+            "text": "...b5 ataca esse bispo; as pretas querem usar o tempo para a ruptura ...c5."
+          }
+        ]
+      }
+    }
+  ]
+}

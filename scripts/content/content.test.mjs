@@ -59,29 +59,55 @@ test('Contrato rejeita campos extras e FEN de puzzle já avançado', () => {
   assert.throws(() => validatePuzzle({ id: 'x', rating: 1000, themes: ['short'], fen: game.fen(), moves: ['e2e4', 'e7e5'], sourceUrl: 'https://lichess.org/training/x' }));
 });
 
-test('Guias de abertura só referenciam famílias e aulas existentes', async () => {
-  const [openings, lessons, guideDocument] = await Promise.all([
+test('Guias de abertura e variantes têm fontes, linhas legais e referências existentes', async () => {
+  const [openings, lessons, guideDocument, variationDocument] = await Promise.all([
     readJson(resolve(DATA, 'openings.json')),
     readJson(resolve(DATA, 'lessons.json')),
     readJson(resolve(DATA, 'opening-guides.json')),
+    readJson(resolve(DATA, 'opening-variations.json')),
   ]);
-  assert.deepEqual(Object.keys(guideDocument), ['guides']);
-  assert.equal(guideDocument.guides.length, 30);
+  const documentFields = ['authorship', 'coverage', 'reviewedAt', 'revision', 'schemaVersion', 'sourceScope'];
+  assert.deepEqual(Object.keys(guideDocument).filter(key => key !== 'guides').sort(), documentFields);
+  assert.deepEqual(Object.keys(variationDocument).filter(key => key !== 'variations').sort(), documentFields);
+  assert.equal(guideDocument.schemaVersion, 1);
+  assert.equal(variationDocument.schemaVersion, 1);
+  assert.equal(guideDocument.coverage.humanReview, 'pending');
+  assert.equal(guideDocument.guides.length, 42);
+  assert.equal(variationDocument.variations.length, 21);
   const families = new Set(openings.map((opening) => opening.family));
+  const openingsById = new Map(openings.map(opening => [opening.id, opening]));
   const openingLessons = new Map(lessons.filter((lesson) => lesson.category === 'openings').map((lesson) => [lesson.id, lesson]));
   let coveredLines = 0;
   for (const guide of guideDocument.guides) {
-    assert.deepEqual(Object.keys(guide).sort(), ['blackPlan', 'commonMistakes', 'family', 'lessonIds', 'overview', 'whitePlan'].sort());
     assert.ok(families.has(guide.family), `Família ausente do catálogo: ${guide.family}`);
     assert.ok(guide.overview.length >= 80);
+    assert.equal(guide.reviewStatus, 'human-review-pending');
+    assert.ok(guide.audit.length >= 20);
     for (const field of ['whitePlan', 'blackPlan', 'commonMistakes']) {
       assert.ok(Array.isArray(guide[field]) && guide[field].length >= 2, `${guide.family}: ${field} insuficiente`);
       assert.ok(guide[field].every((item) => typeof item === 'string' && item.length >= 25));
     }
     for (const lessonId of guide.lessonIds) assert.ok(openingLessons.has(lessonId), `${guide.family}: aula de abertura inexistente: ${lessonId}`);
+    const reference = openingsById.get(guide.referenceLine.openingId);
+    assert.ok(reference && reference.family === guide.family, `${guide.family}: linha de referência inválida`);
+    assert.deepEqual(guide.referenceLine.moves, reference.moves);
+    assert.equal(replay(DEFAULT_POSITION, guide.referenceLine.moves).fen(), guide.referenceLine.fen);
+    assert.ok(guide.sources.every(source => source.scope === 'identity-and-moves' && openingsById.has(source.openingId) && /^https:\/\/github\.com\/lichess-org\/chess-openings\//.test(source.url)));
     coveredLines += openings.filter((opening) => opening.family === guide.family).length;
   }
   assert.ok(coveredLines >= 2800, 'Guias precisam cobrir a maior parte do catálogo');
+  for (const guide of variationDocument.variations) {
+    assert.equal(guide.reviewStatus, 'human-review-pending');
+    assert.ok(families.has(guide.family));
+    assert.ok(guide.distinction.length >= 60);
+    const reference = openingsById.get(guide.line.openingId);
+    assert.ok(reference && reference.name === guide.name && reference.family === guide.family, `${guide.id}: linha incorreta`);
+    assert.deepEqual(guide.line.moves, reference.moves);
+    assert.equal(replay(DEFAULT_POSITION, guide.line.moves).fen(), guide.line.fen);
+    assert.ok(guide.match.exactNames.includes(guide.name));
+    assert.ok(guide.match.uciPrefixes.every(prefix => prefix.length > 0 && openings.some(opening => guide.match.exactNames.includes(opening.name) && prefix.every((move, index) => opening.moves[index] === move))));
+    assert.ok(guide.sources.length > 0 && guide.sources.every(source => openingsById.has(source.openingId)));
+  }
 });
 
 test('Todos os artefatos correspondem às fontes e têm linhas legais', async () => {

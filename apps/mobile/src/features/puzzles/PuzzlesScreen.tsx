@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Text, View } from 'react-native';
 import { Chess } from 'chess.js';
 import type { Page, Puzzle, PuzzleResult, Side } from '../../api/types';
@@ -10,6 +10,8 @@ import { Badge, Button, Card, Empty, ErrorState, Field, Heading, Loading, Notice
 import { s } from '../../ui/theme';
 import { ChessBoard } from '../../chess/ChessBoard';
 import { sideName } from '../../chess/logic';
+import { StudyPlan } from '../learning/StudyPlan';
+import { studyRequestId } from '../learning/request-id';
 
 const themeLabels: Record<string, string> = { mate: 'Mate', mateIn1: 'Mate em 1', mateIn2: 'Mate em 2', fork: 'Garfo', pin: 'Cravada', skewer: 'Espeto', endgame: 'Final', middlegame: 'Meio-jogo', opening: 'Abertura', short: 'Curto', long: 'Longo', crushing: 'Vantagem decisiva', advantage: 'Vantagem', sacrifice: 'Sacrifício', hangingPiece: 'Peça indefesa', discoveredAttack: 'Ataque descoberto', backRankMate: 'Mate na última fileira', defensiveMove: 'Defesa', promotion: 'Promoção', quietMove: 'Lance silencioso' };
 export function PuzzlesScreen() {
@@ -24,6 +26,7 @@ export function PuzzlesScreen() {
     setFilterError(null); setPage(1); setIndex(0); setFilter({ min: low, max: high, theme: theme.trim() });
   };
   return <View style={s.page}><Heading eyebrow="Treine o seu olhar" title="O próximo lance muda tudo." description="Encontre a sequência. O adversário responde, e você continua até resolver." />
+    <StudyPlan />
     <Card><View style={[s.wrap, { alignItems: 'flex-end' }]}><View style={{ flexGrow: 1, flexBasis: 100 }}><Field label="Rating mínimo" value={min} onChangeText={setMin} keyboardType="number-pad" maxLength={4} /></View>
       <View style={{ flexGrow: 1, flexBasis: 100 }}><Field label="Rating máximo" value={max} onChangeText={setMax} keyboardType="number-pad" maxLength={4} /></View>
       <View style={{ flexGrow: 2, flexBasis: 180 }}><Field label="Tema (opcional)" placeholder="Ex.: fork, mateIn2, pin" value={theme} onChangeText={setTheme} autoCapitalize="none" autoCorrect={false} onSubmitEditing={apply} /></View>
@@ -38,7 +41,17 @@ export function PuzzlesScreen() {
     </> : null}
   </View>;
 }
+export function PuzzleScreen({ id }: { id: string }) {
+  const puzzle = useResource<Puzzle>(`/puzzles/${encodeURIComponent(id)}`);
+  const { back } = useNavigation();
+  return <View style={s.page}><Button label="Voltar ao treino" variant="ghost" icon="back" onPress={back} />
+    <Heading eyebrow="Seu próximo desafio" title="Uma ideia para praticar agora." />
+    {puzzle.loading ? <Loading /> : puzzle.error ? <ErrorState message={puzzle.error} retry={puzzle.reload} /> : puzzle.data ? <PuzzleTrainer key={id} puzzle={puzzle.data} /> : null}
+  </View>;
+}
 function PuzzleTrainer({ puzzle }: { puzzle: Puzzle }) {
+  const practiceId = useRef(studyRequestId());
+  const pending = useRef<{ key: string; requestId: string } | null>(null);
   const [fen, setFen] = useState(puzzle.fen); const [moves, setMoves] = useState<string[]>([]);
   const [hintUsed, setHintUsed] = useState(false); const [hint, setHint] = useState<string | undefined>();
   const [result, setResult] = useState<PuzzleResult | null>(null); const [lastMove, setLastMove] = useState<string | undefined>();
@@ -51,9 +64,12 @@ function PuzzleTrainer({ puzzle }: { puzzle: Puzzle }) {
     const withHint = hintUsed || askingHint;
     if (askingHint) setHintUsed(true);
     const proposed = uci ? [...moves, uci] : moves;
-    const response = await api.post<PuzzleResult>(`/puzzles/${encodeURIComponent(puzzle.id)}/attempt`, { moves: proposed, hintUsed: withHint }, signal);
+    const key = JSON.stringify({ proposed, withHint });
+    if (pending.current?.key !== key) pending.current = { key, requestId: studyRequestId() };
+    const response = await api.post<PuzzleResult>(`/puzzles/${encodeURIComponent(puzzle.id)}/attempt`, { moves: proposed, hintUsed: withHint, practiceId: practiceId.current, requestId: pending.current.requestId }, signal);
     // fen is authoritative and already includes reply. Never apply the reply twice.
     new Chess(response.fen);
+    pending.current = null;
     setFen(response.fen); setResult(response);
     if (response.status !== 'incorrect') {
       setMoves(proposed); setLastMove(response.reply ?? uci); setHint(askingHint ? response.expectedMove : undefined);
@@ -62,7 +78,7 @@ function PuzzleTrainer({ puzzle }: { puzzle: Puzzle }) {
   });
   return <Card><View style={[s.between, { flexWrap: 'wrap' }]}><Badge>Rating {puzzle.rating}</Badge><Text style={s.small}>Você joga de {sideName(side)}</Text></View>
     <View style={s.wrap}>{puzzle.themes.map(theme => <Badge key={theme} tone="neutral">{themeLabels[theme] ?? theme}</Badge>)}</View>
-    <ChessBoard fen={fen} orientation={side} onMove={uci => attempt(uci)} disabled={operation.busy || solved || !auth.user} hint={hint} lastMove={lastMove} />
+    <ChessBoard fen={fen} orientation={side} onMove={uci => attempt(uci)} disabled={operation.busy || solved || !auth.user} hint={hint} lastMove={lastMove} showTurnStatus />
     {!auth.user ? <Notice action={<Button label="Entrar para resolver" onPress={() => navigate({ screen: 'auth' })} />}>Entre para validar seus lances e salvar o resultado deste puzzle.</Notice> : null}
     {operation.busy ? <Loading label="Validando a sequência…" /> : null}
     {operation.error ? <ErrorState message={operation.error} /> : null}
@@ -70,8 +86,10 @@ function PuzzleTrainer({ puzzle }: { puzzle: Puzzle }) {
       : result?.status === 'incorrect' ? <Notice tone="error">Ainda não é a sequência certa. A posição foi mantida para você tentar outro lance.</Notice>
       : hint ? <Notice>Dica: mova de {hint.slice(0, 2)} para {hint.slice(2, 4)}{hint[4] ? `, com promoção para ${hint[4]}` : ''}. As casas estão marcadas.</Notice>
       : result?.status === 'correct' ? <Notice tone="success">Bom lance! A resposta do adversário já foi aplicada. Continue a sequência.</Notice> : <Text style={s.muted}>A posição já inclui o primeiro lance do adversário. Encontre a continuação.</Text>}
+    {solved && result.nextReviewAt ? <Text style={s.small}>Próxima revisão: {new Date(result.nextReviewAt).toLocaleString('pt-BR')}.</Text> : null}
+    {solved ? <Button label="Próximo treino recomendado" onPress={() => navigate({ screen: 'home' })} /> : null}
     <View style={s.wrap}><Button label="Pedir dica" variant="secondary" disabled={!auth.user || operation.busy || solved} onPress={() => attempt()} />
-      <Button label="Recomeçar" icon="refresh" variant="ghost" disabled={operation.busy} onPress={() => { setFen(puzzle.fen); setMoves([]); setResult(null); setHint(undefined); setLastMove(undefined); operation.clearError(); }} /></View>
+      <Button label="Recomeçar" icon="refresh" variant="ghost" disabled={operation.busy} onPress={() => { if (solved) { practiceId.current = studyRequestId(); setHintUsed(false); } pending.current = null; setFen(puzzle.fen); setMoves([]); setResult(null); setHint(undefined); setLastMove(undefined); operation.clearError(); }} /></View>
     <Text style={s.small}>{hintUsed ? 'Dica utilizada: esta resolução não concede XP.' : 'Pedir uma dica revela o próximo lance e remove o XP desta resolução.'} Tentativas e pontuação são validadas pelo servidor.</Text>
     <SourceLink url={puzzle.sourceUrl} label="Ver partida de origem" />
   </Card>;

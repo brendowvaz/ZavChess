@@ -19,6 +19,9 @@ model User {
   lessons      LessonProgress[]
   puzzles      PuzzleAttempt[]
   activities   Activity[]
+  studyReviews StudyReview[]
+  studyEvents  StudyEvent[]
+  puzzlePractices PuzzlePractice[]
 }
 
 model Session {
@@ -128,4 +131,51 @@ model Activity {
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@index([userId, createdAt])
+}
+
+model StudyReview {
+  id String @id @default(cuid())
+  userId String
+  kind String @db.VarChar(12)
+  contentId String @db.VarChar(191)
+  side String @default("") @db.VarChar(1)
+  stage Int @default(0)
+  repetitions Int @default(0)
+  dueAt DateTime
+  lastStudiedAt DateTime
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, kind, contentId, side])
+  @@index([userId, dueAt])
+}
+
+model StudyEvent {
+  id String @id @default(cuid())
+  userId String
+  requestId String @db.VarChar(100)
+  kind String @db.VarChar(12)
+  contentId String @db.VarChar(191)
+  side String @default("") @db.VarChar(1)
+  completed Boolean
+  success Boolean
+  mistakes Int @default(0)
+  hintUsed Boolean @default(false)
+  rating Int
+  result Json
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, requestId])
+  @@index([userId, createdAt])
+}
+
+model PuzzlePractice {
+  id String @id @default(cuid())
+  userId String
+  puzzleId String @db.VarChar(191)
+  practiceId String @db.VarChar(100)
+  mistakes Int @default(0)
+  hintUsed Boolean @default(false)
+  solved Boolean @default(false)
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, puzzleId, practiceId])
 }

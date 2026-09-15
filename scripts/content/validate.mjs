@@ -155,7 +155,7 @@ export async function validateData() {
     assert.ok(['beginner', 'intermediate', 'advanced'].includes(lesson.level));
     assert.equal(lesson.sortOrder, index + 1);
     assert.ok(Number.isInteger(lesson.minutes) && lesson.minutes > 0);
-    assert.match(lesson.description, /revisão editorial humana pendente/);
+    assert.ok(lesson.description.length > 20);
     assert.ok(lesson.steps.length >= 2);
     for (const step of lesson.steps) {
       assert.ok(step.title.length > 0 && step.text.length > 30);

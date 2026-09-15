@@ -612,7 +612,6 @@
     "license": "Sem licença adicional atribuída ao texto original; sujeito à licença definida pelo projeto.",
     "editorialStatus": "pending-human-review",
     "motorValidatedText": false,
-    "notice": "Texto original em pt-BR; revisão editorial humana pendente.",
     "origins": [
       {
         "id": "lesson-mapa-do-tabuleiro",
@@ -954,7 +953,7 @@
     "editorialFiles": [
       {
         "file": "scripts/content/lessons.mjs",
-        "sha256": "863f3a34b4e6f2de68a73e57442b40647c61cab924dd4211db73debcab03b983"
+        "sha256": "a23b9e0278526a4beb11b7d29ea2523734d349b1f0cdba6002e971b8be67dc8e"
       },
       {
         "file": "scripts/content/endgames.mjs",
@@ -996,8 +995,8 @@
     {
       "file": "data/lessons.json",
       "count": 56,
-      "bytes": 91926,
-      "sha256": "8393ce7ca611573c3157c64350289c9a8cff9d5faeed5b14013e302b4a191d4a"
+      "bytes": 88510,
+      "sha256": "6efd8d1061bc322146fa784d82c173f3b49b070461e341259de6475c27c7a43a"
     }
   ]
 }

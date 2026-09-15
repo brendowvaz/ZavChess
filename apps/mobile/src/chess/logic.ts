@@ -1,9 +1,19 @@
 import { Chess, DEFAULT_POSITION } from 'chess.js';
-import type { Color, PieceSymbol } from 'chess.js';
+import type { Color, PieceSymbol, Square } from 'chess.js';
 
 export { DEFAULT_POSITION };
 export const pieceNames: Record<PieceSymbol, string> = { p: 'peão', n: 'cavalo', b: 'bispo', r: 'torre', q: 'dama', k: 'rei' };
 export const sideName = (side: Color) => side === 'w' ? 'brancas' : 'pretas';
+export function normalizeCastlingTarget(game: Chess, from: Square, target: Square): Square {
+  const king = game.get(from);
+  const rook = game.get(target);
+  if (king?.type !== 'k' || rook?.type !== 'r' || king.color !== rook.color || from[1] !== target[1]) return target;
+
+  const destinationFile = target[0] === 'h' ? 'g' : target[0] === 'a' ? 'c' : null;
+  if (!destinationFile) return target;
+  const destination = `${destinationFile}${from[1]}` as Square;
+  return game.moves({ square: from, verbose: true }).some(move => move.to === destination) ? destination : target;
+}
 export function moveUci(game: Chess, uci: string) {
   if (!/^[a-h][1-8][a-h][1-8][qrbn]?$/.test(uci)) throw new Error(`Lance UCI inválido: ${uci}`);
   return game.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), ...(uci[4] ? { promotion: uci[4] } : {}) });

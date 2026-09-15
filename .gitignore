@@ -6,6 +6,7 @@ dist/
 .expo/
 coverage/
 *.log
+*.md
 .local/
 apps/api/src/generated/
 apps/mobile/android/

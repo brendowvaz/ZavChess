@@ -5,10 +5,10 @@ import { useAppearance } from '../appearance/AppearanceProvider';
 import type { PieceStyle } from '../appearance/themes';
 
 const sheets: Record<PieceStyle, ImageSourcePropType> = {
-  classic: require('../../assets/pieces/classic-sprite.png'),
-  geometric: require('../../assets/pieces/geometric-sprite.png'),
-  rounded: require('../../assets/pieces/rounded-sprite.png'),
-  sculpted: require('../../assets/pieces/sculpted-sprite.png'),
+  classic: require('../../assets/pieces/classic-web-sprite.png'),
+  geometric: require('../../assets/pieces/geometric-web-sprite.png'),
+  rounded: require('../../assets/pieces/rounded-web-sprite.png'),
+  sculpted: require('../../assets/pieces/sculpted-web-sprite.png'),
 };
 
 const columns: Record<PieceSymbol, number> = { k: 0, q: 1, b: 2, n: 3, r: 4, p: 5 };

@@ -22,10 +22,15 @@ class PuzzleQuery extends PageQuery {
   @IsOptional() @Type(() => Number) @IsInt() @Min(0) @Max(4000) maxRating = 1800;
   @IsOptional() @IsString() @MaxLength(80) theme = '';
 }
-class AnswerDto { @IsInt() @Min(0) @Max(20) answer!: number; }
+class AnswerDto {
+  @IsInt() @Min(0) @Max(20) answer!: number;
+  @IsOptional() @IsString() @MaxLength(100) requestId?: string;
+}
 class AttemptDto {
   @IsArray() @ArrayMaxSize(100) @Matches(UCI_PATTERN, { each: true }) moves!: string[];
   @IsOptional() @IsBoolean() hintUsed = false;
+  @IsOptional() @IsString() @MaxLength(100) requestId?: string;
+  @IsOptional() @IsString() @MaxLength(100) practiceId?: string;
 }
 
 @Controller()
@@ -35,14 +40,15 @@ export class ContentController {
   @Get('lessons') lessons() { return this.content.lessons(); }
   @Get('lessons/:id') lesson(@Param('id') id: string) { return this.content.lesson(id); }
   @Post('lessons/:id/complete') @UseGuards(AuthGuard)
-  complete(@CurrentUser() user: User, @Param('id') id: string, @Body() body: AnswerDto) { return this.content.completeLesson(user.id, id, body.answer); }
+  complete(@CurrentUser() user: User, @Param('id') id: string, @Body() body: AnswerDto) { return this.content.completeLesson(user.id, id, body.answer, body.requestId); }
   @Get('opening-families') openingFamilies(@Query() query: OpeningFamilyQuery) { return this.content.openingFamilies(query.search, query.page, query.pageSize); }
   @Get('opening-families/:family') openingFamily(@Param('family') family: string) { return this.content.openingFamily(family); }
   @Get('openings') openings(@Query() query: OpeningQuery) { return this.content.openings(query.search, query.page, query.pageSize); }
   @Get('openings/:id') opening(@Param('id') id: string) { return this.content.opening(id); }
   @Get('puzzles') puzzles(@Query() query: PuzzleQuery) { return this.content.puzzles(query.minRating, query.maxRating, query.theme, query.page, query.pageSize); }
+  @Get('puzzles/:id') puzzle(@Param('id') id: string) { return this.content.puzzle(id); }
   @Post('puzzles/:id/attempt') @UseGuards(AuthGuard)
-  attempt(@CurrentUser() user: User, @Param('id') id: string, @Body() body: AttemptDto) { return this.content.attemptPuzzle(user.id, id, body.moves, body.hintUsed); }
+  attempt(@CurrentUser() user: User, @Param('id') id: string, @Body() body: AttemptDto) { return this.content.attemptPuzzle(user.id, id, body.moves, body.hintUsed, body.requestId, body.practiceId); }
   @Get('progress') @UseGuards(AuthGuard) progress(@CurrentUser() user: User) { return this.content.progress(user.id); }
   @Get('dashboard') @UseGuards(AuthGuard) dashboard(@CurrentUser() user: User) { return this.content.dashboard(user); }
 }
