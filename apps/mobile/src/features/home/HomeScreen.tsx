@@ -32,7 +32,7 @@ export function HomeScreen() {
       <View style={{ flex: 1, gap: 17, justifyContent: 'center' }}><Text style={[s.eyebrow, { color: '#BBCBAC', fontSize: 10 }]}>Do primeiro movimento ao xeque-mate</Text>
         <Text style={{ fontFamily: serif, color: '#FFFBE8', fontSize: width > 700 ? 39 : 32, lineHeight: width > 700 ? 46 : 39 }}>Aprenda a enxergar{width > 700 ? '\n' : ' '}além do lance.</Text>
         <Text style={{ color: '#D4E0CE', fontSize: 14, lineHeight: 23, maxWidth: 390 }}>Aulas que explicam. Tabuleiros que ensinam. Prática que faz a diferença.</Text>
-        <View style={[s.wrap, { marginTop: 4 }]}><Button label="Explorar aulas" variant="light" icon="arrow" onPress={() => navigate({ screen: 'lessons' })} />
+        <View style={[s.wrap, { marginTop: 4 }]}><Button label={user ? 'Começar treino de hoje' : 'Explorar aulas'} variant="light" icon="arrow" onPress={() => navigate({ screen: user ? 'today' : 'lessons' })} />
           <Pressable accessibilityRole="button" onPress={() => navigate({ screen: 'analysis' })} style={{ padding: 13, minHeight: 46 }}><Text style={{ color: '#F3F4DF', fontSize: 14 }}>Ir para o tabuleiro ↗</Text></Pressable></View>
       </View>
       {width >= 1150 ? <View style={{ width: 220, justifyContent: 'center', transform: [{ rotate: '-6deg' }], opacity: 0.93 }}><ChessBoard fen={DEFAULT_POSITION} maxSize={220} hideStatus edgeToEdge={false} /></View> : null}

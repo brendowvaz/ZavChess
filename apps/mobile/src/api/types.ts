@@ -15,9 +15,8 @@ export interface Lesson {
 }
 export interface LessonDetail extends Lesson {
   steps: { title: string; text: string; fen?: string; moves?: string[] }[];
-  quiz: { question: string; options: string[] };
 }
-export interface LessonResult { correct: boolean; explanation: string; xpEarned: number; nextReviewAt?: string }
+export interface LessonBoardResult { completed: true; xpEarned: number; nextReviewAt?: string }
 export interface OpeningStudyGuide {
   kind: 'family' | 'introductory'; family: string; overview: string;
   whitePlan: string[]; blackPlan: string[]; commonMistakes: string[];

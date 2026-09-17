@@ -1,5 +1,16 @@
 export interface StudySuggestion {
-  kind: 'lesson' | 'puzzle' | 'opening'; contentId: string; title: string; reason: string; dueAt?: string; side?: string;
+  kind: 'lesson' | 'puzzle' | 'opening'; contentId: string; title: string; reason: string; dueAt?: string; side?: string; focusPly?: number;
+}
+export interface RepertoireDecision {
+  key: string; fen: string; ply: number; uci: string; san: string; explanation: string;
+}
+export interface RepertoireLine {
+  openingId: string; name: string; eco: string; moveCount: number; decisions: RepertoireDecision[];
+}
+export interface RepertoireCourse {
+  id: string; title: string; subtitle: string; side: 'w' | 'b'; level: 'beginner' | 'intermediate'; goals: string[];
+  lineCount: number; positionCount: number; lines: RepertoireLine[]; selected: boolean;
+  learnedPositions: number; duePositions: number; mastery: number;
 }
 export interface StudyPlan {
   rating: number; recommendedBand: { min: number; max: number }; dueCount: number; nextReviewAt: string | null; items: StudySuggestion[];

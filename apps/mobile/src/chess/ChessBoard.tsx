@@ -25,9 +25,9 @@ type WebPointerInfo = {
   pointerId: number; shiftKey?: boolean;
 };
 
-export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, lastMove, hint, maxSize = 720, hideStatus = false, showTurnStatus = false, edgeToEdge = true }: {
+export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, lastMove, hint, feedbackArrows = [], maxSize = 720, hideStatus = false, showTurnStatus = false, edgeToEdge = true }: {
   fen: string; orientation?: Color; onMove?: (uci: string) => void; disabled?: boolean;
-  lastMove?: string; hint?: string; maxSize?: number; hideStatus?: boolean; showTurnStatus?: boolean; edgeToEdge?: boolean;
+  lastMove?: string; hint?: string; feedbackArrows?: ArrowAnnotation[]; maxSize?: number; hideStatus?: boolean; showTurnStatus?: boolean; edgeToEdge?: boolean;
 }) {
   const { width: viewportWidth } = useWindowDimensions();
   const { appearance } = useAppearance();
@@ -285,15 +285,15 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
           accessibilityHint={interactive ? 'Toque na peça e depois no destino, ou arraste a peça até o destino.' : undefined}
           accessibilityState={{ selected: square === selected, disabled: !interactive }} disabled={!interactive} onPress={() => press(square)}
           style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: check ? theme.check : highlighted ? theme.selected : previous ? theme.previous : dark ? theme.dark : theme.light }}>
-          {squareAnnotation ? <View pointerEvents="none" style={{ position: 'absolute', inset: 0, backgroundColor: annotationColors[squareAnnotation.tone], opacity: 0.64 }} /> : null}
+          {squareAnnotation ? <View style={{ position: 'absolute', inset: 0, backgroundColor: annotationColors[squareAnnotation.tone], opacity: 0.64, pointerEvents: 'none' }} /> : null}
           {piece && square !== dragging ? <Piece type={piece.type} color={piece.color} size={squareSize * 0.91} /> : null}
-          {target ? <View pointerEvents="none" style={piece ? { position: 'absolute', width: '88%', height: '88%', borderRadius: 99, borderWidth: 3, borderColor: theme.marker + 'AA' } : { position: 'absolute', width: '25%', height: '25%', borderRadius: 99, backgroundColor: theme.marker + '88' }} /> : null}
-          {col === 0 ? <Text accessible={false} style={{ position: 'absolute', top: 2, left: 3, fontSize: Math.max(9, squareSize * 0.19), fontWeight: '600', color: check || highlighted || previous ? theme.labelLight : dark ? theme.labelDark : theme.labelLight }}>{rank}</Text> : null}
-          {row === 7 ? <Text accessible={false} style={{ position: 'absolute', bottom: 1, right: 3, fontSize: Math.max(9, squareSize * 0.19), fontWeight: '600', color: check || highlighted || previous ? theme.labelLight : dark ? theme.labelDark : theme.labelLight }}>{file}</Text> : null}
+          {target ? <View style={piece ? { position: 'absolute', width: '88%', height: '88%', borderRadius: 99, borderWidth: 3, borderColor: theme.marker + 'AA', pointerEvents: 'none' } : { position: 'absolute', width: '25%', height: '25%', borderRadius: 99, backgroundColor: theme.marker + '88', pointerEvents: 'none' }} /> : null}
+          {col === 0 ? <Text aria-hidden style={{ position: 'absolute', top: 2, left: 3, fontSize: Math.max(9, squareSize * 0.19), fontWeight: '600', color: check || highlighted || previous ? theme.labelLight : dark ? theme.labelDark : theme.labelLight }}>{rank}</Text> : null}
+          {row === 7 ? <Text aria-hidden style={{ position: 'absolute', bottom: 1, right: 3, fontSize: Math.max(9, squareSize * 0.19), fontWeight: '600', color: check || highlighted || previous ? theme.labelLight : dark ? theme.labelDark : theme.labelLight }}>{file}</Text> : null}
         </Pressable>;
       })}</View>)}
-      <AnnotationArrows arrows={arrowAnnotations} preview={rightPreview} files={files} ranks={ranks} squareSize={squareSize} boardSize={squareSize * 8} />
-      {dragging && game.get(dragging) ? <Animated.View pointerEvents="none" style={{ position: 'absolute', zIndex: 2, width: squareSize, height: squareSize, alignItems: 'center', justifyContent: 'center', transform: dragPosition.getTranslateTransform() }}>
+      <AnnotationArrows arrows={[...feedbackArrows, ...arrowAnnotations]} preview={rightPreview} files={files} ranks={ranks} squareSize={squareSize} boardSize={squareSize * 8} />
+      {dragging && game.get(dragging) ? <Animated.View style={{ position: 'absolute', zIndex: 2, width: squareSize, height: squareSize, alignItems: 'center', justifyContent: 'center', transform: dragPosition.getTranslateTransform(), pointerEvents: 'none' }}>
         <Piece type={game.get(dragging)!.type} color={game.get(dragging)!.color} size={squareSize * 0.98} />
       </Animated.View> : null}
     </View>
@@ -316,7 +316,7 @@ function AnnotationArrows({ arrows, preview, files, ranks, squareSize, boardSize
 }) {
   const visible = preview ? [...arrows, preview] : arrows;
   if (!visible.length) return null;
-  return <Svg pointerEvents="none" width={boardSize} height={boardSize} style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
+  return <Svg width={boardSize} height={boardSize} style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
     {visible.map((arrow, index) => {
       const geometry = arrowGeometry(arrow.from, arrow.to, files, ranks, squareSize);
       if (!geometry) return null;

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import type { Lesson, LessonDetail, LessonResult, Progress } from '../../api/types';
+import type { Lesson, LessonBoardResult, LessonDetail, Progress } from '../../api/types';
 import { api } from '../../api/client';
 import { useOperation, useResource } from '../../api/hooks';
 import { useAuth } from '../../auth/AuthProvider';
@@ -8,9 +8,12 @@ import { useNavigation } from '../../navigation/Navigation';
 import { Badge, Button, Card, Chip, Empty, ErrorState, Heading, Loading, Notice, ProgressBar, categories, levels } from '../../ui/components';
 import { Icon } from '../../ui/Icon';
 import { colors, s } from '../../ui/theme';
-import { Replay } from '../../chess/Replay';
 import { ChessBoard } from '../../chess/ChessBoard';
 import { studyRequestId } from '../learning/request-id';
+import { GuidedLinePractice, type GuidedPracticeResult } from '../learning/GuidedLinePractice';
+import { lessonBoardExercises } from './board-exercises';
+import { DEFAULT_POSITION, linePositions } from '../../chess/logic';
+import type { ArrowAnnotation } from '../../chess/annotations';
 
 export function LessonsScreen() {
   const auth = useAuth(); const { navigate } = useNavigation();
@@ -44,35 +47,54 @@ export function LessonScreen({ id }: { id: string }) {
 function LessonReader({ lesson }: { lesson: LessonDetail }) {
   const requestId = useRef(studyRequestId());
   const [stepIndex, setStepIndex] = useState(0);
-  const [answer, setAnswer] = useState<number | null>(null);
-  const [result, setResult] = useState<LessonResult | null>(null);
+  const [mastered, setMastered] = useState<Record<string, GuidedPracticeResult>>({});
+  const [result, setResult] = useState<LessonBoardResult | null>(null);
   const auth = useAuth(); const { navigate } = useNavigation(); const operation = useOperation();
   const step = lesson.steps[stepIndex];
-  const quizVisible = stepIndex >= lesson.steps.length;
+  const fallback = lessonBoardExercises[lesson.id];
+  const opponentStep = !!step && /lance adversário|último lance adversário/i.test(`${step.title} ${step.text}`);
+  const editorialPracticeKeys = lesson.steps.flatMap((item, index) => item.moves?.length && !/lance adversário|último lance adversário/i.test(`${item.title} ${item.text}`) ? [`step-${index}`] : []);
+  const fallbackKey = !editorialPracticeKeys.length && fallback ? 'fallback' : null;
+  const requiredKeys = fallbackKey ? [fallbackKey] : editorialPracticeKeys;
+  const practiceKey = step?.moves?.length && !opponentStep ? `step-${stepIndex}` : fallbackKey && stepIndex === lesson.steps.length - 1 ? fallbackKey : null;
+  const practice = practiceKey === fallbackKey ? fallback : step?.moves?.length ? { fen: step.fen ?? DEFAULT_POSITION, moves: step.moves, prompt: 'Faça seus lances; as respostas adversárias são automáticas.' } : null;
+  const nearestFen = step?.fen ?? lesson.steps.find(item => item.fen)?.fen ?? fallback?.fen ?? DEFAULT_POSITION;
+  const allMastered = requiredKeys.length > 0 && requiredKeys.every(key => !!mastered[key]);
+  const totalMistakes = Object.values(mastered).reduce((sum, item) => sum + item.mistakes, 0);
+  const hintUsed = Object.values(mastered).some(item => item.hintUsed);
+  const recordMastery = (key: string, practiceResult: GuidedPracticeResult) => setMastered(items => ({ ...items, [key]: practiceResult }));
   return <View style={s.page}>
-    <Heading eyebrow={`${categories[lesson.category]} · ${levels[lesson.level]}`} title={lesson.title} description={lesson.description} />
-    <View style={s.stack}><View style={s.between}><Text style={s.small}>{quizVisible ? 'Hora de praticar o conceito' : `Etapa ${stepIndex + 1} de ${lesson.steps.length}`}</Text><Text style={s.small}>{lesson.minutes} min</Text></View>
-      <ProgressBar value={stepIndex / Math.max(1, lesson.steps.length) * 100} label="Etapas de leitura desta aula" /></View>
-    {!quizVisible && step ? <Card><Text accessibilityRole="header" style={s.h2}>{step.title}</Text><Text style={s.body}>{step.text}</Text>
-      {step.moves?.length ? <Replay key={`${lesson.id}-${stepIndex}`} initialFen={step.fen} moves={step.moves} /> : step.fen ? <ChessBoard fen={step.fen} /> : null}
-      <View style={[s.between, { flexWrap: 'wrap' }]}><Button label="Etapa anterior" variant="ghost" icon="back" disabled={stepIndex === 0} onPress={() => setStepIndex(n => n - 1)} />
-        <Button label={stepIndex === lesson.steps.length - 1 ? 'Ir para o quiz' : 'Próxima etapa'} icon="arrow" onPress={() => setStepIndex(n => n + 1)} /></View>
-    </Card> : <Card><Badge>QUIZ DA AULA</Badge><Text accessibilityRole="header" style={s.h2}>{lesson.quiz.question}</Text>
-      <View style={{ gap: 10 }}>{lesson.quiz.options.map((option, i) => <Pressable key={i} accessibilityRole="radio" accessibilityLabel={option} accessibilityState={{ checked: answer === i, disabled: operation.busy || !!result?.correct }}
-        disabled={operation.busy || result?.correct} onPress={() => { setAnswer(i); setResult(null); requestId.current = studyRequestId(); }}
-        style={({ pressed }) => ({ flexDirection: 'row', gap: 12, alignItems: 'center', minHeight: 56, borderWidth: 1, borderColor: answer === i ? colors.forest : colors.line, borderRadius: 12, padding: 15, backgroundColor: answer === i ? colors.pale : colors.surface, opacity: pressed ? 0.75 : 1 })}>
-        <View style={{ width: 25, height: 25, borderRadius: 13, borderWidth: 1, borderColor: answer === i ? colors.forest : '#CBD3C5', backgroundColor: answer === i ? colors.forest : 'transparent', alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={{ fontSize: 11, color: answer === i ? 'white' : colors.muted }}>{String.fromCharCode(65 + i)}</Text></View><Text style={[s.body, s.grow]}>{option}</Text></Pressable>)}</View>
-      {!auth.user ? <Notice action={<Button label="Entrar para responder" onPress={() => navigate({ screen: 'auth' })} />}>Entre para enviar sua resposta e registrar a conclusão.</Notice> :
-        <Button label={result?.correct ? 'Aula concluída' : 'Verificar resposta'} icon={result?.correct ? 'check' : 'arrow'} disabled={answer === null || !!result?.correct} busy={operation.busy} onPress={() => void operation.run(async signal => {
-          const response = await api.post<LessonResult>(`/lessons/${encodeURIComponent(lesson.id)}/complete`, { answer, requestId: requestId.current }, signal);
-          setResult(response); requestId.current = studyRequestId(); auth.refreshProgress();
-        })} />}
-      {operation.error ? <ErrorState message={operation.error} /> : null}
-      {result ? <Notice tone={result.correct ? 'success' : 'error'}>{result.correct ? 'Muito bem! ' : 'Ainda não. '}{result.explanation}{result.correct ? ` ${result.xpEarned > 0 ? `+${result.xpEarned} XP.` : 'Esta conclusão não gerou XP adicional.'}` : ''}</Notice> : null}
-      {result?.nextReviewAt ? <Text style={s.small}>Revisão agendada: {new Date(result.nextReviewAt).toLocaleString('pt-BR')}.</Text> : null}
-      <View style={s.wrap}><Button label="Revisar o conteúdo" icon="back" variant="ghost" disabled={operation.busy || !lesson.steps.length} onPress={() => setStepIndex(0)} />
-        {result?.correct ? <Button label="Ver outras aulas" variant="secondary" onPress={() => navigate({ screen: 'lessons' })} /> : null}</View>
-    </Card>}
+    <Heading eyebrow={`${categories[lesson.category]} · ${levels[lesson.level]}`} title={lesson.title} description="Aprenda a ideia, faça os movimentos e corrija seus erros até dominar a aula." />
+    <View style={s.stack}><View style={s.between}><Text style={s.small}>{`Etapa ${stepIndex + 1} de ${lesson.steps.length}`}</Text><Text style={s.small}>{lesson.minutes} min</Text></View>
+      <ProgressBar value={stepIndex / Math.max(1, lesson.steps.length) * 100} label="Progresso desta aula" /></View>
+    {step ? <Card><Badge>APRENDA NO TABULEIRO</Badge><Text accessibilityRole="header" style={s.h2}>{step.title}</Text><Text style={s.body}>{opponentStep ? step.text.replace('Reproduza esse lance para chegar ao problema.', 'Esse lance é aplicado automaticamente para chegar ao problema.') : step.text}</Text>
+      {opponentStep && step.moves?.length ? <AutomaticOpponentMove fen={step.fen ?? DEFAULT_POSITION} moves={step.moves} />
+        : practice && practiceKey ? <><Text style={s.h3}>{practice.prompt}</Text><GuidedLinePractice key={`${lesson.id}-${practiceKey}`} initialFen={practice.fen} moves={practice.moves}
+          onMastered={practiceResult => recordMastery(practiceKey, practiceResult)} /></>
+        : <ChessBoard fen={nearestFen} />}
+      {practiceKey && !mastered[practiceKey] ? <Text style={s.small}>A próxima etapa será liberada quando todos os lances estiverem na pilha de certos.</Text> : null}
+      {stepIndex < lesson.steps.length - 1 ? <View style={[s.between, { flexWrap: 'wrap' }]}><Button label="Etapa anterior" variant="ghost" icon="back" disabled={stepIndex === 0} onPress={() => setStepIndex(n => n - 1)} />
+        <Button label="Próxima etapa" icon="arrow" disabled={!!practiceKey && !mastered[practiceKey]} onPress={() => setStepIndex(n => n + 1)} /></View> : <>
+        {!allMastered ? <Notice>Conclua os movimentos no tabuleiro e corrija todos os erros para finalizar a aula.</Notice>
+          : !auth.user ? <Notice action={<Button label="Entrar para salvar a aula" onPress={() => navigate({ screen: 'auth' })} />}>Prática concluída. Entre para registrar o progresso.</Notice>
+          : result ? <Notice tone="success">Aula concluída no tabuleiro. {result.xpEarned ? `+${result.xpEarned} XP.` : 'Esta revisão não gerou XP adicional.'}</Notice>
+          : <Button label="Concluir aula" icon="check" busy={operation.busy} onPress={() => void operation.run(async signal => {
+            const response = await api.post<LessonBoardResult>(`/lessons/${encodeURIComponent(lesson.id)}/board-complete`, { mistakes: totalMistakes, hintUsed, requestId: requestId.current }, signal);
+            setResult(response); auth.refreshProgress();
+          })} />}
+        {operation.error ? <ErrorState message={operation.error} /> : null}
+        <View style={s.wrap}><Button label="Etapa anterior" variant="ghost" icon="back" disabled={stepIndex === 0} onPress={() => setStepIndex(n => n - 1)} />
+          {result ? <Button label="Ver outras aulas" variant="secondary" onPress={() => navigate({ screen: 'lessons' })} /> : null}</View></>}
+    </Card> : null}
   </View>;
+}
+
+function AutomaticOpponentMove({ fen, moves }: { fen: string; moves: string[] }) {
+  let line;
+  try { line = linePositions(moves, fen); } catch { return <ErrorState message="Não foi possível aplicar a resposta adversária desta etapa." />; }
+  const last = moves.at(-1)!;
+  const orientation = line.positions.at(-1)!.split(' ')[1] === 'b' ? 'b' : 'w';
+  const arrow: ArrowAnnotation = { from: last.slice(0, 2) as ArrowAnnotation['from'], to: last.slice(2, 4) as ArrowAnnotation['to'], tone: 'green' };
+  return <View style={s.stack}><ChessBoard fen={line.positions.at(-1)!} orientation={orientation} lastMove={last} feedbackArrows={[arrow]} />
+    <Notice>O lance adversário foi aplicado automaticamente. Você só fará os seus próprios lances.</Notice></View>;
 }

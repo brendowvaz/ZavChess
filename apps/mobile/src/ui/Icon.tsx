@@ -20,12 +20,12 @@ const paths: Record<IconName, string> = {
   chevron: 'm9 5 7 7-7 7', close: 'm6 6 12 12M18 6 6 18',
 };
 export function Icon({ name, size = 22, color = colors.forest }: { name: IconName; size?: number; color?: string }) {
-  return <Svg width={size} height={size} viewBox="0 0 24 24" accessible={false}>
+  return <Svg width={size} height={size} viewBox="0 0 24 24" aria-hidden>
     <Path d={paths[name]} fill="none" stroke={color} strokeWidth={1.65} strokeLinecap="round" strokeLinejoin="round" />
   </Svg>;
 }
 export function BrandMark({ size = 38, light = false }: { size?: number; light?: boolean }) {
-  return <Svg width={size} height={size} viewBox="0 0 40 40" accessible={false}>
+  return <Svg width={size} height={size} viewBox="0 0 40 40" aria-hidden>
     <Rect x={0} y={0} width={40} height={40} rx={12} fill={light ? '#E8ECD9' : colors.forest} />
     <Path d="M12 29h17l-1-4H14l3-8-4-1 4-8 9 4-2 5 2 7M17 8l-1-3" fill="none" stroke={light ? colors.forest : '#EEEBD5'} strokeWidth={2.4} strokeLinejoin="round" />
     <Circle cx={21} cy={13} r={1} fill={light ? colors.forest : '#EEEBD5'} />

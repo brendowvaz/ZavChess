@@ -3,9 +3,9 @@ import type { Opening, OpeningFamilyDetail } from '../../api/types';
 
 export type StudySide = 'w' | 'b';
 export interface OpeningAttempt {
-  moves: string[]; side: StudySide; hintUsed: boolean; mistakes: number; requestId: string;
+  moves: string[]; plies: number[]; side: StudySide; hintUsed: boolean; mistakes: number; positionMistakes: number[]; requestId: string;
 }
-export interface OpeningAttemptResult { completed: true; nextReviewAt: string; reviewId: string }
+export interface OpeningAttemptResult { completed: true; nextReviewAt: string; reviewId: string; positionMastery?: { tracked: number; clean: number } }
 export interface GuideLine {
   openingId: string; name: string; pgn: string; moves: string[]; fen: string;
   annotations: { ply: number; uci: string; san: string; text: string }[];

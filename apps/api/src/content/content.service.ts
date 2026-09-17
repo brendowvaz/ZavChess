@@ -41,8 +41,8 @@ export class ContentService {
   async lesson(id: string) {
     const lesson = await this.db.lesson.findUnique({ where: { id } });
     if (!lesson) throw new NotFoundException('Aula não encontrada.');
-    const quiz = lesson.quiz as unknown as Quiz;
-    return { ...lesson, quiz: { question: quiz.question, options: quiz.options } };
+    const { quiz: _legacyQuiz, ...boardLesson } = lesson;
+    return boardLesson;
   }
 
   async completeLesson(userId: string, lessonId: string, answer: number, requestId?: string) {
@@ -64,6 +64,23 @@ export class ContentService {
       }
       return { response: { correct, explanation: quiz.explanation, xpEarned }, completed: true, success: correct,
         mistakes: correct ? 0 : 1, recall: correct ? 'good' : 'again' };
+    });
+  }
+
+  async completeBoardLesson(userId: string, lessonId: string, mistakes: number, hintUsed: boolean, requestId?: string) {
+    const lesson = await this.db.lesson.findUnique({ where: { id: lessonId } });
+    if (!lesson) throw new NotFoundException('Aula não encontrada.');
+    return this.learning.capture(userId, { kind: 'lesson', contentId: lessonId, requestId }, async tx => {
+      const alreadyCompleted = await tx.lessonProgress.findUnique({ where: { userId_lessonId: { userId, lessonId } } });
+      let xpEarned = 0;
+      if (!alreadyCompleted) {
+        await tx.lessonProgress.create({ data: { userId, lessonId } });
+        await tx.user.update({ where: { id: userId }, data: { xp: { increment: 25 } } });
+        xpEarned = 25;
+      }
+      await tx.activity.create({ data: { userId, type: 'lesson', title: lesson.title } });
+      const clean = mistakes === 0 && !hintUsed;
+      return { response: { completed: true, xpEarned }, completed: true, success: clean, mistakes, hintUsed, recall: clean ? 'good' : 'hard' };
     });
   }
 

@@ -26,6 +26,11 @@ class AnswerDto {
   @IsInt() @Min(0) @Max(20) answer!: number;
   @IsOptional() @IsString() @MaxLength(100) requestId?: string;
 }
+class BoardLessonDto {
+  @IsInt() @Min(0) @Max(1000) mistakes = 0;
+  @IsOptional() @IsBoolean() hintUsed = false;
+  @IsOptional() @IsString() @MaxLength(100) requestId?: string;
+}
 class AttemptDto {
   @IsArray() @ArrayMaxSize(100) @Matches(UCI_PATTERN, { each: true }) moves!: string[];
   @IsOptional() @IsBoolean() hintUsed = false;
@@ -41,6 +46,8 @@ export class ContentController {
   @Get('lessons/:id') lesson(@Param('id') id: string) { return this.content.lesson(id); }
   @Post('lessons/:id/complete') @UseGuards(AuthGuard)
   complete(@CurrentUser() user: User, @Param('id') id: string, @Body() body: AnswerDto) { return this.content.completeLesson(user.id, id, body.answer, body.requestId); }
+  @Post('lessons/:id/board-complete') @UseGuards(AuthGuard)
+  completeBoard(@CurrentUser() user: User, @Param('id') id: string, @Body() body: BoardLessonDto) { return this.content.completeBoardLesson(user.id, id, body.mistakes, body.hintUsed, body.requestId); }
   @Get('opening-families') openingFamilies(@Query() query: OpeningFamilyQuery) { return this.content.openingFamilies(query.search, query.page, query.pageSize); }
   @Get('opening-families/:family') openingFamily(@Param('family') family: string) { return this.content.openingFamily(family); }
   @Get('openings') openings(@Query() query: OpeningQuery) { return this.content.openings(query.search, query.page, query.pageSize); }

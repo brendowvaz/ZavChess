@@ -511,7 +511,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0eFUC, rating 951. O último lance adversário é Qe2. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0eFUC, rating 951. O último lance adversário é Qe2. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "2r4k/4p2P/p2pN1Q1/1p1P3p/8/2P1q3/PP3r2/K2R4 b - - 6 30",
         "moves": [
           "e3e2"
@@ -554,7 +554,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0fOdT, rating 950. O último lance adversário é Qe6. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0fOdT, rating 950. O último lance adversário é Qe6. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "6k1/p2q1p1p/5Pp1/2p1Q3/1pP5/1P3P2/1P5P/7K b - - 0 37",
         "moves": [
           "d7e6"
@@ -599,7 +599,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 04eXD, rating 950. O último lance adversário é a3. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 04eXD, rating 950. O último lance adversário é a3. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "r5k1/1q4p1/3pNrPp/pp1P3P/1Pn1QpB1/1K6/P7/R3R3 w - - 0 33",
         "moves": [
           "a2a3"
@@ -644,7 +644,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 07VlQ, rating 1700. O último lance adversário é Na4. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 07VlQ, rating 1700. O último lance adversário é Na4. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "r6r/p5pp/1n2R3/kp1p4/5B2/2P5/5PPP/R5K1 b - - 1 26",
         "moves": [
           "b6a4"
@@ -687,7 +687,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0aRGU, rating 1662. O último lance adversário é Rxd7. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0aRGU, rating 1662. O último lance adversário é Rxd7. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "qn3rk1/1R1bp1bp/p1p1p1p1/8/8/1QP3P1/1P1NPP1P/5RK1 w - - 0 19",
         "moves": [
           "b7d7"
@@ -736,7 +736,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0Vz8w, rating 1695. O último lance adversário é Qh5. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0Vz8w, rating 1695. O último lance adversário é Qh5. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "r4rk1/pb1nbppp/2p2n2/1p1q4/5P2/1N1BP1B1/PPP1QP1P/R2R2K1 b - - 3 16",
         "moves": [
           "d5h5"
@@ -785,7 +785,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0ebUk, rating 1703. O último lance adversário é Nxc8. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0ebUk, rating 1703. O último lance adversário é Nxc8. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "2r5/3k4/3Np3/4P3/1r1p4/1pp5/P1P2Q2/1K6 w - - 4 41",
         "moves": [
           "d6c8"
@@ -832,7 +832,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0b2kE, rating 1701. O último lance adversário é Qb4. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0b2kE, rating 1701. O último lance adversário é Qb4. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "3kr3/ppR1q1p1/5pQ1/3p3p/3PnB1P/6P1/PP6/6K1 b - - 3 29",
         "moves": [
           "e7b4"
@@ -877,7 +877,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0ei0O, rating 1712. O último lance adversário é Rc3. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0ei0O, rating 1712. O último lance adversário é Rc3. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "2r2k2/4Rpb1/3p2p1/3P3p/2P4P/Pr4P1/5PBK/1qB1Q3 b - - 0 37",
         "moves": [
           "b3c3"
@@ -922,7 +922,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 03j6z, rating 956. O último lance adversário é Qxc1. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 03j6z, rating 956. O último lance adversário é Qxc1. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "5rk1/pppR2p1/7r/3bP3/5Q2/1P3BP1/5P1p/2q4K w - - 9 37",
         "moves": [
           "f4c1"
@@ -965,7 +965,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0Cgt8, rating 1690. O último lance adversário é Bd1. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0Cgt8, rating 1690. O último lance adversário é Bd1. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "8/8/p2k1p2/p4Pp1/3N2Pp/1PP4P/2b2K2/8 b - - 5 41",
         "moves": [
           "c2d1"
@@ -1010,7 +1010,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0Cc7d, rating 1693. O último lance adversário é Ra5. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0Cc7d, rating 1693. O último lance adversário é Ra5. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "2rr2k1/6p1/4p1b1/2P4p/2P4P/2Kp1P2/6P1/R4N1R w - - 3 29",
         "moves": [
           "a1a5"
@@ -1057,7 +1057,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 06CAz, rating 2294. O último lance adversário é Bf4. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 06CAz, rating 2294. O último lance adversário é Bf4. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "r1b1r1k1/ppp1pp1p/5bpP/8/2Pq4/2NB1Q2/PP5P/R1B1K2R w KQ - 1 14",
         "moves": [
           "c1f4"
@@ -1102,7 +1102,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0ejF1, rating 2339. O último lance adversário é Qd8. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0ejF1, rating 2339. O último lance adversário é Qd8. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "r5rk/1p1bb1pp/1q2p3/3pPp2/2nP1P1N/P5R1/2B2P1P/R1BQ3K b - - 5 22",
         "moves": [
           "b6d8"
@@ -1147,7 +1147,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0Z8os, rating 1710. O último lance adversário é Kg4. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0Z8os, rating 1710. O último lance adversário é Kg4. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "8/8/8/2B5/5K2/6pp/7k/8 w - - 0 44",
         "moves": [
           "f4g4"
@@ -1194,7 +1194,7 @@
       },
       {
         "title": "Observe o lance adversário",
-        "text": "Puzzle Lichess 0907J, rating 1698. O último lance adversário é Re8. Reproduza esse lance para chegar ao problema.",
+        "text": "Puzzle Lichess 0907J, rating 1698. O último lance adversário é Re8. Esse lance é aplicado automaticamente para chegar ao problema.",
         "fen": "2rr1k2/4Rppp/8/p4P2/P2p4/3P4/6PP/4R1K1 b - - 0 29",
         "moves": [
           "d8e8"

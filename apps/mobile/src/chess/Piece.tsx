@@ -18,7 +18,7 @@ export function Piece({ type, color, size, pieceStyle }: { type: PieceSymbol; co
   const style = pieceStyle ?? appearance.pieceStyle;
   const row = color === 'w' ? 0 : 1;
 
-  return <View accessible={false} pointerEvents="none" style={{ width: size, height: size, overflow: 'hidden' }}>
+  return <View aria-hidden style={{ width: size, height: size, overflow: 'hidden', pointerEvents: 'none' }}>
     <Image source={sheets[style]} resizeMode="stretch" fadeDuration={0}
       style={{ position: 'absolute', width: size * 6, height: size * 2,
         left: -columns[type] * size, top: -row * size }} />

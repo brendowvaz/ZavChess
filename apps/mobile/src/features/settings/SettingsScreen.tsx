@@ -48,7 +48,7 @@ export function SettingsScreen() {
               onPress={() => updateAppearance({ boardTheme: id })}
               style={({ pressed }) => ({ flexBasis: '47%', flexGrow: 1, padding: 14, gap: 10, borderRadius: 16, borderWidth: 2, borderColor: selected ? colors.forest : colors.line,
                 backgroundColor: colors.surface, opacity: pressed ? 0.75 : 1 })}>
-              <View style={{ borderRadius: 7, overflow: 'hidden' }} pointerEvents="none">{[0, 1].map(row => <View key={row} style={{ flexDirection: 'row' }}>
+              <View style={{ borderRadius: 7, overflow: 'hidden', pointerEvents: 'none' }}>{[0, 1].map(row => <View key={row} style={{ flexDirection: 'row' }}>
                 {[0, 1, 2, 3].map(col => <View key={col} style={{ flex: 1, height: 22, backgroundColor: (row + col) % 2 ? board.dark : board.light }} />)}
               </View>)}</View>
               <View style={s.between}><Text style={s.h3}>{board.name}</Text><Selection selected={selected} /></View>
@@ -75,7 +75,7 @@ export function SettingsScreen() {
 }
 function PieceSwatch({ pieceStyle, light, dark }: { pieceStyle: PieceStyle; light: string; dark: string }) {
   const [width, setWidth] = useState(180);
-  return <View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" aria-hidden style={{ borderRadius: 8, overflow: 'hidden' }}
+  return <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" aria-hidden style={{ borderRadius: 8, overflow: 'hidden', pointerEvents: 'none' }}
     onLayout={event => setWidth(event.nativeEvent.layout.width)}>
     {(['w', 'b'] as const).map((color, row) => <View key={color} style={{ flexDirection: 'row' }}>{samplePieces.map((type, col) => <View key={type}
       style={{ flex: 1, aspectRatio: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: (row + col) % 2 ? dark : light }}>

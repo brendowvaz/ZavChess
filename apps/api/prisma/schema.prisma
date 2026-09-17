@@ -22,6 +22,8 @@ model User {
   studyReviews StudyReview[]
   studyEvents  StudyEvent[]
   puzzlePractices PuzzlePractice[]
+  repertoires UserRepertoire[]
+  gameImports OpeningGameImport[]
 }
 
 model Session {
@@ -68,8 +70,48 @@ model Opening {
   fen       String
   moves     Json
   sourceUrl String @db.VarChar(500)
+  positions OpeningPosition[]
   @@index([eco])
   @@index([family])
+}
+
+model OpeningPosition {
+  key         String   @id @db.VarChar(64)
+  fen         String
+  openingId   String
+  ply         Int
+  title       String   @db.VarChar(500)
+  explanation String   @db.Text
+  createdAt   DateTime @default(now())
+  opening     Opening  @relation(fields: [openingId], references: [id], onDelete: Cascade)
+  @@index([openingId, ply])
+}
+
+model UserRepertoire {
+  id         String   @id @default(cuid())
+  userId     String
+  courseId   String   @db.VarChar(80)
+  selectedAt DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, courseId])
+  @@index([userId, selectedAt])
+}
+
+model OpeningGameImport {
+  id             String   @id @default(cuid())
+  userId         String
+  platform       String   @db.VarChar(12)
+  username       String   @db.VarChar(80)
+  gameExternalId String   @db.VarChar(191)
+  playedAt       DateTime?
+  color          String   @db.VarChar(1)
+  openingId      String?  @db.VarChar(191)
+  firstMissPly   Int?
+  summary        String   @db.Text
+  importedAt     DateTime @default(now())
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, platform, gameExternalId])
+  @@index([userId, importedAt])
 }
 
 /// Editorial guidance is stored by opening family so every variation inherits
