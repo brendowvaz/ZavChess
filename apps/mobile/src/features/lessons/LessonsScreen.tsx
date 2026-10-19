@@ -14,6 +14,7 @@ import { GuidedLinePractice, type GuidedPracticeResult } from '../learning/Guide
 import { lessonBoardExercises } from './board-exercises';
 import { DEFAULT_POSITION, linePositions } from '../../chess/logic';
 import type { ArrowAnnotation } from '../../chess/annotations';
+import { StudyLayout, StudyMessage } from '../../ui/StudyLayout';
 
 export function LessonsScreen() {
   const auth = useAuth(); const { navigate } = useNavigation();
@@ -40,16 +41,19 @@ export function LessonsScreen() {
 
 export function LessonScreen({ id }: { id: string }) {
   const lesson = useResource<LessonDetail>(`/lessons/${encodeURIComponent(id)}`);
-  const { back } = useNavigation();
-  return <View style={s.page}><Button label="Voltar às aulas" icon="back" variant="ghost" onPress={back} style={{ alignSelf: 'flex-start' }} />
-    {lesson.loading ? <Loading label="Abrindo a aula…" /> : lesson.error ? <ErrorState message={lesson.error} retry={lesson.reload} /> : lesson.data ? <LessonReader lesson={lesson.data} /> : null}</View>;
+  const lessons = useResource<Lesson[]>('/lessons');
+  const ordered = lessons.data?.slice().sort((a, b) => a.sortOrder - b.sortOrder) ?? [];
+  const current = ordered.findIndex(item => item.id === id);
+  const nextLessonId = current >= 0 ? ordered[current + 1]?.id : undefined;
+  return <View style={{ flex: 1, minHeight: 0 }}>
+    {lesson.loading ? <Loading label="Abrindo a aula…" /> : lesson.error ? <ErrorState message={lesson.error} retry={lesson.reload} /> : lesson.data ? <LessonReader lesson={lesson.data} nextLessonId={nextLessonId} /> : null}</View>;
 }
-function LessonReader({ lesson }: { lesson: LessonDetail }) {
+function LessonReader({ lesson, nextLessonId }: { lesson: LessonDetail; nextLessonId?: string }) {
   const requestId = useRef(studyRequestId());
   const [stepIndex, setStepIndex] = useState(0);
   const [mastered, setMastered] = useState<Record<string, GuidedPracticeResult>>({});
   const [result, setResult] = useState<LessonBoardResult | null>(null);
-  const auth = useAuth(); const { navigate } = useNavigation(); const operation = useOperation();
+  const auth = useAuth(); const { navigate, replace, back } = useNavigation(); const operation = useOperation();
   const step = lesson.steps[stepIndex];
   const fallback = lessonBoardExercises[lesson.id];
   const opponentStep = !!step && /lance adversário|último lance adversário/i.test(`${step.title} ${step.text}`);
@@ -59,34 +63,46 @@ function LessonReader({ lesson }: { lesson: LessonDetail }) {
   const practiceKey = step?.moves?.length && !opponentStep ? `step-${stepIndex}` : fallbackKey && stepIndex === lesson.steps.length - 1 ? fallbackKey : null;
   const practice = practiceKey === fallbackKey ? fallback : step?.moves?.length ? { fen: step.fen ?? DEFAULT_POSITION, moves: step.moves, prompt: 'Faça seus lances; as respostas adversárias são automáticas.' } : null;
   const nearestFen = step?.fen ?? lesson.steps.find(item => item.fen)?.fen ?? fallback?.fen ?? DEFAULT_POSITION;
-  const allMastered = requiredKeys.length > 0 && requiredKeys.every(key => !!mastered[key]);
+  const allMastered = requiredKeys.length === 0 || requiredKeys.every(key => !!mastered[key]);
   const totalMistakes = Object.values(mastered).reduce((sum, item) => sum + item.mistakes, 0);
   const hintUsed = Object.values(mastered).some(item => item.hintUsed);
   const recordMastery = (key: string, practiceResult: GuidedPracticeResult) => setMastered(items => ({ ...items, [key]: practiceResult }));
-  return <View style={s.page}>
-    <Heading eyebrow={`${categories[lesson.category]} · ${levels[lesson.level]}`} title={lesson.title} description="Aprenda a ideia, faça os movimentos e corrija seus erros até dominar a aula." />
-    <View style={s.stack}><View style={s.between}><Text style={s.small}>{`Etapa ${stepIndex + 1} de ${lesson.steps.length}`}</Text><Text style={s.small}>{lesson.minutes} min</Text></View>
-      <ProgressBar value={stepIndex / Math.max(1, lesson.steps.length) * 100} label="Progresso desta aula" /></View>
-    {step ? <Card><Badge>APRENDA NO TABULEIRO</Badge><Text accessibilityRole="header" style={s.h2}>{step.title}</Text><Text style={s.body}>{opponentStep ? step.text.replace('Reproduza esse lance para chegar ao problema.', 'Esse lance é aplicado automaticamente para chegar ao problema.') : step.text}</Text>
-      {opponentStep && step.moves?.length ? <AutomaticOpponentMove fen={step.fen ?? DEFAULT_POSITION} moves={step.moves} />
-        : practice && practiceKey ? <><Text style={s.h3}>{practice.prompt}</Text><GuidedLinePractice key={`${lesson.id}-${practiceKey}`} initialFen={practice.fen} moves={practice.moves}
-          onMastered={practiceResult => recordMastery(practiceKey, practiceResult)} /></>
-        : <ChessBoard fen={nearestFen} />}
-      {practiceKey && !mastered[practiceKey] ? <Text style={s.small}>A próxima etapa será liberada quando todos os lances estiverem na pilha de certos.</Text> : null}
-      {stepIndex < lesson.steps.length - 1 ? <View style={[s.between, { flexWrap: 'wrap' }]}><Button label="Etapa anterior" variant="ghost" icon="back" disabled={stepIndex === 0} onPress={() => setStepIndex(n => n - 1)} />
-        <Button label="Próxima etapa" icon="arrow" disabled={!!practiceKey && !mastered[practiceKey]} onPress={() => setStepIndex(n => n + 1)} /></View> : <>
-        {!allMastered ? <Notice>Conclua os movimentos no tabuleiro e corrija todos os erros para finalizar a aula.</Notice>
-          : !auth.user ? <Notice action={<Button label="Entrar para salvar a aula" onPress={() => navigate({ screen: 'auth' })} />}>Prática concluída. Entre para registrar o progresso.</Notice>
-          : result ? <Notice tone="success">Aula concluída no tabuleiro. {result.xpEarned ? `+${result.xpEarned} XP.` : 'Esta revisão não gerou XP adicional.'}</Notice>
-          : <Button label="Concluir aula" icon="check" busy={operation.busy} onPress={() => void operation.run(async signal => {
-            const response = await api.post<LessonBoardResult>(`/lessons/${encodeURIComponent(lesson.id)}/board-complete`, { mistakes: totalMistakes, hintUsed, requestId: requestId.current }, signal);
-            setResult(response); auth.refreshProgress();
-          })} />}
-        {operation.error ? <ErrorState message={operation.error} /> : null}
-        <View style={s.wrap}><Button label="Etapa anterior" variant="ghost" icon="back" disabled={stepIndex === 0} onPress={() => setStepIndex(n => n - 1)} />
-          {result ? <Button label="Ver outras aulas" variant="secondary" onPress={() => navigate({ screen: 'lessons' })} /> : null}</View></>}
-    </Card> : null}
-  </View>;
+  const finish = () => void operation.run(async signal => {
+    const response = await api.post<LessonBoardResult>(`/lessons/${encodeURIComponent(lesson.id)}/board-complete`, { mistakes: totalMistakes, hintUsed, requestId: requestId.current }, signal);
+    setResult(response); auth.refreshProgress();
+  });
+  const nextAction = result ? <Button label={nextLessonId ? 'Próxima aula' : 'Voltar às aulas'} icon="arrow"
+    onPress={() => nextLessonId ? replace({ screen: 'lesson', id: nextLessonId }) : navigate({ screen: 'lessons' })} />
+    : !auth.user ? <Button label="Entrar para salvar" onPress={() => navigate({ screen: 'auth' })} />
+    : <Button label="Concluir aula" icon="check" busy={operation.busy} onPress={finish} />;
+  const continueAction = stepIndex < lesson.steps.length - 1
+    ? <Button label="Continuar" icon="arrow" onPress={() => setStepIndex(value => value + 1)} />
+    : nextAction;
+  if (!step) return null;
+  if (practice && practiceKey) return <GuidedLinePractice key={`${lesson.id}-${practiceKey}`} initialFen={practice.fen} moves={practice.moves}
+    onMastered={practiceResult => recordMastery(practiceKey, practiceResult)}
+    study={{ title: lesson.title, subtitle: step.title, eyebrow: `Etapa ${stepIndex + 1} de ${lesson.steps.length}`,
+      onBack: back, completeAction: mastered[practiceKey] ? continueAction : undefined }} />;
+  let boardFen = nearestFen;
+  let lastMove: string | undefined;
+  let feedbackArrows: ArrowAnnotation[] = [];
+  if (opponentStep && step.moves?.length) {
+    try {
+      const line = linePositions(step.moves, step.fen ?? DEFAULT_POSITION);
+      boardFen = line.positions.at(-1)!; lastMove = step.moves.at(-1);
+      if (lastMove) feedbackArrows = [{ from: lastMove.slice(0, 2) as ArrowAnnotation['from'], to: lastMove.slice(2, 4) as ArrowAnnotation['to'], tone: 'green' }];
+    } catch { /* The static fallback position remains visible. */ }
+  }
+  return <StudyLayout title={lesson.title} subtitle={step.title} eyebrow={`Etapa ${stepIndex + 1} de ${lesson.steps.length}`} onBack={back}
+    progress={(stepIndex + 1) / Math.max(1, lesson.steps.length) * 100}
+    renderBoard={maxSize => <ChessBoard fen={boardFen} orientation={boardFen.split(' ')[1] === 'b' ? 'b' : 'w'} maxSize={maxSize} lastMove={lastMove} feedbackArrows={feedbackArrows} hideStatus />}
+    status={operation.error ? <StudyMessage tone="error">{operation.error}</StudyMessage>
+      : result ? <StudyMessage tone="success">Aula concluída{result.xpEarned ? ` · +${result.xpEarned} XP` : ''}.</StudyMessage>
+      : <StudyMessage>{opponentStep ? step.text.replace('Reproduza esse lance para chegar ao problema.', 'A resposta adversária já foi aplicada.') : step.text}</StudyMessage>}
+    actions={<View style={[s.row, { justifyContent: 'center' }]}>
+      {stepIndex > 0 ? <Button label="Voltar etapa" variant="ghost" icon="back" compact onPress={() => setStepIndex(value => value - 1)} /> : null}
+      {stepIndex < lesson.steps.length - 1 || allMastered ? continueAction : <Button label="Continuar" icon="arrow" disabled onPress={() => {}} />}
+    </View>} />;
 }
 
 function AutomaticOpponentMove({ fen, moves }: { fen: string; moves: string[] }) {

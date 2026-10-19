@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import type { Opening, OpeningFamily, OpeningFamilyDetail, OpeningStudyGuide, OpeningVariant, Page, Side } from '../../api/types';
 import { useDebounced, useResource } from '../../api/hooks';
 import { useNavigation } from '../../navigation/Navigation';
-import { Badge, Button, Card, Chip, Empty, ErrorState, Field, Heading, Loading, Notice, Pagination, ProgressBar, SourceLink } from '../../ui/components';
+import { Badge, Button, Card, Chip, Empty, ErrorState, Field, Heading, Loading, Notice, Pagination, SourceLink } from '../../ui/components';
 import { colors, s } from '../../ui/theme';
 import { Icon } from '../../ui/Icon';
 import { ChessBoard } from '../../chess/ChessBoard';
@@ -11,9 +11,10 @@ import { Replay } from '../../chess/Replay';
 import { sideName } from '../../chess/logic';
 import { useAuth } from '../../auth/AuthProvider';
 import type { EducationalFamily, EducationalOpening, FamilyGuideContent, OpeningEducation, VariationGuideContent } from './education-contracts';
-import { OpeningCompletions } from './OpeningCompletions';
+import { useOpeningCompletions } from './OpeningCompletions';
 import { MasteryStrip } from '../learning/MasteryStrip';
 import type { ArrowAnnotation } from '../../chess/annotations';
+import { StudyLayout, StudyMessage } from '../../ui/StudyLayout';
 import {
   advanceOpeningTraining,
   beginOpeningTraining,
@@ -63,23 +64,15 @@ export function OpeningFamilyScreen({ family }: { family: string }) {
     </> : null}</View>;
 }
 export function OpeningScreen({ id, initialSide, focusPly }: { id: string; initialSide?: Side; focusPly?: number }) {
-  const opening = useResource<EducationalOpening>(`/openings/${encodeURIComponent(id)}`); const { back, navigate } = useNavigation();
-  return <View style={s.page}><Button label="Voltar" icon="back" variant="ghost" onPress={back} style={{ alignSelf: 'flex-start' }} />
-    {opening.data ? <Button label={`Todas as variantes de ${opening.data.family}`} icon="book" variant="secondary" onPress={() => navigate({ screen: 'opening-family', id: opening.data!.family })} style={{ alignSelf: 'flex-start' }} /> : null}
+  const opening = useResource<EducationalOpening>(`/openings/${encodeURIComponent(id)}`);
+  return <View style={{ flex: 1, minHeight: 0 }}>
     {opening.loading ? <Loading label="Abrindo a linha…" /> : opening.error ? <ErrorState message={opening.error} retry={opening.reload} /> : opening.data ? <OpeningReader opening={opening.data} initialSide={initialSide} focusPly={focusPly} /> : null}</View>;
 }
 function OpeningReader({ opening, initialSide, focusPly }: { opening: EducationalOpening; initialSide?: Side; focusPly?: number }) {
-  const [mode, setMode] = useState<'guided' | 'replay'>('guided'); const [side, setSide] = useState<Side>(initialSide ?? 'w');
+  const [side, setSide] = useState<Side>(initialSide ?? 'w'); const { back } = useNavigation();
   const activeFocus = focusPly !== undefined && focusPly % 2 === (side === 'w' ? 0 : 1) ? focusPly : undefined;
-  return <View style={s.page}><Heading eyebrow={`${opening.eco} · ${opening.family}`} title={opening.name} description="Veja cada lance da variante, faça de memória e corrija todos os erros antes de concluir." />
-    <View style={[s.between, { flexWrap: 'wrap' }]}><View style={s.wrap}><Chip label="Aula guiada" selected={mode === 'guided'} onPress={() => setMode('guided')} /><Chip label="Rever linha livremente" selected={mode === 'replay'} onPress={() => setMode('replay')} /></View>
-      <View style={s.wrap}><Chip label="Brancas" selected={side === 'w'} onPress={() => setSide('w')} /><Chip label="Pretas" selected={side === 'b'} onPress={() => setSide('b')} /></View></View>
-    <Card>{mode === 'replay' ? <Replay moves={opening.moves} orientation={side} /> : <OpeningTrainer key={`${side}-${activeFocus ?? 'all'}`} opening={opening} side={side} focusPly={activeFocus} />}</Card>
-    {opening.familyNavigation ? <FamilyNavigator navigation={opening.familyNavigation} side={side} currentId={opening.id} /> : null}
-    {opening.education ? <EducationPanel education={opening.education} /> : opening.studyGuide ? <StudyGuide guide={opening.studyGuide} /> : null}
-    {mode === 'replay' ? <Card><Text style={s.h3}>Notação da linha</Text><Text selectable style={s.mono}>{opening.pgn}</Text></Card> : null}
-    <SourceLink url={opening.sourceUrl} />
-  </View>;
+  return <OpeningTrainer key={`${side}-${activeFocus ?? 'all'}`} opening={opening} side={side} focusPly={activeFocus}
+    onBack={back} onToggleSide={() => setSide(value => value === 'w' ? 'b' : 'w')} />;
 }
 function VariantCard({ family, variant, onPress }: { family: string; variant: OpeningVariant; onPress: () => void }) {
   const title = variationTitle(family, variant.name);
@@ -141,13 +134,16 @@ function StudyGuide({ guide }: { guide: OpeningStudyGuide }) {
     {guide.kind === 'introductory' ? <Notice>Esta variante ainda não tem um guia editorial próprio. A orientação mostra princípios de estudo e não apresenta a linha como forçada.</Notice> : <Text style={s.small}>Guia editorial da família. Variantes podem mudar o plano: confira sempre a posição antes de repetir um lance.</Text>}
   </Card>;
 }
-function OpeningTrainer({ opening, side, focusPly }: { opening: EducationalOpening; side: Side; focusPly?: number }) {
-  const { user } = useAuth(); const { replace } = useNavigation();
+function OpeningTrainer({ opening, side, focusPly, onBack, onToggleSide }: { opening: EducationalOpening; side: Side; focusPly?: number; onBack: () => void; onToggleSide: () => void }) {
+  const { user } = useAuth(); const { replace } = useNavigation(); const completions = useOpeningCompletions();
   const createTraining = () => beginOpeningTraining(opening.moves, side, newOpeningRequestId(), focusPly);
   const [training, setTraining] = useState<OpeningTraining>(createTraining);
   const studentMoves = opening.moves.filter((_, index) => index % 2 === (side === 'w' ? 0 : 1));
-  if (!opening.moves.length) return <Empty title="Linha sem lances" description="Esta abertura ainda não possui uma sequência para treinar." />;
-  if (!studentMoves.length) return <Empty title={`Sem lances das ${sideName(side)}`} description="Escolha a outra cor para treinar esta linha curta." />;
+  if (!opening.moves.length || !studentMoves.length) return <StudyLayout title={opening.name} subtitle={opening.eco} eyebrow={opening.family}
+    onBack={onBack} topAction={<Chip label={side === 'w' ? 'Brancas' : 'Pretas'} selected onPress={onToggleSide} />}
+    renderBoard={maxSize => <ChessBoard fen={opening.fen} orientation={side} maxSize={maxSize} disabled hideStatus />}
+    status={<StudyMessage>{opening.moves.length ? `Esta linha não tem lances das ${sideName(side)}.` : 'Esta linha ainda não possui movimentos para treinar.'}</StudyMessage>}
+    actions={opening.moves.length ? <Button label="Treinar a outra cor" onPress={onToggleSide} /> : <Button label="Voltar" icon="back" onPress={onBack} />} />;
   const finished = trainingFinished(training);
   const learning = training.phase === 'learn';
   const counts = openingTrainingCounts(training);
@@ -180,22 +176,27 @@ function OpeningTrainer({ opening, side, focusPly }: { opening: EducationalOpeni
   const restart = () => setTraining(createTraining());
   const progress = finished ? 100 : learning ? training.cursor / Math.max(1, training.studentPlies.length) * 35
     : (counts.correct / Math.max(1, training.studentPlies.length) * 65) + 35;
-  return <View style={s.stack}>{focusPly !== undefined ? <Notice>Revisão focada: pratique somente a decisão agendada; o contexto anterior permanece visível no tabuleiro.</Notice> : null}<View style={s.between}><Badge tone={training.phase === 'review' ? 'gold' : 'green'}>{learning ? '1 · APRENDA' : training.phase === 'review' ? '3 · CORRIJA OS ERROS' : finished ? 'DOMINADO' : '2 · FAÇA VOCÊ'}</Badge><Text style={s.small}>De {sideName(side)}</Text></View>
-    <ProgressBar value={progress} label="Progresso da sessão guiada" />
-    {!learning ? <MasteryStrip todo={counts.todo} wrong={counts.wrong} correct={counts.correct} /> : null}
-    {finished ? <><ChessBoard fen={fen} orientation={side} lastMove={opening.moves.at(-1)} />
-      <Notice tone="success">Muito bem! Você corrigiu todos os lances desta variante{training.mistakes ? ` depois de ${training.mistakes} ${training.mistakes === 1 ? 'erro' : 'erros'}` : ' sem erros'}.</Notice>
-      <Button label="Praticar novamente" icon="refresh" variant="secondary" onPress={restart} /></> : <>
-      <ChessBoard fen={fen} orientation={side} onMove={learning || training.revealed ? undefined : move} disabled={learning || training.revealed}
-        feedbackArrows={feedbackArrows} lastMove={learning ? expectedMove : training.line[training.index - 1]} />
-      {learning ? <Notice><Text style={{ fontWeight: '700' }}>Observe: {expectedSan}.</Text> {why} Logo depois você fará este lance sem a indicação.</Notice>
-        : training.outcome === 'correct' ? <Notice tone="success">Correto: {expectedSan}. {why}</Notice>
-        : training.outcome === 'wrong' ? <Notice tone="error">A seta vermelha mostra seu lance; a verde mostra o correto: {expectedSan}. Este lance voltará na revisão.</Notice>
-        : training.outcome === 'dont-know' ? <Notice tone="error">Sem problema: o lance é {expectedSan}. Ele foi marcado para revisão até você acertar.</Notice>
-        : <Text style={s.muted}>{training.phase === 'review' ? 'Este lance voltou porque houve um erro. Faça-o corretamente para limpar a pilha.' : 'Agora é com você: jogue o lance que acabou de aprender.'}</Text>}
-      <View style={s.wrap}>{learning || training.revealed ? <Button label={learning && training.cursor === training.studentPlies.length - 1 ? 'Começar prática' : 'Continuar'} icon="arrow" onPress={advance} /> : <Button label="Não sei" variant="secondary" onPress={() => setTraining(hintOpeningTraining(training))} />}
-        <Button label="Recomeçar aula" icon="refresh" variant="ghost" onPress={restart} /></View></>}
-    <OpeningCompletions onlyRequestId={training.requestId} onReview={(id, reviewSide) => replace({ screen: 'opening', id, studySide: reviewSide })} />
-    <Text style={s.small}>Cada posição inclui a resposta publicada do adversário. Erros e “não sei” voltam no fim até serem corrigidos e influenciam a próxima revisão.</Text>
-  </View>;
+  const completion = completions.records.find(record => record.attempt.requestId === training.requestId);
+  const phaseLabel = learning ? 'Aprenda' : training.phase === 'review' ? 'Corrija' : finished ? 'Dominado' : 'Pratique';
+  const message = finished ? <StudyMessage tone="success">{completion?.status === 'error' ? 'Linha dominada; não foi possível salvar agora.' : completion?.status === 'saved' ? 'Linha dominada e progresso salvo.' : 'Linha dominada. Muito bem!'}</StudyMessage>
+    : learning ? <StudyMessage>Observe {expectedSan}. {why}</StudyMessage>
+    : training.outcome === 'correct' ? <StudyMessage tone="success">Correto: {expectedSan}. {why}</StudyMessage>
+    : training.outcome === 'wrong' ? <StudyMessage tone="error">Seu lance está em vermelho; o correto é {expectedSan}.</StudyMessage>
+    : training.outcome === 'dont-know' ? <StudyMessage tone="error">O lance é {expectedSan}. Ele voltará para revisão.</StudyMessage>
+    : <StudyMessage>{training.phase === 'review' ? 'Corrija este lance para limpar a pilha.' : 'Jogue o lance que você acabou de aprender.'}</StudyMessage>;
+  const nextVariant = opening.familyNavigation?.next;
+  const actions = finished ? <View style={[s.row, { justifyContent: 'center' }]}>
+      <Button label="Refazer" icon="refresh" compact variant="ghost" onPress={restart} />
+      {nextVariant ? <Button label="Próxima variante" icon="arrow" onPress={() => replace({ screen: 'opening', id: nextVariant.id, studySide: side })} /> : null}
+    </View>
+    : learning || training.revealed ? <Button label={learning && training.cursor === training.studentPlies.length - 1 ? 'Começar prática' : 'Continuar'} icon="arrow" onPress={advance} />
+    : <Button label="Não sei" variant="secondary" onPress={() => setTraining(hintOpeningTraining(training))} />;
+  return <StudyLayout title={opening.name} subtitle={`${opening.eco} · ${phaseLabel}`} eyebrow={focusPly !== undefined ? 'Revisão focada' : opening.family}
+    onBack={onBack} progress={progress} topAction={<Chip label={side === 'w' ? 'Brancas' : 'Pretas'} selected onPress={onToggleSide} />}
+    renderBoard={maxSize => <ChessBoard fen={fen} orientation={side} maxSize={maxSize} hideStatus
+      onMove={finished || learning || training.revealed ? undefined : move} disabled={finished || learning || training.revealed}
+      feedbackArrows={feedbackArrows} lastMove={finished ? opening.moves.at(-1) : learning ? expectedMove : training.line[training.index - 1]} />}
+    status={message}
+    stats={!learning && !finished ? <MasteryStrip compact todo={counts.todo} wrong={counts.wrong} correct={counts.correct} /> : undefined}
+    actions={actions} />;
 }

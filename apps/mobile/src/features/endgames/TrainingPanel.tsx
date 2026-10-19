@@ -6,13 +6,34 @@ import { s } from '../../ui/theme';
 import type { EndgameTheme } from './contracts';
 import { categoryLabels, endgameStatus } from './training-state';
 import { useEndgameTraining } from './useEndgameTraining';
+import { StudyLayout, StudyMessage } from '../../ui/StudyLayout';
 
-export function TrainingBoard({ trainer }: { trainer: ReturnType<typeof useEndgameTraining> }) {
+export function TrainingBoard({ trainer, study }: { trainer: ReturnType<typeof useEndgameTraining>; study?: { title: string; subtitle?: string; onBack: () => void; onNext?: () => void } }) {
   const { state, move, hint, reset } = trainer;
   const { exercise, position } = state;
   const [showMoves, setShowMoves] = useState(false);
   if (!exercise || !position) return null;
   const lost = state.feedback?.code === 'lost-win' || state.feedback?.code === 'lost-draw';
+  if (study) {
+    const message = state.operation === 'move' ? <StudyMessage>Avaliando e preparando a resposta…</StudyMessage>
+      : state.error ? <StudyMessage tone="error">{state.error}</StudyMessage>
+      : position.terminal ? <StudyMessage tone={lost ? 'error' : 'success'}>{endgameStatus(position)}</StudyMessage>
+      : state.hint ? <StudyMessage>Dica: {position.moves.find(item => item.uci === state.hint)?.san || state.hint}.</StudyMessage>
+      : state.feedback ? <StudyMessage tone={lost ? 'error' : state.feedback.code === 'preserved' ? 'success' : 'info'}>{state.feedback.message}</StudyMessage>
+      : <StudyMessage>{exercise.objective === 'win' ? 'Converta a vantagem.' : 'Segure o empate.'} A resposta adversária é automática.</StudyMessage>;
+    const actions = position.terminal ? <View style={[s.row, { justifyContent: 'center' }]}>
+        <Button label="Refazer" variant="ghost" compact icon="refresh" onPress={reset} />
+        {study.onNext ? <Button label="Próximo final" icon="arrow" onPress={study.onNext} /> : null}
+      </View>
+      : <View style={[s.row, { justifyContent: 'center' }]}><Button label="Dica" variant="secondary" compact onPress={() => { void hint(); }} busy={state.operation === 'hint'} disabled={!!state.operation} />
+        <Button label="Recomeçar" variant="ghost" compact icon="refresh" onPress={reset} disabled={!state.history.length && !state.operation} /></View>;
+    return <StudyLayout title={study.title} subtitle={study.subtitle} eyebrow={exercise.objective === 'win' ? 'Objetivo: vencer' : 'Objetivo: empatar'}
+      onBack={study.onBack} progress={position.terminal ? 100 : Math.min(90, state.history.length * 10)}
+      renderBoard={maxSize => <ChessBoard fen={position.fen} orientation={exercise.side} maxSize={maxSize} hideStatus
+        lastMove={state.history.at(-1)} hint={state.hint || undefined} onMove={uci => { void move(uci); }}
+        disabled={!!state.operation || !!position.terminal || position.turn !== exercise.side} />}
+      status={message} actions={actions} />;
+  }
   return <View style={s.stack}>
     <Card><View style={s.between}><Text style={s.h2}>{exercise.title}</Text><Badge>{exercise.objective === 'win' ? 'Vencer' : 'Empatar'}</Badge></View>
       <Text style={s.body}>Você joga de {exercise.side === 'w' ? 'brancas' : 'pretas'}. A resposta adversária é automática.</Text>

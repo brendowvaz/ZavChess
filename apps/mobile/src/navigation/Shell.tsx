@@ -20,6 +20,7 @@ export function Shell({ children }: React.PropsWithChildren) {
   const { user, notice, retrySession, dismissNotice, restoring } = useAuth();
   const scroll = useRef<ScrollView>(null);
   const selected = activeTab(route);
+  const immersive = ['lesson', 'puzzle', 'opening', 'endgame', 'puzzles'].includes(route.screen);
   const screenLabel = selected === 'settings' ? 'Configurações' : tabs.find(tab => tab.id === selected)?.label ?? 'Aprender';
   useEffect(() => { scroll.current?.scrollTo({ y: 0, animated: false }); }, [route]);
   useEffect(() => {
@@ -35,6 +36,7 @@ export function Shell({ children }: React.PropsWithChildren) {
     <Text style={{ fontSize: bottom ? 10 : 14, fontWeight: selected === tab.id ? '700' : '500', color: selected === tab.id ? colors.forest : colors.muted }}>{tab.label}</Text>
     {!bottom && selected === tab.id ? <View style={{ marginLeft: 'auto', width: 5, height: 5, borderRadius: 3, backgroundColor: colors.forest }} /> : null}
   </Pressable>);
+  if (immersive) return <View style={{ flex: 1, minHeight: 0, backgroundColor: colors.background, paddingTop: insets.top }}>{notice ? <View style={{ padding: 8 }}><Notice>{notice}</Notice></View> : null}{children}</View>;
   return <View style={{ flex: 1, flexDirection: 'row', backgroundColor: colors.background, paddingTop: insets.top }}>
     {wide ? <View style={{ width: 224, borderRightWidth: 1, borderRightColor: colors.line, backgroundColor: colors.surface, padding: 24, paddingTop: 35, gap: 36 }}>
       <View style={s.row}><BrandMark /><View><Text style={{ fontFamily: serif, fontSize: 25, color: colors.forest }}>zav chess</Text><Text style={[s.eyebrow, { fontSize: 8, letterSpacing: 2.1 }]}>Um lance à frente</Text></View></View>

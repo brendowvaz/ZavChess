@@ -268,10 +268,11 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
   }), [endDrag, game, interactive, moveDraggedPiece, squareAt]);
 
   if (!game) return <ErrorState message="O tabuleiro recebeu uma posição inválida. Recarregue este conteúdo." />;
-  return <View style={{ width: fullBleed ? compactWidth : '100%', maxWidth: fullBleed ? undefined : maxSize, alignSelf: 'center', gap: 12 }} onLayout={e => setWidth(e.nativeEvent.layout.width)}>
+  const fillsCompactWidth = fullBleed && compactWidth <= maxSize;
+  return <View style={{ width: fullBleed ? Math.min(compactWidth, maxSize) : '100%', maxWidth: maxSize, alignSelf: 'center', gap: 12 }} onLayout={e => setWidth(e.nativeEvent.layout.width)}>
     <View ref={boardRef} onLayout={measureBoard} onPointerDown={startPointer} onPointerMove={movePointer}
       onPointerUp={releasePointer} onPointerCancel={cancelPointer} {...(Platform.OS === 'web' ? {} : panResponder.panHandlers)}
-      style={{ borderRadius: fullBleed ? 0 : 8, overflow: 'hidden', width: '100%', aspectRatio: 1, backgroundColor: theme.light }}>
+      style={{ borderRadius: fillsCompactWidth ? 0 : 8, overflow: 'hidden', width: '100%', aspectRatio: 1, backgroundColor: theme.light }}>
       {ranks.map((rank, row) => <View key={rank} style={{ flexDirection: 'row', flex: 1 }}>{files.map((file, col) => {
         const square = `${file}${rank}` as Square;
         const piece = game.get(square);
