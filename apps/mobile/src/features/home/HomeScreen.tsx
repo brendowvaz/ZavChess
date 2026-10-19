@@ -10,6 +10,9 @@ import { colors, s, serif } from '../../ui/theme';
 import { ChessBoard } from '../../chess/ChessBoard';
 import { DEFAULT_POSITION } from '../../chess/logic';
 import { StudyPlan } from '../learning/StudyPlan';
+import { useAppearance } from '../../appearance/AppearanceProvider';
+import { lessonTrack } from '../lessons/lesson-session';
+import { ActivityCalendar } from './ActivityCalendar';
 
 const practice: { screen: Tab; icon: IconName; title: string; description: string; tag: string }[] = [
   { screen: 'puzzles', icon: 'puzzle', title: 'Encontre o melhor lance', description: 'Treine o olhar para as oportunidades.', tag: 'TÁTICA' },
@@ -23,12 +26,13 @@ export function HomeScreen() {
   const dashboard = useResource<Dashboard>(user ? '/dashboard' : null, revision);
   const progress = useResource<Progress>(user ? '/progress' : null, revision);
   const lessons = useResource<Lesson[]>('/lessons');
-  const next = lessons.data?.slice().sort((a, b) => a.sortOrder - b.sortOrder).find(lesson => !progress.data?.completedLessonIds.includes(lesson.id));
+  const { appearance } = useAppearance();
+  const next = lessons.data?.filter(lesson => lessonTrack(lesson) === appearance.learningTrack).sort((a, b) => a.sortOrder - b.sortOrder).find(lesson => !progress.data?.completedLessonIds.includes(lesson.id));
   const data = dashboard.data;
   return <View style={s.page}>
     <Heading eyebrow="Um pouco de xadrez. Todos os dias." title={user ? `Seu próximo lance, ${user.name.split(' ')[0]}.` : 'Grandes ideias começam aqui.'}
       description="Um espaço para entender o jogo e evoluir no seu ritmo." />
-    <View style={{ backgroundColor: colors.forest, borderRadius: 24, padding: width > 700 ? 32 : 25, overflow: 'hidden', flexDirection: 'row', gap: 28 }}>
+    <View style={{ backgroundColor: colors.forestDark, borderRadius: 24, padding: width > 700 ? 32 : 25, overflow: 'hidden', flexDirection: 'row', gap: 28 }}>
       <View style={{ flex: 1, gap: 17, justifyContent: 'center' }}><Text style={[s.eyebrow, { color: '#BBCBAC', fontSize: 10 }]}>Do primeiro movimento ao xeque-mate</Text>
         <Text style={{ fontFamily: serif, color: '#FFFBE8', fontSize: width > 700 ? 39 : 32, lineHeight: width > 700 ? 46 : 39 }}>Aprenda a enxergar{width > 700 ? '\n' : ' '}além do lance.</Text>
         <Text style={{ color: '#D4E0CE', fontSize: 14, lineHeight: 23, maxWidth: 390 }}>Aulas que explicam. Tabuleiros que ensinam. Prática que faz a diferença.</Text>
@@ -51,6 +55,14 @@ export function HomeScreen() {
         <Card><View style={s.between}><Text style={s.h3}>Seu caminho de aprendizado</Text><Badge>Rating {data.user.rating}</Badge></View>
           <ProgressBar value={data.counts.lessons ? data.completedLessons / data.counts.lessons * 100 : 0} label="Porcentagem das aulas concluídas" />
           <Text style={s.small}>{data.completedLessons} de {data.counts.lessons} aulas concluídas. Cada conceito é mais uma ferramenta no seu jogo.</Text></Card>
+        <Card><View style={s.between}><View><Text style={s.h3}>Sequência diária</Text><Text style={s.small}>{data.weekly.activeDays} dias ativos nos últimos 7 dias</Text></View><View style={[s.row, { gap: 6 }]}><Icon name="flame" color={colors.gold} /><Text style={s.h2}>{data.streak}</Text></View></View>
+          <Text style={s.muted}>Qualquer aula, puzzle ou treino concluído conta como prática. Volte a cada dia para manter a sequência.</Text></Card>
+        <ActivityCalendar dates={data.activeDates ?? []} />
+        <Card><View style={s.between}><Text style={s.h3}>Desafios da semana</Text><Badge tone="gold">PESSOAL</Badge></View>
+          {[{ label: 'Resolver 5 puzzles', value: data.weekly.puzzles, goal: 5 }, { label: 'Treinar 2 linhas de abertura', value: data.weekly.openings, goal: 2 }, { label: 'Concluir 2 lições', value: data.weekly.lessons, goal: 2 }].map(challenge => <View key={challenge.label} style={s.stack}>
+            <View style={s.between}><Text style={s.body}>{challenge.label}</Text><Text style={s.small}>{Math.min(challenge.value, challenge.goal)}/{challenge.goal}</Text></View><ProgressBar value={challenge.value / challenge.goal * 100} label={challenge.label} /></View>)}
+          <Text style={s.small}>Metas motivacionais, sem prêmio pago, limite de uso ou conteúdo bloqueado.</Text></Card>
+        <View style={s.wrap}><Button label="Ver relatório completo" icon="spark" variant="secondary" onPress={() => navigate({ screen: 'report' })} /><Button label="Grupos de estudo" variant="secondary" onPress={() => navigate({ screen: 'community' })} /><Button label="Configurações" icon="settings" variant="ghost" onPress={() => navigate({ screen: 'settings' })} /></View>
       </> : null}
     </> : <Card style={{ flexDirection: width > 650 ? 'row' : 'column', alignItems: width > 650 ? 'center' : 'stretch' }}>
       <View style={[s.grow, { gap: 5 }]}><Text style={s.h3}>Seu progresso merece um lugar.</Text><Text style={s.muted}>Crie sua conta para guardar as aulas concluídas e os puzzles resolvidos.</Text></View>

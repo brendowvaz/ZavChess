@@ -4,6 +4,7 @@ import { PrismaService } from '../database/prisma.service';
 import { publicUser } from '../auth/auth.service';
 import { calculateStreak, puzzlePosition, validatePuzzle } from '../chess/chess-rules';
 import { LearningService } from '../learning/learning.service';
+import { studyDate } from '../learning/schedule';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import {
@@ -41,8 +42,18 @@ export class ContentService {
   async lesson(id: string) {
     const lesson = await this.db.lesson.findUnique({ where: { id } });
     if (!lesson) throw new NotFoundException('Aula não encontrada.');
-    const { quiz: _legacyQuiz, ...boardLesson } = lesson;
-    return boardLesson;
+    const themes: Record<string, string> = {
+      'mate-em-um': 'mateIn1', 'mate-em-dois': 'mateIn2', garfo: 'fork', cravada: 'pin', espeto: 'skewer',
+      'ataque-descoberto': 'discoveredAttack', 'xeque-duplo': 'doubleCheck', 'desvio-do-defensor': 'deflection', atracao: 'attraction',
+      'peca-pendurada': 'hangingPiece', 'peca-presa': 'trappedPiece', liberacao: 'clearance', interferencia: 'interference',
+      'sacrificio-calculado': 'sacrifice', 'promocao-tatica': 'promotion', 'defesa-ativa': 'defensiveMove',
+    };
+    const theme = themes[lesson.slug];
+    const band = lesson.level === 'advanced' ? [1600, 2600] : lesson.level === 'intermediate' ? [1000, 1900] : [300, 1300];
+    const examples = theme ? await this.db.puzzle.findMany({ where: { themes: { array_contains: theme }, rating: { gte: band[0], lte: band[1] } },
+      orderBy: [{ rating: 'asc' }, { id: 'asc' }], take: 4 }) : [];
+    return { ...lesson, challenges: examples.map(item => ({ id: item.id, fen: puzzlePosition(item.fen, item.moves as string[]).fen(),
+      moves: (item.moves as string[]).slice(1), rating: item.rating, sourceUrl: item.sourceUrl })) };
   }
 
   async completeLesson(userId: string, lessonId: string, answer: number, requestId?: string) {
@@ -257,7 +268,7 @@ export class ContentService {
         create: { ...practiceKey, hintUsed, mistakes: incorrect ? 1 : 0 },
         update: { ...(hintUsed ? { hintUsed: true } : {}), ...(incorrect ? { mistakes: { increment: 1 } } : {}) },
       });
-      // Historical hints stay sticky for XP; each new practice has its own recall quality.
+      // Track help for scheduling; help itself never reduces rewards.
       const attempt = await tx.puzzleAttempt.upsert({ where,
         create: { userId, puzzleId, hintUsed, mistakes: incorrect ? 1 : 0 },
         update: { ...(hintUsed ? { hintUsed: true } : {}), ...(incorrect ? { mistakes: { increment: 1 } } : {}) },
@@ -268,10 +279,11 @@ export class ContentService {
       let xpEarned = 0;
       if (!attempt.solved) {
         await tx.puzzleAttempt.update({ where, data: { solved: true, solvedAt: new Date() } });
-        xpEarned = attempt.hintUsed ? 0 : attempt.mistakes > 0 ? 5 : 15;
+        // Dicas são uma ferramenta didática, não uma limitação: não retiram XP nem rating.
+        xpEarned = attempt.mistakes > 0 ? 5 : 15;
         const user = await tx.user.findUniqueOrThrow({ where: { id: userId } });
         const expected = 1 / (1 + 10 ** ((puzzle.rating - user.rating) / 400));
-        const performance = attempt.hintUsed ? 0 : attempt.mistakes > 0 ? 0.5 : 1;
+        const performance = attempt.mistakes > 0 ? 0.5 : 1;
         const rating = Math.max(100, Math.min(3500, user.rating + Math.round(20 * (performance - expected))));
         await tx.user.update({ where: { id: userId }, data: { xp: { increment: xpEarned }, rating } });
       }
@@ -280,6 +292,22 @@ export class ContentService {
       return { response: { ...publicResult, xpEarned }, completed: true, success: clean, mistakes: practice.mistakes,
         hintUsed: practice.hintUsed, recall: clean ? 'good' : 'hard' };
     });
+  }
+
+  async puzzleSolution(id: string) {
+    const puzzle = await this.db.puzzle.findUnique({ where: { id } });
+    if (!puzzle) throw new NotFoundException('Puzzle não encontrado.');
+    const moves = puzzle.moves as string[];
+    return { fen: puzzlePosition(puzzle.fen, moves).fen(), moves: moves.slice(1) };
+  }
+
+  async checkPuzzle(id: string, moves: string[], hintUsed: boolean) {
+    const puzzle = await this.db.puzzle.findUnique({ where: { id } });
+    if (!puzzle) throw new NotFoundException('Puzzle não encontrado.');
+    try {
+      const { expectedMove, ...result } = validatePuzzle(puzzle.fen, puzzle.moves as string[], moves);
+      return { ...result, ...(hintUsed ? { expectedMove } : {}) };
+    } catch { throw new BadRequestException('Sequência de lances inválida.'); }
   }
 
   async progress(userId: string) {
@@ -291,13 +319,19 @@ export class ContentService {
   }
 
   async dashboard(user: User) {
-    const [completedLessons, solvedPuzzles, recentActivity, days, lessons, openings, puzzles, endgames] = await Promise.all([
+    const weekStart = new Date(Date.now() - 7 * 86_400_000);
+    const [completedLessons, solvedPuzzles, recentActivity, days, weeklyActivity, lessons, openings, puzzles, endgames] = await Promise.all([
       this.db.lessonProgress.count({ where: { userId: user.id } }),
       this.db.puzzleAttempt.count({ where: { userId: user.id, solved: true } }),
       this.db.activity.findMany({ where: { userId: user.id }, orderBy: { createdAt: 'desc' }, take: 6, select: { id: true, type: true, title: true, createdAt: true } }),
       this.db.activity.findMany({ where: { userId: user.id }, select: { createdAt: true } }),
+      this.db.activity.findMany({ where: { userId: user.id, createdAt: { gte: weekStart } }, select: { type: true, createdAt: true } }),
       this.db.lesson.count(), this.db.opening.count(), this.db.puzzle.count(), this.db.endgame.count(),
     ]);
-    return { user: publicUser(user), completedLessons, solvedPuzzles, recentActivity, streak: calculateStreak(days.map((row) => row.createdAt)), counts: { lessons, openings, puzzles, endgames } };
+    const activeDays = new Set(weeklyActivity.map(item => item.createdAt.toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' }))).size;
+    return { user: publicUser(user), completedLessons, solvedPuzzles, recentActivity, streak: calculateStreak(days.map((row) => row.createdAt)),
+      activeDates: [...new Set(days.map(row => studyDate(row.createdAt)))],
+      weekly: { puzzles: weeklyActivity.filter(item => item.type === 'puzzle').length, openings: weeklyActivity.filter(item => item.type === 'opening').length,
+        lessons: weeklyActivity.filter(item => item.type === 'lesson').length, activeDays }, counts: { lessons, openings, puzzles, endgames } };
   }
 }

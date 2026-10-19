@@ -3,16 +3,17 @@ import { Pressable, Text, useWindowDimensions, View } from 'react-native';
 import { Icon } from './Icon';
 import { colors, s } from './theme';
 
-export function StudyLayout({ title, subtitle, eyebrow, progress, onBack, topAction, renderBoard, status, stats, actions }: {
+export function StudyLayout({ title, subtitle, eyebrow, progress, onBack, topAction, renderBoard, status, stats, actions, boardMaxSize = 720 }: {
   title: string; subtitle?: string; eyebrow?: string; progress?: number; onBack: () => void;
   topAction?: React.ReactNode; renderBoard: (maxSize: number) => React.ReactNode;
   status?: React.ReactNode; stats?: React.ReactNode; actions?: React.ReactNode;
+  boardMaxSize?: number;
 }) {
   const { width, height } = useWindowDimensions();
   const horizontal = width >= 780 || width > height;
-  const boardSize = Math.max(240, Math.floor(horizontal
+  const boardSize = Math.min(boardMaxSize, Math.max(180, Math.floor(horizontal
     ? Math.min(720, height - 96, width - 360)
-    : Math.min(width, height - 270)));
+    : Math.min(width, height - 320))));
   const clamped = Math.max(0, Math.min(100, progress ?? 0));
   return <View style={{ flex: 1, minHeight: 0, backgroundColor: colors.background, overflow: 'hidden' }}>
     <View style={{ minHeight: 64, paddingHorizontal: 14, paddingVertical: 8, flexDirection: 'row', alignItems: 'center', gap: 10,
@@ -29,7 +30,7 @@ export function StudyLayout({ title, subtitle, eyebrow, progress, onBack, topAct
       <View style={{ minWidth: 44, alignItems: 'flex-end' }}>{topAction}</View>
     </View>
     {progress !== undefined ? <View accessibilityRole="progressbar" accessibilityLabel="Progresso da atividade"
-      accessibilityValue={{ min: 0, max: 100, now: Math.round(clamped) }} style={{ height: 4, backgroundColor: '#E6EADC' }}>
+      accessibilityValue={{ min: 0, max: 100, now: Math.round(clamped) }} style={{ height: 4, backgroundColor: colors.line }}>
       <View style={{ width: `${clamped}%`, height: 4, backgroundColor: colors.forest }} />
     </View> : null}
     <View style={{ flex: 1, minHeight: 0, flexDirection: horizontal ? 'row' : 'column', alignItems: horizontal ? 'center' : 'stretch',
@@ -50,9 +51,9 @@ export function StudyLayout({ title, subtitle, eyebrow, progress, onBack, topAct
 
 export function StudyMessage({ children, tone = 'info' }: React.PropsWithChildren<{ tone?: 'info' | 'success' | 'error' }>) {
   const color = tone === 'error' ? colors.error : colors.forest;
-  const backgroundColor = tone === 'error' ? colors.errorBg : tone === 'success' ? '#DCECD8' : colors.pale;
+  const backgroundColor = tone === 'error' ? colors.errorBg : colors.pale;
   return <View accessibilityRole={tone === 'error' ? 'alert' : undefined} accessibilityLiveRegion="polite"
     style={{ minHeight: 48, borderRadius: 12, paddingHorizontal: 14, paddingVertical: 11, alignItems: 'center', justifyContent: 'center', backgroundColor }}>
-    <Text numberOfLines={3} style={[s.body, { color, fontWeight: '600', textAlign: 'center', fontSize: 14, lineHeight: 19 }]}>{children}</Text>
+    <Text style={[s.body, { color, fontWeight: '600', textAlign: 'center', fontSize: 14, lineHeight: 19 }]}>{children}</Text>
   </View>;
 }

@@ -1,9 +1,9 @@
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { BackHandler, Platform } from 'react-native';
 
-export type Tab = 'home' | 'lessons' | 'openings' | 'puzzles' | 'endgames' | 'analysis';
-export type Route = { screen: Tab | 'auth' | 'settings' | 'report' | 'today' | 'repertoires' } | { screen: 'lesson' | 'puzzle' | 'opening-family' | 'endgame' | 'repertoire'; id: string } | { screen: 'opening'; id: string; studySide?: 'w' | 'b'; focusPly?: number };
-const screenNames = new Set(['home', 'lessons', 'openings', 'puzzles', 'endgames', 'analysis', 'auth', 'settings', 'report', 'today', 'repertoires', 'repertoire', 'lesson', 'puzzle', 'opening', 'opening-family', 'endgame']);
+export type Tab = 'openings' | 'lessons' | 'endgames' | 'games' | 'puzzles';
+export type Route = { screen: Tab | 'home' | 'analysis' | 'auth' | 'settings' | 'report' | 'today' | 'repertoires' | 'community' } | { screen: 'lesson' | 'puzzle' | 'opening-family' | 'endgame' | 'repertoire' | 'game'; id: string } | { screen: 'opening'; id: string; studySide?: 'w' | 'b'; focusPly?: number };
+const screenNames = new Set(['home', 'lessons', 'openings', 'puzzles', 'endgames', 'games', 'game', 'analysis', 'auth', 'settings', 'report', 'today', 'repertoires', 'repertoire', 'lesson', 'puzzle', 'opening', 'opening-family', 'endgame', 'community']);
 function routeHash(route: Route) {
   const query = route.screen === 'opening' ? new URLSearchParams({ ...(route.studySide ? { side: route.studySide } : {}), ...(route.focusPly !== undefined ? { ply: String(route.focusPly) } : {}) }).toString() : '';
   return `#/${route.screen}${'id' in route ? `/${encodeURIComponent(route.id)}` : ''}${query ? `?${query}` : ''}`;
@@ -13,7 +13,7 @@ function readHash(): Route {
   const [path, query] = globalThis.location.hash.replace(/^#\/?/, '').split('?');
   const [screen, id] = path!.split('/');
   if (!screen || !screenNames.has(screen)) return { screen: 'home' };
-  if (screen === 'lesson' || screen === 'puzzle' || screen === 'opening' || screen === 'opening-family' || screen === 'endgame' || screen === 'repertoire') {
+  if (screen === 'lesson' || screen === 'puzzle' || screen === 'opening' || screen === 'opening-family' || screen === 'endgame' || screen === 'repertoire' || screen === 'game') {
     try {
       if (!id) return { screen: 'home' };
       const params = new URLSearchParams(query); const side = params.get('side'); const plyParam = params.get('ply'); const ply = plyParam === null ? Number.NaN : Number(plyParam);
@@ -23,15 +23,18 @@ function readHash(): Route {
   }
   return { screen: screen as Tab | 'auth' | 'settings' | 'report' };
 }
-export function activeTab(route: Route): Tab | 'settings' {
+export function activeTab(route: Route): Tab | 'settings' | 'home' {
   if (route.screen === 'lesson') return 'lessons';
   if (route.screen === 'puzzle') return 'puzzles';
   if (route.screen === 'report') return 'home';
+  if (route.screen === 'community') return 'home';
   if (route.screen === 'today') return 'home';
   if (route.screen === 'repertoires' || route.screen === 'repertoire') return 'openings';
   if (route.screen === 'opening') return 'openings';
   if (route.screen === 'opening-family') return 'openings';
   if (route.screen === 'endgame') return 'endgames';
+  if (route.screen === 'analysis') return 'games';
+  if (route.screen === 'game') return 'games';
   if (route.screen === 'auth') return 'home';
   return route.screen;
 }
@@ -74,7 +77,7 @@ export function NavigationProvider({ children }: React.PropsWithChildren) {
       return () => { globalThis.removeEventListener('popstate', sync); globalThis.removeEventListener('hashchange', sync); };
     }
     const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
-    if (stack.current.length || ['lesson', 'puzzle', 'opening', 'opening-family', 'endgame', 'auth', 'settings', 'report', 'today', 'repertoires', 'repertoire'].includes(route.screen)) { back(); return true; }
+    if (stack.current.length || ['lesson', 'puzzle', 'opening', 'opening-family', 'endgame', 'analysis', 'auth', 'settings', 'report', 'today', 'repertoires', 'repertoire', 'game', 'community'].includes(route.screen)) { back(); return true; }
       return false;
     });
     return () => subscription.remove();

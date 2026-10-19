@@ -11,7 +11,7 @@ export interface TrainingPosition {
   halfmoveClock: number; rule50: 'claim-at-100-plies'; source: { kind: 'tablebase' | 'rules'; name: string; url: string };
 }
 export interface TrainingExercise {
-  fen: string; side: Side; theme: EndgameTheme; objective: 'win' | 'draw'; title: string; instructions: string[];
+  fen: string; side: Side; theme: EndgameTheme; objective: 'win' | 'draw' | 'resist'; title: string; instructions: string[];
   source: { kind: 'generated' | 'reference'; name: string; url?: string }; tablebase: TrainingPosition;
 }
 export interface TrainingFeedback { code: 'lost-win' | 'lost-draw' | 'preserved' | 'uncertain'; message: string }

@@ -9,7 +9,7 @@ export function MasteryStrip({ todo, wrong, correct, compact = false }: { todo: 
     <Text style={[s.h2, { color, fontSize: compact ? 17 : 21, lineHeight: compact ? 21 : 28 }]}>{value}</Text>
   </View>;
   return <View style={[s.row, { alignItems: 'stretch', flexWrap: 'wrap' }]}>
-    {item('A fazer', todo, colors.muted, '#EFF1EC')}
+    {item('A fazer', todo, colors.muted, '#292D30')}
     {item('Erros', wrong, colors.error, colors.errorBg)}
     {item('Certos', correct, colors.forest, colors.pale)}
   </View>;

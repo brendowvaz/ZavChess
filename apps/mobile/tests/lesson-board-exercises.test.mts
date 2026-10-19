@@ -7,7 +7,7 @@ import { lessonBoardExercises } from '../src/features/lessons/board-exercises.ts
 
 type LessonFile = { id: string; steps: { title: string; text: string; fen?: string; moves?: string[] }[] }[];
 const lessonsPath = fileURLToPath(new URL('../../../data/lessons.json', import.meta.url));
-const lessons = JSON.parse(readFileSync(lessonsPath, 'utf8')) as LessonFile;
+const lessons = [...JSON.parse(readFileSync(lessonsPath, 'utf8')), ...JSON.parse(readFileSync(new URL('../../../data/lesson-extensions.json', import.meta.url), 'utf8'))] as LessonFile;
 
 test('todas as aulas têm ao menos uma prática do aluno no tabuleiro', () => {
   for (const lesson of lessons) {

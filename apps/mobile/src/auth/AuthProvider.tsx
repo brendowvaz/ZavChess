@@ -17,6 +17,14 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
   const [restoreKey, setRestoreKey] = useState(0);
   const sessionVersion = useRef(0);
   const refreshProgress = useCallback(() => setRevision(n => n + 1), []);
+  useEffect(() => {
+    if (!user || restoring || revision === 0) return;
+    const controller = new AbortController(); const version = sessionVersion.current;
+    void api.get<User>('/auth/me', controller.signal).then(current => {
+      if (!controller.signal.aborted && version === sessionVersion.current) setUser(current);
+    }).catch(() => { /* The study screen retains its own retry/error state. */ });
+    return () => controller.abort();
+  }, [revision, user?.id, restoring]);
   useEffect(() => onSessionExpired(() => {
     sessionVersion.current++; setApiToken(null); setUser(null); refreshProgress();
     setNotice('Sua sessão expirou. Entre novamente para continuar salvando seu progresso.');

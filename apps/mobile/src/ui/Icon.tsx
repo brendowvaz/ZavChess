@@ -2,7 +2,7 @@ import React from 'react';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { colors } from './theme';
 
-export type IconName = 'home' | 'book' | 'opening' | 'puzzle' | 'flag' | 'play' | 'arrow' | 'back' | 'check' | 'user' | 'search' | 'spark' | 'clock' | 'refresh' | 'chevron' | 'close' | 'settings';
+export type IconName = 'home' | 'book' | 'opening' | 'puzzle' | 'flag' | 'play' | 'arrow' | 'back' | 'check' | 'user' | 'search' | 'spark' | 'clock' | 'flame' | 'refresh' | 'chevron' | 'close' | 'settings';
 const paths: Record<IconName, string> = {
   settings: 'M4 7h3m6 0h7M4 17h9m6 0h1M10 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6M16 14a3 3 0 1 0 0 6 3 3 0 0 0 0-6',
   home: 'M3 10 12 3 21 10M5 9v12h5v-7h4v7h5V9',
@@ -16,6 +16,7 @@ const paths: Record<IconName, string> = {
   search: 'm16 16 5 5M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14',
   spark: 'm12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z',
   clock: 'M12 7v5l3 2M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20',
+  flame: 'M13 2c1 4-2 5-2 8 0 2 2 3 3 3 2 0 4-2 3-6 3 3 4 6 2 9-2 5-12 4-13-3-1-5 1-8 4-11 0 3 2 5 4 6-1-3 0-7 4-10Z',
   refresh: 'M20 7v5h-5M4 17v-5h5M5 7a8 8 0 0 1 14-1l1 6M4 12l1 6a8 8 0 0 0 14-1',
   chevron: 'm9 5 7 7-7 7', close: 'm6 6 12 12M18 6 6 18',
 };

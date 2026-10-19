@@ -12,8 +12,8 @@ export const boardThemes = {
   graphite: { name: 'Grafite', description: 'Cinzas neutros e contraste definido.', light: '#E0E2E2', dark: '#737C80', labelLight: '#40494D', labelDark: '#FFFFFF', selected: '#E8C16E', previous: '#C4C59A', check: '#DD928A', marker: '#253136' },
 } as const;
 export type BoardTheme = keyof typeof boardThemes;
-export type Appearance = { pieceStyle: PieceStyle; boardTheme: BoardTheme };
-export const defaultAppearance: Appearance = { pieceStyle: 'geometric', boardTheme: 'sage' };
+export type Appearance = { pieceStyle: PieceStyle; boardTheme: BoardTheme; autoAdvance: boolean; vibration: boolean; colorBlind: boolean; showLegalMoves: boolean; learningTrack: 'start' | 'improve' };
+export const defaultAppearance: Appearance = { pieceStyle: 'geometric', boardTheme: 'sage', autoAdvance: true, vibration: false, colorBlind: false, showLegalMoves: true, learningTrack: 'improve' };
 
 // Validate fields independently so older or damaged settings cannot break a board.
 export function parseAppearance(raw: string | null): Appearance {
@@ -24,6 +24,11 @@ export function parseAppearance(raw: string | null): Appearance {
     return {
       pieceStyle: pieceStyles.some(style => style.id === saved.pieceStyle) ? saved.pieceStyle as PieceStyle : defaultAppearance.pieceStyle,
       boardTheme: typeof saved.boardTheme === 'string' && Object.hasOwn(boardThemes, saved.boardTheme) ? saved.boardTheme as BoardTheme : defaultAppearance.boardTheme,
+      autoAdvance: typeof saved.autoAdvance === 'boolean' ? saved.autoAdvance : defaultAppearance.autoAdvance,
+      vibration: typeof saved.vibration === 'boolean' ? saved.vibration : defaultAppearance.vibration,
+      colorBlind: typeof saved.colorBlind === 'boolean' ? saved.colorBlind : defaultAppearance.colorBlind,
+      showLegalMoves: typeof saved.showLegalMoves === 'boolean' ? saved.showLegalMoves : defaultAppearance.showLegalMoves,
+      learningTrack: saved.learningTrack === 'start' ? 'start' : 'improve',
     };
   } catch { return { ...defaultAppearance }; }
 }

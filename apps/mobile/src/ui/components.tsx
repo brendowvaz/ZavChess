@@ -11,7 +11,7 @@ export function Button({ label, onPress, variant = 'primary', icon, disabled, bu
   return <Pressable accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ disabled: !!disabled || !!busy, busy: !!busy }}
     onPress={onPress} disabled={disabled || busy} style={({ pressed }) => [{ minHeight: compact ? 40 : 48, borderRadius: 12,
       paddingHorizontal: compact ? 13 : 18, paddingVertical: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 9,
-      backgroundColor: variant === 'primary' ? colors.forest : variant === 'secondary' ? colors.pale : variant === 'light' ? '#F0EFDA' : 'transparent',
+      backgroundColor: variant === 'primary' ? colors.forestDark : variant === 'secondary' ? colors.pale : variant === 'light' ? '#F0EFDA' : 'transparent',
       opacity: disabled || busy ? 0.5 : pressed ? 0.76 : 1 }, style]}>
     {busy ? <ActivityIndicator size="small" color={foreground} /> : icon ? <Icon name={icon} size={18} color={foreground} /> : null}
     <Text style={{ color: foreground, fontWeight: '600', fontSize: compact ? 13 : 14 }}>{label}</Text>
@@ -21,13 +21,13 @@ export function Chip({ label, selected, onPress }: { label: string; selected?: b
   return <Pressable accessibilityRole={onPress ? 'button' : 'text'} accessibilityState={{ selected: !!selected }} disabled={!onPress}
     onPress={onPress} style={({ pressed }) => ({ paddingHorizontal: 14, paddingVertical: 10, minHeight: onPress ? 44 : undefined,
       justifyContent: 'center', borderRadius: 24, borderWidth: 1, borderColor: selected ? colors.forest : colors.line,
-      backgroundColor: selected ? colors.forest : colors.surface, opacity: pressed ? 0.75 : 1 })}>
+      backgroundColor: selected ? colors.forestDark : colors.surface, opacity: pressed ? 0.75 : 1 })}>
     <Text style={{ fontSize: 13, color: selected ? colors.white : colors.muted, fontWeight: selected ? '600' : '400' }}>{label}</Text>
   </Pressable>;
 }
 export function Badge({ children, tone = 'green' }: React.PropsWithChildren<{ tone?: 'green' | 'gold' | 'neutral' }>) {
   return <View style={{ alignSelf: 'flex-start', borderRadius: 6, paddingHorizontal: 8, paddingVertical: 4,
-    backgroundColor: tone === 'gold' ? colors.warningBg : tone === 'neutral' ? '#EFEEE7' : colors.pale }}>
+    backgroundColor: tone === 'gold' ? colors.warningBg : tone === 'neutral' ? '#292D30' : colors.pale }}>
     <Text style={{ fontSize: 11, fontWeight: '600', color: tone === 'gold' ? colors.warning : colors.forest }}>{children}</Text>
   </View>;
 }
@@ -55,12 +55,12 @@ export function Empty({ title, description }: { title: string; description: stri
 }
 export function Field({ label, ...props }: TextInputProps & { label: string }) {
   return <View style={{ gap: 7 }}><Text style={s.label}>{label}</Text><TextInput accessibilityLabel={label}
-    placeholderTextColor="#849084" {...props} style={[s.input, props.style]} /></View>;
+    placeholderTextColor="#7F8984" {...props} style={[s.input, props.style]} /></View>;
 }
 export function ProgressBar({ value, label }: { value: number; label: string }) {
   const clamped = Math.min(100, Math.max(0, value));
   return <View accessibilityRole="progressbar" accessibilityLabel={label} accessibilityValue={{ min: 0, max: 100, now: Math.round(clamped) }}
-    style={{ height: 7, borderRadius: 5, backgroundColor: '#E6EADC', overflow: 'hidden' }}>
+    style={{ height: 7, borderRadius: 5, backgroundColor: '#30363A', overflow: 'hidden' }}>
     <View style={{ height: 7, width: `${clamped}%`, backgroundColor: colors.forest, borderRadius: 5 }} /></View>;
 }
 export function Pagination({ page, pageSize, total, onChange }: { page: number; pageSize: number; total: number; onChange: (n: number) => void }) {

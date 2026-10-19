@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Pressable, Text, useWindowDimensions, View } from 'react-native';
+import { Pressable, Switch, Text, useWindowDimensions, View } from 'react-native';
 import { Chess, type PieceSymbol } from 'chess.js';
 import { useAppearance } from '../../appearance/AppearanceProvider';
 import { boardThemes, defaultAppearance, pieceStyles, type BoardTheme, type PieceStyle } from '../../appearance/themes';
 import { ChessBoard } from '../../chess/ChessBoard';
 import { Piece } from '../../chess/Piece';
 import { moveUci } from '../../chess/logic';
-import { Button, Card, Heading, Notice } from '../../ui/components';
+import { Button, Card, Chip, Heading, Notice } from '../../ui/components';
 import { Icon } from '../../ui/Icon';
 import { colors, s } from '../../ui/theme';
 
@@ -23,6 +23,18 @@ export function SettingsScreen() {
     {saveState === 'error' ? <Notice tone="error" action={<Button label="Tentar salvar novamente" onPress={retrySave} variant="secondary" compact />}>
       Não foi possível acessar suas preferências salvas. As escolhas funcionam agora, mas podem não ser mantidas ao reabrir o app.
     </Notice> : null}
+    <Card><Text style={s.h2}>Seu ritmo de aprendizado</Text><View style={s.wrap}>
+      <Chip label="Já jogo · Quero evoluir" selected={appearance.learningTrack === 'improve'} onPress={() => updateAppearance({ learningTrack: 'improve' })} />
+      <Chip label="Estou começando" selected={appearance.learningTrack === 'start'} onPress={() => updateAppearance({ learningTrack: 'start' })} /></View>
+      {([
+        ['autoAdvance', 'Avançar automaticamente', 'Após acertos, siga para a próxima decisão. Você pode pausar durante a sessão.'],
+        ['showLegalMoves', 'Mostrar destinos legais', 'Veja as casas disponíveis ao selecionar uma peça.'],
+        ['colorBlind', 'Realces para daltonismo', 'Use azul, laranja e magenta nos realces do tabuleiro.'],
+        ['vibration', 'Vibrar ao jogar', 'Uma vibração curta confirma o movimento nos aparelhos compatíveis.'],
+      ] as const).map(([key, label, description]) => <View key={key} style={[s.between, { alignItems: 'flex-start' }]}>
+        <View style={{ flex: 1, gap: 4 }}><Text style={s.label}>{label}</Text><Text style={s.small}>{description}</Text></View>
+        <Switch accessibilityLabel={label} value={appearance[key]} onValueChange={value => updateAppearance({ [key]: value })} trackColor={{ true: colors.forestDark, false: colors.line }} />
+      </View>)}</Card>
     <View style={{ width: '100%', gap: 28 }}>
       <View style={{ width: '100%', minWidth: 0, gap: 28 }}>
         <View style={s.stack}>

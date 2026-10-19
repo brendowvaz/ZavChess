@@ -15,7 +15,7 @@ async function upsertInBatches(rows, operation) {
 }
 
 async function seed() {
-  const lessons = read('lessons');
+  const lessons = [...read('lessons'), ...read('lesson-extensions')];
   const openings = read('openings');
   const openingGuides = read('opening-guides').guides;
   const puzzles = read('puzzles');

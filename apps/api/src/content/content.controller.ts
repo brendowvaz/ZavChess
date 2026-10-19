@@ -54,6 +54,8 @@ export class ContentController {
   @Get('openings/:id') opening(@Param('id') id: string) { return this.content.opening(id); }
   @Get('puzzles') puzzles(@Query() query: PuzzleQuery) { return this.content.puzzles(query.minRating, query.maxRating, query.theme, query.page, query.pageSize); }
   @Get('puzzles/:id') puzzle(@Param('id') id: string) { return this.content.puzzle(id); }
+  @Get('puzzles/:id/solution') solution(@Param('id') id: string) { return this.content.puzzleSolution(id); }
+  @Post('puzzles/:id/check') check(@Param('id') id: string, @Body() body: AttemptDto) { return this.content.checkPuzzle(id, body.moves, body.hintUsed); }
   @Post('puzzles/:id/attempt') @UseGuards(AuthGuard)
   attempt(@CurrentUser() user: User, @Param('id') id: string, @Body() body: AttemptDto) { return this.content.attemptPuzzle(user.id, id, body.moves, body.hintUsed, body.requestId, body.practiceId); }
   @Get('progress') @UseGuards(AuthGuard) progress(@CurrentUser() user: User) { return this.content.progress(user.id); }

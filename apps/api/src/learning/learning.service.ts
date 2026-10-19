@@ -2,15 +2,17 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { Prisma } from '@prisma/client';
 import { randomUUID } from 'node:crypto';
 import { PrismaService } from '../database/prisma.service';
-import { nextReview, studyDate, trainingBand, type Recall } from './schedule';
+import { masteryPoints, masteryRank, nextReview, studyDate, trainingBand, type Recall } from './schedule';
 import { buildRepertoireCourses, lineDecisions, repertoireSpec, repertoireSpecs } from './repertoires';
 import { Chess } from 'chess.js';
+import { EngineService } from '../engine/engine.service';
+import { gameMovePosition, resultForPlayer, reviewEntries } from './game-review';
 
 type StudyKind = 'lesson' | 'puzzle' | 'opening' | 'position';
 type StudyInput = { kind: StudyKind; contentId: string; side?: string; requestId?: string };
 type Outcome = { response: object; completed: boolean; success: boolean; mistakes?: number; hintUsed?: boolean; recall: Recall | null };
 type Suggestion = { kind: Exclude<StudyKind, 'position'>; contentId: string; title: string; reason: string; dueAt?: string; side?: string; focusPly?: number };
-type ImportedGame = { externalId: string; playedAt: Date | null; color: 'w' | 'b'; moves: string[] };
+type ImportedGame = { externalId: string; playedAt: Date | null; color: 'w' | 'b'; moves: string[]; initialFen: string; opponent: string; opponentRating: number | null; result: string; speed: string };
 
 function uciHistory(game: Chess) {
   return game.history({ verbose: true }).map(move => `${move.from}${move.to}${move.promotion ?? ''}`);
@@ -37,7 +39,7 @@ async function fetchWithTimeout(url: string, init: RequestInit = {}) {
 
 @Injectable()
 export class LearningService {
-  constructor(private readonly db: PrismaService) {}
+  constructor(private readonly db: PrismaService, private readonly engine: EngineService) {}
 
   async capture(userId: string, input: StudyInput, action: (tx: Prisma.TransactionClient) => Promise<Outcome>) {
     const requestId = input.requestId || randomUUID();
@@ -126,7 +128,7 @@ export class LearningService {
     const [rows, selected, reviews] = await Promise.all([
       this.courseRows(),
       this.db.userRepertoire.findMany({ where: { userId }, select: { courseId: true } }),
-      this.db.studyReview.findMany({ where: { userId, kind: 'position' }, select: { contentId: true, dueAt: true, repetitions: true } }),
+      this.db.studyReview.findMany({ where: { userId, kind: 'position' }, select: { contentId: true, dueAt: true, repetitions: true, stage: true } }),
     ]);
     const selectedIds = new Set(selected.map(item => item.courseId));
     const byKey = new Map(reviews.map(review => [review.contentId, review]));
@@ -135,8 +137,11 @@ export class LearningService {
       const keys = new Set(course.lines.flatMap(line => line.decisions.map(decision => decision.key)));
       const learned = [...keys].filter(key => byKey.has(key)).length;
       const due = [...keys].filter(key => (byKey.get(key)?.dueAt ?? new Date(8640000000000000)) <= now).length;
-      return { ...course, selected: selectedIds.has(course.id), learnedPositions: learned, duePositions: due,
-        mastery: keys.size ? Math.round(learned / keys.size * 100) : 0 };
+      const points = [...keys].reduce((sum, key) => sum + masteryPoints(byKey.get(key)), 0);
+      const mastery = keys.size ? Math.round(points / (keys.size * 10) * 100) : 0;
+      return { ...course, lines: course.lines.map(line => ({ ...line, decisions: line.decisions.map(decision => ({ ...decision,
+        masteryPoints: masteryPoints(byKey.get(decision.key)), dueAt: byKey.get(decision.key)?.dueAt.toISOString() ?? null })) })),
+        selected: selectedIds.has(course.id), learnedPositions: learned, duePositions: due, mastery, rank: masteryRank(mastery), points, maxPoints: keys.size * 10 };
     });
   }
 
@@ -161,7 +166,7 @@ export class LearningService {
     const archives = (archivePayload.archives ?? []).slice(-2);
     const batches = await Promise.all(archives.map(async url => {
       const response = await fetchWithTimeout(url, { headers: { 'User-Agent': 'ZavChess/0.1 learning-import' } });
-      return (await response.json() as { games?: Array<{ url?: string; pgn?: string; end_time?: number; white?: { username?: string }; black?: { username?: string } }> }).games ?? [];
+      return (await response.json() as { games?: Array<{ url?: string; pgn?: string; end_time?: number; time_class?: string; white?: { username?: string; rating?: number }; black?: { username?: string; rating?: number } }> }).games ?? [];
     }));
     return batches.flat().slice(-50).flatMap(raw => {
       try {
@@ -169,7 +174,10 @@ export class LearningService {
           : raw.black?.username?.toLocaleLowerCase() === username.toLocaleLowerCase() ? 'b' : null;
         if (!color || !raw.pgn) return [];
         const game = new Chess(); game.loadPgn(raw.pgn);
-        return [{ externalId: raw.url ?? `${raw.end_time}-${uciHistory(game).join('')}`, playedAt: raw.end_time ? new Date(raw.end_time * 1000) : null, color, moves: uciHistory(game) }];
+        const opponent = color === 'w' ? raw.black : raw.white;
+        return [{ externalId: raw.url ?? `${raw.end_time}-${uciHistory(game).join('')}`, playedAt: raw.end_time ? new Date(raw.end_time * 1000) : null, color, moves: uciHistory(game),
+          initialFen: game.history({ verbose: true })[0]?.before ?? new Chess().fen(), opponent: opponent?.username ?? 'Adversário', opponentRating: opponent?.rating ?? null,
+          result: resultForPlayer(game.getHeaders().Result, color), speed: raw.time_class ?? 'unknown' }];
       } catch { return []; }
     });
   }
@@ -179,13 +187,16 @@ export class LearningService {
     const body = await response.text();
     return body.split(/\r?\n/).filter(Boolean).flatMap(line => {
       try {
-        const raw = JSON.parse(line) as { id?: string; createdAt?: number; moves?: string; players?: { white?: { user?: { name?: string } }; black?: { user?: { name?: string } } } };
+        const raw = JSON.parse(line) as { id?: string; createdAt?: number; initialFen?: string; moves?: string; speed?: string; winner?: string; status?: string; players?: { white?: { user?: { name?: string }; rating?: number }; black?: { user?: { name?: string }; rating?: number } } };
         const color = raw.players?.white?.user?.name?.toLocaleLowerCase() === username.toLocaleLowerCase() ? 'w'
           : raw.players?.black?.user?.name?.toLocaleLowerCase() === username.toLocaleLowerCase() ? 'b' : null;
         if (!color || !raw.id || !raw.moves) return [];
-        const game = new Chess();
+        const game = new Chess(raw.initialFen);
         for (const san of raw.moves.split(/\s+/)) game.move(san);
-        return [{ externalId: raw.id, playedAt: raw.createdAt ? new Date(raw.createdAt) : null, color, moves: uciHistory(game) }];
+        const opponent = color === 'w' ? raw.players?.black : raw.players?.white;
+        const result = raw.winner === 'white' ? '1-0' : raw.winner === 'black' ? '0-1' : ['draw', 'stalemate'].includes(raw.status ?? '') ? '1/2-1/2' : '*';
+        return [{ externalId: raw.id, playedAt: raw.createdAt ? new Date(raw.createdAt) : null, color, moves: uciHistory(game), initialFen: raw.initialFen ?? new Chess().fen(),
+          opponent: opponent?.user?.name ?? 'Anônimo', opponentRating: opponent?.rating ?? null, result: resultForPlayer(result, color), speed: raw.speed ?? 'unknown' }];
       } catch { return []; }
     });
   }
@@ -209,10 +220,13 @@ export class LearningService {
         : `O adversário escolheu uma resposta ainda não coberta depois de ${best.row.name}.`;
       return { game, openingId: best.row.id, firstMissPly: diverged ? best.prefix : null, weakness, summary };
     });
-    await this.db.openingGameImport.createMany({ data: analyzed.map(item => ({
-      userId, platform, username, gameExternalId: item.game.externalId, playedAt: item.game.playedAt, color: item.game.color,
-      openingId: item.openingId, firstMissPly: item.weakness ? item.firstMissPly : null, summary: item.summary,
-    })), skipDuplicates: true });
+    for (const item of analyzed) {
+      const data = { username, playedAt: item.game.playedAt, color: item.game.color, initialFen: item.game.initialFen, moves: item.game.moves,
+        opponent: item.game.opponent, opponentRating: item.game.opponentRating, result: item.game.result, speed: item.game.speed,
+        openingId: item.openingId, firstMissPly: item.weakness ? item.firstMissPly : null, summary: item.summary };
+      await this.db.openingGameImport.upsert({ where: { userId_platform_gameExternalId: { userId, platform, gameExternalId: item.game.externalId } },
+        create: { ...data, userId, platform, gameExternalId: item.game.externalId }, update: data });
+    }
     const weaknesses = analyzed.filter(item => item.weakness);
     const grouped = new Map<string, { openingId: string; count: number; summary: string }>();
     for (const item of weaknesses) {
@@ -224,7 +238,44 @@ export class LearningService {
       recommendations: [...grouped.values()].sort((a, b) => b.count - a.count).slice(0, 5) };
   }
 
-  async plan(userId: string) {
+  async games(userId: string) {
+    const rows = await this.db.openingGameImport.findMany({ where: { userId }, orderBy: [{ playedAt: 'desc' }, { importedAt: 'desc' }], take: 100 });
+    const openingIds = [...new Set(rows.flatMap(row => row.openingId ? [row.openingId] : []))];
+    const openings = await this.db.opening.findMany({ where: { id: { in: openingIds } }, select: { id: true, name: true, eco: true } });
+    const byId = new Map(openings.map(opening => [opening.id, opening]));
+    return rows.map(row => ({
+      id: row.id, platform: row.platform, username: row.username, playedAt: row.playedAt?.toISOString() ?? null,
+      color: row.color, openingId: row.openingId, opening: row.openingId ? byId.get(row.openingId) ?? null : null,
+      firstMissPly: row.firstMissPly, summary: row.summary, needsPractice: row.firstMissPly !== null,
+      opponent: row.opponent, opponentRating: row.opponentRating, result: row.result, speed: row.speed,
+      moveCount: Array.isArray(row.moves) ? row.moves.length : 0, analyzedMoves: Object.keys(reviewEntries(row.review)).length,
+    }));
+  }
+
+  async game(userId: string, id: string) {
+    const game = await this.db.openingGameImport.findFirst({ where: { id, userId } });
+    if (!game) throw new NotFoundException('Partida não encontrada.');
+    return game;
+  }
+
+  async reviewGameMove(userId: string, id: string, ply: number) {
+    const game = await this.game(userId, id);
+    const previous = reviewEntries(game.review)[String(ply)];
+    if (previous) return previous;
+    let position;
+    try { position = gameMovePosition(game.moves as string[] ?? [], game.initialFen, ply); }
+    catch { throw new BadRequestException('Não há lances para analisar. Importe esta partida novamente.'); }
+    const result = await this.engine.analyzeMove(position.fen, position.move, 12);
+    await this.db.$transaction(async tx => {
+      await tx.$queryRaw`SELECT id FROM OpeningGameImport WHERE id = ${id} AND userId = ${userId} FOR UPDATE`;
+      const latest = await tx.openingGameImport.findUniqueOrThrow({ where: { id } });
+      const merged = { ...reviewEntries(latest.review), [String(ply)]: result };
+      await tx.openingGameImport.update({ where: { id }, data: { review: merged as unknown as Prisma.InputJsonValue } });
+    });
+    return result;
+  }
+
+  async plan(userId: string, track: 'start' | 'improve' = 'improve') {
     const [user, reviews, lessons, progress, attempts, events] = await Promise.all([
       this.db.user.findUniqueOrThrow({ where: { id: userId } }),
       this.db.studyReview.findMany({ where: { userId }, orderBy: { dueAt: 'asc' } }),
@@ -253,7 +304,8 @@ export class LearningService {
     const completed = new Set(progress.map(row => row.lessonId));
     const level = user.rating < 1200 ? 'beginner' : user.rating < 1800 ? 'intermediate' : 'advanced';
     const remaining = lessons.filter(lesson => !completed.has(lesson.id));
-    const lesson = remaining.find(row => row.category === 'fundamentals') || remaining.find(row => row.level === level) || remaining[0];
+    const trackLessons = remaining.filter(row => track === 'start' ? row.category === 'fundamentals' : row.category !== 'fundamentals');
+    const lesson = trackLessons.find(row => row.level === level) || trackLessons[0];
     if (lesson) items.push({ kind: 'lesson', contentId: lesson.id, title: lesson.title, reason: lesson.category === 'fundamentals' ? 'Consolide os fundamentos antes de avançar.' : `Próxima aula ainda não concluída, considerando seu rating de treino (${user.rating}).` });
 
     const recentPuzzles = await this.db.puzzle.findMany({ where: { id: { in: [...new Set(events.map(row => row.contentId))] } }, select: { id: true, themes: true } });
@@ -306,8 +358,8 @@ export class LearningService {
     return undefined;
   }
 
-  async report(userId: string) {
-    const since = new Date(Date.now() - 28 * 86_400_000);
+  async report(userId: string, period = 28) {
+    const since = new Date(Date.now() - period * 86_400_000);
     const [events, reviews, puzzleAttempts] = await Promise.all([
       this.db.studyEvent.findMany({ where: { userId, createdAt: { gte: since }, completed: true }, orderBy: { createdAt: 'asc' } }),
       this.db.studyReview.findMany({ where: { userId } }),

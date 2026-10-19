@@ -11,3 +11,10 @@ export function parseExactUciInfo(line: string): { score: EngineScore; depth: nu
   if (!score || !depth || !pv?.length || !Number.isSafeInteger(Number(score[2]))) return null;
   return { score: { type: score[1] as EngineScore['type'], value: Number(score[2]) }, depth: Number(depth[1]), pv };
 }
+
+export function parseExactMultiPv(line: string) {
+  const rank = Number(line.match(/\bmultipv (\d+)\b/)?.[1] ?? '1');
+  if (!Number.isInteger(rank) || rank < 1 || rank > 3) return null;
+  const exact = parseExactUciInfo(line.replace(/\bmultipv \d+\b/, 'multipv 1'));
+  return exact ? { ...exact, rank } : null;
+}

@@ -1,5 +1,9 @@
 const DAY = 86_400_000;
-const INTERVALS = [1, 3, 7, 14, 30, 60];
+const INTERVALS = [1, 3, 7, 14, 30, 60, 90, 120, 180, 365];
+export function masteryPoints(review: { stage: number } | undefined) { return review ? Math.min(10, Math.max(1, review.stage + 1)) : 0; }
+export function masteryRank(percent: number) {
+  return percent >= 100 ? 'Dominado' : percent >= 70 ? 'Consolidando' : percent >= 40 ? 'Praticante' : percent >= 10 ? 'Explorador' : 'Começando';
+}
 export type Recall = 'again' | 'hard' | 'good';
 
 export function nextReview(previous: { stage: number; dueAt: Date } | null, recall: Recall, now: Date) {

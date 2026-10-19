@@ -27,8 +27,8 @@ export function useEndgameTraining() {
   function open(exercise: Omit<TrainingExercise, 'tablebase' | 'objective'>) {
     return run('generate', async (signal, requestId) => {
       const tablebase = await request<TrainingPosition>('/endgame-training/position', { method: 'POST', signal, body: { initialFen: exercise.fen, history: [] } });
-      if (tablebase.terminal || !tablebase.bestMove || (tablebase.outcome !== 'win' && tablebase.outcome !== 'draw')) throw new Error('Esta posição não possui objetivo de vitória ou empate certificado para quem tem a vez.');
-      dispatch({ type: 'exercise', requestId, exercise: { ...exercise, side: tablebase.turn, objective: tablebase.outcome, tablebase } });
+      if (tablebase.terminal || !tablebase.bestMove || !tablebase.outcome) throw new Error('Esta posição não possui um resultado certificado para quem tem a vez.');
+      dispatch({ type: 'exercise', requestId, exercise: { ...exercise, side: tablebase.turn, objective: tablebase.outcome === 'loss' ? 'resist' : tablebase.outcome, tablebase } });
     });
   }
   function move(move: string) {

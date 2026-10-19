@@ -5,6 +5,7 @@ import { importOpenings } from './openings.mjs';
 import { importPuzzles } from './puzzles.mjs';
 import { importEndgames } from './endgames.mjs';
 import { buildLessons } from './lessons.mjs';
+import { buildAdvancedLessons } from './advanced-lessons.mjs';
 
 const args = process.argv.slice(2);
 if (args.includes('--help')) {
@@ -19,6 +20,7 @@ const openings = await importOpenings(options);
 const puzzles = await importPuzzles(options);
 const endgames = await importEndgames(options);
 const lessons = buildLessons(openings.openings, puzzles.puzzles, endgames.endgames);
+await writeStable(resolve(DATA, 'lesson-extensions.json'), json(buildAdvancedLessons(puzzles.puzzles)));
 const artifacts = [];
 for (const [name, rows] of Object.entries({ openings: openings.openings, puzzles: puzzles.puzzles, endgames: endgames.endgames, lessons: lessons.lessons })) {
   const bytes = json(rows);

@@ -4,8 +4,8 @@
     "slug": "zav-chess",
     "version": "1.0.0",
     "orientation": "default",
-    "userInterfaceStyle": "light",
-    "backgroundColor": "#F6F4ED",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0E1012",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.zav.chess",

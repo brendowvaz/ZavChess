@@ -5,6 +5,7 @@ import type { EngineDifficulty } from './engine-strength';
 export type EngineScore = { type: 'cp' | 'mate'; value: number };
 export interface EngineAnalysis {
   fen: string; bestMove: string | null; score: EngineScore; depth: number; pv: string[]; engine: string;
+  variations?: { rank: number; score: EngineScore; depth: number; pv: string[] }[];
 }
 export interface EngineMove {
   fen: string; bestMove: string | null; engine: string; difficulty: EngineDifficulty; elo: number | null;

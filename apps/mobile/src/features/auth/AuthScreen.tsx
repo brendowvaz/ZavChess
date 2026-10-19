@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { KeyboardAvoidingView, Platform, Text, View } from 'react-native';
 import { useAuth } from '../../auth/AuthProvider';
 import { useOperation } from '../../api/hooks';
-import { API_URL } from '../../api/client';
 import { useNavigation } from '../../navigation/Navigation';
 import { Badge, Button, Card, ErrorState, Field, Heading, Loading, Notice } from '../../ui/components';
 import { BrandMark } from '../../ui/Icon';
@@ -18,12 +17,12 @@ export function AuthScreen() {
   if (auth.restoring) return <Loading label="Restaurando sua sessão…" />;
   if (auth.user) return <View style={s.page}><Heading eyebrow="Seu perfil" title={`Olá, ${auth.user.name.split(' ')[0]}.`} description="Sua conta e seu aprendizado, no mesmo lugar." />
     <Card><View style={s.row}><BrandMark /><View style={s.grow}><Text style={s.h2}>{auth.user.name}</Text><Text selectable style={s.muted}>{auth.user.email}</Text></View></View>
-      <View style={s.wrap}><Badge>{auth.user.rating} de rating no cadastro da sessão</Badge></View>
+      <View style={s.wrap}><Badge>{auth.user.rating} de rating de treino</Badge><Badge>{auth.user.xp} XP</Badge></View>
       <Text style={s.muted}>Acompanhe os valores atualizados de XP, rating e suas atividades no início.</Text>
       <Button label="Ver meu progresso" icon="arrow" onPress={() => navigate({ screen: 'home' })} />
       <Button label="Sair da conta" variant="secondary" busy={operation.busy} onPress={() => void operation.run(async signal => { await auth.logout(signal); setPassword(''); })} />
       {operation.error ? <ErrorState message={operation.error} /> : null}</Card>
-      <Text selectable style={s.small}>Servidor configurado: {API_URL}</Text></View>;
+      </View>;
   const submit = () => {
     setValidation(null);
     if (mode === 'register' && name.trim().length < 2) { setValidation('Informe seu nome com pelo menos 2 caracteres.'); return; }

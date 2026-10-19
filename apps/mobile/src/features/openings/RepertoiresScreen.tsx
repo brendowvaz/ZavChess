@@ -31,7 +31,8 @@ export function RepertoiresScreen() {
     {courses.loading ? <Loading label="Montando repertórios…" /> : courses.error ? <ErrorState message={courses.error} retry={courses.reload} /> : courses.data?.length ? <View style={s.stack}>{courses.data.map(course =>
       <Card key={course.id}><View style={s.between}><View style={s.wrap}><Badge tone={course.selected ? 'green' : 'neutral'}>{course.selected ? 'NO MEU REPERTÓRIO' : course.side === 'w' ? 'BRANCAS' : 'PRETAS'}</Badge><Text style={s.small}>{course.level === 'beginner' ? 'Iniciante' : 'Intermediário'}</Text></View><Text style={s.small}>{course.lineCount} linhas</Text></View>
         <Text style={s.h2}>{course.title}</Text><Text style={s.muted}>{course.subtitle}</Text>
-        <ProgressBar value={course.mastery} label={`${course.learnedPositions} de ${course.positionCount} decisões praticadas`} />
+        <View style={s.between}><Badge tone="gold">{course.rank ?? 'Começando'}</Badge><Text style={s.small}>{course.points ?? 0}/{course.maxPoints ?? course.positionCount * 10} pontos de domínio</Text></View>
+        <ProgressBar value={course.mastery} label={`${course.mastery}% de domínio consolidado`} />
         {course.duePositions ? <Notice>{course.duePositions} posições estão prontas para revisão.</Notice> : null}
         <Button label={course.selected ? 'Continuar repertório' : 'Conhecer repertório'} icon="arrow" onPress={() => navigate({ screen: 'repertoire', id: course.id })} style={{ alignSelf: 'flex-start' }} />
       </Card>)}</View> : <Empty title="Repertórios em preparação" description="O catálogo ainda não contém linhas suficientes para montar os cursos." />}
@@ -46,6 +47,8 @@ export function RepertoireScreen({ id }: { id: string }) {
       <Heading eyebrow={`${course.data.side === 'w' ? 'Brancas' : 'Pretas'} · ${course.data.lineCount} linhas curtas`} title={course.data.title} description={course.data.subtitle} />
       <Card><Text style={s.h3}>O que você aprenderá</Text>{course.data.goals.map(goal => <Text key={goal} style={s.body}>• {goal}</Text>)}
         <ProgressBar value={course.data.mastery} label={`${course.data.mastery}% do repertório praticado`} />
+        <Text style={s.body}>{course.data.rank} · {course.data.points}/{course.data.maxPoints} pontos</Text>
+        <Text style={s.small}>Cada decisão chega a 10 pontos com revisões espaçadas. Repetir antes da data ajuda a praticar; os pontos avançam quando a revisão está pronta.</Text>
         {!course.data.selected ? <Button label="Adicionar ao meu repertório" busy={operation.busy} onPress={() => void operation.run(async signal => {
           await api.post(`/learning/repertoires/${encodeURIComponent(id)}/select`, {}, signal); auth.refreshProgress(); course.reload();
         })} style={{ alignSelf: 'flex-start' }} /> : <Notice tone="success">Este curso já faz parte do seu treino pessoal.</Notice>}
@@ -55,8 +58,10 @@ export function RepertoireScreen({ id }: { id: string }) {
       {course.data.lines.map((line, index) => <Card key={line.openingId}>
         <View style={s.between}><Badge>{line.eco}</Badge><Text style={s.small}>Ramo {index + 1} · {line.decisions.length} decisões suas</Text></View>
         <Text style={s.h3}>{line.name}</Text>
-        {line.decisions.slice(0, 3).map(decision => <View key={decision.key} style={s.stack}><Text style={s.body}><Text style={{ fontWeight: '700' }}>{decision.san}</Text> — {decision.explanation}</Text></View>)}
-        {line.decisions.length > 3 ? <Text style={s.small}>+ {line.decisions.length - 3} decisões na prática guiada</Text> : null}
+        {line.decisions.map(decision => <View key={decision.key} style={s.stack}><View style={s.between}><Text style={s.label}>{decision.san}</Text><Badge>{decision.masteryPoints ?? 0}/10</Badge></View>
+          <Text style={s.body}>{decision.explanation}</Text><ProgressBar value={(decision.masteryPoints ?? 0) * 10} label={`Domínio da decisão ${decision.san}`} />
+          <Button label="Revisar esta decisão" compact variant="ghost" onPress={() => navigate({ screen: 'opening', id: line.openingId, studySide: course.data!.side, focusPly: decision.ply })} />
+        </View>)}
         <Button label="Aprender este ramo" icon="arrow" onPress={() => navigate({ screen: 'opening', id: line.openingId, studySide: course.data!.side })} style={{ alignSelf: 'flex-start' }} />
       </Card>)}
     </> : null}

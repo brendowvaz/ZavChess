@@ -953,7 +953,7 @@
     "editorialFiles": [
       {
         "file": "scripts/content/lessons.mjs",
-        "sha256": "a23b9e0278526a4beb11b7d29ea2523734d349b1f0cdba6002e971b8be67dc8e"
+        "sha256": "8fe9e6a8e332dbf391f13996c7fbb1adbd8ee82e73a511cf8dc9a4c329249bb0"
       },
       {
         "file": "scripts/content/endgames.mjs",
@@ -995,8 +995,8 @@
     {
       "file": "data/lessons.json",
       "count": 56,
-      "bytes": 88510,
-      "sha256": "6efd8d1061bc322146fa784d82c173f3b49b070461e341259de6475c27c7a43a"
+      "bytes": 88798,
+      "sha256": "b5cf0939cd4f147272bc50a3d98aa22a41f32141a269a15e3d4cfbee0c2fd337"
     }
   ]
 }

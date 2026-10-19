@@ -5,7 +5,7 @@ import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { EngineAnalysis, EngineMove } from './analysis-contract';
 import { analyzeMoveWithEngine, legalAnalysisLine, parseAnalysisPosition, validateAnalysisDepth } from './analysis-coach';
-import { parseExactUciInfo } from './analysis-uci';
+import { parseExactMultiPv, parseExactUciInfo } from './analysis-uci';
 import { chooseWeakenedMove, parseRankedEngineMove, type RankedEngineMove } from './weakened-move';
 import {
   emptyStrengthCapabilities,
@@ -15,7 +15,7 @@ import {
 } from './engine-strength';
 
 type Evaluation = { category: string; dtz: number | null; dtm: number | null; moves: { uci: string; san: string; category: string; dtz: number | null }[] };
-type StockfishRequest = { kind: 'analysis'; depth: number } | { kind: 'move'; difficulty: EngineDifficulty };
+type StockfishRequest = { kind: 'analysis'; depth: number; multipv?: number } | { kind: 'move'; difficulty: EngineDifficulty };
 
 function parsePosition(fen: string) {
   try { return new Chess(fen); }
@@ -61,11 +61,11 @@ export class EngineService {
     return analyzeMoveWithEngine(fen, move, depth, (position, requestedDepth) => this.analyze(position, requestedDepth));
   }
 
-  async analyze(fen: string, depth: number): Promise<EngineAnalysis> {
+  async analyze(fen: string, depth: number, multipv = 1): Promise<EngineAnalysis> {
     validateAnalysisDepth(depth);
     const chess = parseAnalysisPosition(fen);
     if (chess.isGameOver()) return { fen: chess.fen(), bestMove: null, score: { type: chess.isCheckmate() ? 'mate' : 'cp', value: 0 }, depth: 0, pv: [], engine: 'Regras do xadrez: posição terminada' };
-    return this.executeStockfish(chess.fen(), { kind: 'analysis', depth });
+    return this.executeStockfish(chess.fen(), { kind: 'analysis', depth, multipv });
   }
 
   async play(fen: string, difficulty: EngineDifficulty): Promise<EngineMove> {
@@ -74,7 +74,7 @@ export class EngineService {
     return this.executeStockfish(chess.fen(), { kind: 'move', difficulty });
   }
 
-  private executeStockfish(fen: string, request: { kind: 'analysis'; depth: number }): Promise<EngineAnalysis>;
+  private executeStockfish(fen: string, request: { kind: 'analysis'; depth: number; multipv?: number }): Promise<EngineAnalysis>;
   private executeStockfish(fen: string, request: { kind: 'move'; difficulty: EngineDifficulty }): Promise<EngineMove>;
   private async executeStockfish(fen: string, request: StockfishRequest): Promise<EngineAnalysis | EngineMove> {
     const enginePath = process.env.STOCKFISH_PATH || resolve(__dirname, '../../../../.local/stockfish/stockfish.exe');
@@ -95,6 +95,7 @@ export class EngineService {
       let selectedElo: number | null = null;
       let moveSearch: { depth: number | null; movetimeMs: number; weakening: NonNullable<ReturnType<typeof strengthSettings>>['weakening'] } | null = null;
       const rankedMovesByDepth = new Map<number, Map<number, RankedEngineMove>>();
+      const variations = new Map<number, NonNullable<ReturnType<typeof parseExactMultiPv>>>();
       let finished = false;
       const fail = () => finish(new ServiceUnavailableException('Não foi possível concluir a análise do Stockfish.'));
       const timer = setTimeout(fail, 12_000);
@@ -121,6 +122,7 @@ export class EngineService {
           if (line.startsWith('option name ')) capabilities = readStrengthOption(line, capabilities);
           if (line === 'uciok') {
             const commands = ['setoption name Threads value 1', 'setoption name Hash value 32'];
+            if (request.kind === 'analysis' && (request.multipv ?? 1) > 1) commands.push(`setoption name MultiPV value ${request.multipv}`);
             if (request.kind === 'move') {
               const settings = strengthSettings(request.difficulty, capabilities);
               if (!settings) {
@@ -145,6 +147,10 @@ export class EngineService {
           }
           const info = parseExactUciInfo(line);
           if (info && (!evaluation || info.depth >= evaluation.depth)) evaluation = info;
+          if (request.kind === 'analysis' && (request.multipv ?? 1) > 1) {
+            const variation = parseExactMultiPv(line);
+            if (variation && variation.depth >= (variations.get(variation.rank)?.depth ?? 0)) variations.set(variation.rank, variation);
+          }
           if (request.kind === 'move' && moveSearch?.weakening) {
             const candidate = parseRankedEngineMove(line);
             if (candidate) {
@@ -171,7 +177,11 @@ export class EngineService {
             const legal = legalAnalysisLine(fen, evaluation.pv, 'alternative-pv');
             if (!legal.moves.length) { fail(); continue; }
             evaluation.pv = legal.moves;
-            finish(undefined, { fen, bestMove: engineMove, ...evaluation, engine });
+            const candidates = [...variations.values()].sort((a, b) => a.rank - b.rank).flatMap(candidate => {
+              const legal = legalAnalysisLine(fen, candidate.pv, 'alternative-pv').moves;
+              return legal.length ? [{ ...candidate, pv: legal }] : [];
+            });
+            finish(undefined, { fen, bestMove: engineMove, ...evaluation, engine, ...(candidates.length ? { variations: candidates } : {}) });
           }
         }
       });

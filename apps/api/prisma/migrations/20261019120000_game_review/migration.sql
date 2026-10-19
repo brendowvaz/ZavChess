@@ -1,0 +1,8 @@
+ALTER TABLE `OpeningGameImport`
+  ADD COLUMN `initialFen` VARCHAR(200) NULL,
+  ADD COLUMN `moves` JSON NULL,
+  ADD COLUMN `opponent` VARCHAR(100) NULL,
+  ADD COLUMN `opponentRating` INTEGER NULL,
+  ADD COLUMN `result` VARCHAR(12) NULL,
+  ADD COLUMN `speed` VARCHAR(20) NULL,
+  ADD COLUMN `review` JSON NULL;

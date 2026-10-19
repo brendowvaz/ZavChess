@@ -6,7 +6,9 @@ export interface Page<T> { items: T[]; total: number; page: number; pageSize: nu
 export interface Progress { completedLessonIds: string[]; solvedPuzzleIds: string[] }
 export interface Dashboard {
   user: User; completedLessons: number; solvedPuzzles: number; streak: number;
+  activeDates: string[];
   recentActivity: { id: string; type: string; title: string; createdAt: string }[];
+  weekly: { puzzles: number; openings: number; lessons: number; activeDays: number };
   counts: { lessons: number; openings: number; puzzles: number; endgames: number };
 }
 export interface Lesson {
@@ -15,6 +17,8 @@ export interface Lesson {
 }
 export interface LessonDetail extends Lesson {
   steps: { title: string; text: string; fen?: string; moves?: string[] }[];
+  quiz?: { question: string; options: string[]; answer: number; explanation: string };
+  challenges?: { id: string; fen: string; moves: string[]; rating: number; sourceUrl: string }[];
 }
 export interface LessonBoardResult { completed: true; xpEarned: number; nextReviewAt?: string }
 export interface OpeningStudyGuide {
@@ -35,4 +39,5 @@ export interface Tablebase {
   category: TablebaseCategory; dtz: number | null; dtm: number | null;
   moves: { uci: string; san: string; category: TablebaseCategory; dtz: number | null }[];
 }
-export interface Analysis { fen: string; bestMove: string | null; score: { type: 'cp' | 'mate'; value: number }; depth: number; pv: string[]; engine: string }
+export interface Analysis { fen: string; bestMove: string | null; score: { type: 'cp' | 'mate'; value: number }; depth: number; pv: string[]; engine: string;
+  variations?: { rank: number; score: { type: 'cp' | 'mate'; value: number }; depth: number; pv: string[] }[] }

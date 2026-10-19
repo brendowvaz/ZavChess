@@ -7,6 +7,7 @@ import { parseOpenings } from './openings.mjs';
 import { BANDS, puzzleFromCsv } from './puzzles.mjs';
 import { ENDGAME_SEEDS } from './endgames.mjs';
 import { buildLessons } from './lessons.mjs';
+import { buildAdvancedLessons } from './advanced-lessons.mjs';
 
 export function exactFields(value, keys) {
   assert.deepEqual(Object.keys(value).sort(), [...keys].sort(), 'Campos divergentes do contrato');
@@ -172,6 +173,16 @@ export async function validateData() {
   }
   assert.deepEqual(editorialFiles.map((file) => file.file).sort(), ['scripts/content/endgames.mjs', 'scripts/content/lessons.mjs']);
   for (const file of editorialFiles) assert.equal(sha256(await readFile(resolve(ROOT, file.file))), file.sha256);
+  const extensions = await readJson(resolve(DATA, 'lesson-extensions.json'));
+  assert.deepEqual(extensions, buildAdvancedLessons(puzzles), 'Extensões precisam ser reproduzíveis a partir do acervo atribuído');
+  assert.equal(new Set([...lessons, ...extensions].map(lesson => lesson.id)).size, lessons.length + extensions.length);
+  for (const lesson of extensions) {
+    categories[lesson.category] = (categories[lesson.category] ?? 0) + 1;
+    assert.ok(lesson.steps.filter(step => step.moves?.length).length > 0, lesson.id);
+    for (const step of lesson.steps) if (step.moves) { replay(step.fen, step.moves); lessonLines++; }
+    assert.equal(new Set(lesson.quiz.options).size, 4);
+    assert.ok(lesson.quiz.options[lesson.quiz.answer]);
+  }
   assert.equal(sources.stockfish.sourceUrl, 'https://stockfishchess.org/');
   assert.equal(sources.stockfish.license, 'GPL-3.0');
   assert.equal(sources.stockfish.localEngineExecuted, false);
@@ -183,7 +194,7 @@ export async function validateData() {
     puzzles: puzzles.length, puzzleMoves: puzzles.reduce((sum, p) => sum + p.moves.length, 0),
     ratingMin: Math.min(...puzzles.map((p) => p.rating)), ratingMax: Math.max(...puzzles.map((p) => p.rating)),
     bands, themeCount: Object.keys(themes).length, themes,
-    lessons: lessons.length, categories, lessonLines, endgames: endgames.length, endgameResults,
+    lessons: lessons.length + extensions.length, baseLessons: lessons.length, extensionLessons: extensions.length, categories, lessonLines, endgames: endgames.length, endgameResults,
     compressedBytes: sampling.compressedBytes, scannedRows: sampling.scannedRows,
   };
   return report;

@@ -6,10 +6,12 @@ import { useNavigation } from '../../navigation/Navigation';
 import { Badge, Button, Card, ErrorState, Loading } from '../../ui/components';
 import { s } from '../../ui/theme';
 import type { StudyPlan as Plan } from './types';
+import { useAppearance } from '../../appearance/AppearanceProvider';
 
 export function StudyPlan() {
   const auth = useAuth();
-  const plan = useResource<Plan>(auth.user ? '/learning/plan' : null, auth.revision);
+  const { appearance } = useAppearance();
+  const plan = useResource<Plan>(auth.user ? `/learning/plan?track=${appearance.learningTrack}` : null, auth.revision);
   const { navigate } = useNavigation();
   if (!auth.user) return null;
   return <View style={s.stack}>

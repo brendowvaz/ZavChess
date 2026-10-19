@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useResource } from '../../api/hooks';
 import { useNavigation } from '../../navigation/Navigation';
-import { Badge, Button, Card, Empty, ErrorState, Heading, Loading, levels } from '../../ui/components';
+import { Badge, Button, Card, Empty, ErrorState, Heading, Loading, Notice, levels } from '../../ui/components';
 import { Icon } from '../../ui/Icon';
 import { s } from '../../ui/theme';
 import { ChessBoard } from '../../chess/ChessBoard';
@@ -10,16 +10,26 @@ import type { CatalogEndgame } from './contracts';
 import { GeneratedEndgamePanel, TrainingBoard } from './TrainingPanel';
 import { useEndgameTraining } from './useEndgameTraining';
 import { StudyLayout, StudyMessage } from '../../ui/StudyLayout';
+import { LearningPath } from '../../ui/LearningPath';
+import type { Lesson } from '../../api/types';
 
 export function EndgamesScreen() {
   const endgames = useResource<CatalogEndgame[]>('/endgames'); const { navigate } = useNavigation();
-  return <View style={s.page}><Heading eyebrow="Precisão até o último lance" title="Pratique seus finais" description="Jogue contra a melhor resposta da tablebase e descubra quando uma decisão muda o resultado." />
-    <GeneratedEndgamePanel />
-    <Text style={s.h2}>Posições do acervo</Text>
+  const lessons = useResource<Lesson[]>('/lessons');
+  return <View style={s.page}><Heading eyebrow="Precisão até o último lance" title="Finais" description="Aprenda o padrão, reconheça a posição-chave e converta contra a melhor defesa da tablebase." />
+    <Card><View style={s.between}><View><Text style={s.h3}>Curso de finais</Text><Text style={s.small}>Lições e posições práticas</Text></View><Badge tone="green">TUDO LIBERADO</Badge></View>
+      <Text style={s.muted}>Siga a trilha sugerida ou abra qualquer posição. Nenhum final, dica ou tentativa exige assinatura.</Text></Card>
+    <Text accessibilityRole="header" style={s.h2}>Reconheça a ideia</Text>
+    {lessons.data ? <LearningPath items={lessons.data.filter(item => item.category === 'endgames').map((lesson, index) => ({ id: lesson.id, title: lesson.title,
+      subtitle: `${levels[lesson.level]} · desafios no tabuleiro`, state: index === 0 ? 'current' as const : 'ready' as const }))} onPress={item => navigate({ screen: 'lesson', id: item.id })} /> : null}
+    <Text accessibilityRole="header" style={s.h2}>Leve até o fim contra a melhor defesa</Text>
     {endgames.loading ? <Loading label="Carregando acervo…" /> : endgames.error ? <ErrorState message={endgames.error} retry={endgames.reload} /> : !endgames.data?.length ? <Empty title="Nenhum final no acervo" description="Você pode continuar usando o gerador acima." /> :
-      <View style={s.stack}>{endgames.data.map(endgame => <Pressable key={endgame.id} accessibilityRole="button" accessibilityLabel={`Praticar ${endgame.title}`} onPress={() => navigate({ screen: 'endgame', id: endgame.id })}
-        style={({ pressed }) => [s.card, { opacity: pressed ? 0.75 : 1 }]}><View style={s.between}><Badge>{levels[endgame.level]}</Badge><Icon name="flag" /></View>
-        <Text style={s.h2}>{endgame.title}</Text><Text style={s.muted}>{endgame.description}</Text></Pressable>)}</View>}
+      <LearningPath items={endgames.data.map((endgame, index) => ({ id: endgame.id, title: endgame.title,
+        subtitle: `${levels[endgame.level]} · ${endgame.goal}`, state: index === 0 ? 'current' as const : 'ready' as const,
+        accessibilityLabel: `Praticar ${endgame.title}. ${levels[endgame.level]}. Disponível`,
+      }))} onPress={item => navigate({ screen: 'endgame', id: item.id })} />}
+    <Notice>Quer variar a posição? O laboratório abaixo gera exercícios novos e verifica o objetivo pela tablebase.</Notice>
+    <GeneratedEndgamePanel />
   </View>;
 }
 export function EndgameScreen({ id }: { id: string }) {

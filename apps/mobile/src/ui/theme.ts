@@ -1,9 +1,9 @@
 import { Platform, StyleSheet } from 'react-native';
 
 export const colors = {
-  background: '#F6F4ED', surface: '#FFFEFA', forest: '#214B3D', forestDark: '#173B30',
-  ink: '#223C32', muted: '#67746A', line: '#DFE3D8', pale: '#EAF0E5', sage: '#A6B58E',
-  gold: '#DAB875', warning: '#805710', warningBg: '#FCF0D7', error: '#A03731', errorBg: '#FBEAE6',
+  background: '#0E1012', surface: '#191C1F', forest: '#70B69A', forestDark: '#3F8069',
+  ink: '#F5F3EB', muted: '#A9B0AC', line: '#30363A', pale: '#20352E', sage: '#5F8978',
+  gold: '#F2A43B', warning: '#F6B955', warningBg: '#3A2B16', error: '#FF8C82', errorBg: '#3C211F',
   boardLight: '#E9E9D5', boardDark: '#819878', selected: '#E8C16E', white: '#FFFFFF',
 };
 export const serif = Platform.select({ web: 'Georgia, Times New Roman, serif', ios: 'Georgia', default: 'serif' });
@@ -20,7 +20,7 @@ export const s = StyleSheet.create({
   body: { color: colors.ink, fontSize: 15, lineHeight: 24 },
   muted: { color: colors.muted, fontSize: 14, lineHeight: 22 },
   small: { color: colors.muted, fontSize: 12, lineHeight: 18 },
-  input: { borderWidth: 1, borderColor: '#CED7CA', backgroundColor: colors.surface, borderRadius: 12, paddingHorizontal: 15,
+  input: { borderWidth: 1, borderColor: colors.line, backgroundColor: colors.surface, borderRadius: 12, paddingHorizontal: 15,
     paddingVertical: 13, color: colors.ink, fontSize: 15, minHeight: 48 },
   label: { fontSize: 13, fontWeight: '600', color: colors.ink },
   split: { flexDirection: 'row', alignItems: 'flex-start', gap: 26 },

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, Modal, PanResponder, Platform, Pressable, Text, useWindowDimensions, View, type PointerEvent } from 'react-native';
+import { Animated, Modal, PanResponder, Platform, Pressable, Text, useWindowDimensions, Vibration, View, type PointerEvent } from 'react-native';
 import Svg, { Path, Polygon } from 'react-native-svg';
 import { Chess, type Color, type Square, type PieceSymbol } from 'chess.js';
 import { colors, s } from '../ui/theme';
@@ -25,13 +25,16 @@ type WebPointerInfo = {
   pointerId: number; shiftKey?: boolean;
 };
 
-export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, lastMove, hint, feedbackArrows = [], maxSize = 720, hideStatus = false, showTurnStatus = false, edgeToEdge = true }: {
+export function ChessBoard({ fen, orientation = 'w', onMove, onSquarePress, practiceMode = false, disabled = false, lastMove, hint, feedbackArrows = [], maxSize = 720, hideStatus = false, showTurnStatus = false, edgeToEdge = true }: {
   fen: string; orientation?: Color; onMove?: (uci: string) => void; disabled?: boolean;
+  onSquarePress?: (square: Square) => void; practiceMode?: boolean;
   lastMove?: string; hint?: string; feedbackArrows?: ArrowAnnotation[]; maxSize?: number; hideStatus?: boolean; showTurnStatus?: boolean; edgeToEdge?: boolean;
 }) {
   const { width: viewportWidth } = useWindowDimensions();
   const { appearance } = useAppearance();
-  const theme = boardThemes[appearance.boardTheme];
+  const baseTheme = boardThemes[appearance.boardTheme];
+  const theme = appearance.colorBlind ? { ...baseTheme, selected: '#E69F00', previous: '#F0E442', check: '#CC79A7', marker: '#0072B2' } : baseTheme;
+  const annotationPalette = appearance.colorBlind ? { green: '#0072B2', red: '#CC79A7', yellow: '#E69F00', blue: '#56B4E9' } : annotationColors;
   const fullBleed = edgeToEdge && viewportWidth < 980;
   const [compactWidth, setCompactWidth] = useState(viewportWidth);
   const [width, setWidth] = useState(320);
@@ -81,7 +84,7 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
   const ranks = useMemo(() => orientation === 'w' ? [8, 7, 6, 5, 4, 3, 2, 1] : [1, 2, 3, 4, 5, 6, 7, 8], [orientation]);
   const files = useMemo(() => (orientation === 'w' ? 'abcdefgh' : 'hgfedcba').split(''), [orientation]);
   const legal = selected && game ? game.moves({ square: selected, verbose: true }) : [];
-  const interactive = !!onMove && !disabled && !!game && !game.isGameOver();
+  const interactive = !disabled && !!game && (!!onSquarePress || !!onMove && (!game.isGameOver() || practiceMode && !game.isCheckmate() && !game.isStalemate()));
   const castlingRookTargets = useMemo(() => {
     if (!selected || game?.get(selected)?.type !== 'k') return new Set<Square>();
     const targets = new Set<Square>();
@@ -93,9 +96,9 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
   }, [game, legal, selected]);
   const commit = useCallback((from: Square, to: Square, promote?: string) => {
     const uci = `${from}${to}${promote ?? ''}`;
-    try { moveUci(new Chess(fen), uci); setSelected(null); setPromotion(null); onMove?.(uci); }
+    try { moveUci(new Chess(fen), uci); setSelected(null); setPromotion(null); if (appearance.vibration) Vibration.vibrate(20); onMove?.(uci); }
     catch { setAnnouncement('Esse lance não é permitido nesta posição.'); }
-  }, [fen, onMove]);
+  }, [fen, onMove, appearance.vibration]);
   const attemptMove = useCallback((from: Square, rawTarget: Square) => {
     if (!game) return false;
     const to = normalizeCastlingTarget(game, from, rawTarget);
@@ -108,12 +111,13 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
   const press = useCallback((square: Square) => {
     if (suppressPress.current) { suppressPress.current = false; return; }
     if (!interactive || !game) return;
+    if (onSquarePress) { onSquarePress(square); return; }
     if (selected === square) { setSelected(null); return; }
     if (selected && attemptMove(selected, square)) return;
     const piece = game.get(square);
     if (piece?.color === game.turn()) { setSelected(square); setAnnouncement(`${pieceNames[piece.type]} em ${square} selecionado. Escolha uma casa marcada.`); }
     else { setSelected(null); setAnnouncement('Selecione uma peça da cor que tem a vez.'); }
-  }, [attemptMove, game, interactive, selected]);
+  }, [attemptMove, game, interactive, selected, onSquarePress]);
   const measureBoard = useCallback(() => {
     boardRef.current?.measureInWindow((x, y) => { boardOrigin.current = { x, y }; });
   }, []);
@@ -126,6 +130,7 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
   }, [files, ranks, squareSize]);
   const startPointer = useCallback((event: PointerEvent) => {
     if (Platform.OS !== 'web') return;
+    if (onSquarePress) return;
     const pointer = event.nativeEvent as unknown as WebPointerInfo;
     const x = pointer.clientX;
     const y = pointer.clientY;
@@ -153,7 +158,7 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
       pendingDragSource.current = from && game && game.get(from)?.color === game.turn() ? from : null;
       pointerDrag.current = pendingDragSource.current ? { from: pendingDragSource.current, x, y, pointerId, active: false } : null;
     });
-  }, [game, squareAt]);
+  }, [game, squareAt, onSquarePress]);
   const moveDraggedPiece = useCallback((pageX: number, pageY: number) => {
     dragPosition.setValue({
       x: pageX - boardOrigin.current.x - squareSize / 2,
@@ -241,13 +246,13 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
   }, [endDrag]);
   const panResponder = useMemo(() => PanResponder.create({
     onStartShouldSetPanResponderCapture: event => {
-      if (!interactive || !game) return false;
+      if (!interactive || !game || onSquarePress) return false;
       const from = squareAt(event.nativeEvent.pageX, event.nativeEvent.pageY);
       pendingDragSource.current = from && game.get(from)?.color === game.turn() ? from : null;
       return false;
     },
     onMoveShouldSetPanResponderCapture: (_event, gesture) => {
-      if (!interactive || !game || Math.hypot(gesture.dx, gesture.dy) < 5) return false;
+      if (!interactive || !game || onSquarePress || Math.hypot(gesture.dx, gesture.dy) < 5) return false;
       const from = pendingDragSource.current;
       if (!from || game.get(from)?.color !== game.turn()) return false;
       return true;
@@ -265,7 +270,7 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
     onPanResponderRelease: (_event, gesture) => endDrag(gesture.moveX, gesture.moveY),
     onPanResponderTerminate: () => endDrag(),
     onPanResponderTerminationRequest: () => false,
-  }), [endDrag, game, interactive, moveDraggedPiece, squareAt]);
+  }), [endDrag, game, interactive, moveDraggedPiece, squareAt, onSquarePress]);
 
   if (!game) return <ErrorState message="O tabuleiro recebeu uma posição inválida. Recarregue este conteúdo." />;
   const fillsCompactWidth = fullBleed && compactWidth <= maxSize;
@@ -282,13 +287,13 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
         const highlighted = square === selected || hint?.slice(0, 2) === square || hint?.slice(2, 4) === square;
         const previous = lastMove?.slice(0, 2) === square || lastMove?.slice(2, 4) === square;
         const check = piece?.type === 'k' && piece.color === game.turn() && game.isCheck();
-        return <Pressable key={square} accessibilityRole={onMove ? 'button' : 'text'} accessibilityLabel={`${square}, ${piece ? `${pieceNames[piece.type]} ${piece.color === 'w' ? 'branco' : 'preto'}` : 'casa vazia'}${target ? ', destino legal' : ''}${check ? ', em xeque' : ''}${squareAnnotation ? `, marcada em ${annotationToneLabels[squareAnnotation.tone]}` : ''}`}
-          accessibilityHint={interactive ? 'Toque na peça e depois no destino, ou arraste a peça até o destino.' : undefined}
+        return <Pressable key={square} accessibilityRole={onMove || onSquarePress ? 'button' : 'text'} accessibilityLabel={`${square}, ${piece ? `${pieceNames[piece.type]} ${piece.color === 'w' ? 'branco' : 'preto'}` : 'casa vazia'}${target ? ', destino legal' : ''}${check ? ', em xeque' : ''}${squareAnnotation ? `, marcada em ${annotationToneLabels[squareAnnotation.tone]}` : ''}`}
+          accessibilityHint={interactive ? onSquarePress ? 'Toque na casa pedida pelo desafio.' : 'Toque na peça e depois no destino, ou arraste a peça até o destino.' : undefined}
           accessibilityState={{ selected: square === selected, disabled: !interactive }} disabled={!interactive} onPress={() => press(square)}
           style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: check ? theme.check : highlighted ? theme.selected : previous ? theme.previous : dark ? theme.dark : theme.light }}>
-          {squareAnnotation ? <View style={{ position: 'absolute', inset: 0, backgroundColor: annotationColors[squareAnnotation.tone], opacity: 0.64, pointerEvents: 'none' }} /> : null}
+          {squareAnnotation ? <View style={{ position: 'absolute', inset: 0, backgroundColor: annotationPalette[squareAnnotation.tone], opacity: 0.64, pointerEvents: 'none' }} /> : null}
           {piece && square !== dragging ? <Piece type={piece.type} color={piece.color} size={squareSize * 0.91} /> : null}
-          {target ? <View style={piece ? { position: 'absolute', width: '88%', height: '88%', borderRadius: 99, borderWidth: 3, borderColor: theme.marker + 'AA', pointerEvents: 'none' } : { position: 'absolute', width: '25%', height: '25%', borderRadius: 99, backgroundColor: theme.marker + '88', pointerEvents: 'none' }} /> : null}
+          {target && appearance.showLegalMoves ? <View style={piece ? { position: 'absolute', width: '88%', height: '88%', borderRadius: 99, borderWidth: 3, borderColor: theme.marker + 'AA', pointerEvents: 'none' } : { position: 'absolute', width: '25%', height: '25%', borderRadius: 99, backgroundColor: theme.marker + '88', pointerEvents: 'none' }} /> : null}
           {col === 0 ? <Text aria-hidden style={{ position: 'absolute', top: 2, left: 3, fontSize: Math.max(9, squareSize * 0.19), fontWeight: '600', color: check || highlighted || previous ? theme.labelLight : dark ? theme.labelDark : theme.labelLight }}>{rank}</Text> : null}
           {row === 7 ? <Text aria-hidden style={{ position: 'absolute', bottom: 1, right: 3, fontSize: Math.max(9, squareSize * 0.19), fontWeight: '600', color: check || highlighted || previous ? theme.labelLight : dark ? theme.labelDark : theme.labelLight }}>{file}</Text> : null}
         </Pressable>;
@@ -315,13 +320,15 @@ export function ChessBoard({ fen, orientation = 'w', onMove, disabled = false, l
 function AnnotationArrows({ arrows, preview, files, ranks, squareSize, boardSize }: {
   arrows: ArrowAnnotation[]; preview: ArrowAnnotation | null; files: string[]; ranks: number[]; squareSize: number; boardSize: number;
 }) {
+  const { appearance } = useAppearance();
+  const palette = appearance.colorBlind ? { green: '#0072B2', red: '#CC79A7', yellow: '#E69F00', blue: '#56B4E9' } : annotationColors;
   const visible = preview ? [...arrows, preview] : arrows;
   if (!visible.length) return null;
   return <Svg width={boardSize} height={boardSize} style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
     {visible.map((arrow, index) => {
       const geometry = arrowGeometry(arrow.from, arrow.to, files, ranks, squareSize);
       if (!geometry) return null;
-      const color = annotationColors[arrow.tone];
+      const color = palette[arrow.tone];
       const opacity = preview === arrow ? 0.58 : 0.78;
       return <React.Fragment key={`${arrow.from}-${arrow.to}-${arrow.tone}-${index}`}>
         <Path d={geometry.path} fill="none" stroke={color} strokeWidth={squareSize * 0.18} strokeLinecap="round" strokeLinejoin="round" opacity={opacity} />

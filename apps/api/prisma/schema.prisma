@@ -24,6 +24,7 @@ model User {
   puzzlePractices PuzzlePractice[]
   repertoires UserRepertoire[]
   gameImports OpeningGameImport[]
+  groupMemberships StudyGroupMember[]
 }
 
 model Session {
@@ -108,6 +109,13 @@ model OpeningGameImport {
   openingId      String?  @db.VarChar(191)
   firstMissPly   Int?
   summary        String   @db.Text
+  initialFen     String?  @db.VarChar(200)
+  moves          Json?
+  opponent       String?  @db.VarChar(100)
+  opponentRating Int?
+  result         String?  @db.VarChar(12)
+  speed          String?  @db.VarChar(20)
+  review         Json?
   importedAt     DateTime @default(now())
   user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@unique([userId, platform, gameExternalId])
@@ -220,4 +228,23 @@ model PuzzlePractice {
   createdAt DateTime @default(now())
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@unique([userId, puzzleId, practiceId])
+}
+
+model StudyGroup {
+  id String @id @default(cuid())
+  name String @db.VarChar(80)
+  inviteCode String @unique @db.VarChar(32)
+  createdAt DateTime @default(now())
+  members StudyGroupMember[]
+}
+
+model StudyGroupMember {
+  id String @id @default(cuid())
+  groupId String
+  userId String
+  joinedAt DateTime @default(now())
+  group StudyGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([groupId, userId])
+  @@index([userId])
 }

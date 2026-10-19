@@ -1,0 +1,1239 @@
+[
+  {
+    "id": "lesson-peao-avancado",
+    "slug": "peao-avancado",
+    "title": "Um peão que exige uma resposta",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Um peão perto da promoção pode valer mais pela ameaça que cria do que pelo seu valor material.",
+    "sortOrder": 100,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Um peão perto da promoção pode valer mais pela ameaça que cria do que pelo seu valor material. Conte quantos tempos faltam e compare promover, capturar e jogar com xeque."
+      },
+      {
+        "title": "Aplique em outra posição · 1391",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um peão perto da promoção pode valer mais pela ameaça que cria do que pelo seu valor material. Conte quantos tempos faltam e compare promover, capturar e jogar com xeque.",
+        "fen": "8/8/1Pr1p1k1/5pp1/2PR3p/3KP3/6P1/8 w - - 1 44",
+        "moves": [
+          "b6b7",
+          "c6b6",
+          "d4d7"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1377",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um peão perto da promoção pode valer mais pela ameaça que cria do que pelo seu valor material. Conte quantos tempos faltam e compare promover, capturar e jogar com xeque.",
+        "fen": "4k3/4P1pp/3p1b2/p2N1P2/8/6P1/1p5P/r3R1K1 w - - 1 37",
+        "moves": [
+          "d5c7",
+          "e8d7",
+          "e7e8q"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1423",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um peão perto da promoção pode valer mais pela ameaça que cria do que pelo seu valor material. Conte quantos tempos faltam e compare promover, capturar e jogar com xeque.",
+        "fen": "rnb1k1nr/pp1ppp2/2p5/6q1/3P3p/2P3B1/PP1NPPP1/R2QKB1R b KQkq - 1 9",
+        "moves": [
+          "h4g3",
+          "h1h8",
+          "g3f2",
+          "e1f2",
+          "g5f6",
+          "f2g1",
+          "f6h8"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que deve entrar no cálculo de um peão avançado?",
+      "options": [
+        "Tempos até promover e recursos do adversário",
+        "Apenas o valor de um ponto",
+        "Somente a distância até a dama inimiga",
+        "Promover sempre sem olhar a posição"
+      ],
+      "answer": 0,
+      "explanation": "Um peão perto da promoção pode valer mais pela ameaça que cria do que pelo seu valor material. Conte quantos tempos faltam e compare promover, capturar e jogar com xeque."
+    }
+  },
+  {
+    "id": "lesson-capturar-defensor",
+    "slug": "capturar-defensor",
+    "title": "Capture quem sustenta a defesa",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Localize a peça que protege o alvo.",
+    "sortOrder": 101,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Localize a peça que protege o alvo. Capturá-la pode tornar possível uma segunda captura ou um mate. Calcule a recaptura antes de sacrificar: remover um defensor só funciona quando a continuação compensa."
+      },
+      {
+        "title": "Aplique em outra posição · 1437",
+        "text": "Encontre a continuação e calcule a resposta adversária. Localize a peça que protege o alvo. Capturá-la pode tornar possível uma segunda captura ou um mate. Calcule a recaptura antes de sacrificar: remover um defensor só funciona quando a continuação compensa.",
+        "fen": "5k1b/5n1p/1p1pB1pP/p1pP2P1/P1P1K3/1P4B1/8/8 w - - 9 48",
+        "moves": [
+          "e6f7",
+          "f8f7",
+          "g3d6"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1440",
+        "text": "Encontre a continuação e calcule a resposta adversária. Localize a peça que protege o alvo. Capturá-la pode tornar possível uma segunda captura ou um mate. Calcule a recaptura antes de sacrificar: remover um defensor só funciona quando a continuação compensa.",
+        "fen": "1r3rk1/p3bpp1/1qp4p/3nQ2P/5p2/1NN5/PPP2PP1/2KR3R w - - 1 21",
+        "moves": [
+          "c3d5",
+          "c6d5",
+          "e5e7"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1473",
+        "text": "Encontre a continuação e calcule a resposta adversária. Localize a peça que protege o alvo. Capturá-la pode tornar possível uma segunda captura ou um mate. Calcule a recaptura antes de sacrificar: remover um defensor só funciona quando a continuação compensa.",
+        "fen": "4r1k1/ppB1q1pp/4Npb1/2bP4/2P1r1P1/1P5P/P4P2/R2Q1RK1 b - - 0 23",
+        "moves": [
+          "e4e6",
+          "d5e6",
+          "e7c7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Quando capturar um defensor é justificável?",
+      "options": [
+        "Sempre que a captura é com xeque",
+        "Quando a continuação concreta compensa a troca",
+        "Quando a peça está perto do rei",
+        "Sempre que podemos sacrificar a dama"
+      ],
+      "answer": 1,
+      "explanation": "Localize a peça que protege o alvo. Capturá-la pode tornar possível uma segunda captura ou um mate. Calcule a recaptura antes de sacrificar: remover um defensor só funciona quando a continuação compensa."
+    }
+  },
+  {
+    "id": "lesson-rei-exposto",
+    "slug": "rei-exposto",
+    "title": "Aproveite um rei sem abrigo",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Um rei exposto pode ser atacado por várias direções.",
+    "sortOrder": 102,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Um rei exposto pode ser atacado por várias direções. Comece pelos xeques, mas confira também as fugas: um xeque que ajuda o rei a escapar pode ser pior que uma ameaça tranquila."
+      },
+      {
+        "title": "Aplique em outra posição · 1337",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um rei exposto pode ser atacado por várias direções. Comece pelos xeques, mas confira também as fugas: um xeque que ajuda o rei a escapar pode ser pior que uma ameaça tranquila.",
+        "fen": "8/pk6/3r3p/4Q1p1/1P2p3/P3K1PP/3r2P1/8 b - - 6 37",
+        "moves": [
+          "d6d3",
+          "e3e4",
+          "d2e2",
+          "e4d3",
+          "e2e5"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1484",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um rei exposto pode ser atacado por várias direções. Comece pelos xeques, mas confira também as fugas: um xeque que ajuda o rei a escapar pode ser pior que uma ameaça tranquila.",
+        "fen": "4k3/1p4Q1/p2p4/4p3/7p/5r2/1PP3RK/4q3 w - - 0 44",
+        "moves": [
+          "g7g8",
+          "f3f8",
+          "g8e6",
+          "e8d8",
+          "e6d6"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1500",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um rei exposto pode ser atacado por várias direções. Comece pelos xeques, mas confira também as fugas: um xeque que ajuda o rei a escapar pode ser pior que uma ameaça tranquila.",
+        "fen": "r4r2/5pkp/p3pnp1/1p6/2pP3q/2P1Q1N1/PPB4R/1R4K1 b - - 1 26",
+        "moves": [
+          "h4h2",
+          "g1h2",
+          "f6g4",
+          "h2g1",
+          "g4e3"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual é a melhor rotina contra um rei exposto?",
+      "options": [
+        "Capturar o primeiro peão que aparecer",
+        "Dar qualquer xeque disponível",
+        "Comparar xeques, fugas e respostas defensivas",
+        "Mover apenas a dama"
+      ],
+      "answer": 2,
+      "explanation": "Um rei exposto pode ser atacado por várias direções. Comece pelos xeques, mas confira também as fugas: um xeque que ajuda o rei a escapar pode ser pior que uma ameaça tranquila."
+    }
+  },
+  {
+    "id": "lesson-lance-intermediario",
+    "slug": "lance-intermediario",
+    "title": "Antes de recapturar, crie uma obrigação",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Uma recaptura pode esperar quando existe um lance mais urgente.",
+    "sortOrder": 103,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Uma recaptura pode esperar quando existe um lance mais urgente. Um xeque ou outra ameaça forte pode obrigar uma resposta e melhorar a troca. Confira se ainda poderá recuperar o material depois."
+      },
+      {
+        "title": "Aplique em outra posição · 1411",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma recaptura pode esperar quando existe um lance mais urgente. Um xeque ou outra ameaça forte pode obrigar uma resposta e melhorar a troca. Confira se ainda poderá recuperar o material depois.",
+        "fen": "r6k/2p2p1p/p2p1q2/1p1Q1P1p/2P1P3/8/PP4rP/1K4R1 w - - 0 25",
+        "moves": [
+          "d5a8",
+          "h8g7",
+          "g1g2"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1356",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma recaptura pode esperar quando existe um lance mais urgente. Um xeque ou outra ameaça forte pode obrigar uma resposta e melhorar a troca. Confira se ainda poderá recuperar o material depois.",
+        "fen": "3k2r1/3rp2q/p7/3p1p1Q/1P1P4/N7/P2n1P1P/2R3RK b - - 0 30",
+        "moves": [
+          "g8g1",
+          "c1g1",
+          "h7h5"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1473",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma recaptura pode esperar quando existe um lance mais urgente. Um xeque ou outra ameaça forte pode obrigar uma resposta e melhorar a troca. Confira se ainda poderá recuperar o material depois.",
+        "fen": "4r1k1/ppB1q1pp/4Npb1/2bP4/2P1r1P1/1P5P/P4P2/R2Q1RK1 b - - 0 23",
+        "moves": [
+          "e4e6",
+          "d5e6",
+          "e7c7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que caracteriza um lance intermediário?",
+      "options": [
+        "Oferecer empate entre dois lances",
+        "Recapturar imediatamente em toda troca",
+        "Jogar somente com peões",
+        "Inserir uma ameaça antes da continuação esperada"
+      ],
+      "answer": 3,
+      "explanation": "Uma recaptura pode esperar quando existe um lance mais urgente. Um xeque ou outra ameaça forte pode obrigar uma resposta e melhorar a troca. Confira se ainda poderá recuperar o material depois."
+    }
+  },
+  {
+    "id": "lesson-ataque-ao-roque",
+    "slug": "ataque-ao-roque",
+    "title": "Abra caminhos para o rei roqueado",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Ataques ao roque dependem de linhas abertas e peças cooperando.",
+    "sortOrder": 104,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Ataques ao roque dependem de linhas abertas e peças cooperando. Antes de quebrar a cobertura de peões, confira quantas peças chegam ao ataque e quais defesas podem fechar o caminho."
+      },
+      {
+        "title": "Aplique em outra posição · 1411",
+        "text": "Encontre a continuação e calcule a resposta adversária. Ataques ao roque dependem de linhas abertas e peças cooperando. Antes de quebrar a cobertura de peões, confira quantas peças chegam ao ataque e quais defesas podem fechar o caminho.",
+        "fen": "r4rk1/p1p1q1pn/1p1p3p/3PnP1b/2N5/1QP2P2/P5PP/R1B1RBK1 b - - 0 18",
+        "moves": [
+          "e5f3",
+          "g2f3",
+          "e7e1"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1414",
+        "text": "Encontre a continuação e calcule a resposta adversária. Ataques ao roque dependem de linhas abertas e peças cooperando. Antes de quebrar a cobertura de peões, confira quantas peças chegam ao ataque e quais defesas podem fechar o caminho.",
+        "fen": "r1b2rk1/1p3p1p/pq1p2p1/3Nn3/1P2P1P1/P4Q1P/7K/5R2 w - - 2 23",
+        "moves": [
+          "d5e7",
+          "g8g7",
+          "f3f6"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1417",
+        "text": "Encontre a continuação e calcule a resposta adversária. Ataques ao roque dependem de linhas abertas e peças cooperando. Antes de quebrar a cobertura de peões, confira quantas peças chegam ao ataque e quais defesas podem fechar o caminho.",
+        "fen": "r4rk1/1p4pp/p1nb4/2pp4/6n1/1P2PN1q/PBPN1P2/R2QRBK1 b - - 3 15",
+        "moves": [
+          "d6h2",
+          "f3h2",
+          "h3h2"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que torna um ataque ao roque mais consistente?",
+      "options": [
+        "Coordenação e cálculo das respostas defensivas",
+        "Somente ter uma dama perto do rei",
+        "Avançar todos os peões sem calcular",
+        "Ignorar as peças longe do ataque"
+      ],
+      "answer": 0,
+      "explanation": "Ataques ao roque dependem de linhas abertas e peças cooperando. Antes de quebrar a cobertura de peões, confira quantas peças chegam ao ataque e quais defesas podem fechar o caminho."
+    }
+  },
+  {
+    "id": "lesson-ataque-ala-dama",
+    "slug": "ataque-ala-dama",
+    "title": "Crie ameaças na ala da dama",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "A ala da dama também oferece alvos: um rei abrigado ali, peças sem defesa e colunas abertas.",
+    "sortOrder": 105,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "A ala da dama também oferece alvos: um rei abrigado ali, peças sem defesa e colunas abertas. Identifique o alvo real antes de avançar peões; abrir uma coluna interessa a quem consegue ocupá-la."
+      },
+      {
+        "title": "Aplique em outra posição · 1398",
+        "text": "Encontre a continuação e calcule a resposta adversária. A ala da dama também oferece alvos: um rei abrigado ali, peças sem defesa e colunas abertas. Identifique o alvo real antes de avançar peões; abrir uma coluna interessa a quem consegue ocupá-la.",
+        "fen": "7r/1k4pp/2p2p2/pN2q3/1p2P1P1/1P2Q2P/P1P5/2KR4 b - - 0 26",
+        "moves": [
+          "e5a1",
+          "c1d2",
+          "h8d8",
+          "e3d3",
+          "d8d3"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1410",
+        "text": "Encontre a continuação e calcule a resposta adversária. A ala da dama também oferece alvos: um rei abrigado ali, peças sem defesa e colunas abertas. Identifique o alvo real antes de avançar peões; abrir uma coluna interessa a quem consegue ocupá-la.",
+        "fen": "1k1r1b1r/npp2pp1/5n1p/1N6/8/1P3N2/1P2qPPP/R2R2K1 w - - 0 17",
+        "moves": [
+          "d1d8",
+          "a7c8",
+          "a1a8",
+          "b8a8",
+          "d8c8"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1387",
+        "text": "Encontre a continuação e calcule a resposta adversária. A ala da dama também oferece alvos: um rei abrigado ali, peças sem defesa e colunas abertas. Identifique o alvo real antes de avançar peões; abrir uma coluna interessa a quem consegue ocupá-la.",
+        "fen": "2k2b1r/Qpp1r3/3pNn2/3P1q2/2P5/7P/PP3PP1/RN2n1K1 w - - 0 23",
+        "moves": [
+          "a7a8",
+          "c8d7",
+          "a8d8"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Antes de abrir uma coluna, o que você deve conferir?",
+      "options": [
+        "Apenas a cor da casa de promoção",
+        "Qual lado conseguirá ocupar e usar essa coluna",
+        "Se todos os peões já se moveram",
+        "Se a dama começou na ala correta"
+      ],
+      "answer": 1,
+      "explanation": "A ala da dama também oferece alvos: um rei abrigado ali, peças sem defesa e colunas abertas. Identifique o alvo real antes de avançar peões; abrir uma coluna interessa a quem consegue ocupá-la."
+    }
+  },
+  {
+    "id": "lesson-lance-silencioso",
+    "slug": "lance-silencioso",
+    "title": "Encontre a ameaça sem xeque",
+    "category": "tactics",
+    "level": "advanced",
+    "description": "Um lance silencioso não captura nem dá xeque, mas pode preparar uma ameaça decisiva.",
+    "sortOrder": 106,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Um lance silencioso não captura nem dá xeque, mas pode preparar uma ameaça decisiva. Depois de procurar as opções forçantes, imagine a posição ideal das suas peças e calcule como o adversário poderia impedir seu plano."
+      },
+      {
+        "title": "Aplique em outra posição · 1902",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um lance silencioso não captura nem dá xeque, mas pode preparar uma ameaça decisiva. Depois de procurar as opções forçantes, imagine a posição ideal das suas peças e calcule como o adversário poderia impedir seu plano.",
+        "fen": "7r/B1k2ppp/2p5/1r1p4/8/5PPB/P6P/R5K1 b - - 0 24",
+        "moves": [
+          "c6c5",
+          "a2a4",
+          "b5a5",
+          "a7c5",
+          "a5c5"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1879",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um lance silencioso não captura nem dá xeque, mas pode preparar uma ameaça decisiva. Depois de procurar as opções forçantes, imagine a posição ideal das suas peças e calcule como o adversário poderia impedir seu plano.",
+        "fen": "r5k1/p1pN1p2/1p1b2p1/3p1n2/3P4/2P3Pq/P2QRP1P/1R4K1 b - - 4 23",
+        "moves": [
+          "f5h4",
+          "d7f6",
+          "g8g7"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1934",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um lance silencioso não captura nem dá xeque, mas pode preparar uma ameaça decisiva. Depois de procurar as opções forçantes, imagine a posição ideal das suas peças e calcule como o adversário poderia impedir seu plano.",
+        "fen": "1r5k/5Qp1/7p/p7/q1BP4/7P/1r3PP1/2n1R1K1 w - - 1 31",
+        "moves": [
+          "e1e7",
+          "a4d1",
+          "g1h2",
+          "d1d4",
+          "e7e8"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Por que um lance sem captura ou xeque pode ser forte?",
+      "options": [
+        "Porque lances silenciosos não podem ser capturados",
+        "Porque o adversário perde a vez",
+        "Ele pode criar uma ameaça difícil de defender",
+        "Porque elimina a necessidade de calcular"
+      ],
+      "answer": 2,
+      "explanation": "Um lance silencioso não captura nem dá xeque, mas pode preparar uma ameaça decisiva. Depois de procurar as opções forçantes, imagine a posição ideal das suas peças e calcule como o adversário poderia impedir seu plano."
+    }
+  },
+  {
+    "id": "lesson-ataque-raio-x",
+    "slug": "ataque-raio-x",
+    "title": "Enxergue o alvo atrás da peça",
+    "category": "tactics",
+    "level": "advanced",
+    "description": "Uma peça de longo alcance pode influenciar um alvo através de uma peça intermediária.",
+    "sortOrder": 107,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Uma peça de longo alcance pode influenciar um alvo através de uma peça intermediária. Imagine o que muda quando essa peça sai da linha ou é capturada. Confira a sequência antes de contar o alvo como ganho."
+      },
+      {
+        "title": "Aplique em outra posição · 1612",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma peça de longo alcance pode influenciar um alvo através de uma peça intermediária. Imagine o que muda quando essa peça sai da linha ou é capturada. Confira a sequência antes de contar o alvo como ganho.",
+        "fen": "7k/p1pq1pnP/6r1/2p5/2P1P3/1pBP4/1P3P2/1K4RR w - - 5 30",
+        "moves": [
+          "c3g7",
+          "g6g7",
+          "g1g7",
+          "d7d3",
+          "b1a1"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1365",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma peça de longo alcance pode influenciar um alvo através de uma peça intermediária. Imagine o que muda quando essa peça sai da linha ou é capturada. Confira a sequência antes de contar o alvo como ganho.",
+        "fen": "7k/p2q3p/1p6/8/3p2QP/4r3/PPP2r2/R5RK b - - 5 27",
+        "moves": [
+          "e3h3",
+          "g4h3",
+          "d7h3"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1175",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma peça de longo alcance pode influenciar um alvo através de uma peça intermediária. Imagine o que muda quando essa peça sai da linha ou é capturada. Confira a sequência antes de contar o alvo como ganho.",
+        "fen": "r7/2k3pp/2pq4/p1Q5/1r1n1P2/6P1/P6P/3RR2K w - - 1 32",
+        "moves": [
+          "e1e7",
+          "d6e7",
+          "c5e7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual pergunta ajuda a reconhecer um raio X?",
+      "options": [
+        "A dama pode saltar o bloqueador?",
+        "Quantas casas o cavalo salta?",
+        "A torre pode atravessar uma peça agora?",
+        "O que a peça de trás atacará quando a linha abrir?"
+      ],
+      "answer": 3,
+      "explanation": "Uma peça de longo alcance pode influenciar um alvo através de uma peça intermediária. Imagine o que muda quando essa peça sai da linha ou é capturada. Confira a sequência antes de contar o alvo como ganho."
+    }
+  },
+  {
+    "id": "lesson-zugzwang",
+    "slug": "zugzwang",
+    "title": "Quando ter a vez vira um problema",
+    "category": "endgames",
+    "level": "advanced",
+    "description": "No zugzwang, ter de jogar piora a posição.",
+    "sortOrder": 108,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "No zugzwang, ter de jogar piora a posição. Compare os lances disponíveis do defensor e o que cada um abandona. Um lance de espera pode transferir essa obrigação, mas ele também precisa preservar sua própria posição."
+      },
+      {
+        "title": "Aplique em outra posição · 1941",
+        "text": "Encontre a continuação e calcule a resposta adversária. No zugzwang, ter de jogar piora a posição. Compare os lances disponíveis do defensor e o que cada um abandona. Um lance de espera pode transferir essa obrigação, mas ele também precisa preservar sua própria posição.",
+        "fen": "8/8/1pk5/p1p1K3/P1P5/1P6/8/8 w - - 5 45",
+        "moves": [
+          "e5e6",
+          "c6c7",
+          "e6e7"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1953",
+        "text": "Encontre a continuação e calcule a resposta adversária. No zugzwang, ter de jogar piora a posição. Compare os lances disponíveis do defensor e o que cada um abandona. Um lance de espera pode transferir essa obrigação, mas ele também precisa preservar sua própria posição.",
+        "fen": "8/6p1/7p/7K/5kPP/8/8/8 b - - 0 42",
+        "moves": [
+          "g7g5",
+          "h4g5",
+          "h6g5",
+          "h5h6",
+          "f4g4"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1842",
+        "text": "Encontre a continuação e calcule a resposta adversária. No zugzwang, ter de jogar piora a posição. Compare os lances disponíveis do defensor e o que cada um abandona. Um lance de espera pode transferir essa obrigação, mas ele também precisa preservar sua própria posição.",
+        "fen": "8/8/5p1p/3k1p2/4pPP1/3KP2P/8/8 w - - 0 43",
+        "moves": [
+          "d3c3",
+          "f5g4",
+          "h3g4",
+          "d5c5",
+          "f4f5"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que define o zugzwang?",
+      "options": [
+        "A obrigação de jogar força uma concessão",
+        "O jogador pode passar a vez",
+        "Todo xeque é mate",
+        "A partida acaba por falta de tempo"
+      ],
+      "answer": 0,
+      "explanation": "No zugzwang, ter de jogar piora a posição. Compare os lances disponíveis do defensor e o que cada um abandona. Um lance de espera pode transferir essa obrigação, mas ele também precisa preservar sua própria posição."
+    }
+  },
+  {
+    "id": "lesson-mate-ultima-fileira",
+    "slug": "mate-ultima-fileira",
+    "title": "A última fileira precisa de uma saída",
+    "category": "tactics",
+    "level": "beginner",
+    "description": "O rei pode ficar preso atrás dos próprios peões.",
+    "sortOrder": 109,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "O rei pode ficar preso atrás dos próprios peões. Torres e damas exploram essa falta de fugas. Antes de jogar a combinação, confira capturas e bloqueios na última fileira e veja se o rei dispõe de uma casa de escape."
+      },
+      {
+        "title": "Aplique em outra posição · 857",
+        "text": "Encontre a continuação e calcule a resposta adversária. O rei pode ficar preso atrás dos próprios peões. Torres e damas exploram essa falta de fugas. Antes de jogar a combinação, confira capturas e bloqueios na última fileira e veja se o rei dispõe de uma casa de escape.",
+        "fen": "6k1/6p1/7p/8/2RN4/qR2P3/5PPP/6K1 b - - 0 42",
+        "moves": [
+          "a3a1",
+          "b3b1",
+          "a1b1",
+          "c4c1",
+          "b1c1"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 841",
+        "text": "Encontre a continuação e calcule a resposta adversária. O rei pode ficar preso atrás dos próprios peões. Torres e damas exploram essa falta de fugas. Antes de jogar a combinação, confira capturas e bloqueios na última fileira e veja se o rei dispõe de uma casa de escape.",
+        "fen": "2r3k1/p4ppp/1p2p3/q3n3/3Q4/P7/2r2PPP/3RR1K1 w - - 0 32",
+        "moves": [
+          "d4d8",
+          "c8d8",
+          "d1d8"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 837",
+        "text": "Encontre a continuação e calcule a resposta adversária. O rei pode ficar preso atrás dos próprios peões. Torres e damas exploram essa falta de fugas. Antes de jogar a combinação, confira capturas e bloqueios na última fileira e veja se o rei dispõe de uma casa de escape.",
+        "fen": "2R2r1k/6pp/p2p4/1p4P1/4PQ2/P7/1q4P1/7K w - - 2 29",
+        "moves": [
+          "c8f8"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que torna o mate na última fileira possível?",
+      "options": [
+        "Qualquer torre na oitava fileira",
+        "O rei está sem fugas e a linha não pode ser defendida",
+        "Ter um peão a mais",
+        "O rei ter feito roque em algum momento"
+      ],
+      "answer": 1,
+      "explanation": "O rei pode ficar preso atrás dos próprios peões. Torres e damas exploram essa falta de fugas. Antes de jogar a combinação, confira capturas e bloqueios na última fileira e veja se o rei dispõe de uma casa de escape."
+    }
+  },
+  {
+    "id": "lesson-mate-em-tres",
+    "slug": "mate-em-tres",
+    "title": "Calcule até o fim: mate em três",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "Não pare o cálculo depois do primeiro xeque.",
+    "sortOrder": 110,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Não pare o cálculo depois do primeiro xeque. Para cada tentativa, procure a defesa que mais resiste e acompanhe a nova posição. Uma linha de mate exige respostas a todas as defesas relevantes, não apenas à mais natural."
+      },
+      {
+        "title": "Aplique em outra posição · 1410",
+        "text": "Encontre a continuação e calcule a resposta adversária. Não pare o cálculo depois do primeiro xeque. Para cada tentativa, procure a defesa que mais resiste e acompanhe a nova posição. Uma linha de mate exige respostas a todas as defesas relevantes, não apenas à mais natural.",
+        "fen": "1k1r1b1r/npp2pp1/5n1p/1N6/8/1P3N2/1P2qPPP/R2R2K1 w - - 0 17",
+        "moves": [
+          "d1d8",
+          "a7c8",
+          "a1a8",
+          "b8a8",
+          "d8c8"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1420",
+        "text": "Encontre a continuação e calcule a resposta adversária. Não pare o cálculo depois do primeiro xeque. Para cada tentativa, procure a defesa que mais resiste e acompanhe a nova posição. Uma linha de mate exige respostas a todas as defesas relevantes, não apenas à mais natural.",
+        "fen": "4r1k1/Q6p/3p2pB/5b2/2q5/8/PP3PPP/5RK1 b - - 2 26",
+        "moves": [
+          "c4f1",
+          "g1f1",
+          "f5d3",
+          "f1g1",
+          "e8e1"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1427",
+        "text": "Encontre a continuação e calcule a resposta adversária. Não pare o cálculo depois do primeiro xeque. Para cada tentativa, procure a defesa que mais resiste e acompanhe a nova posição. Uma linha de mate exige respostas a todas as defesas relevantes, não apenas à mais natural.",
+        "fen": "4rrk1/pp5R/5qp1/3p4/2p5/2P4Q/P1P2PPP/5RK1 b - - 1 24",
+        "moves": [
+          "f6f2",
+          "f1f2",
+          "e8e1",
+          "f2f1",
+          "e1f1"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Como testar uma linha de mate?",
+      "options": [
+        "Contar apenas quantos xeques existem",
+        "Supor que o adversário fará o lance mais fraco",
+        "Procurar a melhor defesa em cada posição",
+        "Interromper o cálculo na primeira captura"
+      ],
+      "answer": 2,
+      "explanation": "Não pare o cálculo depois do primeiro xeque. Para cada tentativa, procure a defesa que mais resiste e acompanhe a nova posição. Uma linha de mate exige respostas a todas as defesas relevantes, não apenas à mais natural."
+    }
+  },
+  {
+    "id": "lesson-mate-em-quatro",
+    "slug": "mate-em-quatro",
+    "title": "Mantenha a rede por vários lances",
+    "category": "tactics",
+    "level": "advanced",
+    "description": "Em uma sequência longa, a rede de mate precisa sobreviver a cada defesa.",
+    "sortOrder": 111,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Em uma sequência longa, a rede de mate precisa sobreviver a cada defesa. Controle as fugas, identifique as peças indispensáveis e evite trocar o atacante que mantém o rei preso."
+      },
+      {
+        "title": "Aplique em outra posição · 1953",
+        "text": "Encontre a continuação e calcule a resposta adversária. Em uma sequência longa, a rede de mate precisa sobreviver a cada defesa. Controle as fugas, identifique as peças indispensáveis e evite trocar o atacante que mantém o rei preso.",
+        "fen": "6r1/pb2Bp1k/1p3Prp/8/P6R/2pP4/2P1BP1R/2K5 b - - 0 27",
+        "moves": [
+          "g6g1",
+          "e2d1",
+          "g1d1",
+          "c1d1",
+          "b7f3",
+          "d1c1",
+          "g8g1"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1955",
+        "text": "Encontre a continuação e calcule a resposta adversária. Em uma sequência longa, a rede de mate precisa sobreviver a cada defesa. Controle as fugas, identifique as peças indispensáveis e evite trocar o atacante que mantém o rei preso.",
+        "fen": "r4bk1/7p/p2pb1pP/qp1N4/4PQn1/5R2/P1P2PP1/5RK1 w - - 4 24",
+        "moves": [
+          "f4f8",
+          "a8f8",
+          "d5e7",
+          "g8h8",
+          "f3f8",
+          "e6g8",
+          "f8g8"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1971",
+        "text": "Encontre a continuação e calcule a resposta adversária. Em uma sequência longa, a rede de mate precisa sobreviver a cada defesa. Controle as fugas, identifique as peças indispensáveis e evite trocar o atacante que mantém o rei preso.",
+        "fen": "r5k1/ppp2r2/3pN2p/3Pb2N/2P1q1nR/4B3/PP1Q2RP/7K b - - 6 28",
+        "moves": [
+          "f7f1",
+          "e3g1",
+          "f1g1",
+          "h1g1",
+          "e4b1",
+          "d2e1",
+          "b1e1"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Durante o cálculo, o que precisa ser reavaliado após cada defesa?",
+      "options": [
+        "O número do lance da abertura",
+        "Somente o relógio",
+        "A posição inicial, sem atualizar as peças",
+        "As fugas do rei e a coordenação dos atacantes"
+      ],
+      "answer": 3,
+      "explanation": "Em uma sequência longa, a rede de mate precisa sobreviver a cada defesa. Controle as fugas, identifique as peças indispensáveis e evite trocar o atacante que mantém o rei preso."
+    }
+  },
+  {
+    "id": "lesson-subpromocao",
+    "slug": "subpromocao",
+    "title": "Nem sempre a dama é a promoção certa",
+    "category": "tactics",
+    "level": "advanced",
+    "description": "Promover a cavalo, torre ou bispo pode dar um xeque necessário ou evitar um afogamento.",
+    "sortOrder": 112,
+    "minutes": 3,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Promover a cavalo, torre ou bispo pode dar um xeque necessário ou evitar um afogamento. Compare as quatro opções na posição resultante; escolher a peça mais forte em valor não garante o melhor resultado."
+      },
+      {
+        "title": "Aplique em outra posição · 876",
+        "text": "Encontre a continuação e calcule a resposta adversária. Promover a cavalo, torre ou bispo pode dar um xeque necessário ou evitar um afogamento. Compare as quatro opções na posição resultante; escolher a peça mais forte em valor não garante o melhor resultado.",
+        "fen": "8/8/6q1/8/8/4NQ2/4K1pk/8 b - - 5 67",
+        "moves": [
+          "g2g1n",
+          "e2f2",
+          "g1f3"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Quando considerar uma subpromoção?",
+      "options": [
+        "Quando outra peça cria o recurso exato ou evita empate",
+        "Somente quando já existe uma dama",
+        "Porque o peão precisa continuar peão",
+        "Porque promover a dama é proibido no final"
+      ],
+      "answer": 0,
+      "explanation": "Promover a cavalo, torre ou bispo pode dar um xeque necessário ou evitar um afogamento. Compare as quatro opções na posição resultante; escolher a peça mais forte em valor não garante o melhor resultado."
+    }
+  },
+  {
+    "id": "lesson-bispos-final-tatico",
+    "slug": "bispos-final-tatico",
+    "title": "Bispos: diagonais que decidem o final",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Nos finais de bispos, as diagonais conectam ataque e defesa.",
+    "sortOrder": 113,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Nos finais de bispos, as diagonais conectam ataque e defesa. Observe peões nas casas da cor do bispo, passados distantes e a atividade dos reis. Calcule a tática antes de usar uma regra geral sobre bispos."
+      },
+      {
+        "title": "Aplique em outra posição · 1471",
+        "text": "Encontre a continuação e calcule a resposta adversária. Nos finais de bispos, as diagonais conectam ataque e defesa. Observe peões nas casas da cor do bispo, passados distantes e a atividade dos reis. Calcule a tática antes de usar uma regra geral sobre bispos.",
+        "fen": "8/8/3b2p1/5kBp/4pP1P/4K3/5P2/8 b - - 2 51",
+        "moves": [
+          "d6c5",
+          "e3e2",
+          "f5g4"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1539",
+        "text": "Encontre a continuação e calcule a resposta adversária. Nos finais de bispos, as diagonais conectam ataque e defesa. Observe peões nas casas da cor do bispo, passados distantes e a atividade dos reis. Calcule a tática antes de usar uma regra geral sobre bispos.",
+        "fen": "8/8/p1p5/2B1k2p/3p1p2/1P2b2P/P1P1K1P1/8 b - - 0 37",
+        "moves": [
+          "d4d3",
+          "e2d3",
+          "e3c5"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1574",
+        "text": "Encontre a continuação e calcule a resposta adversária. Nos finais de bispos, as diagonais conectam ataque e defesa. Observe peões nas casas da cor do bispo, passados distantes e a atividade dos reis. Calcule a tática antes de usar uma regra geral sobre bispos.",
+        "fen": "8/5B2/1p1pK2b/p1pP4/P1P5/1Pk5/8/8 b - - 5 45",
+        "moves": [
+          "c3b3",
+          "f7e8",
+          "b3c4"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que uma regra sobre finais de bispos não substitui?",
+      "options": [
+        "O nome da abertura",
+        "O cálculo da posição concreta",
+        "A contagem dos números das casas",
+        "A escolha da cor das peças antes da partida"
+      ],
+      "answer": 1,
+      "explanation": "Nos finais de bispos, as diagonais conectam ataque e defesa. Observe peões nas casas da cor do bispo, passados distantes e a atividade dos reis. Calcule a tática antes de usar uma regra geral sobre bispos."
+    }
+  },
+  {
+    "id": "lesson-cavalos-final-tatico",
+    "slug": "cavalos-final-tatico",
+    "title": "Cavalos: calcule os saltos e os tempos",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Um cavalo pode atacar dois alvos, mas precisa de tempos para chegar até eles.",
+    "sortOrder": 114,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Um cavalo pode atacar dois alvos, mas precisa de tempos para chegar até eles. Conte os saltos, confira xeques intermediários e não subestime um peão passado que obriga o cavalo a abandonar outra função."
+      },
+      {
+        "title": "Aplique em outra posição · 1430",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um cavalo pode atacar dois alvos, mas precisa de tempos para chegar até eles. Conte os saltos, confira xeques intermediários e não subestime um peão passado que obriga o cavalo a abandonar outra função.",
+        "fen": "8/1PK5/2N5/4n3/5k2/8/7p/8 b - - 0 76",
+        "moves": [
+          "e5c6",
+          "c7c6",
+          "h2h1q"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1260",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um cavalo pode atacar dois alvos, mas precisa de tempos para chegar até eles. Conte os saltos, confira xeques intermediários e não subestime um peão passado que obriga o cavalo a abandonar outra função.",
+        "fen": "8/1P6/2n5/p1P5/P2p1K2/7k/8/8 w - - 0 63",
+        "moves": [
+          "f4e4",
+          "h3g4",
+          "e4d5",
+          "d4d3",
+          "d5c6"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1558",
+        "text": "Encontre a continuação e calcule a resposta adversária. Um cavalo pode atacar dois alvos, mas precisa de tempos para chegar até eles. Conte os saltos, confira xeques intermediários e não subestime um peão passado que obriga o cavalo a abandonar outra função.",
+        "fen": "6k1/5pp1/N3p3/3p4/pP4P1/8/6K1/1n6 w - - 0 35",
+        "moves": [
+          "b4b5",
+          "a4a3",
+          "a6b4",
+          "b1d2",
+          "b5b6",
+          "d2c4",
+          "b6b7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Como comparar cavalo e peão passado?",
+      "options": [
+        "Supondo que o cavalo anda em diagonal",
+        "Somente pelo valor material do cavalo",
+        "Contando os saltos e os tempos até a promoção",
+        "Ignorando os reis"
+      ],
+      "answer": 2,
+      "explanation": "Um cavalo pode atacar dois alvos, mas precisa de tempos para chegar até eles. Conte os saltos, confira xeques intermediários e não subestime um peão passado que obriga o cavalo a abandonar outra função."
+    }
+  },
+  {
+    "id": "lesson-peoes-final-tatico",
+    "slug": "peoes-final-tatico",
+    "title": "Peões: uma ruptura pode mudar tudo",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Finais de peões exigem precisão porque um tempo pode decidir a promoção.",
+    "sortOrder": 115,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Finais de peões exigem precisão porque um tempo pode decidir a promoção. Compare corridas, capturas e rupturas. Antes de trocar peões, reconstrua onde os reis ficarão e quem terá a vez."
+      },
+      {
+        "title": "Aplique em outra posição · 1410",
+        "text": "Encontre a continuação e calcule a resposta adversária. Finais de peões exigem precisão porque um tempo pode decidir a promoção. Compare corridas, capturas e rupturas. Antes de trocar peões, reconstrua onde os reis ficarão e quem terá a vez.",
+        "fen": "8/8/1p6/p2p1k1p/P2P1p1P/1P3p2/4K1P1/8 w - - 0 48",
+        "moves": [
+          "e2f3",
+          "f5g6",
+          "f3f4"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1416",
+        "text": "Encontre a continuação e calcule a resposta adversária. Finais de peões exigem precisão porque um tempo pode decidir a promoção. Compare corridas, capturas e rupturas. Antes de trocar peões, reconstrua onde os reis ficarão e quem terá a vez.",
+        "fen": "8/p7/1p1kp1p1/1P3p1p/P2PK1P1/7P/5P2/8 w - - 0 40",
+        "moves": [
+          "g4f5",
+          "g6f5",
+          "e4f4",
+          "d6d5",
+          "f4g5",
+          "d5d4",
+          "g5h5"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1452",
+        "text": "Encontre a continuação e calcule a resposta adversária. Finais de peões exigem precisão porque um tempo pode decidir a promoção. Compare corridas, capturas e rupturas. Antes de trocar peões, reconstrua onde os reis ficarão e quem terá a vez.",
+        "fen": "8/2k3p1/5p1p/4p3/4K1PP/5P2/8/8 w - - 4 46",
+        "moves": [
+          "e4f5",
+          "c7b6",
+          "f5g6",
+          "e5e4",
+          "f3e4"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Antes de trocar peões, qual informação é essencial?",
+      "options": [
+        "A cor da última peça capturada",
+        "Apenas quantos peões havia na abertura",
+        "O valor da dama que já saiu",
+        "A posição resultante e quem terá a vez"
+      ],
+      "answer": 3,
+      "explanation": "Finais de peões exigem precisão porque um tempo pode decidir a promoção. Compare corridas, capturas e rupturas. Antes de trocar peões, reconstrua onde os reis ficarão e quem terá a vez."
+    }
+  },
+  {
+    "id": "lesson-torres-final-tatico",
+    "slug": "torres-final-tatico",
+    "title": "Torres ativas e peões sob pressão",
+    "category": "endgames",
+    "level": "intermediate",
+    "description": "Uma torre ativa pode dar xeques e atacar peões ao mesmo tempo.",
+    "sortOrder": 116,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Uma torre ativa pode dar xeques e atacar peões ao mesmo tempo. Compare defesa passiva, atividade e distância dos reis. Uma regra como ficar atrás do peão é um ponto de partida; a posição concreta decide o lance."
+      },
+      {
+        "title": "Aplique em outra posição · 1403",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma torre ativa pode dar xeques e atacar peões ao mesmo tempo. Compare defesa passiva, atividade e distância dos reis. Uma regra como ficar atrás do peão é um ponto de partida; a posição concreta decide o lance.",
+        "fen": "8/1p6/1Kp5/2P2k2/1P3rp1/1R6/8/8 w - - 0 52",
+        "moves": [
+          "b6b7",
+          "g4g3",
+          "b3g3"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1406",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma torre ativa pode dar xeques e atacar peões ao mesmo tempo. Compare defesa passiva, atividade e distância dos reis. Uma regra como ficar atrás do peão é um ponto de partida; a posição concreta decide o lance.",
+        "fen": "8/5pp1/7p/1p1R4/6Pk/1P2RP1r/2r5/5K2 w - - 8 47",
+        "moves": [
+          "d5h5",
+          "h4g3",
+          "f3f4"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1407",
+        "text": "Encontre a continuação e calcule a resposta adversária. Uma torre ativa pode dar xeques e atacar peões ao mesmo tempo. Compare defesa passiva, atividade e distância dos reis. Uma regra como ficar atrás do peão é um ponto de partida; a posição concreta decide o lance.",
+        "fen": "8/6rp/3k4/4rR1K/7P/8/8/R7 w - - 1 70",
+        "moves": [
+          "a1a6",
+          "d6d5",
+          "a6a5"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Como usar uma regra de finais de torres?",
+      "options": [
+        "Como orientação que ainda precisa de cálculo",
+        "Como ordem obrigatória em toda posição",
+        "Para dispensar a defesa dos peões",
+        "Para ignorar xeques adversários"
+      ],
+      "answer": 0,
+      "explanation": "Uma torre ativa pode dar xeques e atacar peões ao mesmo tempo. Compare defesa passiva, atividade e distância dos reis. Uma regra como ficar atrás do peão é um ponto de partida; a posição concreta decide o lance."
+    }
+  },
+  {
+    "id": "lesson-damas-final-tatico",
+    "slug": "damas-final-tatico",
+    "title": "Damas: xeques, fugas e promoção",
+    "category": "endgames",
+    "level": "advanced",
+    "description": "A dama pode mudar de lado do tabuleiro em um lance.",
+    "sortOrder": 117,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "A dama pode mudar de lado do tabuleiro em um lance. Em finais, conte xeques, possíveis repetições e a segurança do rei antes de promover ou buscar material. Um peão a mais não elimina os recursos defensivos."
+      },
+      {
+        "title": "Aplique em outra posição · 1933",
+        "text": "Encontre a continuação e calcule a resposta adversária. A dama pode mudar de lado do tabuleiro em um lance. Em finais, conte xeques, possíveis repetições e a segurança do rei antes de promover ou buscar material. Um peão a mais não elimina os recursos defensivos.",
+        "fen": "8/8/4p1k1/4PpPp/1KQ3q1/P5P1/1P6/8 b - - 2 50",
+        "moves": [
+          "g4c4",
+          "b4c4",
+          "f5f4",
+          "g3f4",
+          "h5h4"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 2010",
+        "text": "Encontre a continuação e calcule a resposta adversária. A dama pode mudar de lado do tabuleiro em um lance. Em finais, conte xeques, possíveis repetições e a segurança do rei antes de promover ou buscar material. Um peão a mais não elimina os recursos defensivos.",
+        "fen": "8/3k1p2/3p2p1/3P3p/2q1Q3/5PP1/6KP/8 b - - 3 44",
+        "moves": [
+          "c4e4",
+          "f3e4",
+          "d7e7",
+          "g2f3",
+          "e7f6"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 2081",
+        "text": "Encontre a continuação e calcule a resposta adversária. A dama pode mudar de lado do tabuleiro em um lance. Em finais, conte xeques, possíveis repetições e a segurança do rei antes de promover ou buscar material. Um peão a mais não elimina os recursos defensivos.",
+        "fen": "3k4/3P3p/p2Q1pp1/1p3p2/8/P4P2/1q3PKP/8 w - - 0 36",
+        "moves": [
+          "d6c6",
+          "b2c1",
+          "c6c1"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que pode impedir a conversão de um final de damas?",
+      "options": [
+        "A dama não poder dar xeque",
+        "Xeques perpétuos e outros recursos defensivos",
+        "Peões deixarem de promover",
+        "Reis poderem se capturar"
+      ],
+      "answer": 1,
+      "explanation": "A dama pode mudar de lado do tabuleiro em um lance. Em finais, conte xeques, possíveis repetições e a segurança do rei antes de promover ou buscar material. Um peão a mais não elimina os recursos defensivos."
+    }
+  },
+  {
+    "id": "lesson-dama-torre-final",
+    "slug": "dama-torre-final",
+    "title": "Dama e torre: coordene as ameaças",
+    "category": "endgames",
+    "level": "advanced",
+    "description": "Com peças pesadas, a segurança do rei costuma ser urgente.",
+    "sortOrder": 118,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "Com peças pesadas, a segurança do rei costuma ser urgente. Observe ameaças de mate, ataques duplos e peças alinhadas antes de recolher peões. Uma peça pesada distante pode mudar a avaliação com um único xeque."
+      },
+      {
+        "title": "Aplique em outra posição · 1840",
+        "text": "Encontre a continuação e calcule a resposta adversária. Com peças pesadas, a segurança do rei costuma ser urgente. Observe ameaças de mate, ataques duplos e peças alinhadas antes de recolher peões. Uma peça pesada distante pode mudar a avaliação com um único xeque.",
+        "fen": "8/7k/1p6/p5K1/2P5/1P1P2R1/2P1q1p1/6R1 b - - 3 45",
+        "moves": [
+          "e2e5",
+          "g5g4",
+          "e5d4",
+          "g4f3",
+          "d4g1"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1833",
+        "text": "Encontre a continuação e calcule a resposta adversária. Com peças pesadas, a segurança do rei costuma ser urgente. Observe ameaças de mate, ataques duplos e peças alinhadas antes de recolher peões. Uma peça pesada distante pode mudar a avaliação com um único xeque.",
+        "fen": "8/pkpR2R1/1p6/8/8/P3p2P/2q3PK/8 w - - 2 38",
+        "moves": [
+          "d7c7",
+          "c2c7",
+          "g7c7",
+          "b7c7",
+          "h2g3"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 2027",
+        "text": "Encontre a continuação e calcule a resposta adversária. Com peças pesadas, a segurança do rei costuma ser urgente. Observe ameaças de mate, ataques duplos e peças alinhadas antes de recolher peões. Uma peça pesada distante pode mudar a avaliação com um único xeque.",
+        "fen": "2R5/4PK1k/5P2/p6p/2P5/5r2/8/1q6 w - - 0 52",
+        "moves": [
+          "c8h8",
+          "h7h8",
+          "e7e8q",
+          "h8h7",
+          "e8g8",
+          "h7h6",
+          "g8g7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "O que deve vir antes de uma captura de peão?",
+      "options": [
+        "Jogar qualquer lance de torre",
+        "Retirar a dama do tabuleiro",
+        "Conferir xeques e ameaças contra o rei",
+        "Ignorar alinhamentos das peças"
+      ],
+      "answer": 2,
+      "explanation": "Com peças pesadas, a segurança do rei costuma ser urgente. Observe ameaças de mate, ataques duplos e peças alinhadas antes de recolher peões. Uma peça pesada distante pode mudar a avaliação com um único xeque."
+    }
+  },
+  {
+    "id": "lesson-ameaca-f2-f7",
+    "slug": "ameaca-f2-f7",
+    "title": "Reconheça a pressão sobre f2 e f7",
+    "category": "tactics",
+    "level": "beginner",
+    "description": "No início, f2 e f7 são defendidas apenas pelo rei.",
+    "sortOrder": 119,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "No início, f2 e f7 são defendidas apenas pelo rei. Bispos, cavalos e damas podem combinar ataques ali. Isso não torna qualquer sacrifício correto: confira o desenvolvimento e as respostas antes de executar a ideia."
+      },
+      {
+        "title": "Aplique em outra posição · 764",
+        "text": "Encontre a continuação e calcule a resposta adversária. No início, f2 e f7 são defendidas apenas pelo rei. Bispos, cavalos e damas podem combinar ataques ali. Isso não torna qualquer sacrifício correto: confira o desenvolvimento e as respostas antes de executar a ideia.",
+        "fen": "r2qk2r/ppp2pp1/3p3p/6P1/2B1P3/2NP2n1/PPP4K/R4Q2 w kq - 0 16",
+        "moves": [
+          "f1f7"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 964",
+        "text": "Encontre a continuação e calcule a resposta adversária. No início, f2 e f7 são defendidas apenas pelo rei. Bispos, cavalos e damas podem combinar ataques ali. Isso não torna qualquer sacrifício correto: confira o desenvolvimento e as respostas antes de executar a ideia.",
+        "fen": "5r1k/8/Q6p/1pR5/3PP2q/P3P3/1P3P2/3RK3 b - - 0 31",
+        "moves": [
+          "h4f2"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 666",
+        "text": "Encontre a continuação e calcule a resposta adversária. No início, f2 e f7 são defendidas apenas pelo rei. Bispos, cavalos e damas podem combinar ataques ali. Isso não torna qualquer sacrifício correto: confira o desenvolvimento e as respostas antes de executar a ideia.",
+        "fen": "r1bbk2r/pp3ppp/3p4/q3p2Q/1nB5/P2P4/1PP2PPP/RN3RK1 w kq - 2 13",
+        "moves": [
+          "h5f7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Por que f2 e f7 chamam atenção na posição inicial?",
+      "options": [
+        "Os peões dessas casas não podem mover",
+        "Estão fora do tabuleiro",
+        "Não podem receber um xeque",
+        "São defendidas apenas pelo rei"
+      ],
+      "answer": 3,
+      "explanation": "No início, f2 e f7 são defendidas apenas pelo rei. Bispos, cavalos e damas podem combinar ataques ali. Isso não torna qualquer sacrifício correto: confira o desenvolvimento e as respostas antes de executar a ideia."
+    }
+  },
+  {
+    "id": "lesson-xeque-descoberto",
+    "slug": "xeque-descoberto",
+    "title": "Saia da linha e dê xeque com outra peça",
+    "category": "tactics",
+    "level": "intermediate",
+    "description": "No xeque descoberto, uma peça sai da frente e revela o ataque de outra ao rei.",
+    "sortOrder": 120,
+    "minutes": 6,
+    "steps": [
+      {
+        "title": "Uma ideia para procurar",
+        "text": "No xeque descoberto, uma peça sai da frente e revela o ataque de outra ao rei. A peça que se move pode criar uma segunda ameaça enquanto o adversário precisa responder ao xeque."
+      },
+      {
+        "title": "Aplique em outra posição · 1406",
+        "text": "Encontre a continuação e calcule a resposta adversária. No xeque descoberto, uma peça sai da frente e revela o ataque de outra ao rei. A peça que se move pode criar uma segunda ameaça enquanto o adversário precisa responder ao xeque.",
+        "fen": "8/5pp1/7p/1p1R4/6Pk/1P2RP1r/2r5/5K2 w - - 8 47",
+        "moves": [
+          "d5h5",
+          "h4g3",
+          "f3f4"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1417",
+        "text": "Encontre a continuação e calcule a resposta adversária. No xeque descoberto, uma peça sai da frente e revela o ataque de outra ao rei. A peça que se move pode criar uma segunda ameaça enquanto o adversário precisa responder ao xeque.",
+        "fen": "r2r1q2/p2k1NQ1/b3p3/3p4/2p5/8/P1P3PP/5R1K w - - 1 28",
+        "moves": [
+          "f7e5",
+          "d7d6",
+          "f1f8"
+        ]
+      },
+      {
+        "title": "Aplique em outra posição · 1425",
+        "text": "Encontre a continuação e calcule a resposta adversária. No xeque descoberto, uma peça sai da frente e revela o ataque de outra ao rei. A peça que se move pode criar uma segunda ameaça enquanto o adversário precisa responder ao xeque.",
+        "fen": "r3kb1r/p1qb1ppp/2p2n2/3p4/3p4/2P1BP2/PP2Q1PP/RN2K1NR w KQkq - 0 11",
+        "moves": [
+          "e3f4",
+          "e8d8",
+          "f4c7"
+        ]
+      }
+    ],
+    "quiz": {
+      "question": "Qual peça dá o xeque descoberto?",
+      "options": [
+        "A peça cuja linha foi aberta",
+        "Sempre a peça que acabou de mover",
+        "Sempre um cavalo",
+        "O próprio rei adversário"
+      ],
+      "answer": 0,
+      "explanation": "No xeque descoberto, uma peça sai da frente e revela o ataque de outra ao rei. A peça que se move pode criar uma segunda ameaça enquanto o adversário precisa responder ao xeque."
+    }
+  }
+]

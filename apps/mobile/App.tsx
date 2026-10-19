@@ -16,6 +16,9 @@ import { NavigationProvider, useNavigation } from './src/navigation/Navigation';
 import { Shell } from './src/navigation/Shell';
 import { AppearanceProvider } from './src/appearance/AppearanceProvider';
 import { SettingsScreen } from './src/features/settings/SettingsScreen';
+import { GamesScreen } from './src/features/games/GamesScreen';
+import { GameReviewScreen } from './src/features/games/GameReviewScreen';
+import { CommunityScreen } from './src/features/learning/CommunityScreen';
 
 function CurrentScreen() {
   const { route } = useNavigation();
@@ -26,6 +29,7 @@ function CurrentScreen() {
     case 'lessons': return <LessonsScreen />;
     case 'lesson': return <LessonScreen key={route.id} id={route.id} />;
     case 'report': return <ReportScreen />;
+    case 'community': return <CommunityScreen />;
     case 'today': return <DailyTrainingScreen />;
     case 'openings': return <OpeningsScreen />;
     case 'repertoires': return <RepertoiresScreen />;
@@ -36,13 +40,15 @@ function CurrentScreen() {
     case 'puzzle': return <PuzzleScreen key={route.id} id={route.id} />;
     case 'endgames': return <EndgamesScreen />;
     case 'endgame': return <EndgameScreen id={route.id} />;
+    case 'games': return <GamesScreen />;
+    case 'game': return <GameReviewScreen id={route.id} />;
     case 'analysis': return <AnalysisScreen />;
   }
 }
 
 export default function App() {
   return <SafeAreaProvider>
-    <StatusBar style="dark" />
+    <StatusBar style="light" />
     <NavigationProvider>
       <AuthProvider>
         <AppearanceProvider><Shell><CurrentScreen /></Shell></AppearanceProvider>

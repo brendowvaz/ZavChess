@@ -6,6 +6,7 @@ import { useNavigation } from '../../navigation/Navigation';
 import { Badge, Button, Card, Empty, ErrorState, Heading, Loading, ProgressBar } from '../../ui/components';
 import { s } from '../../ui/theme';
 import type { StudyPlan, StudySuggestion } from './types';
+import { useAppearance } from '../../appearance/AppearanceProvider';
 
 function open(item: StudySuggestion, navigate: ReturnType<typeof useNavigation>['navigate']) {
   if (item.kind === 'opening') navigate({ screen: 'opening', id: item.contentId, studySide: item.side === 'b' ? 'b' : 'w', focusPly: item.focusPly });
@@ -14,7 +15,8 @@ function open(item: StudySuggestion, navigate: ReturnType<typeof useNavigation>[
 
 export function DailyTrainingScreen() {
   const auth = useAuth(); const { navigate } = useNavigation();
-  const plan = useResource<StudyPlan>(auth.user ? '/learning/plan' : null, auth.revision);
+  const { appearance } = useAppearance();
+  const plan = useResource<StudyPlan>(auth.user ? `/learning/plan?track=${appearance.learningTrack}` : null, auth.revision);
   if (!auth.user) return <View style={s.page}><Heading eyebrow="Treino pessoal" title="Entre para receber seu treino de hoje." description="O plano usa seu progresso, seus erros e as revisões que estão prontas." />
     <Button label="Entrar ou criar conta" icon="arrow" onPress={() => navigate({ screen: 'auth' })} style={{ alignSelf: 'flex-start' }} /></View>;
   return <View style={s.page}>

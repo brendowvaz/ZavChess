@@ -304,7 +304,7 @@ export function buildLessons(openings, puzzles, endgames) {
     const level = puzzle.rating < 1400 ? 'beginner' : puzzle.rating < 2000 ? 'intermediate' : 'advanced';
     add(slug, title, 'tactics', level, `Reconheça o motivo ${title.split(':')[0].toLowerCase()} em um puzzle real.`, 6,
       [step('Reconheça o padrão', idea),
-        step('Observe o lance adversário', `Puzzle Lichess ${puzzle.id}, rating ${puzzle.rating}. O último lance adversário é ${opponentMove.san}. Reproduza esse lance para chegar ao problema.`, { fen: puzzle.fen, moves: [puzzle.moves[0]] }),
+        step('Observe o lance adversário', `Puzzle Lichess ${puzzle.id}, rating ${puzzle.rating}. O último lance adversário é ${opponentMove.san}. Esse lance é aplicado automaticamente para chegar ao problema.`, { fen: puzzle.fen, moves: [puzzle.moves[0]] }),
         step('Calcule e confira', `${practice} A linha a seguir é a solução publicada pelo Lichess; os lances alternam os dois lados.`, { fen: game.fen(), moves: puzzle.moves.slice(1) })],
       question, { type: 'lichess-puzzle', puzzleId: puzzle.id, theme, sourceUrl: puzzle.sourceUrl });
   }

@@ -3,6 +3,7 @@ export interface StudySuggestion {
 }
 export interface RepertoireDecision {
   key: string; fen: string; ply: number; uci: string; san: string; explanation: string;
+  masteryPoints?: number; dueAt?: string | null;
 }
 export interface RepertoireLine {
   openingId: string; name: string; eco: string; moveCount: number; decisions: RepertoireDecision[];
@@ -11,6 +12,7 @@ export interface RepertoireCourse {
   id: string; title: string; subtitle: string; side: 'w' | 'b'; level: 'beginner' | 'intermediate'; goals: string[];
   lineCount: number; positionCount: number; lines: RepertoireLine[]; selected: boolean;
   learnedPositions: number; duePositions: number; mastery: number;
+  rank?: string; points?: number; maxPoints?: number;
 }
 export interface StudyPlan {
   rating: number; recommendedBand: { min: number; max: number }; dueCount: number; nextReviewAt: string | null; items: StudySuggestion[];

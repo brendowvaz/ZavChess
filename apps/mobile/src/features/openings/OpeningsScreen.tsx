@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import type { Opening, OpeningFamily, OpeningFamilyDetail, OpeningStudyGuide, OpeningVariant, Page, Side } from '../../api/types';
 import { useDebounced, useResource } from '../../api/hooks';
@@ -15,6 +15,10 @@ import { useOpeningCompletions } from './OpeningCompletions';
 import { MasteryStrip } from '../learning/MasteryStrip';
 import type { ArrowAnnotation } from '../../chess/annotations';
 import { StudyLayout, StudyMessage } from '../../ui/StudyLayout';
+import { StudyPlan } from '../learning/StudyPlan';
+import { useAppearance } from '../../appearance/AppearanceProvider';
+import { PositionInspector } from '../analysis/PositionInspector';
+import { LearningPath } from '../../ui/LearningPath';
 import {
   advanceOpeningTraining,
   beginOpeningTraining,
@@ -31,8 +35,9 @@ export function OpeningsScreen() {
   const [search, setSearch] = useState(''); const [page, setPage] = useState(1);
   const query = useDebounced(search.trim()); const { navigate } = useNavigation();
   const data = useResource<Page<OpeningFamily>>(`/opening-families?search=${encodeURIComponent(query)}&page=${page}&pageSize=24`);
-  return <View style={s.page}><Heading eyebrow="Construa seu repertório" title="Escolha uma abertura. Depois, uma variante." description="A lista mostra as famílias. Dentro de cada uma você encontra todas as linhas-filhas para estudar e comparar." />
-    <Card><Badge tone="gold">NOVO · CURSO PESSOAL</Badge><Text style={s.h2}>Prefere um caminho pronto?</Text><Text style={s.muted}>Escolha um repertório curto e pratique seus ramos essenciais como uma árvore de decisões.</Text><Button label="Ver repertórios guiados" icon="arrow" onPress={() => navigate({ screen: 'repertoires' })} style={{ alignSelf: 'flex-start' }} /></Card>
+  return <View style={s.page}><Heading eyebrow="Descubra, pratique, domine" title="Aberturas" description="Comece pelo treino de hoje ou explore famílias, variantes, armadilhas estratégicas e repertórios completos." />
+    <StudyPlan />
+    <Card><View style={s.between}><Badge tone="gold">CURSO PESSOAL</Badge><Badge tone="green">SEM BLOQUEIOS</Badge></View><Text style={s.h2}>Prefere um caminho pronto?</Text><Text style={s.muted}>Escolha um repertório curto e pratique seus ramos essenciais como uma árvore de decisões. Todas as linhas, revisões e explicações ficam disponíveis.</Text><Button label="Ver repertórios guiados" icon="arrow" onPress={() => navigate({ screen: 'repertoires' })} style={{ alignSelf: 'flex-start' }} /></Card>
     <Field label="Pesquisar aberturas" placeholder="Ex.: Italiana, Siciliana ou B20" value={search} onChangeText={text => { setSearch(text); setPage(1); }} autoCorrect={false} returnKeyType="search" />
     {data.loading ? <Loading label="Buscando aberturas…" /> : data.error ? <ErrorState message={data.error} retry={data.reload} /> : data.data ? <>
       <Text style={s.small}>{data.data.total.toLocaleString('pt-BR')} {data.data.total === 1 ? 'família encontrada' : 'famílias encontradas'}</Text>
@@ -47,6 +52,7 @@ export function OpeningsScreen() {
 export function OpeningFamilyScreen({ family }: { family: string }) {
   const content = useResource<EducationalFamily>(`/opening-families/${encodeURIComponent(family)}`); const { back, navigate } = useNavigation();
   const [search, setSearch] = useState('');
+  const [section, setSection] = useState<'course' | 'traps' | 'variations'>('course');
   const variants = useMemo(() => {
     const term = search.trim().toLocaleLowerCase('pt-BR');
     if (!content.data || !term) return content.data?.variations ?? [];
@@ -54,13 +60,19 @@ export function OpeningFamilyScreen({ family }: { family: string }) {
   }, [content.data, search]);
   return <View style={s.page}><Button label="Voltar às aberturas" icon="back" variant="ghost" onPress={back} style={{ alignSelf: 'flex-start' }} />
     {content.loading ? <Loading label="Carregando variantes…" /> : content.error ? <ErrorState message={content.error} retry={content.reload} /> : content.data ? <>
-      <Heading eyebrow="ABERTURA-PÃE" title={content.data.family} description={`${content.data.variationCount} variantes-filhas. Abra uma e use anterior/próxima para compará-las sem perder sua posição na família.`} />
+      <Heading eyebrow="Explore o repertório" title={content.data.family} description={`${content.data.variationCount} variantes para conhecer, praticar e comparar.`} />
+      <View style={s.wrap}><Chip label="Curso" selected={section === 'course'} onPress={() => setSection('course')} /><Chip label="Armadilhas" selected={section === 'traps'} onPress={() => setSection('traps')} /><Chip label="Variações" selected={section === 'variations'} onPress={() => setSection('variations')} /></View>
       {content.data.education ? <EducationPanel education={content.data.education} familyOnly /> : <StudyGuide guide={content.data.studyGuide} />}
-      <Card><Text style={s.h2}>Variantes desta abertura</Text><Text style={s.muted}>Filtre pelo nome, ECO ou sequência. A lista mantém todas as variantes da família visíveis durante o estudo.</Text>
+      {section === 'course' ? <View style={s.stack}><Text style={s.h2}>Das linhas curtas às decisões mais profundas</Text><LearningPath items={[...content.data.variations].sort((a, b) => a.moveCount - b.moveCount).slice(0, 16).map((variant, index) => ({ id: variant.id,
+        title: variationTitle(family, variant.name), subtitle: `${variant.eco} · ${variant.moveCount} meios-lances`, state: index === 0 ? 'current' as const : 'ready' as const }))}
+        onPress={item => navigate({ screen: 'opening', id: item.id })} /></View> : section === 'traps' ? <View style={s.stack}><Text style={s.h2}>Armadilhas identificadas no catálogo</Text>
+        {content.data.variations.filter(variant => /\btrap\b|armadilha/i.test(variant.name)).map(variant => <VariantCard key={variant.id} family={family} variant={variant} onPress={() => navigate({ screen: 'opening', id: variant.id })} />)}
+        {!content.data.variations.some(variant => /\btrap\b|armadilha/i.test(variant.name)) ? <Empty title="Nenhuma armadilha nomeada nesta família" description="O guia de erros comuns acima ajuda a reconhecer os riscos. Explore as variantes para estudar outras decisões." /> : null}
+      </View> : <Card><Text style={s.h2}>Variantes desta abertura</Text><Text style={s.muted}>Filtre pelo nome, ECO ou sequência.</Text>
         <Field label="Filtrar variantes" placeholder="Ex.: Najdorf, B90 ou 6. Bg5" value={search} onChangeText={setSearch} autoCorrect={false} returnKeyType="search" />
         <Text style={s.small}>{variants.length} {variants.length === 1 ? 'variante exibida' : 'variantes exibidas'}</Text>
         {!variants.length ? <Empty title="Nenhuma variante neste filtro" description="Limpe ou altere o filtro para ver outra linha da família." /> : <View style={s.stack}>{variants.map(variant => <VariantCard key={variant.id} family={content.data!.family} variant={variant} onPress={() => navigate({ screen: 'opening', id: variant.id })} />)}</View>}
-      </Card>
+      </Card>}
     </> : null}</View>;
 }
 export function OpeningScreen({ id, initialSide, focusPly }: { id: string; initialSide?: Side; focusPly?: number }) {
@@ -138,6 +150,18 @@ function OpeningTrainer({ opening, side, focusPly, onBack, onToggleSide }: { ope
   const { user } = useAuth(); const { replace } = useNavigation(); const completions = useOpeningCompletions();
   const createTraining = () => beginOpeningTraining(opening.moves, side, newOpeningRequestId(), focusPly);
   const [training, setTraining] = useState<OpeningTraining>(createTraining);
+  const { appearance } = useAppearance();
+  const [automatic, setAutomatic] = useState(appearance.autoAdvance);
+  const [inspecting, setInspecting] = useState(false);
+  useEffect(() => {
+    if (!automatic || inspecting || trainingFinished(training) || (training.phase !== 'learn' && !training.revealed)) return;
+    const timer = setTimeout(() => {
+      const next = advanceOpeningTraining(training);
+      setTraining(next);
+      if (trainingFinished(next)) openingCompletions.enqueue(opening.id, opening.name, next, user?.id ?? null);
+    }, training.phase === 'learn' ? 2000 : training.outcome === 'correct' ? 500 : 1800);
+    return () => clearTimeout(timer);
+  }, [training, automatic, inspecting, opening.id, opening.name, user?.id]);
   const studentMoves = opening.moves.filter((_, index) => index % 2 === (side === 'w' ? 0 : 1));
   if (!opening.moves.length || !studentMoves.length) return <StudyLayout title={opening.name} subtitle={opening.eco} eyebrow={opening.family}
     onBack={onBack} topAction={<Chip label={side === 'w' ? 'Brancas' : 'Pretas'} selected onPress={onToggleSide} />}
@@ -163,10 +187,7 @@ function OpeningTrainer({ opening, side, focusPly, onBack, onToggleSide }: { ope
     : training.outcome === 'dont-know' ? arrow(expectedMove, 'green') : [];
   const move = (uci: string) => {
     const answered = moveOpeningTraining(training, uci);
-    if (answered.outcome !== 'correct') { setTraining(answered); return; }
-    const next = advanceOpeningTraining(answered);
-    setTraining(next);
-    if (trainingFinished(next)) openingCompletions.enqueue(opening.id, opening.name, next, user?.id ?? null);
+    setTraining(answered);
   };
   const advance = () => {
     const next = advanceOpeningTraining(training);
@@ -189,14 +210,16 @@ function OpeningTrainer({ opening, side, focusPly, onBack, onToggleSide }: { ope
       <Button label="Refazer" icon="refresh" compact variant="ghost" onPress={restart} />
       {nextVariant ? <Button label="Próxima variante" icon="arrow" onPress={() => replace({ screen: 'opening', id: nextVariant.id, studySide: side })} /> : null}
     </View>
-    : learning || training.revealed ? <Button label={learning && training.cursor === training.studentPlies.length - 1 ? 'Começar prática' : 'Continuar'} icon="arrow" onPress={advance} />
+    : learning || training.revealed ? <View style={s.wrap}><Button label={automatic ? 'Pausar' : 'Retomar'} variant="ghost" onPress={() => setAutomatic(value => !value)} />
+      {!automatic ? <Button label={learning && training.cursor === training.studentPlies.length - 1 ? 'Começar prática' : 'Avançar'} icon="arrow" onPress={advance} /> : <Text style={s.small}>Avanço automático</Text>}</View>
     : <Button label="Não sei" variant="secondary" onPress={() => setTraining(hintOpeningTraining(training))} />;
-  return <StudyLayout title={opening.name} subtitle={`${opening.eco} · ${phaseLabel}`} eyebrow={focusPly !== undefined ? 'Revisão focada' : opening.family}
+  return <><StudyLayout title={opening.name} subtitle={`${opening.eco} · ${phaseLabel}`} eyebrow={focusPly !== undefined ? 'Revisão focada' : opening.family}
     onBack={onBack} progress={progress} topAction={<Chip label={side === 'w' ? 'Brancas' : 'Pretas'} selected onPress={onToggleSide} />}
     renderBoard={maxSize => <ChessBoard fen={fen} orientation={side} maxSize={maxSize} hideStatus
       onMove={finished || learning || training.revealed ? undefined : move} disabled={finished || learning || training.revealed}
       feedbackArrows={feedbackArrows} lastMove={finished ? opening.moves.at(-1) : learning ? expectedMove : training.line[training.index - 1]} />}
     status={message}
     stats={!learning && !finished ? <MasteryStrip compact todo={counts.todo} wrong={counts.wrong} correct={counts.correct} /> : undefined}
-    actions={actions} />;
+    actions={<View style={s.stack}>{actions}<Button label="Analisar posição" compact variant="ghost" onPress={() => setInspecting(true)} /></View>} />
+    {inspecting ? <PositionInspector fen={fen} onClose={() => setInspecting(false)} /> : null}</>;
 }
